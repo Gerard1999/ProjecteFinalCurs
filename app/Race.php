@@ -10,7 +10,7 @@ class Race extends Model
     use Sluggable;
 
     //Una cursa pertany a un usuari
-    public function user(){
+    public function organizer(){
         return $this->belongsTo(Organizer::class);
     }
 
