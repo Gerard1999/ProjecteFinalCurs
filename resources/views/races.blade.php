@@ -24,8 +24,7 @@
                 </div>
             </div>
             @endforeach
-            
-           
+            {{$races->links()}}
         </div>
     </div>
 </div>
