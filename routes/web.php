@@ -15,12 +15,12 @@ use Illuminate\Support\Facades\Route;
 
 /*Route::get('/', function(){
     return view('home');
-});
+});*/
 
-/*Route::get('/users', 'UserController@index');
+Route::get('/users', 'UserController@index');
 Route::post('users', 'UserController@store')->name('users.store');
 Route::delete('users/{user}', 'UserController@destroy')->name('users.destroy');
-*/
+
 
 Auth::routes();
 
@@ -45,7 +45,7 @@ Route::get('races', function(){
     foreach ($races as $race) {
         echo "<p>
                 $race->id |
-                <strong>{$race->user->name}</strong> |
+                <strong>{$race->shirt}</strong> |
                 $race->name
                 </p>";
     }
@@ -53,7 +53,7 @@ Route::get('races', function(){
 
 use App\User;
 
-Route::get('users', function(){
+/*Route::get('users', function(){
     $users = User::all();
 
     foreach ($users as $user) {
@@ -63,4 +63,4 @@ Route::get('users', function(){
                 <strong>{$user->races->count()} races</strong>
                 </p>";
     }
-});
+});*/

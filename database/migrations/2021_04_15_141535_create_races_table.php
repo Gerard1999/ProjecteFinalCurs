@@ -14,15 +14,21 @@ class CreateRacesTable extends Migration
     public function up()
     {
         Schema::create('races', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
 
-            $table->unsignedBigInteger('user_id');
-
-            $table->string('name');
-
-            $table->foreign('user_id')->references('id')->on('users');
-
+            //Clau forana de Organizers
+            $table->bigInteger('organizer_id')->unsigned();
+            
+            $table->char('name', 25);
+            $table->string('url');
+            $table->boolean('shirt');
+            $table->date('date')->format('d-m-Y');
+            $table->char('location', 100);
+            
             $table->timestamps();
+            
+            $table->foreign('organizer_id')->references('id')->on('organizers');
+            
         });
     }
 

@@ -7,7 +7,11 @@ use Faker\Generator as Faker;
 
 $factory->define(Race::class, function (Faker $faker) {
     return [
-        'user_id' => rand(1,4),
-        'name' => $faker -> sentence
+        'organizer_id' => 1,
+        'name' => $faker -> name(),
+        'location' => $faker -> city(),
+        'url' => $faker->text(10),
+        'date' => $faker -> date(),
+        'shirt' => $faker -> boolean(),
     ];
 });

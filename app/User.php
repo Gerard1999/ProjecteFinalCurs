@@ -37,8 +37,5 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    //Relació : Un usuari té moltes curses
-    public function races(){
-        return $this->hasMany(Race::class);
-    }
+    
 }
