@@ -18,7 +18,12 @@ class DatabaseSeeder extends Seeder
             'telephone' => 608569842,
             'email' => 'bestrail@gmail.com'
         ]);
-
+        
+        App\User::create([
+            'name' => 'Gerard',
+            'email' => 'gerardlopo@gmail.com',
+            'password' => bcrypt('12341234'),
+        ]);
         //factory(App\User::class, 4)->create();
         factory(App\Race::class, 30)->create();
         factory(App\Product::class, 10)->create();
