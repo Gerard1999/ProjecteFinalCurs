@@ -19,14 +19,18 @@ class Race extends Model
      *
      * @return array
      */
-    public function sluggable(): array
-    {
+    public function sluggable(): array{
         return [
             'slug' => [
                 'source' => 'title',
                 'onUpdate' => true
             ]
         ];
+    }
+
+    //Funció per substreure un fragment de la descripció de la cursa
+    public function getGetExcerptAttribute(){
+        return substr($this->description, 0, 140);
     }
 }
 
