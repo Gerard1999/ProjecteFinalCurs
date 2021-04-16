@@ -26,10 +26,10 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($races as $race)
+                            @forelse($races as $race)
                                 <tr>
                                     <td>{{$race->name}}</td>
-                                    <td>{{$race->date}}</td>
+                                    <td>{{date('d/m/Y', strtotime($race->date))}}</td>
                                     <td>{{$race->location}}</td>
                                     <td>
                                         <a href="{{ route('races.edit', $race)}}" class="btn btn-primary btn-sm">
@@ -44,7 +44,11 @@
                                         </form>
                                     </td>
                                 </tr>
-                            @endforeach
+                            @empty
+                                <tr>
+                                    <td colspan="5">No hi ha curses</td>
+                                </tr>
+                            @endforelse
                         </tbody>
                     </table>
                 </div>
