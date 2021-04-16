@@ -20,7 +20,7 @@
                         &ndash; {{ $race->organizer->name }}
                         </em>
                     </p>
-                    <em>{{ $race->date }}</em>
+                    <em>{{ date('d/m/Y', strtotime($race->date)) }}</em>
                 </div>
             </div>
             @endforeach
