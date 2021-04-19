@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use App\Race;
 use App\Http\Requests\RaceRequest;
+use Illuminate\Support\Facades\Storage;
 
 class RaceController extends Controller
 {
@@ -43,8 +44,6 @@ class RaceController extends Controller
         ] + $request->all());
 
         //Guardar Imatge
-        
-        //dd($request->file('img'));
         if ($request->file('img')) {
             $race->img_cover = $request->file('img')->store('races', 'public');
             $race->save();
@@ -55,17 +54,6 @@ class RaceController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  \App\Race  $race
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Race $race)
-    {
-        //
-    }
-
-    /**
      * Show the form for editing the specified resource.
      *
      * @param  \App\Race  $race
@@ -73,19 +61,29 @@ class RaceController extends Controller
      */
     public function edit(Race $race)
     {
-        //
+        return view('races.edit', compact('race'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\RaceRequest  $request
      * @param  \App\Race  $race
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Race $race)
+    public function update(RaceRequest $request, Race $race)
     {
-        //
+        //Actualitzar les dades
+        $race->update($request->all());
+
+        if ($request->file('img')) {
+            //Eliminar la imatge anterior per actualitzar la nova.
+            Storage::disk('public')->delete($race->img_cover);
+            $race->img_cover = $request->file('img')->store('races', 'public');
+            $race->save();
+        }
+
+        return back()->with('status', 'Cursa actualitzada amb èxit');
     }
 
     /**
@@ -96,6 +94,11 @@ class RaceController extends Controller
      */
     public function destroy(Race $race)
     {
-        //
+        //Eliminem primer la imatge del disc
+        Storage::disk('public')->delete($race->img_cover);
+        
+        $race->delete();
+
+        return back()->with('status', 'Cursa esborrada correctament');
     }
 }
