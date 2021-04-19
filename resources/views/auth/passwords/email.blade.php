@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container mt-3">
+<div class="container">
     <div class="row justify-content-center">
         <div class="col-md-4 col-md-offset-8">
             <div class="panel panel-default">
-                <div class="title-headin">
+                <div class="panel-heading">
                     <h1 class="panel-title text-center p-4">Recuperar Contrasenya</h1>
                 </div>
 
