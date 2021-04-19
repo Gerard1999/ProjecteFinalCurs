@@ -20,7 +20,7 @@ class CreateRacesTable extends Migration
             $table->bigInteger('organizer_id')->unsigned();
             
             $table->char('name', 25);
-            $table->string('description',400);
+            $table->string('description',800);
             $table->string('url');
             $table->boolean('shirt');
             $table->date('date')->format('d M Y');
