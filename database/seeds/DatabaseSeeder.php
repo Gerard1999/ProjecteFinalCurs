@@ -40,7 +40,7 @@ class DatabaseSeeder extends Seeder
             ]);
 
         //factory(App\User::class, 4)->create();
-        factory(App\Race::class, 30)->create();
+        //factory(App\Race::class, 30)->create();
         factory(App\Product::class, 10)->create();
         // $this->call(UserSeeder::class);
     }

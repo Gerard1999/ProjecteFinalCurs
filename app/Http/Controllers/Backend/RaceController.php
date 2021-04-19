@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Race;
-use Illuminate\Http\Request;
+use App\Http\Requests\RaceRequest;
 
 class RaceController extends Controller
 {
@@ -26,7 +26,7 @@ class RaceController extends Controller
      */
     public function create()
     {
-        //
+        return view('races.create');
     }
 
     /**
@@ -35,9 +35,23 @@ class RaceController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(RaceRequest $request)
     {
-        //
+        //Guardar
+        $race = Race::create([
+            'organizer_id' => auth()->user()->id
+        ] + $request->all());
+
+        //Guardar Imatge
+        
+        //dd($request->file('img'));
+        if ($request->file('img')) {
+            $race->img_cover = $request->file('img')->store('races', 'public');
+            $race->save();
+        }
+        
+        //Retornar
+        return back()->with('status', 'Creat amb èxit');
     }
 
     /**

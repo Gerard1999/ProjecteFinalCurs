@@ -9,6 +9,10 @@ class Race extends Model
 {
     use Sluggable;
 
+    protected $fillable = [
+        'name', 'description', 'location', 'date', 'img_cover', 'organizer_id'
+    ];
+
     //Una cursa pertany a un usuari
     public function organizer(){
         return $this->belongsTo(Organizer::class);
@@ -21,8 +25,8 @@ class Race extends Model
      */
     public function sluggable(): array{
         return [
-            'slug' => [
-                'source' => 'title',
+            'url' => [
+                'source' => 'name',
                 'onUpdate' => true
             ]
         ];

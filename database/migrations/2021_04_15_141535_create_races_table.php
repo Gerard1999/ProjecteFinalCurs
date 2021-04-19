@@ -21,11 +21,11 @@ class CreateRacesTable extends Migration
             
             $table->char('name', 25);
             $table->string('description',800);
-            $table->string('url');
-            $table->boolean('shirt');
+            $table->string('url')->nullable();
+            $table->boolean('shirt')->nullable();
             $table->date('date')->format('d M Y');
             $table->char('location', 100);
-            $table->string('img_cover');
+            $table->string('img_cover')->nullable();
             
             $table->timestamps();
             
