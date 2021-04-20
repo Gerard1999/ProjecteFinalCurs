@@ -32,11 +32,16 @@ class Race extends Model
         ];
     }
 
-    //Funció per substreure un fragment de la descripció de la cursa
+    /**
+     * Funció per substreure un fragment de la descripció de la cursa
+     */
     public function getGetExcerptAttribute(){
         return substr($this->description, 0, 140);
     }
 
+    /**
+     * Funció que retorna la url de la imatge de la cursa
+     */
     public function getGetImageAttribute(){
         return url("storage/$this->img_cover");
     }
