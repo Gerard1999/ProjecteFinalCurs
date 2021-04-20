@@ -18,6 +18,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('estilsSass/estils.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -25,6 +26,9 @@
             <div class="container p-2">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     Trail Races
+                </a>
+                <a class="prova" href="{{ url('/') }}">
+                    Prova
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>

@@ -8,10 +8,10 @@
 
             @foreach($races as $race)
             <div class="card mt-3">
+                @if($race->img_cover)
+                    <img src="{{ $race->get_image }}" class="card-img-top img-cover">
+                @endif
                 <div class="card-body">
-                    @if($race->img_cover)
-                        <img src="{{ $race->get_image }}" class="card-img-top">
-                    @endif
                     <h3 class="card-title">{{$race->name}}</h3>
                     <h5 class="card-text">Població: {{$race->location}}</h5>
                     <p class="card-text">
