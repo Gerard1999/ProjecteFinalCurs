@@ -14,15 +14,12 @@ class CreateRunnersTable extends Migration
     public function up()
     {
         Schema::create('runners', function (Blueprint $table) {
-            $table->id('id');
-            $table->char('name', 25);
+            $table->id();
+
+            //Clau forana de Organizers
+            $table->bigInteger('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->char('surname', 25);
-            $table->char('username', 25)->unique();
-            $table->string('password', 9);
-            $table->integer('telephone');
-            $table->char('email', 50)->unique();
-            $table->string('address');
-            $table->string('city');
 
             $table->timestamps();
         });

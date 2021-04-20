@@ -15,19 +15,19 @@ class CreateOrganizersTable extends Migration
     {
         Schema::create('organizers', function (Blueprint $table) {
             $table->id('id');
-            $table->char('name', 25);
-            $table->string('username')->unique();
-            $table->string('password');
-            $table->char('telephone',9);
-            $table->char('email', 50)->unique();
+
+            //Clau forana de Organizers
+            $table->bigInteger('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+
             $table->char('link_web', 100)->nullable();
             $table->char('link_instagram', 100)->nullable();
             $table->char('link_facebook', 100)->nullable();
             $table->char('link_twitter', 100)->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
-            
             $table->timestamps();
+
         });
     }
 
