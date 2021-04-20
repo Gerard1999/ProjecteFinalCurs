@@ -36,6 +36,10 @@ class Race extends Model
     public function getGetExcerptAttribute(){
         return substr($this->description, 0, 140);
     }
+
+    public function getGetImageAttribute(){
+        return url("storage/$this->img_cover");
+    }
 }
 
 
