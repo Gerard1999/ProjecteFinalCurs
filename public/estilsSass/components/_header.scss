@@ -7,21 +7,19 @@ nav {
     min-height: 8vh;
     font-family: $poppins;
 
-    .logo {
+    .logo a {
         text-transform: uppercase;
-        font-size: 2rem;
+        color: black;
+        text-decoration: none;
+        font-size: 1.6rem;
+        letter-spacing: 5px;
+        font-weight: normal;
+        transition: color 0.4s ease;
+        border: 1px $grisFosc solid;
+        padding: 0.4rem;
         
-        a {
-            color: black;
-            text-decoration: none;
-            font-size: 1.6rem;
-            letter-spacing: 5px;
-            font-weight: normal;
-            transition: color 0.4s ease;
-            
-            &:hover{
-                color: $grisFosc;
-            }
+        &:hover{
+            color: $grisFosc;
         }
     }
 
@@ -35,12 +33,22 @@ nav {
             list-style: none;
         }
 
+        .register {
+            border: 1px $grisFosc solid;
+            padding: 0.4rem;
+            border-radius: 5px;
+            &:hover {
+                color: $grisFosc;
+                background-color: $grisClar;
+            }
+        }
+
         a {
-            margin: 2vw;
+            margin: 0.2rem;
             text-decoration: none;
             color: black;
-            font-size: 1.2rem;
-            letter-spacing: 3px;
+            font-size: 1rem;
+            letter-spacing: 2px;
             
             &:hover {
                 color: $grisFosc;
@@ -48,9 +56,11 @@ nav {
         }
     }
 
-    .user-links a {
-        font-size: 1rem;
-        letter-spacing: normal;
+    .user-links {
+        justify-content: center;
+        a {
+            letter-spacing: normal;
+        }
     }
 
     .linies {
@@ -67,9 +77,23 @@ nav {
     }
 }
 
+/*@media screen and (min-width: 768) and (max-width: 1024) {
+    .nav-links, .user-links{
+        margin: 0px;
+        display: flex;
+        justify-content: space-around;
+        width: 10%;
+        background-color: red;
+    }
+}*/
+
 @media screen and (max-width: 768px) {
     body{
         overflow-x: hidden;
+
+        .user-links {
+            display: none;
+        }
 
         .nav-links {
             position: absolute;

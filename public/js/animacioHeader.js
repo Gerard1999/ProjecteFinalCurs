@@ -6,6 +6,7 @@ const navSlide = () => {
     linies.addEventListener('click', ()=> {
         nav.classList.toggle('nav-active');
 
+        //Per cada link del menú li dona una animació
         links.forEach((link, index) => {
             if (link.style.animation) {
                 link.style.animation = '';
@@ -13,6 +14,7 @@ const navSlide = () => {
                 link.style.animation = `navAnimation 0.5s ease forwards ${index / 5 + 0.2}s`;
             }
         });
+        //Afegeix classe per animació a les línies del menú
         linies.classList.toggle('animacioLinies');
     });
 }

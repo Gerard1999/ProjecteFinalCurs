@@ -36,11 +36,11 @@
             <ul class="user-links">
                 @guest
                     <li>
-                        <a href="{{ route('login') }}">{{ __('Login') }}</a>
+                        <a href="{{ route('login') }}">Entrar</a>
                     </li>
                     @if (Route::has('register'))
                         <li>
-                            <a href="{{ route('register') }}">{{ __('Register') }}</a>
+                            <a class="register" href="{{ route('register') }}">Registrar-se</a>
                         </li>
                     @endif
                     @else
