@@ -32,22 +32,28 @@ nav .logo a {
 nav .logo a:hover {
   color: #424242;
 }
-nav .nav-links {
+nav .nav-links, nav .user-links {
   margin: 0px;
   display: flex;
   justify-content: space-around;
   width: 30%;
 }
-nav .nav-links li {
+nav .nav-links li, nav .user-links li {
   list-style: none;
 }
-nav .nav-links a {
+nav .nav-links a, nav .user-links a {
   margin: 2vw;
   text-decoration: none;
   color: black;
   font-size: 1.2rem;
   letter-spacing: 3px;
-  font-weight: bold;
+}
+nav .nav-links a:hover, nav .user-links a:hover {
+  color: #424242;
+}
+nav .user-links a {
+  font-size: 1rem;
+  letter-spacing: normal;
 }
 nav .linies {
   display: none;
@@ -104,7 +110,7 @@ nav .linies div {
     }
     to {
       opacity: 1;
-      transofrm: translateX(0px);
+      transform: translateX(0px);
     }
   }
   @keyframes navAnimation {
@@ -113,7 +119,7 @@ nav .linies div {
     }
     to {
       opacity: 1;
-      transofrm: translateX(0px);
+      transform: translateX(0px);
     }
   }
 }

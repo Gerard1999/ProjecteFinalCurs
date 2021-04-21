@@ -25,13 +25,53 @@
     <div id="app">
         <nav>
             <div class="logo">
-                <h4><a href="{{ url('/') }}">Trail Races</a></h4>
+                <h4><a href="/">Trail Races</a></h4>
             </div>
             
             <ul class="nav-links">
-                <li><a href="#races">Curses</a></li>
+                <li><a href="/#races">Curses</a></li>
                 <li><a href="">Botiga</a></li>
                 <li><a href="">Galeria</a></li>
+            </ul>
+            <ul class="user-links">
+                @guest
+                    <li>
+                        <a href="{{ route('login') }}">{{ __('Login') }}</a>
+                    </li>
+                    @if (Route::has('register'))
+                        <li>
+                            <a href="{{ route('register') }}">{{ __('Register') }}</a>
+                        </li>
+                    @endif
+                    @else
+                    <!-- Comprova els tipus d'usuaris i mostra un enllaç o un altre -->
+                    @if(Auth::user()->user_type == 'organizer')
+                        <li>
+                            <a href="{{ route('races.index')}}">Espai Organizador</a>
+                        </li>
+                    @elseif(Auth::user()->user_type == 'corredor')
+                        <li >
+                            <a href="{{ route('races.index')}}">Espai Corredor</a>
+                        </li>
+                    @endif
+                    <li>
+                        <a id="navbarDropdown" class="dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            {{ Auth::user()->name }}
+                        </a>
+
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                    document.getElementById('logout-form').submit();">
+                                Tancar Sessió
+                            </a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
+                        </div>
+                    </li>
+                    @endguest
             </ul>
 
             <div class="linies">

@@ -25,7 +25,7 @@ nav {
         }
     }
 
-    .nav-links {
+    .nav-links, .user-links{
         margin: 0px;
         display: flex;
         justify-content: space-around;
@@ -41,8 +41,16 @@ nav {
             color: black;
             font-size: 1.2rem;
             letter-spacing: 3px;
-            font-weight: bold;
+            
+            &:hover {
+                color: $grisFosc;
+            }
         }
+    }
+
+    .user-links a {
+        font-size: 1rem;
+        letter-spacing: normal;
     }
 
     .linies {
@@ -101,17 +109,8 @@ nav {
         }
 
         @keyframes navAnimation {
-            from {
-                transform: translateX(100px);
-            }
-            to {
-                opacity: 1;
-                transofrm: translateX(0px);
-            }
+            from {transform: translateX(100px); }
+            to {opacity: 1; transform: translateX(0px);}
         }
     }
 }
-
-
-    
-

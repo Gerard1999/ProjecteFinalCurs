@@ -9,7 +9,7 @@
             @foreach($races as $race)
             <div class="card mt-3">
                 @if($race->img_cover)
-                    <img src="{{ $race->get_image }}" class="card-img-top img-cover" height="300px">
+                    <img src="{{ $race->get_image }}" class="card-img-top img-cover">
                 @endif
                 <div class="card-body">
                     <h3 class="card-title">{{$race->name}}</h3>
