@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
         //Crear un Usuari predeterminat
         App\User::create([
             'name' => 'Bestrail',
+            'user_type' => 'organizer',
             'email' => 'best@trail.com',
             'password' => bcrypt('12341234'),
             'telephone' => 689482945,

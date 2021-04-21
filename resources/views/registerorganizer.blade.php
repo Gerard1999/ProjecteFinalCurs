@@ -6,7 +6,7 @@
         <div class="col-md-4 col-md-offset-8 box-login">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h1 class="panel-title text-center p-2">Registre Corredor</h1>
+                    <h1 class="panel-title text-center p-2">Registre Organitzador</h1>
                 </div>
 
                 <div class="panel-body">
@@ -58,8 +58,8 @@
                             <a class="btn btn-link btn-block" href="{{ route('login') }}">
                                 Ja tinc un compte
                             </a>
-                            <a class="btn btn-link btn-block" href="organizers/register">
-                                Registrar Organitzador
+                            <a class="btn btn-link btn-block" href="{{ route('register') }}">
+                                Registrar Corredor
                             </a>
                         </div>
                     </form>

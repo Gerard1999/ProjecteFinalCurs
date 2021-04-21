@@ -23,6 +23,7 @@ Route::resource('races', 'Backend\RaceController')
         ->middleware('auth')
         ->except('show');
 
+Route::get('organizers/register', 'OrganizerController@showRegisterForm')->name('registerorganizer');
 /*Route::get('/users', 'UserController@index');
 Route::post('users', 'UserController@store')->name('users.store');
 Route::delete('users/{user}', 'UserController@destroy')->name('users.destroy');*/

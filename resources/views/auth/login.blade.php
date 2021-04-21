@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-4 col-md-offset-8">
+        <div class="col-lg-4 col-sm-8 col-md-offset-8 box-login">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h1 class="panel-title text-center p-4">Iniciar Sessió</h1>
