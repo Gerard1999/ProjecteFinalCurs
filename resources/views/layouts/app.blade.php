@@ -15,6 +15,7 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap" rel="stylesheet">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -24,12 +25,17 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container p-2">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    Trail Races
-                </a>
-                <a class="prova" href="{{ url('/') }}">
-                    Prova
-                </a>
+                <div class="navegacio">
+                    <a class="navbar-brand titol" href="{{ url('/') }}">
+                        Trail Races
+                    </a>
+                    <ul class="nav-links">
+                        <li><a href="#races">Curses</a></li>
+                        <li><a href="">Botiga</a></li>
+                        <li><a href="">Galeria</a></li>
+                    </ul>
+                </div>
+
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -53,9 +59,16 @@
                                 </li>
                             @endif
                         @else
-                            <li class="nav-item">
-                                <a href="{{ route('races.index')}}" class="nav-link">Curses</a>
-                            </li>
+                        <!-- Comprova els tipus d'usuaris i mostra un enllaç o un altre -->
+                            @if(Auth::user()->user_type == 'organizer')
+                                <li class="nav-item">
+                                    <a href="{{ route('races.index')}}" class="nav-link">Espai Organizador</a>
+                                </li>
+                            @elseif(Auth::user()->user_type == 'corredor')
+                                <li class="nav-item">
+                                    <a href="{{ route('races.index')}}" class="nav-link">Espai Corredor</a>
+                                </li>
+                            @endif
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}

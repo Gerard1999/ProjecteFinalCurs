@@ -4,6 +4,12 @@ html {
     box-sizing: border-box;
 }
 
+* {
+    scroll-behavior: smooth !important;
+}
+
+$poppins: 'Poppins', sans-serif;
+
 @import 'components/_header.scss';
 @import 'components/_curses.scss';
 @import 'components/_login.scss';

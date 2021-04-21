@@ -4,6 +4,45 @@ html {
   box-sizing: border-box;
 }
 
+* {
+  scroll-behavior: smooth !important;
+}
+
+.navbar {
+  background: #ffd393;
+  background: linear-gradient(90deg, #ffd393 10%, #ffc05e 32%, #ffa43d 80%);
+}
+.navbar .navegacio {
+  margin-left: 5vw;
+  display: flex;
+  justify-content: space-around;
+  min-width: 50vw;
+  align-items: center;
+  min-height: 8vh;
+  font-family: "Poppins", sans-serif;
+}
+.navbar .navegacio .titol {
+  text-transform: uppercase;
+  font-size: 2rem;
+}
+.navbar .navegacio .nav-links {
+  margin: 0px;
+  display: flex;
+  justify-content: space-around;
+  width: 30vw;
+}
+.navbar .navegacio .nav-links li {
+  list-style: none;
+}
+.navbar .navegacio .nav-links a {
+  margin: 2vw;
+  text-decoration: none;
+  color: black;
+  font-size: 1.2rem;
+  letter-spacing: 3px;
+  font-weight: bold;
+}
+
 .img-cover {
   -o-object-fit: cover;
      object-fit: cover;
