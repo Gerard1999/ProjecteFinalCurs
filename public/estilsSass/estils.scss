@@ -8,7 +8,11 @@ html {
     scroll-behavior: smooth !important;
 }
 
+//Fonts
 $poppins: 'Poppins', sans-serif;
+
+//Colors
+$grisFosc: rgb(66, 66, 66);
 
 @import 'components/_header.scss';
 @import 'components/_curses.scss';
