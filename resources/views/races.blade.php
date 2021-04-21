@@ -9,7 +9,7 @@
             @foreach($races as $race)
             <div class="card mt-3">
                 @if($race->img_cover)
-                    <img src="{{ $race->get_image }}" class="card-img-top img-cover">
+                    <img src="{{ $race->get_image }}" class="card-img-top img-cover" height="300px">
                 @endif
                 <div class="card-body">
                     <h3 class="card-title">{{$race->name}}</h3>
@@ -20,7 +20,7 @@
                     </p>
                     <p class="text-muted mb-0">
                         <em>
-                        &ndash; {{ $race->organizer->name }}
+                        &ndash; {{ $race->organizer->user }} NO ES MOSTRÀ EL NOM D'ORGANITZADOR
                         </em>
                     </p>
                     <em>{{ date('d/m/Y', strtotime($race->date)) }}</em>
