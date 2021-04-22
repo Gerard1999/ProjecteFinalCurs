@@ -63,6 +63,10 @@ nav {
         }
     }
 
+    .nav-links {
+        width: 40%;
+    }
+
     .linies {
         display: none;
         cursor: pointer;
@@ -88,6 +92,9 @@ nav {
 }*/
 
 @media screen and (max-width: 768px) {
+    .no-scroll {
+        overflow-y: hidden;
+    }
     body{
         overflow-x: hidden;
 

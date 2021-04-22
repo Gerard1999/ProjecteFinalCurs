@@ -2,9 +2,11 @@ const navSlide = () => {
     const linies = document.querySelector(".linies");
     const nav = document.querySelector('.nav-links');
     const links = document.querySelectorAll('.nav-links li');
+    const body = document.body;
 
     linies.addEventListener('click', ()=> {
         nav.classList.toggle('nav-active');
+        body.classList.toggle('no-scroll');
 
         //Per cada link del menú li dona una animació
         links.forEach((link, index) => {

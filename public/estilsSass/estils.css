@@ -65,6 +65,9 @@ nav .user-links {
 nav .user-links a {
   letter-spacing: normal;
 }
+nav .nav-links {
+  width: 40%;
+}
 nav .linies {
   display: none;
   cursor: pointer;
@@ -87,6 +90,10 @@ nav .linies div {
     }
 }*/
 @media screen and (max-width: 768px) {
+  .no-scroll {
+    overflow-y: hidden;
+  }
+
   body {
     overflow-x: hidden;
   }
