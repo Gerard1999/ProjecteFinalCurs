@@ -11,12 +11,12 @@ class User extends Authenticatable
     use Notifiable;
 
     /**
-     * The attributes that are mass assignable.
+     * Atributs de la taula que es poden omplir.
      *
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'user_type', 'email', 'password', 'telephone', 'address', 'city', 'nif',
     ];
 
     /**
@@ -37,5 +37,10 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+
+    //Relació : Un Usuari pot ser Corredor
+    public function runner(){
+        return $this->hasOne(Runner::class);
+    }
     
 }

@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Bestrail',
             'user_type' => 'organizer',
             'email' => 'best@trail.com',
+            'nif' => 'G44346729',
             'password' => bcrypt('12341234'),
             'telephone' => 689482945,
             'address' => 'Avinguda Diagonal 244',

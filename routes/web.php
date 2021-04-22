@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,7 +25,7 @@ Route::resource('races', 'Backend\RaceController')
         ->except('show');
 
 Route::get('organizers/register', 'OrganizerController@showRegisterForm')->name('registerorganizer');
-/*Route::get('/users', 'UserController@index');
-Route::post('users', 'UserController@store')->name('users.store');
-Route::delete('users/{user}', 'UserController@destroy')->name('users.destroy');*/
+/*Route::get('/users', 'UserController@index');*/
+Route::post('/registerRunner', [UserController::class,'storeRunner'])->name('users.storeRunner');
+/*Route::delete('users/{user}', 'UserController@destroy')->name('users.destroy');*/
 //use App\User;
