@@ -20,7 +20,7 @@
                     </p>
                     <p class="text-muted mb-0">
                         <em>
-                        &ndash; {{ $race->organizer->user }} NO ES MOSTRÀ EL NOM D'ORGANITZADOR
+                        &ndash; {{ $race->organizer->user->name }}
                         </em>
                     </p>
                     <em>{{ date('d/m/Y', strtotime($race->date)) }}</em>

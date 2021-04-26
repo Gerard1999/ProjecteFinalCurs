@@ -14,7 +14,7 @@
                     <p class="card-text">{{$race->description}}</p>
                     <p class="text-muted mb-0">
                         <em>
-                        Ho organitza:  {{ $race->organizer->name }}
+                        Ho organitza:  {{ $race->organizer->user->name }}
                         </em>
                     </p>
                     <em>{{ date('d/m/Y', strtotime($race->date)) }}</em>
