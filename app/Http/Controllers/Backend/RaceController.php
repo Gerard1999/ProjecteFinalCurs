@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Race;
 use App\Http\Requests\RaceRequest;
 use Illuminate\Support\Facades\Storage;
+use Auth;
 
 class RaceController extends Controller
 {
@@ -16,7 +17,9 @@ class RaceController extends Controller
      */
     public function index()
     {
-        $races = Race::get();
+        $races = Race::where('organizer_id', auth()->user()->id)
+                    ->orderBy('date')
+                    ->get();
         return view('races.index', compact('races'));
     }
 

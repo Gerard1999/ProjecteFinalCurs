@@ -7,6 +7,7 @@ use App\User;
 use App\Runner;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\Auth;
 
 
 class UserController extends Controller
@@ -44,7 +45,7 @@ class UserController extends Controller
 
         $user = User::create([
             'name' => $request->name,
-            'user_type' => 'corredor',
+            'user_type' => 'runner',
             'email' => $request->email,
             'password' => bcrypt($request->password),
             'telephone' => $request->telephone,
@@ -57,6 +58,8 @@ class UserController extends Controller
             'surname' => $request->surname,
             'user_id' => $user->id,
         ]);
+
+        Auth::login($user);
 
         return redirect()->route('home');
     }

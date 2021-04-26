@@ -49,7 +49,7 @@
                         <li>
                             <a href="{{ route('races.index')}}">Espai Organizador</a>
                         </li>
-                    @elseif(Auth::user()->user_type == 'corredor')
+                    @elseif(Auth::user()->user_type == 'runner')
                         <li >
                             <a href="{{ route('races.index')}}">Espai Corredor</a>
                         </li>

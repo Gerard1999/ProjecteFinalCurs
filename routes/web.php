@@ -22,6 +22,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('races', 'Backend\RaceController')
         ->middleware('auth')
+        ->middleware('admin')
         ->except('show');
 
 Route::get('organizers/register', 'OrganizerController@showRegisterForm')->name('registerorganizer');
