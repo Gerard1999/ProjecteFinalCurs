@@ -34,6 +34,7 @@ Route::get('/privatezone', [RunnerController::class, 'privatezone'])->name('priv
 
 Route::get('organizers/register', [OrganizerController::class, 'showRegisterForm'])->name('registerorganizer');
 /*Route::get('/users', 'UserController@index');*/
-Route::post('/registerRunner', [UserController::class,'storeRunner'])->name('users.storeRunner');
+Route::post('/register-runner', [UserController::class,'storeRunner'])->name('users.storeRunner');
+Route::post('/register-organizer', [UserController::class,'storeOrganizer'])->name('users.storeOrganizer');
 /*Route::delete('users/{user}', 'UserController@destroy')->name('users.destroy');*/
 //use App\User;
