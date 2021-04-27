@@ -1,15 +1,14 @@
 //Fonts
-$poppins: 'Poppins', sans-serif;
-
+$poppins: 'Poppins',
+sans-serif;
 //Colors
 $grisFosc: rgb(66, 66, 66);
 $grisClar: rgba(255, 255, 255, 0.466);
-
 @import 'components/_header.scss';
 @import 'components/_curses.scss';
 @import 'components/_login.scss';
 @import 'components/privatezone';
-
+@import 'components/footer';
 html {
     margin: 0;
     padding: 0;

@@ -31,7 +31,8 @@ nav .logo a:hover {
   color: #424242;
 }
 
-nav .nav-links, nav .user-links {
+nav .nav-links,
+nav .user-links {
   margin: 0px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -41,31 +42,40 @@ nav .nav-links, nav .user-links {
   width: 30%;
 }
 
-nav .nav-links li, nav .user-links li {
+nav .nav-links li,
+nav .user-links li {
   list-style: none;
 }
 
-nav .nav-links .register, nav .user-links .register {
+nav .nav-links .register,
+nav .user-links .register {
   border: 1px #424242 solid;
   padding: 0.4rem;
   border-radius: 5px;
 }
 
-nav .nav-links .register:hover, nav .user-links .register:hover {
+nav .nav-links .register:hover,
+nav .user-links .register:hover {
   color: orange;
   background-color: #424242;
 }
 
-nav .nav-links a, nav .user-links a {
+nav .nav-links a,
+nav .user-links a {
   margin: 0.2rem;
   text-decoration: none;
   color: black;
   font-size: 1rem;
   letter-spacing: 2px;
+  border-radius: 20px;
+  padding: 8px;
 }
 
-nav .nav-links a:hover, nav .user-links a:hover {
+nav .nav-links a:hover,
+nav .user-links a:hover {
   color: #424242;
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 3px 6px 0 rgba(109, 109, 109, 0.527);
+          box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 3px 6px 0 rgba(109, 109, 109, 0.527);
 }
 
 nav .user-links {
@@ -247,6 +257,75 @@ nav .linies div {
   font-size: 1.2rem;
   text-decoration: none;
   padding: 1rem;
+}
+
+footer {
+  margin: 1.8rem 0 0 0;
+  width: 100%;
+  background: #424242;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+footer .separador {
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 0.2vh;
+  background-color: rgba(255, 255, 255, 0.466);
+  margin: auto;
+}
+
+footer .links_pagina,
+footer .social {
+  height: 10vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+footer .links_pagina a,
+footer .social a {
+  color: orange;
+  font-size: large;
+  text-decoration: none;
+}
+
+footer .links_pagina a:hover,
+footer .social a:hover {
+  color: rgba(255, 255, 255, 0.466);
+}
+
+footer .social {
+  margin: 0 12rem 0 12rem;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+footer h4 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: rgba(255, 255, 255, 0.466);
 }
 
 html {

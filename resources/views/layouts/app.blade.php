@@ -85,6 +85,7 @@
         <main>
             @yield('content')
         </main>
+        
     </div>
     <script src="{{ asset('js/animacioHeader.js') }}"></script>
 </body>

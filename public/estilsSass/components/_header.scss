@@ -1,12 +1,11 @@
 nav {
-    background: rgb(255,211,147);
-    background: linear-gradient(90deg, rgba(255,211,147,1) 10%, rgba(255,192,94,1) 32%, rgba(255,164,61,1) 80%);
+    background: rgb(255, 211, 147);
+    background: linear-gradient(90deg, rgba(255, 211, 147, 1) 10%, rgba(255, 192, 94, 1) 32%, rgba(255, 164, 61, 1) 80%);
     display: flex;
     justify-content: space-around;
     align-items: center;
     min-height: 8vh;
     font-family: $poppins;
-
     .logo a {
         text-transform: uppercase;
         color: black;
@@ -17,22 +16,19 @@ nav {
         transition: color 0.4s ease;
         border: 1px $grisFosc solid;
         padding: 0.4rem;
-        
-        &:hover{
+        &:hover {
             color: $grisFosc;
         }
     }
-
-    .nav-links, .user-links{
+    .nav-links,
+    .user-links {
         margin: 0px;
         display: flex;
         justify-content: space-around;
         width: 30%;
-        
-        li{
+        li {
             list-style: none;
         }
-
         .register {
             border: 1px $grisFosc solid;
             padding: 0.4rem;
@@ -42,36 +38,33 @@ nav {
                 background-color: $grisFosc;
             }
         }
-
         a {
             margin: 0.2rem;
             text-decoration: none;
             color: black;
             font-size: 1rem;
             letter-spacing: 2px;
-            
+            border-radius: 20px;
+            padding: 8px;
             &:hover {
                 color: $grisFosc;
+                box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 3px 6px 0 rgba(109, 109, 109, 0.527);
             }
         }
     }
-
     .user-links {
         justify-content: center;
         a {
             letter-spacing: normal;
         }
     }
-
     .nav-links {
         width: 40%;
     }
-
     .linies {
         display: none;
         cursor: pointer;
-
-        div{
+        div {
             width: 25px;
             height: 3px;
             background-color: $grisFosc;
@@ -80,6 +73,7 @@ nav {
         }
     }
 }
+
 
 /*@media screen and (min-width: 768) and (max-width: 1024) {
     .nav-links, .user-links{
@@ -95,20 +89,18 @@ nav {
     .no-scroll {
         overflow-y: hidden;
     }
-    body{
+    body {
         overflow-x: hidden;
-
         .user-links {
             display: none;
         }
-
         .nav-links {
             position: absolute;
             right: 0px;
             height: 92vh;
             top: 8vh;
-            background: rgb(255,211,147);
-            background: linear-gradient(0deg, rgba(255,211,147,1) 10%, rgba(255,192,94,1) 32%, rgba(255,164,61,1) 80%);
+            background: rgb(255, 211, 147);
+            background: linear-gradient(0deg, rgba(255, 211, 147, 1) 10%, rgba(255, 192, 94, 1) 32%, rgba(255, 164, 61, 1) 80%);
             display: flex;
             z-index: 1;
             flex-direction: column;
@@ -120,11 +112,9 @@ nav {
                 opacity: 0;
             }
         }
-
         .linies {
             display: block;
         }
-
         .animacioLinies .linia1 {
             transform: rotate(45deg) translate(2px, 9px);
         }
@@ -134,14 +124,17 @@ nav {
         .animacioLinies .linia3 {
             transform: rotate(-45deg) translate(2px, -9px);
         }
-
         .nav-active {
             transform: translateX(0%);
         }
-
         @keyframes navAnimation {
-            from {transform: translateX(100px); }
-            to {opacity: 1; transform: translateX(0px);}
+            from {
+                transform: translateX(100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0px);
+            }
         }
     }
 }
