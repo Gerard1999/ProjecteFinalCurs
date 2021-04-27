@@ -24,16 +24,31 @@ Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
-Route::resource('races', 'Backend\RaceController')
-        ->middleware('auth')
-        ->middleware('admin')
-        ->except('show');
+//Rutes dels corredors
+Route::group([
+        'prefix' => 'runner',
+        'as' => 'runner.',
+        'namespace' => 'Runner',
+        'middleware' => ['auth']    
+], function() {
+        Route::get('/privatezone', [RunnerController::class, 'privatezone'])->name('privatezone');
+});
 
-Route::get('/privatezone', [RunnerController::class, 'privatezone'])->name('privatezone.index');
+//Rutes dels organitzadors
+Route::group([
+        'prefix' => 'organizer',
+        'as' => 'organizer.',
+        'namespace' => 'Backend',
+        'middleware' => ['auth','admin']    
+], function() {
+        Route::resource('races', 'RaceController')->except('show');
+});
+
 
 
 Route::get('organizers/register', [OrganizerController::class, 'showRegisterForm'])->name('registerorganizer');
 /*Route::get('/users', 'UserController@index');*/
+
 Route::post('/register-runner', [UserController::class,'storeRunner'])->name('users.storeRunner');
 Route::post('/register-organizer', [UserController::class,'storeOrganizer'])->name('users.storeOrganizer');
 /*Route::delete('users/{user}', 'UserController@destroy')->name('users.destroy');*/

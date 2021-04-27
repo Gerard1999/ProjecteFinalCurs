@@ -37,4 +37,13 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+    //Funció per redirigir els usuaris segons rol
+    /*public function redirect(){
+        if (auth()->user->user_type == 'organizer') {
+            return route('organizer.races');
+        }
+
+        return route('runner.privatezone');
+    }*/
 }

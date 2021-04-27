@@ -47,11 +47,11 @@
                     <!-- Comprova els tipus d'usuaris i mostra un enllaç o un altre -->
                     @if(Auth::user()->user_type == 'organizer')
                         <li>
-                            <a href="{{ route('races.index')}}">Espai Organizador</a>
+                            <a href="{{ route('organizer.races.index')}}">Espai Organizador</a>
                         </li>
                     @elseif(Auth::user()->user_type == 'runner')
                         <li >
-                            <a href="{{ route('privatezone.index')}}">Espai Corredor</a>
+                            <a href="{{ route('runner.privatezone')}}">Espai Corredor</a>
                         </li>
                     @endif
                     <li>
