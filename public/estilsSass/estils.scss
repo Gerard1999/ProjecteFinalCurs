@@ -1,20 +1,25 @@
+//Fonts
+$poppins: 'Poppins', sans-serif;
+
+//Colors
+$grisFosc: rgb(66, 66, 66);
+$grisClar: rgba(255, 255, 255, 0.466);
+
+@import 'components/_header.scss';
+@import 'components/_curses.scss';
+@import 'components/_login.scss';
+@import 'components/privatezone';
+
 html {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+body {
+    background-color: white;
+}
+
 * {
     scroll-behavior: smooth !important;
 }
-
-//Fonts
-$poppins: 'Poppins', sans-serif;
-
-//Colors
-$grisFosc: rgb(66, 66, 66);
-$grisClar: rgba(144, 144, 144, 0.246);
-
-@import 'components/_header.scss';
-@import 'components/_curses.scss';
-@import 'components/_login.scss';
