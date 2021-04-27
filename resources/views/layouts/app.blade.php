@@ -51,7 +51,7 @@
                         </li>
                     @elseif(Auth::user()->user_type == 'runner')
                         <li >
-                            <a href="{{ route('races.index')}}">Espai Corredor</a>
+                            <a href="{{ route('privatezone.index')}}">Espai Corredor</a>
                         </li>
                     @endif
                     <li>

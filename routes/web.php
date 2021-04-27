@@ -5,6 +5,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OrganizerController;
+use App\Http\Controllers\RunnerController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,6 +28,9 @@ Route::resource('races', 'Backend\RaceController')
         ->middleware('auth')
         ->middleware('admin')
         ->except('show');
+
+Route::get('/privatezone', [RunnerController::class, 'privatezone'])->name('privatezone.index');
+
 
 Route::get('organizers/register', [OrganizerController::class, 'showRegisterForm'])->name('registerorganizer');
 /*Route::get('/users', 'UserController@index');*/
