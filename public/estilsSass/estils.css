@@ -1,12 +1,19 @@
 nav {
   background: #ffd393;
+  background: -webkit-gradient(linear, left top, right top, color-stop(10%, #ffd393), color-stop(32%, #ffc05e), color-stop(80%, #ffa43d));
   background: linear-gradient(90deg, #ffd393 10%, #ffc05e 32%, #ffa43d 80%);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   min-height: 8vh;
   font-family: "Poppins", sans-serif;
 }
+
 nav .logo a {
   text-transform: uppercase;
   color: black;
@@ -14,31 +21,41 @@ nav .logo a {
   font-size: 1.6rem;
   letter-spacing: 5px;
   font-weight: normal;
+  -webkit-transition: color 0.4s ease;
   transition: color 0.4s ease;
   border: 1px #424242 solid;
   padding: 0.4rem;
 }
+
 nav .logo a:hover {
   color: #424242;
 }
+
 nav .nav-links, nav .user-links {
   margin: 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-around;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   width: 30%;
 }
+
 nav .nav-links li, nav .user-links li {
   list-style: none;
 }
+
 nav .nav-links .register, nav .user-links .register {
   border: 1px #424242 solid;
   padding: 0.4rem;
   border-radius: 5px;
 }
+
 nav .nav-links .register:hover, nav .user-links .register:hover {
   color: orange;
   background-color: #424242;
 }
+
 nav .nav-links a, nav .user-links a {
   margin: 0.2rem;
   text-decoration: none;
@@ -46,27 +63,36 @@ nav .nav-links a, nav .user-links a {
   font-size: 1rem;
   letter-spacing: 2px;
 }
+
 nav .nav-links a:hover, nav .user-links a:hover {
   color: #424242;
 }
+
 nav .user-links {
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
+
 nav .user-links a {
   letter-spacing: normal;
 }
+
 nav .nav-links {
   width: 40%;
 }
+
 nav .linies {
   display: none;
   cursor: pointer;
 }
+
 nav .linies div {
   width: 25px;
   height: 3px;
   background-color: #424242;
   margin: 5px;
+  -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 
@@ -83,7 +109,6 @@ nav .linies div {
   .no-scroll {
     overflow-y: hidden;
   }
-
   body {
     overflow-x: hidden;
   }
@@ -96,13 +121,25 @@ nav .linies div {
     height: 92vh;
     top: 8vh;
     background: #ffd393;
+    background: -webkit-gradient(linear, left bottom, left top, color-stop(10%, #ffd393), color-stop(32%, #ffc05e), color-stop(80%, #ffa43d));
     background: linear-gradient(0deg, #ffd393 10%, #ffc05e 32%, #ffa43d 80%);
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     z-index: 1;
-    flex-direction: column;
-    align-items: center;
-    transform: translateX(100%);
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+    -webkit-transition: -webkit-transform 0.4s ease-in;
+    transition: -webkit-transform 0.4s ease-in;
     transition: transform 0.4s ease-in;
+    transition: transform 0.4s ease-in, -webkit-transform 0.4s ease-in;
     width: 40%;
   }
   body .nav-links li {
@@ -112,36 +149,44 @@ nav .linies div {
     display: block;
   }
   body .animacioLinies .linia1 {
-    transform: rotate(45deg) translate(2px, 9px);
+    -webkit-transform: rotate(45deg) translate(2px, 9px);
+            transform: rotate(45deg) translate(2px, 9px);
   }
   body .animacioLinies .linia2 {
     opacity: 0;
   }
   body .animacioLinies .linia3 {
-    transform: rotate(-45deg) translate(2px, -9px);
+    -webkit-transform: rotate(-45deg) translate(2px, -9px);
+            transform: rotate(-45deg) translate(2px, -9px);
   }
   body .nav-active {
-    transform: translateX(0%);
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
   }
   @-webkit-keyframes navAnimation {
     from {
-      transform: translateX(100px);
+      -webkit-transform: translateX(100px);
+              transform: translateX(100px);
     }
     to {
       opacity: 1;
-      transform: translateX(0px);
+      -webkit-transform: translateX(0px);
+              transform: translateX(0px);
     }
   }
   @keyframes navAnimation {
     from {
-      transform: translateX(100px);
+      -webkit-transform: translateX(100px);
+              transform: translateX(100px);
     }
     to {
       opacity: 1;
-      transform: translateX(0px);
+      -webkit-transform: translateX(0px);
+              transform: translateX(0px);
     }
   }
 }
+
 .img-cover {
   -o-object-fit: cover;
      object-fit: cover;
@@ -149,48 +194,66 @@ nav .linies div {
 }
 
 .box-login {
-  position: absolute;
-  top: 50%;
-  transform: translate(0%, -50%);
+  margin-top: 5vh;
 }
 
 .opcions {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   height: 92vh;
 }
+
 .opcions ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-around;
-  flex-direction: column;
-  width: 25rem;
-  height: 25%;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  max-width: 30rem;
+  height: 30%;
   padding: 0;
 }
+
 .opcions ul li {
   text-align: center;
   list-style: none;
   border: 1px black solid;
   border-radius: 50px;
-  padding: 1.6rem;
+  padding: 1rem;
+  margin: 1.5rem 0.2rem;
+  background: -webkit-gradient(linear, left top, right top, color-stop(10%, #ffd393), color-stop(32%, #ffc05e), color-stop(80%, #ffa43d));
   background: linear-gradient(90deg, #ffd393 10%, #ffc05e 32%, #ffa43d 80%);
   cursor: pointer;
 }
+
 .opcions ul li:hover {
-  filter: grayscale(35%);
+  -webkit-filter: grayscale(35%);
+          filter: grayscale(35%);
 }
+
 .opcions ul li a {
   color: #424242;
   font-size: 1.2rem;
   text-decoration: none;
-  padding: 2.5rem;
+  padding: 1rem;
 }
 
 html {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
@@ -199,4 +262,5 @@ body {
 
 * {
   scroll-behavior: smooth !important;
-}/*# sourceMappingURL=estils.css.map */
+}
+/*# sourceMappingURL=estils.css.map */

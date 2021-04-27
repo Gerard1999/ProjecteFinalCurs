@@ -68,7 +68,7 @@
                         <div class="form-group">
                         <div class="row">
                                 <div class="col col-md-6 col-12">
-                                    <label for="nif">NIF</label>
+                                    <label for="nif">NIF *</label>
                                     <input id="nif" type="text" class="form-control @error('nif') is-invalid @enderror" name="nif" value="{{ old('nif') }}" required autocomplete="nif">
 
                                     @error('nif')
@@ -78,7 +78,7 @@
                                     @enderror   
                                 </div>
                                 <div class="col col-md-6 col-12">
-                                    <label for="telephone">Telèfon</label>
+                                    <label for="telephone">Telèfon *</label>
                                     <input id="telephone" type="numer" class="form-control @error('telephone') is-invalid @enderror" name="telephone" value="{{ old('telephone') }}" required autocomplete="telephone" autofocus>
 
                                     @error('telephone')
@@ -93,7 +93,7 @@
                         <div class="form-group">
                             <div class="row">
                                 <div class="col col-md-6 col-12">
-                                    <label for="password">Contrasenya</label>
+                                    <label for="password">Contrasenya *</label>
                                     <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
 
                                     @error('password')
@@ -103,7 +103,7 @@
                                     @enderror
                                 </div>
                                 <div class="col col-md-6 col-12">
-                                    <label for="password-confirm">Repeteix Contrsenya</label>
+                                    <label for="password-confirm">Repeteix Contrsenya *</label>
                                     <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                                 </div>
                             </div>

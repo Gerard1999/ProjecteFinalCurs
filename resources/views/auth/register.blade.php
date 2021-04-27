@@ -16,7 +16,7 @@
                         <div class="form-group">
                             <div class="row">
                                 <div class="col col-md-6">
-                                    <label for="name">Nom</label>
+                                    <label for="name">Nom *</label>
                                     <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
 
                                     @error('name')
@@ -26,7 +26,7 @@
                                     @enderror
                                 </div>
                                 <div class="col col-md-6">
-                                    <label for="surname">Cognom</label>
+                                    <label for="surname">Cognom *</label>
                                     <input id="surname" type="text" class="form-control @error('surname') is-invalid @enderror" name="surname" value="{{ old('surname') }}" required autocomplete="surname" autofocus>
 
                                     @error('surname')
@@ -41,7 +41,7 @@
                         <div class="form-group">
                         <div class="row">
                                 <div class="col col-md-4 col-12">
-                                    <label for="nif">DNI</label>
+                                    <label for="nif">DNI *</label>
                                     <input id="nif" type="text" class="form-control @error('nif') is-invalid @enderror" name="nif" value="{{ old('nif') }}" required autocomplete="nif">
 
                                     @error('nif')
@@ -61,7 +61,7 @@
                                     @enderror
                                 </div>
                                 <div class="col col-md-4 col-12">
-                                    <label for="telephone">Telèfon</label>
+                                    <label for="telephone">Telèfon *</label>
                                     <input id="telephone" type="numer" class="form-control @error('telephone') is-invalid @enderror" name="telephone" value="{{ old('telephone') }}" required autocomplete="telephone" autofocus>
 
                                     @error('telephone')
@@ -76,7 +76,7 @@
                         <div class="form-group">
                             <div class="row">
                                 <div class="col col-md-6">
-                                    <label for="email">Correu Electrònic</label>
+                                    <label for="email">Correu Electrònic *</label>
                                     <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
                                     @error('email')
@@ -87,7 +87,7 @@
                                 </div>
                                 <div class="col col-md-6">
                                     <label for="address">Adreça</label>
-                                    <input id="address" type="address" class="form-control @error('address') is-invalid @enderror" name="address" value="{{ old('address') }}" required autocomplete="address" autofocus>
+                                    <input id="address" type="address" class="form-control @error('address') is-invalid @enderror" name="address" value="{{ old('address') }}" autocomplete="address" autofocus>
 
                                     @error('address')
                                         <span class="invalid-feedback" role="alert">
@@ -101,7 +101,7 @@
                         <div class="form-group">
                             <div class="row">
                                 <div class="col col-md-6 col-12">
-                                    <label for="password">Contrasenya</label>
+                                    <label for="password">Contrasenya *</label>
                                     <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
 
                                     @error('password')
@@ -111,7 +111,7 @@
                                     @enderror
                                 </div>
                                 <div class="col col-md-6 col-12">
-                                    <label for="password-confirm">Repeteix Contrsenya</label>
+                                    <label for="password-confirm">Repeteix Contrsenya *</label>
                                     <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                                 </div>
                             </div>
