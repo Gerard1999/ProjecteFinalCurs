@@ -20,6 +20,8 @@ use App\Http\Controllers\RunnerController;
 Route::get('/', [PageController::class, 'races']);
 Route::get('curses/{race}', [PageController::class, 'race'])->name('race');
 
+Route::get('products', [PageController::class, 'products'])->name('products');
+
 Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
