@@ -27,7 +27,10 @@ class DatabaseSeeder extends Seeder
         //Crear un Organitzador predeterminat
         App\Organizer::create([
             'user_id' => 1,
-        ]);
+            'link_web' => 'besttrail.cat',
+            'link_facebook' => 'www.facebook.com/besttrail',
+            'link_instagram' => 'www.instagram.com/besttrail',
+            ]);
 
         //Crear una Cursa predeterminada
         App\Race::create([
@@ -41,9 +44,19 @@ class DatabaseSeeder extends Seeder
             'img_cover' => 'shorturl.at/dgluM',
             ]);
 
-        //factory(App\User::class, 4)->create();
-        //factory(App\Race::class, 30)->create();
-        factory(App\Product::class, 10)->create();
-        // $this->call(UserSeeder::class);
+        App\Size::create([
+            's' => true,
+            'm' => true,
+            'l' => true,
+        ]);
+
+        App\Product::create([
+            'name' => 'Samarreta tècnica Salomon',
+            'description' => 'Samarreta tècnia Salomon de trail running. LLeugeresa i transpirabilitat',
+            'price' => 14.99,
+            'link_photo' => 'products/samarretaSalomon.jpg',
+            'size_id' => 1,
+            'organizer_id' => 1,
+        ]);
     }
 }
