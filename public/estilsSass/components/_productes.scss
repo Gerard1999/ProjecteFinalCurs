@@ -1,0 +1,22 @@
+.contingut {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    margin: 2rem;
+}
+
+
+.productes {
+    background-color: rgb(255, 217, 146);
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    
+    .producte {
+        border: 1px solid black;
+        border-radius: 10px;
+        width: 30%;
+        padding: 2rem
+    }
+};
