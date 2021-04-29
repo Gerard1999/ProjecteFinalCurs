@@ -28,11 +28,12 @@
             border-radius: 5px;
             padding-bottom: 5rem;
             width: 20rem;
-            height: 28rem;
+            height: 26rem;
             margin-right: 2rem;
             margin-bottom: 2rem;
             overflow: hidden;
             transition: box-shadow 0.3s ease;
+            background: linear-gradient(90deg, rgb(255, 197, 109) 10%, rgb(255, 193, 94) 32%, rgb(255, 164, 61) 80%);
             &:hover {
                 box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 3px 6px 0 rgba(109, 109, 109, 0.527);
             }
@@ -48,11 +49,20 @@
                 }
             }
             .dades-producte {
-                height: 3rem;
+                height: auto;
                 padding: 0.8rem;
-            }
-            .preu {
-                padding: 0 0.8rem 0 0.8rem
+                font-weight: bold;
+                color: $grisFosc;
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+                flex-direction: column;
+                .separador {
+                    width: 90%;
+                    height: 1px;
+                    background-color: $grisFosc;
+                    margin: 0.4rem 0;
+                }
             }
         }
     }

@@ -11,11 +11,12 @@
             <div class="imatge-producte">
                 <img src="{{$product->get_image}}">
             </div>
-            <h4 class="dades-producte">{{$product->name}}</h4>
-                <!--<p>{{$product->description}}</p>-->
-            <hr>
-            <h5 class="preu">{{$product->price}} €</h5>
-            
+            <div class="dades-producte">
+                <h4>{{$product->name}}</h4> 
+                    <!--<p>{{$product->description}}</p>-->
+                <div class="separador"></div>
+                <h5 class="preu">{{$product->price}} €</h5>
+            </div>
         </div>
         @endforeach
     </div>

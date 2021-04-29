@@ -1,5 +1,4 @@
 nav {
-  background: #ffd393;
   background: -webkit-gradient(linear, left top, right top, color-stop(10%, #ffd393), color-stop(32%, #ffc05e), color-stop(80%, #ffa43d));
   background: linear-gradient(90deg, #ffd393 10%, #ffc05e 32%, #ffa43d 80%);
   display: -webkit-box;
@@ -199,10 +198,93 @@ nav .linies div {
   }
 }
 
-.img-cover {
+.curses {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 5rem;
+}
+
+.curses .cursa {
+  height: 18rem;
+  max-width: 80%;
+  border-radius: 10px;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.2);
+  margin-bottom: 2rem;
+}
+
+.curses .cursa .imatge-cursa {
+  height: 100%;
+  width: 60%;
+  display: inline-block;
+}
+
+.curses .cursa .imatge-cursa img {
+  width: 100%;
+  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  height: 30vh;
+}
+
+.curses .cursa .informacio-cursa {
+  height: 100%;
+  width: 40%;
+  background: -webkit-gradient(linear, left top, right top, color-stop(10%, #ffc56d), color-stop(32%, #ffc15e), color-stop(80%, #ffa43d));
+  background: linear-gradient(90deg, #ffc56d 10%, #ffc15e 32%, #ffa43d 80%);
+  color: #424242;
+  padding: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.curses .cursa .informacio-cursa h3 {
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.curses .cursa .informacio-cursa p {
+  text-align: justify;
+  margin: 0;
+}
+
+.curses .cursa .informacio-cursa .link-cursa {
+  border: #424242 1px solid;
+  border-radius: 10px;
+  padding: 0.4rem;
+  margin: 0.4rem;
+  color: #424242;
+  text-decoration: none;
+}
+
+.curses .cursa .informacio-cursa .link-cursa:hover {
+  color: orange;
+  background-color: #424242;
 }
 
 .box-login {
@@ -382,7 +464,7 @@ footer h4 {
   border-radius: 5px;
   padding-bottom: 5rem;
   width: 20rem;
-  height: 28rem;
+  height: 26rem;
   margin-right: 2rem;
   margin-bottom: 2rem;
   overflow: hidden;
@@ -390,6 +472,8 @@ footer h4 {
   transition: -webkit-box-shadow 0.3s ease;
   transition: box-shadow 0.3s ease;
   transition: box-shadow 0.3s ease, -webkit-box-shadow 0.3s ease;
+  background: -webkit-gradient(linear, left top, right top, color-stop(10%, #ffc56d), color-stop(32%, #ffc15e), color-stop(80%, #ffa43d));
+  background: linear-gradient(90deg, #ffc56d 10%, #ffc15e 32%, #ffa43d 80%);
 }
 
 .contingut .productes .producte:hover {
@@ -418,12 +502,30 @@ footer h4 {
 }
 
 .contingut .productes .producte .dades-producte {
-  height: 3rem;
+  height: auto;
   padding: 0.8rem;
+  font-weight: bold;
+  color: #424242;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
-.contingut .productes .producte .preu {
-  padding: 0 0.8rem 0 0.8rem;
+.contingut .productes .producte .dades-producte .separador {
+  width: 90%;
+  height: 1px;
+  background-color: #424242;
+  margin: 0.4rem 0;
 }
 
 html {
