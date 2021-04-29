@@ -6,19 +6,17 @@
     margin: 4rem 2rem 2rem 2rem;
     text-transform: uppercase;
     letter-spacing: 4px;
-    h1{
+    h1 {
         width: 60%;
         border-bottom: 1px black solid;
         padding-bottom: 1rem;
     }
-
 }
 
 .contingut {
     display: flex;
     justify-content: center;
     align-self: center;
-
     .productes {
         width: 90%;
         display: flex;
@@ -26,12 +24,11 @@
         justify-content: space-evenly;
         padding: 4rem 0 0 4rem;
         flex-wrap: wrap;
-        
         .producte {
             border-radius: 5px;
             padding-bottom: 5rem;
             width: 20rem;
-            height: 30rem;
+            height: 28rem;
             margin-right: 2rem;
             margin-bottom: 2rem;
             overflow: hidden;
@@ -39,25 +36,21 @@
             &:hover {
                 box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 3px 6px 0 rgba(109, 109, 109, 0.527);
             }
-
             .imatge-producte {
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 padding: 1rem;
                 background-color: white;
-                
                 img {
                     object-fit: cover;
                     width: 100%;
                 }
             }
-
-            .dades-producte{
+            .dades-producte {
                 height: 3rem;
                 padding: 0.8rem;
             }
-
             .preu {
                 padding: 0 0.8rem 0 0.8rem
             }

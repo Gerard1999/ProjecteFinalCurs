@@ -41,7 +41,7 @@ class DatabaseSeeder extends Seeder
             'shirt' => true,
             'date' => '2021-09-07',
             'location' => 'Setcases',
-            'img_cover' => 'shorturl.at/dgluM',
+            'img_cover' => 'races\DZTMYto8g8wLDen4NdAH2YAS9fzPgpTxZQAzrPd9.jpg',
             ]);
 
         App\Size::create([
