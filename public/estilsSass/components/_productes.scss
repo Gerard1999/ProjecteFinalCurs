@@ -1,10 +1,26 @@
+.titol {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 4rem 2rem 2rem 2rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    h1{
+        width: 60%;
+        border-bottom: 1px black solid;
+        padding-bottom: 1rem;
+    }
+
+}
+
 .contingut {
     display: flex;
     justify-content: center;
     align-self: center;
 
     .productes {
-        width: 80%;
+        width: 90%;
         display: flex;
         align-self: center;
         justify-content: space-evenly;
@@ -15,7 +31,7 @@
             border-radius: 5px;
             padding-bottom: 5rem;
             width: 20rem;
-            height: 32rem;
+            height: 30rem;
             margin-right: 2rem;
             margin-bottom: 2rem;
             overflow: hidden;
@@ -37,12 +53,13 @@
                 }
             }
 
-            .dades-producte {
-                display: flex;
-                flex-direction: column;
-                margin: 0;
-                padding: 1rem;
-                position: relative;
+            .dades-producte{
+                height: 3rem;
+                padding: 0.8rem;
+            }
+
+            .preu {
+                padding: 0 0.8rem 0 0.8rem
             }
         }
     }

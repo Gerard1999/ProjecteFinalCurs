@@ -57,7 +57,7 @@ nav .user-links a {
 nav .nav-links a:hover,
 nav .user-links a:hover {
   color: #424242;
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 3px 6px 0 rgba(109, 109, 109, 0.527);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
 }
 nav .user-links {
   justify-content: center;
@@ -240,13 +240,28 @@ footer h4 {
   color: rgba(255, 255, 255, 0.466);
 }
 
+.titol {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 4rem 2rem 2rem 2rem;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+.titol h1 {
+  width: 60%;
+  border-bottom: 1px black solid;
+  padding-bottom: 1rem;
+}
+
 .contingut {
   display: flex;
   justify-content: center;
   align-self: center;
 }
 .contingut .productes {
-  width: 80%;
+  width: 90%;
   display: flex;
   align-self: center;
   justify-content: space-evenly;
@@ -257,7 +272,7 @@ footer h4 {
   border-radius: 5px;
   padding-bottom: 5rem;
   width: 20rem;
-  height: 32rem;
+  height: 30rem;
   margin-right: 2rem;
   margin-bottom: 2rem;
   overflow: hidden;
@@ -279,11 +294,11 @@ footer h4 {
   width: 100%;
 }
 .contingut .productes .producte .dades-producte {
-  display: flex;
-  flex-direction: column;
-  margin: 0;
-  padding: 1rem;
-  position: relative;
+  height: 3rem;
+  padding: 0.8rem;
+}
+.contingut .productes .producte .preu {
+  padding: 0 0.8rem 0 0.8rem;
 }
 
 html {

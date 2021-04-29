@@ -4,7 +4,9 @@
 <div class="container" id="races">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <h1>Curses</h1>
+            <div class="titol">
+                <h1>Curses</h1>
+            </div>
 
             @foreach($races as $race)
             <div class="card mt-3">
