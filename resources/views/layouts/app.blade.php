@@ -16,6 +16,7 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="images/logo.png" />
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -26,6 +27,7 @@
         <nav>
             <div class="logo">
                 <h4><a href="/">Trail Races</a></h4>
+                <!--<img src="images/logo.png" alt="">-->
             </div>
             
             <ul class="nav-links">
