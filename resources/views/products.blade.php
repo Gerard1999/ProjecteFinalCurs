@@ -1,15 +1,20 @@
 @extends('layouts.app')
 
 @section('content')
+<h1>Els nostres productes</h1>
 <div class="contingut">
-    <h1>Productes</h1>
     <div class="productes">
         @foreach($products as $product)
         <div class="producte">
-            <h4>{{$product->name}}</h4>
-            <img src="{{$product->get_image}}" alt="" height="200px">
-            <p>{{$product->description}}</p>
-            <h4 class="price">{{$product->price}} €</h4>
+            <div class="imatge-producte">
+                <img src="{{$product->get_image}}">
+            </div>
+            <div class="dades-producte">
+                <h4>{{$product->name}}</h4>
+                <p>{{$product->description}}</p>
+                <hr>
+                <h5 class="preu">{{$product->price}} €</h5>
+            </div>
         </div>
         @endforeach
     </div>

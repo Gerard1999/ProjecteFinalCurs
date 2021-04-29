@@ -6,6 +6,7 @@ nav {
   align-items: center;
   min-height: 8vh;
   font-family: "Poppins", sans-serif;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.596);
 }
 nav .logo a {
   text-transform: uppercase;
@@ -243,21 +244,46 @@ footer h4 {
   display: flex;
   justify-content: center;
   align-self: center;
-  margin: 2rem;
 }
-
-.productes {
-  background-color: #ffd992;
+.contingut .productes {
   width: 80%;
   display: flex;
-  justify-content: center;
   align-self: center;
+  justify-content: space-evenly;
+  padding: 4rem 0 0 4rem;
+  flex-wrap: wrap;
 }
-.productes .producte {
-  border: 1px solid black;
-  border-radius: 10px;
-  width: 30%;
-  padding: 2rem;
+.contingut .productes .producte {
+  border-radius: 5px;
+  padding-bottom: 5rem;
+  width: 20rem;
+  height: 32rem;
+  margin-right: 2rem;
+  margin-bottom: 2rem;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+}
+.contingut .productes .producte:hover {
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 3px 6px 0 rgba(109, 109, 109, 0.527);
+}
+.contingut .productes .producte .imatge-producte {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  background-color: white;
+}
+.contingut .productes .producte .imatge-producte img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+}
+.contingut .productes .producte .dades-producte {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 1rem;
+  position: relative;
 }
 
 html {
@@ -268,6 +294,11 @@ html {
 
 body {
   background-color: white;
+  font-family: "Poppins", sans-serif;
+}
+
+h4 {
+  font-size: 1.2rem;
 }
 
 * {
