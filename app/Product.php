@@ -6,6 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
+    //Relació : Un Producte pertany a un Organitzador
+    public function organizer(){
+        return $this->belongsTo(Organizer::class);
+    }
+
     /**
      * Funció que retorna la url de la imatge de la cursa
      */
