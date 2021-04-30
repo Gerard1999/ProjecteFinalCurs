@@ -1,0 +1,22 @@
+.contingut-producte {
+    width: 80%;
+    margin: auto;
+    margin-top: 4rem;
+    display: flex;
+    .imatge-producte {
+        margin: 5rem;
+        height: 22rem;
+        width: 22rem;
+        background: red;
+        img {
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+    .detalls-producte {
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+        align-items: center;
+    }
+}

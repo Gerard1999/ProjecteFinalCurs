@@ -481,6 +481,10 @@ footer h4 {
           box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 3px 6px 0 rgba(109, 109, 109, 0.527);
 }
 
+.contingut .productes .producte a {
+  text-decoration: none;
+}
+
 .contingut .productes .producte .imatge-producte {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -526,6 +530,44 @@ footer h4 {
   height: 1px;
   background-color: #424242;
   margin: 0.4rem 0;
+}
+
+.contingut-producte {
+  width: 80%;
+  margin: auto;
+  margin-top: 4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.contingut-producte .imatge-producte {
+  margin: 5rem;
+  height: 22rem;
+  width: 22rem;
+  background: red;
+}
+
+.contingut-producte .imatge-producte img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.contingut-producte .detalls-producte {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 html {

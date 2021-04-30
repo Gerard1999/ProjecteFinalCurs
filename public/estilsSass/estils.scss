@@ -10,6 +10,7 @@ $grisClar: rgba(255, 255, 255, 0.466);
 @import 'components/privatezone';
 @import 'components/footer';
 @import 'components/productes';
+@import 'components/product';
 html {
     margin: 0;
     padding: 0;
@@ -21,7 +22,7 @@ body {
     font-family: $poppins;
 }
 
-h4{
+h4 {
     font-size: 1.2rem;
 }
 

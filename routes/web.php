@@ -6,6 +6,7 @@ use App\Http\Controllers\PageController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OrganizerController;
 use App\Http\Controllers\RunnerController;
+use App\Http\Controllers\ProductController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,7 +21,8 @@ use App\Http\Controllers\RunnerController;
 Route::get('/', [PageController::class, 'races']);
 Route::get('curses/{race}', [PageController::class, 'race'])->name('race');
 
-Route::get('products', [PageController::class, 'products'])->name('products');
+Route::get('products', [ProductController::class, 'products'])->name('products');
+Route::get('products/{product}', [ProductController::class, 'product'])->name('product');
 
 Auth::routes();
 

@@ -8,15 +8,18 @@
     <div class="productes">
         @foreach($products as $product)
         <div class="producte">
-            <div class="imatge-producte">
-                <img src="{{$product->get_image}}">
-            </div>
-            <div class="dades-producte">
-                <h4>{{$product->name}}</h4> 
-                    <!--<p>{{$product->description}}</p>-->
-                <div class="separador"></div>
-                <h5 class="preu">{{$product->price}} €</h5>
-            </div>
+            <a href="{{ route('product', $product) }}">
+                <div class="imatge-producte">
+                    <img src="{{$product->get_image}}">
+                </div>
+                <div class="dades-producte">
+                    <h4>{{$product->name}}</h4> 
+                        <!--<p>{{$product->description}}</p>-->
+                    <div class="separador"></div>
+                    <div class="footer-producte"></div>
+                    <h5 class="preu">{{$product->price}} €</h5>
+                </div>
+            </a>
         </div>
         @endforeach
     </div>
