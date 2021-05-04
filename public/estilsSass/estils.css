@@ -358,6 +358,8 @@ nav .linies div {
       -ms-flex-align: center;
           align-items: center;
   height: 92vh;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .opcions ul {
@@ -366,37 +368,48 @@ nav .linies div {
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  max-width: 30rem;
-  height: 30%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 60%;
   padding: 0;
+  margin: auto;
 }
 
 .opcions ul li {
+  width: 10rem;
+  height: 10rem;
   text-align: center;
   list-style: none;
-  border: 1px black solid;
-  border-radius: 50px;
-  padding: 1rem;
-  margin: 1.5rem 0.2rem;
+  margin: 2rem;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.2), 0 10px 10px 0 rgba(109, 109, 109, 0.527);
+          box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.2), 0 10px 10px 0 rgba(109, 109, 109, 0.527);
   background: -webkit-gradient(linear, left top, right top, color-stop(10%, #ffd393), color-stop(32%, #ffc05e), color-stop(80%, #ffa43d));
   background: linear-gradient(90deg, #ffd393 10%, #ffc05e 32%, #ffa43d 80%);
-  cursor: pointer;
 }
 
 .opcions ul li:hover {
-  -webkit-filter: grayscale(35%);
-          filter: grayscale(35%);
+  -webkit-filter: grayscale(25%);
+          filter: grayscale(25%);
 }
 
 .opcions ul li a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   color: #424242;
   font-size: 1.2rem;
   text-decoration: none;
-  padding: 1rem;
+  text-align: center;
+  width: 100%;
+  height: 100%;
 }
 
 footer {
