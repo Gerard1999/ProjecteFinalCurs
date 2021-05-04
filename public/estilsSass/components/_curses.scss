@@ -96,3 +96,21 @@
         }
     }
 }
+
+//Mida de mòbil
+@media screen and (max-width: 768px) {
+    .curses {
+        width: 90%;
+        margin: auto;
+        .cursa {
+            width: 80%;
+            height: 40%;
+            .informacio-cursa {
+                height: 60%;
+            }
+            .imatge-cursa {
+                height: 40%;
+            }
+        }
+    }
+}
