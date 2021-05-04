@@ -17,6 +17,11 @@
                         Ho organitza:  {{ $race->organizer->user->name }}
                         </em>
                     </p>
+                    <h3>Modalitats:</h3>
+                    @foreach($race->categories as $category)
+                    <h5>{{$category->name_category}}</h5>
+
+                    @endforeach
                     <em>{{ date('d/m/Y', strtotime($race->date)) }}</em>
                 </div>
             </div>

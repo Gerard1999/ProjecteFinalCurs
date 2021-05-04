@@ -13,9 +13,14 @@ class Race extends Model
         'name', 'description', 'location', 'date', 'img_cover', 'organizer_id'
     ];
 
-    //Una cursa pertany a un usuari
+    //Una Cursa pertany a un Usuari
     public function organizer(){
         return $this->belongsTo(Organizer::class);
+    }
+
+    //Relació : Una Cursa pot tenir moltes Categories
+    public function categories(){
+        return $this->hasMany(Category::class);
     }
 
     /**
