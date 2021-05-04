@@ -46,6 +46,7 @@ Route::group([
         'middleware' => ['auth','admin']    
 ], function() {
         Route::resource('races', 'RaceController')->except('show');
+        Route::get('/organizerzone', [OrganizerController::class, 'organizerzone'])->name('organizerzone');
 });
 
 

@@ -11,4 +11,8 @@ class OrganizerController extends Controller
     {
         return view('registerorganizer');
     }
+
+    public function organizerzone(){
+        return view('organizerzone.index');
+    }
 }

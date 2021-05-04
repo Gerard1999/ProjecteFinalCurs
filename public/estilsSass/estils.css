@@ -366,8 +366,6 @@ nav .linies div {
       -ms-flex-align: center;
           align-items: center;
   height: 92vh;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
 }
 
 .opcions ul {
@@ -379,7 +377,9 @@ nav .linies div {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 60%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 70%;
   padding: 0;
   margin: auto;
 }
@@ -418,6 +418,20 @@ nav .linies div {
   text-align: center;
   width: 100%;
   height: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .opcions {
+    margin: 0;
+  }
+  .opcions ul {
+    width: 100%;
+  }
+  .opcions ul li {
+    margin: 1rem;
+    width: 90%;
+    height: 5rem;
+  }
 }
 
 footer {
