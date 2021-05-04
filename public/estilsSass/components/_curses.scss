@@ -5,7 +5,7 @@
     align-items: center;
     margin: 5rem;
     .cursa {
-        height: 18rem;
+        height: 20rem;
         width: 60%;
         border-radius: 10px;
         overflow: hidden;
@@ -73,6 +73,25 @@
                     color: orange;
                     background-color: $grisFosc;
                 }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .curses {
+        .cursa {
+            font-size: 0.8rem;
+            flex-direction: column;
+            width: 60%;
+            height: 30rem;
+            .imatge-cursa {
+                width: 100%;
+                height: 50%;
+            }
+            .informacio-cursa {
+                width: 100%;
+                height: 50%;
             }
         }
     }

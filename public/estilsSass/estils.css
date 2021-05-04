@@ -216,7 +216,7 @@ nav .linies div {
 }
 
 .curses .cursa {
-  height: 18rem;
+  height: 20rem;
   width: 60%;
   border-radius: 10px;
   overflow: hidden;
@@ -321,6 +321,26 @@ nav .linies div {
 .curses .cursa .informacio-cursa .link-cursa:hover {
   color: orange;
   background-color: #424242;
+}
+
+@media screen and (max-width: 1024px) {
+  .curses .cursa {
+    font-size: 0.8rem;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 60%;
+    height: 30rem;
+  }
+  .curses .cursa .imatge-cursa {
+    width: 100%;
+    height: 50%;
+  }
+  .curses .cursa .informacio-cursa {
+    width: 100%;
+    height: 50%;
+  }
 }
 
 .box-login {
