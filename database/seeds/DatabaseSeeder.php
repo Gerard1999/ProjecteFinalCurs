@@ -43,18 +43,52 @@ class DatabaseSeeder extends Seeder
             'location' => 'Setcases',
             'img_cover' => 'races\DZTMYto8g8wLDen4NdAH2YAS9fzPgpTxZQAzrPd9.jpg',
             ]);
+        //Modalitats Cursa Entrevalls
+        App\Category::create([
+            'race_id' => 1,
+            'name_category' => 'Short',
+            'kms' => 12,
+            'elevation_gain' => 600,
+            'location_start' => 'Setcases',
+            'location_finish' => 'Setcases',
+            'start_time' => '9:00',
+            'num_aid_station' => 1,
+            'price' => 20,
+            'max_participants' => 300,
+        ]);
+        App\Category::create([
+            'race_id' => 1,
+            'name_category' => 'Clàssica',
+            'kms' => 30,
+            'elevation_gain' => 1900,
+            'location_start' => 'Setcases',
+            'location_finish' => 'Setcases',
+            'start_time' => '8:00',
+            'num_aid_station' => 2,
+            'price' => 30,
+            'max_participants' => 200,
+        ]);
 
         App\Size::create([
             's' => true,
             'm' => true,
             'l' => true,
         ]);
-
+        
+        //Creant Productes
         App\Product::create([
             'name' => 'Samarreta tècnica Salomon',
             'description' => 'Samarreta tècnia Salomon de trail running. LLeugeresa i transpirabilitat',
-            'price' => 14.99,
+            'price' => 24.99,
             'link_photo' => 'products/samarretaSalomon.jpg',
+            'size_id' => 1,
+            'organizer_id' => 1,
+        ]);
+        App\Product::create([
+            'name' => 'Samarreta tècnica Adidas',
+            'description' => 'Samarreta tècnia Adidas de trail running. LLeugeresa i transpirabilitat',
+            'price' => 19.99,
+            'link_photo' => 'products/samarretaAdidas.jpg',
             'size_id' => 1,
             'organizer_id' => 1,
         ]);

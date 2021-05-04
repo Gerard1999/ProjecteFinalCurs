@@ -24,6 +24,11 @@
         </div>
         <div class="imatge-cursa">
             <img src="{{ $race->get_image }}">
+            <div class="modalitats">
+                @foreach($race->categories as $category)
+                    <h5>{{$category->name_category}} ({{$category->kms}}kms)</h5>
+                @endforeach
+            </div>
         </div>
     </div>
     @endforeach
