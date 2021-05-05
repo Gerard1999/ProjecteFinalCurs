@@ -22,6 +22,9 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('estilsSass/estils.css') }}" rel="stylesheet">
+
+    <!-- Icones -->
+    <link href="{{ asset('iconesFontawesome/css/all.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">

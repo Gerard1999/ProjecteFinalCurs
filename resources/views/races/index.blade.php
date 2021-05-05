@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-header">
                     Curses
-                    <a href="{{route('organizer.races.create')}}" class="btn btn-sm btn-primary float-right">Crear</a>
+                    <a href="{{route('organizer.crearcursa')}}" class="btn btn-sm btn-primary float-right">Crear</a>
                 </div>
                 <div class="card-body">
                     @if (session('status'))
@@ -32,12 +32,12 @@
                                     <td>{{date('d/m/Y', strtotime($race->date))}}</td>
                                     <td>{{$race->location}}</td>
                                     <td>
-                                        <a href="{{ route('organizer.races.edit', $race)}}" class="btn btn-primary btn-sm">
+                                        <a href="{{ route('organizer.editarcursa', $race)}}" class="btn btn-primary btn-sm">
                                             Editar
                                         </a>
                                     </td>
                                     <td>
-                                        <form action="{{ route('organizer.races.destroy', $race)}}" method="POST">
+                                        <form action="{{ route('organizer.eliminarcursa', $race)}}" method="POST">
                                             @csrf
                                             @method('DELETE')
                                             <input type="submit" value="Eliminar" class="btn btn-danger btn-sm" onclick="return confirm('Estàs segur/a que vols eliminar aquesta cursa?')">

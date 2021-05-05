@@ -1,0 +1,28 @@
+.container {
+    margin-top: 3rem;
+    .modalitats {
+        margin: 2rem 0 2rem 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        .modalitat {
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            .header-modalitat {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 1.4rem;
+                h4 {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+    .boto-afegir {
+        display: flex;
+        justify-content: center;
+    }
+}

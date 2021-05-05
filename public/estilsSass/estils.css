@@ -661,6 +661,58 @@ footer h4 {
           align-items: center;
 }
 
+.container {
+  margin-top: 3rem;
+}
+
+.container .modalitats {
+  margin: 2rem 0 2rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.container .modalitats .modalitat {
+  padding: 2rem;
+  margin-bottom: 2rem;
+  -webkit-box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+.container .modalitats .modalitat .header-modalitat {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 1.4rem;
+}
+
+.container .modalitats .modalitat .header-modalitat h4 {
+  text-decoration: underline;
+}
+
+.container .boto-afegir {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 html {
   margin: 0;
   padding: 0;

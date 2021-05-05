@@ -7,6 +7,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OrganizerController;
 use App\Http\Controllers\RunnerController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\Backend\RaceController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -45,7 +46,12 @@ Route::group([
         'namespace' => 'Backend',
         'middleware' => ['auth','admin']    
 ], function() {
-        Route::resource('races', 'RaceController')->except('show');
+        Route::get('/les-meves-curses', [RaceController::class, 'index'])->name('cursesorganitzador');
+        Route::get('/crear-cursa', [RaceController::class, 'create'])->name('crearcursa');
+        Route::get('/editar-cursa', [RaceController::class, 'edit'])->name('editarcursa');
+        Route::post('/guardar-cursa', [RaceController::class, 'store'])->name('guardarcursa');
+        Route::get('/eliminar-cursa', [RaceController::class, 'destroy'])->name('eliminarcursa');
+        //Route::resource('races', 'RaceController')->except('show');
         Route::get('/organizerzone', [OrganizerController::class, 'organizerzone'])->name('organizerzone');
 });
 
