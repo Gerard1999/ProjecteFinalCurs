@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+<script src="{{ asset('js/formulari.js') }}" defer></script>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-6">
@@ -16,12 +17,13 @@
                         </div>
                     @endif
 
-                    <form action="{{ route('organizer.races.store')}}" method="POST" enctype="multipart/form-data">
+                    <form id="formulari" enctype="multipart/form-data">
+                    <span id="result"></span>
                     <div class="form-group">
                         <div class="row">
                             <div class="col col-md-6">
-                                <label>Nom Cursa *</label>
-                                <input type="text" name="name" class="form-control" required>
+                                <label id="nomcursaxd">Nom Cursa *</label>
+                                <input id="name" type="text" name="name" class="form-control" required>
                             </div>
                             <div class="col col-md-6">
                                 <label>Població *</label>
@@ -42,7 +44,12 @@
                                     <input type="date" name="date" class="form-control" required>
                                 </div>
                             </div>
-                            
+
+                            <tr>
+                                <td><input type="text" name="name_category[]" /></td>
+                                <td><input type="text" name="kms[]" /></td>
+                                <td><button type="button" name="add" id="add" class="btn btn-block btn-success">Add</button></td>
+                            </tr>
                             
                             <!--<br><br>
                             <label>Es vendran samarretes? *</label>
@@ -61,7 +68,7 @@
                             <br><br>
                             <div class="form-group">
                                 @csrf
-                                <input type="submit" value="Crear Cursa" class="btn btn-primary btn-block">
+                                <input id="save" type="submit" value="Crear Cursa" class="btn btn-primary btn-block">
                             </div>
                         </div>
                     </form>
