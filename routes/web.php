@@ -53,6 +53,7 @@ Route::group([
         Route::get('/eliminar-cursa', [RaceController::class, 'destroy'])->name('eliminarcursa');
         //Route::resource('races', 'RaceController')->except('show');
         Route::get('/organizerzone', [OrganizerController::class, 'organizerzone'])->name('organizerzone');
+        Route::get('/prodcutes', [OrganizerController::class, 'products'])->name('productes');
 });
 
 
