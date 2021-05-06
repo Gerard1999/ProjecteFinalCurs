@@ -11,7 +11,6 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-    <script src="{{ asset('js/jQuery341.js') }}" defer></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -93,6 +92,6 @@
         </main>
         
     </div>
-    <script src="{{ asset('js/animacioHeader.js') }}"></script>
+@yield('scripts')
 </body>
 </html>
