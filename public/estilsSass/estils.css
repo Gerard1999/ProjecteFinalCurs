@@ -203,7 +203,7 @@ nav .linies div {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 5rem;
+  margin: 0rem 5rem;
 }
 
 .curses .cursa {
@@ -348,6 +348,81 @@ nav .linies div {
   .curses .cursa .imatge-cursa {
     height: 40%;
   }
+}
+
+.pagina-cursa {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.pagina-cursa .header-imatge {
+  height: 18rem;
+  width: 100%;
+}
+
+.pagina-cursa .header-imatge img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.pagina-cursa .header-imatge .titular-cursa {
+  width: 100%;
+  height: 3rem;
+  background: -webkit-gradient(linear, left top, right top, color-stop(10%, rgba(255, 197, 109, 0.75)), color-stop(32%, rgba(255, 193, 94, 0.75)), color-stop(80%, rgba(255, 164, 61, 0.75)));
+  background: linear-gradient(90deg, rgba(255, 197, 109, 0.75) 10%, rgba(255, 193, 94, 0.75) 32%, rgba(255, 164, 61, 0.75) 80%);
+  -webkit-transform: translateY(-3rem);
+          transform: translateY(-3rem);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  letter-spacing: 10px;
+}
+
+.pagina-cursa .header-imatge .titular-cursa h2 {
+  font-weight: 800;
+}
+
+.pagina-cursa .info-cursa {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 4rem;
+}
+
+.pagina-cursa .info-cursa h5 {
+  background: #fab958;
+  width: 100%;
+  margin: 2rem;
+  padding: 4rem;
 }
 
 .box-login {
