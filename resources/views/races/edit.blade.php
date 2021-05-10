@@ -16,7 +16,7 @@
                         </div>
                     @endif
 
-                    <form action="{{ route('organizer.races.update', $race) }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('organizer.reguardarcursa', $race) }}" method="POST" enctype="multipart/form-data">
                     <div class="form-group">
                         <div class="row">
                             <div class="col col-md-6">

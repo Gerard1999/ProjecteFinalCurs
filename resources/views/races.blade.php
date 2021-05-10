@@ -26,7 +26,7 @@
             <img src="{{ $race->get_image }}">
             <div class="modalitats">
                 @foreach($race->categories as $category)
-                    <h5>{{$category->name_category}} ({{$category->kms}}kms)</h5>
+                    <h5>{{$category->name_category}} ({{$category->kms}}kms - {{$category->elevation_gain}}m+)</h5>
                 @endforeach
             </div>
         </div>

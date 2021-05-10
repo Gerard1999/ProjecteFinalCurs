@@ -33,7 +33,6 @@
                 transition: filter 0.3s ease-in-out;
             }
             &:hover .modalitats {
-                transition: display 0.3s ease-in-out;
                 display: block;
                 position: absolute;
                 border: 1px solid $grisFosc;
@@ -55,6 +54,7 @@
             align-items: center;
             flex-direction: column;
             h3 {
+                text-align: center;
                 font-weight: bold;
                 letter-spacing: 2px;
             }

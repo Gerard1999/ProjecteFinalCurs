@@ -256,8 +256,6 @@ nav .linies div {
 }
 
 .curses .cursa .imatge-cursa:hover .modalitats {
-  -webkit-transition: display 0.3s ease-in-out;
-  transition: display 0.3s ease-in-out;
   display: block;
   position: absolute;
   border: 1px solid #424242;
@@ -291,6 +289,7 @@ nav .linies div {
 }
 
 .curses .cursa .informacio-cursa h3 {
+  text-align: center;
   font-weight: bold;
   letter-spacing: 2px;
 }
