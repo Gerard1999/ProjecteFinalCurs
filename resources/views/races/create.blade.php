@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-<script src="{{ asset('js/formulari.js') }}" defer></script>
 <div class="titol">
     <h1>Crear cursa</h1>
 </div>
@@ -16,7 +15,7 @@
                         </div>
                     @endif
 
-                    <form id="formulari" enctype="multipart/form-data">
+                    <form id="formulari" enctype="multipart/form-data" action="{{route('organizer.guardarcursa')}}" method="post">
                         @csrf
                     <span id="result"></span>
                         <div class="form-group">
@@ -45,6 +44,7 @@
                                 </div>
                             </div>
                             <div class="modalitats">
+                                <input type="hidden" value="" id="counter" name="counter">
                                 <h2>Modalitats:</h2>
                                 <div class="modalitat">
                                     <div class="header-modalitat">
@@ -53,43 +53,43 @@
                                     <div class="row">
                                         <div class="col col-md-4 col-12">
                                             <label>Nom modalitat *</label>
-                                            <input type="text" name="name_category" class="form-control" required>
+                                            <input type="text" name="name_category_0" class="form-control" required>
                                         </div>
                                         <div class="col col-md-4 col-6">
                                             <label>Quilòmetres *</label>
-                                            <input type="number" name="kms" class="form-control" required>
+                                            <input type="number" name="kms_0" class="form-control" required>
                                         </div>
                                         <div class="col col-md-4 col-6">  
                                             <label>Desnivell Positiu *</label>
-                                            <input type="number" name="elevation_gain" class="form-control" required>
+                                            <input type="number" name="elevation_gain_0" class="form-control" required>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col col-md-3 col-6">
                                             <label>Lloc Inici *</label>
-                                            <input type="text" name="location_start" class="form-control" required>
+                                            <input type="text" name="location_start_0" class="form-control" required>
                                         </div>
                                         <div class="col col-md-3 col-6">
                                             <label>Lloc Fi *</label>
-                                            <input type="text" name="location_finish" class="form-control" required>
+                                            <input type="text" name="location_finish_0" class="form-control" required>
                                         </div>
                                         <div class="col col-md-3 col-6">  
                                             <label>Hora Inici *</label>
-                                            <input type="time" name="start_time" class="form-control" required>
+                                            <input type="time" name="start_time_0" class="form-control" required>
                                         </div>
                                         <div class="col col-md-3 col-6">
                                             <label>Preu *</label>
-                                            <input type="number" name="price" class="form-control" required>
+                                            <input type="number" name="price_0" class="form-control" required>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col col-md-6">
                                             <label>Num. avituallaments *</label>
-                                            <input type="number" name="num_aid_station" class="form-control" required>
+                                            <input type="number" name="num_aid_station_0" class="form-control" required>
                                         </div>
                                         <div class="col col-md-6">  
                                             <label>Num. participants *</label>
-                                            <input type="number" name="num_participants" class="form-control" required>
+                                            <input type="number" name="num_participants_0" class="form-control" required>
                                         </div>
                                     </div>
                                 </div>
@@ -113,56 +113,58 @@
 @section('scripts')
 <script src="{{ asset('js/jQuery341.js') }}" ></script>
 <script defer>
+    //Script per afegir/esborrar els camps per crear modalitat de curses
     $(document).ready(function() {
-        let counter = 2;
+        var counter = 0;
+        $('#counter').val(counter);
 
         function categoriesInputs(counter) {
             var html =
                 `<div class="modalitat">
                     <div class="header-modalitat">
-                        <h4>Modalitat ` + counter + `:</h4>
+                        <h4>Modalitat:</h4>
                         <button type="button" class="btn btn-danger eliminar far fa-times-circle"></button>
                     </div>
                     <div class="row">
                         <div class="col col-md-4 col-12">
                             <label>Nom modalitat *</label>
-                            <input type="text" name="name_category" class="form-control" required>
+                            <input type="text" name="name_category_${counter}" class="form-control" required>
                         </div>
                         <div class="col col-md-4 col-6">
                             <label>Quilòmetres *</label>
-                            <input type="number" name="kms" class="form-control" required>
+                            <input type="number" name="kms_${counter}" class="form-control" required>
                         </div>
                         <div class="col col-md-4 col-6">  
                             <label>Desnivell Positiu *</label>
-                            <input type="number" name="elevation_gain" class="form-control" required>
+                            <input type="number" name="elevation_gain_${counter}" class="form-control" required>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col col-md-3 col-6">
                             <label>Lloc Inici *</label>
-                            <input type="text" name="location_start" class="form-control" required>
+                            <input type="text" name="location_start_${counter}" class="form-control" required>
                         </div>
                         <div class="col col-md-3 col-6">
                             <label>Lloc Fi *</label>
-                            <input type="text" name="location_finish" class="form-control" required>
+                            <input type="text" name="location_finish_${counter}" class="form-control" required>
                         </div>
                         <div class="col col-md-3 col-6">  
                             <label>Hora Inici *</label>
-                            <input type="time" name="start_time" class="form-control" required>
+                            <input type="time" name="start_time_${counter}" class="form-control" required>
                         </div>
                         <div class="col col-md-3 col-6">
                             <label>Preu *</label>
-                            <input type="number" name="price" class="form-control" required>
+                            <input type="number" name="price_${counter}" class="form-control" required>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col col-md-6">
                             <label>Num. avituallaments *</label>
-                            <input type="number" name="num_aid_station" class="form-control" required>
+                            <input type="number" name="num_aid_station_${counter}" class="form-control" required>
                         </div>
                         <div class="col col-md-6">  
                             <label>Num. participants *</label>
-                            <input type="number" name="num_participants" class="form-control" required>
+                            <input type="number" name="num_participants_${counter}" class="form-control" required>
                         </div>
                     </div>
                 </div>`;
@@ -172,45 +174,18 @@
 
         var add = document.querySelector('#add');
         add.addEventListener('click', () => {
-            categoriesInputs(counter);
             counter++;
+            $('#counter').val(counter);
+            categoriesInputs(counter);
+            console.log( $('#counter').val());
         });
 
 
         $(document).on('click', '.eliminar', function() {
             $(this).parent().parent().remove();
             counter--;
+            $('#counter').val(counter);
         });
-        $('#formulari').on('submit', function(e) {
-            console.log("click al submit");
-            e.preventDefault();
-            $.ajax({
-                url: "{{ route('organizer.guardarcursa')}}",
-                type: 'post',
-                data: $(this).serialize(),
-                dataType: 'json',
-                beforeSend: function() {
-                    $('#save').attr('disabled', 'disabled');
-                },
-                success: function(data) {
-                    console.log("Entra!!!");
-                    if (data.error) {
-                        var errorhtml = '';
-                        for (let i = 0; i < data.error.length; i++) {
-                            errorhtml += '<p>' + data.error[i] + '</p>';
-                            $('#result').html('<div class="alert alert-danger">' + errorhtml + '</div>');
-                        }
-                    } else {
-                        $('#result').html('<div class="alert alert-success">' + data.success + '</div>');
-                    }
-                    $('#save').attr('disabled', false);
-                },
-                error: function(response) {
-                    console.log(response);
-                },
-            })
-        });
-
     });
 </script>
 @endsection

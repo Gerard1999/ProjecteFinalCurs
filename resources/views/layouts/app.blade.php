@@ -24,7 +24,6 @@
 
     <!-- Icones -->
     <link href="{{ asset('iconesFontawesome/css/all.css') }}" rel="stylesheet">
-    @livewireStyles
 </head>
 <body>
     <div id="app">
@@ -94,6 +93,5 @@
         
     </div>
     @yield('scripts')
-    @livewireScripts
 </body>
 </html>

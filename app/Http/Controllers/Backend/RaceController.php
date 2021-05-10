@@ -46,8 +46,10 @@ class RaceController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(RaceRequest $request)
+    public function store(Request $request)
     {
+
+        
         //Guardar cursa
         $race = Race::create([
             'organizer_id'  => auth()->user()->id,
@@ -60,59 +62,29 @@ class RaceController extends Controller
             'name'          => $request->name,
         ]);
 
-
-        $category = Category::create([
-            'race_id' => $race->id,
-            'name_category'     => 'Categoria de prova',
-            'kms'               => 31,
-            'elevation_gain'    => 200,
-            'location_start'    => 'Osor',
-            'location_finish'   => 'Osor',
-            'start_time'        => '8:00:00',
-            'price'             => 35,
-            'num_aid_station'   => 2,
-            'num_participants'  => 250,
-        ]);
+        $counter = $request['counter'];
+        
+        //Per cada Modalitat enviada crea una modalitat d'aquesta cursa
+        for ($i=0; $i <= $counter; $i++) { 
+            $category = Category::create([
+                'race_id'           => $race->id,
+                'name_category'     => $request['name_category_'.$i],
+                'kms'               => $request['kms_'.$i],
+                'elevation_gain'    => $request['elevation_gain_'].$i,
+                'location_start'    => $request['location_start_'].$i,
+                'location_finish'   => $request['location_finish_'].$i,
+                'start_time'        => $request['start_time_'].$i,
+                'price'             => $request['price_'].$i,
+                'num_aid_station'   => $request['num_aid_station_'].$i,
+                'max_participants'  => $request['num_participants_'].$i,
+            ]);
+        }
 
         //Guardar Imatge
         if ($request->file('img')) {
             $race->img_cover = $request->file('img')->store('races', 'public');
             $race->save();
         }
-
-        //Guardar Categories
-        // if ($request->ajax()) {
-        //     $name_category = $request->name_category;
-        //     $kms = $request->kms;
-        //     $elevation_gain = $request->elevation_gain;
-        //     $location_start = $request->location_start;
-        //     $location_finish = $request->location_finish;
-        //     $start_time = $request->start_time;
-        //     $price = $request->price;
-        //     $num_aid_station = $request->num_aid_station;
-        //     $num_participants = $request->num_participants;
-
-        //     for ($i=0; $i < count($name_category); $i++) { 
-        //         $data = array(
-        //             'name_category'     => $name_category[$i],
-        //             'kms'               => $kms[$i],
-        //             'elevation_gain'    => $elevation_gain[$i],
-        //             'location_start'    => $location_start[$i],
-        //             'location_finish'   => $location_finish[$i],
-        //             'start_time'        => $start_time[$i],
-        //             'price'             => $price[$i],
-        //             'num_aid_station'   => $num_aid_station[$i],
-        //             'num_participants'  => $num_participants[$i],
-        //         );
-        //         $insert_data[] = $data;
-
-        //         Category::insert($insert_data);
-        //         return response()->json([
-        //             'success' => 'Cursa creada correctament'
-        //         ]);
-        //     }
-        // }
-
         
         //Retornar
         return back()->with('status', 'Creat amb èxit');
