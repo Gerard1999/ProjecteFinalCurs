@@ -1,17 +1,17 @@
 .curses {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 0rem 5rem;
+    margin: 0rem 0rem;
+    flex-wrap: wrap;
     .cursa {
         height: 20rem;
-        width: 60%;
+        width: 45%;
         border-radius: 10px;
         overflow: hidden;
         display: flex;
         box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.2);
-        margin-bottom: 2rem;
+        margin: 2rem 2rem;
         .imatge-cursa {
             display: flex;
             justify-content: center;

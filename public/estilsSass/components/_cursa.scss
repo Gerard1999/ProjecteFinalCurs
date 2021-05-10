@@ -1,3 +1,7 @@
+p {
+    font-size: 1rem;
+}
+
 .pagina-cursa {
     display: flex;
     align-items: center;
@@ -30,12 +34,65 @@
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        padding: 4rem;
-        h5 {
-            background: rgb(250, 185, 88);
-            width: 100%;
-            margin: 2rem;
-            padding: 4rem;
+        padding: 4rem 0rem;
+        width: 100%;
+
+        .dades-generals {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: justify;
+            width: 60%;
+            line-height: 2.2;
+            h3 {
+                color: red;
+            }
         }
+        
+        .modalitats {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 80%;
+            .modalitat {
+                width: 80%;
+                background: rgb(250, 185, 88);
+                padding: 2rem;
+                margin-top: 2rem;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                
+                &:nth-child(odd){
+                    flex-direction: row-reverse;
+                }
+                
+                .modalitat-titol {
+                    height: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-left: 2px solid $grisFosc;
+                    border-right: 2px solid $grisFosc;
+                    padding: 2rem;
+                }
+    
+                .modalitat-info {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    p {
+                        font-weight: 600;
+                        letter-spacing: 2px;
+                        font-family: 1.5rem;
+                        margin: 4rem;
+                    }
+                }
+    
+            }
+        }
+
     }
 }
