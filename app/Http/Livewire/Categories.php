@@ -9,6 +9,9 @@ class Categories extends Component
 
     public $categoriesCursa = [];
 
+    public function afegirModalitat(){
+        $this->categoriesCursa = [[]];
+    }
 
     public function render()
     {
