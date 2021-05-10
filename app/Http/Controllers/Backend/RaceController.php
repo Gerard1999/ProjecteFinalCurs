@@ -63,20 +63,19 @@ class RaceController extends Controller
         ]);
 
         $counter = $request['counter'];
-        
         //Per cada Modalitat enviada crea una modalitat d'aquesta cursa
-        for ($i=0; $i <= $counter; $i++) { 
+        for ($i=0; $i <= $counter; $i++) {
             $category = Category::create([
                 'race_id'           => $race->id,
                 'name_category'     => $request['name_category_'.$i],
                 'kms'               => $request['kms_'.$i],
-                'elevation_gain'    => $request['elevation_gain_'].$i,
-                'location_start'    => $request['location_start_'].$i,
-                'location_finish'   => $request['location_finish_'].$i,
-                'start_time'        => $request['start_time_'].$i,
-                'price'             => $request['price_'].$i,
-                'num_aid_station'   => $request['num_aid_station_'].$i,
-                'max_participants'  => $request['num_participants_'].$i,
+                'elevation_gain'    => $request['elevation_gain_'.$i],
+                'location_start'    => $request['location_start_'.$i],
+                'location_finish'   => $request['location_finish_'.$i],
+                'start_time'        => $request['start_time_'.$i],
+                'price'             => $request['price_'.$i],
+                'num_aid_station'   => $request['num_aid_station_'.$i],
+                'max_participants'  => $request['num_participants_'.$i],
             ]);
         }
 
