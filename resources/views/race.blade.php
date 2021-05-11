@@ -24,7 +24,6 @@
         <div class="modalitats">
             @foreach($race->categories as $category)
             <div class="modalitat">
-                <div class="modalitat-upper">
                     <div class="modalitat-titol">
                         <h3>{{$category->name_category}}</h3>
                     </div>
@@ -33,16 +32,15 @@
                         <li><img src="{{asset('images/mountains.png')}}">{{$category->elevation_gain}}m+</li>
                         <li><img src="{{asset('images/money.png')}}">{{$category->price}}€</li>
                     </ul>
-                </div>
                 <div class="separador"></div>
                 <div class="modalitat-detalls">
                     <ul>
                         <li><img src="{{asset('images/calendar.png')}}">{{ date('d/m/Y', strtotime($race->date)) }}</li>
+                        <li><img src="{{asset('images/clock.png')}}">{{$category->start_time}}</li>
                         <li><img src="{{asset('images/xinxeta.png')}}">Sortida: {{$category->location_start}}</li>
                         <li><img src="{{asset('images/xinxeta.png')}}">Arribada: {{$category->location_finish}}</li>
-                        <li><img src="{{asset('images/clock.png')}}">{{$category->start_time}}</li>
                         <li><img src="{{asset('images/fork.png')}}">Avituallaments: {{$category->num_aid_station}}</li>
-                        <li><img src="{{asset('images/group.png')}}">{{$category->max_participants}}</li>
+                        <li><img src="{{asset('images/group.png')}}">Màxim participants: {{$category->max_participants}}</li>
                     </ul>
                 </div>
             </div>

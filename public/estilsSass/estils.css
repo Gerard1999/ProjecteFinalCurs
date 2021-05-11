@@ -316,7 +316,7 @@ p {
   width: 80%;
 }
 .pagina-cursa .info-cursa .modalitats .modalitat {
-  width: 80%;
+  max-width: 75%;
   background: #fab958;
   padding: 1.5rem;
   margin-top: 2rem;
@@ -327,34 +327,30 @@ p {
   box-shadow: 6px 6px 20px 6px rgba(0, 0, 0, 0.329);
   flex-direction: column;
 }
-.pagina-cursa .info-cursa .modalitats .modalitat .modalitat-upper {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  width: 100%;
-}
-.pagina-cursa .info-cursa .modalitats .modalitat .modalitat-upper:nth-child(odd) {
-  flex-direction: row-reverse;
-}
-.pagina-cursa .info-cursa .modalitats .modalitat .modalitat-upper .modalitat-titol {
-  height: 100%;
-  width: 30%;
+.pagina-cursa .info-cursa .modalitats .modalitat .modalitat-titol {
+  width: 20%;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-left: 2px solid #424242;
-  border-right: 2px solid #424242;
-  padding: 1rem;
+  margin: 1rem;
+  border-top: 2px solid #424242;
+  border-bottom: 2px solid #424242;
 }
-.pagina-cursa .info-cursa .modalitats .modalitat .modalitat-upper .modalitat-info {
+.pagina-cursa .info-cursa .modalitats .modalitat .modalitat-titol h3 {
+  padding: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  font-weight: 600;
+}
+.pagina-cursa .info-cursa .modalitats .modalitat .modalitat-info {
   margin: 0;
   padding: 0;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 60%;
+  width: 75%;
 }
-.pagina-cursa .info-cursa .modalitats .modalitat .modalitat-upper .modalitat-info li {
+.pagina-cursa .info-cursa .modalitats .modalitat .modalitat-info li {
   border-radius: 50%;
   box-shadow: 1px 2px 4px 4px rgba(0, 0, 0, 0.2);
   list-style: none;
@@ -368,7 +364,7 @@ p {
   width: 7rem;
   height: 7rem;
 }
-.pagina-cursa .info-cursa .modalitats .modalitat .modalitat-upper .modalitat-info li img {
+.pagina-cursa .info-cursa .modalitats .modalitat .modalitat-info li img {
   height: 50px;
   width: 50px;
   margin-bottom: 10px;
@@ -378,6 +374,30 @@ p {
   width: 90%;
   height: 2px;
   margin: 2rem;
+}
+.pagina-cursa .info-cursa .modalitats .modalitat .modalitat-detalls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-height: 10%;
+  width: 80%;
+}
+.pagina-cursa .info-cursa .modalitats .modalitat .modalitat-detalls ul {
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+.pagina-cursa .info-cursa .modalitats .modalitat .modalitat-detalls ul li {
+  width: 30%;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin: 1rem;
+}
+.pagina-cursa .info-cursa .modalitats .modalitat .modalitat-detalls ul li img {
+  margin-right: 2rem;
 }
 
 .box-login {

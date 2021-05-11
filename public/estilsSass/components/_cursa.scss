@@ -57,7 +57,7 @@ p {
             flex-direction: column;
             width: 80%;
             .modalitat {
-                width: 80%;
+                max-width: 75%;
                 background: rgb(250, 185, 88);
                 padding: 1.5rem;
                 margin-top: 2rem;
@@ -67,51 +67,47 @@ p {
                 border-radius: 5px;
                 box-shadow: 6px 6px 20px 6px rgba(0, 0, 0, 0.329);
                 flex-direction: column;
-                .modalitat-upper {
+                    
+                .modalitat-titol {
+                    width: 20%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin: 1rem;
+                    border-top: 2px solid $grisFosc;
+                    border-bottom: 2px solid $grisFosc;
+                    h3{
+                        padding: 1rem;
+                        text-transform: uppercase;
+                        letter-spacing: 6px;
+                        font-weight: 600;
+                    }
+                }
+    
+                .modalitat-info {
+                    margin: 0;
+                    padding: 0;
                     display: flex;
                     justify-content: space-around;
                     align-items: center;
-                    width: 100%;
-                    &:nth-child(odd){
-                        flex-direction: row-reverse;
-                    }
-                    
-                    .modalitat-titol {
-                        height: 100%;
-                        width: 30%;
+                    width: 75%;
+                    li{
+                        border-radius: 50%;
+                        box-shadow: 1px 2px 4px 4px rgba(0, 0, 0, 0.2);
+                        list-style: none;
+                        font-weight: 600;
+                        letter-spacing: 2px;
+                        font-family: 1.5rem;
                         display: flex;
                         justify-content: center;
                         align-items: center;
-                        border-left: 2px solid $grisFosc;
-                        border-right: 2px solid $grisFosc;
-                        padding: 1rem;
-                    }
-        
-                    .modalitat-info {
-                        margin: 0;
-                        padding: 0;
-                        display: flex;
-                        justify-content: space-around;
-                        align-items: center;
-                        width: 60%;
-                        li{
-                            border-radius: 50%;
-                            box-shadow: 1px 2px 4px 4px rgba(0, 0, 0, 0.2);
-                            list-style: none;
-                            font-weight: 600;
-                            letter-spacing: 2px;
-                            font-family: 1.5rem;
-                            display: flex;
-                            justify-content: center;
-                            align-items: center;
-                            flex-direction: column;
-                            width: 7rem;
-                            height: 7rem;
-                            img {
-                                height: 50px;
-                                width: 50px;
-                                margin-bottom: 10px;
-                            }
+                        flex-direction: column;
+                        width: 7rem;
+                        height: 7rem;
+                        img {
+                            height: 50px;
+                            width: 50px;
+                            margin-bottom: 10px;
                         }
                     }
                 }
@@ -120,6 +116,33 @@ p {
                     width: 90%;
                     height: 2px;
                     margin: 2rem;
+                }
+
+                .modalitat-detalls {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    max-height: 10%;
+                    width: 80%;
+
+                    ul {
+                        padding: 0;
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content: space-around;
+                        align-items: center;
+
+                        li{
+                            width: 30%;
+                            list-style: none;
+                            display: flex;
+                            align-items: center;
+                            margin: 1rem;
+                            img {
+                                margin-right: 2rem;
+                            }
+                        }
+                    }
                 }
     
             }
