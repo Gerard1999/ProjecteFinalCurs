@@ -1,7 +1,7 @@
 <footer>
     <ul class="links_pagina">
-        <li><a href="#races">Curses</a></li>
-        <li><a href="">Botiga</a></li>
+        <li><a href="{{ route('races') }}">Curses</a></li>
+        <li><a href="{{ route('products') }}">Botiga</a></li>
         <li><a href="">Galeria</a></li>
     </ul>
     <div class="separador"></div>

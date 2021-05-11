@@ -19,7 +19,7 @@ use App\Http\Controllers\Backend\RaceController;
 |
 */
 
-Route::get('/', [PageController::class, 'races']);
+Route::get('/', [PageController::class, 'races'])->name('races');
 Route::get('curses/{race}', [PageController::class, 'race'])->name('race');
 
 Route::get('products', [ProductController::class, 'products'])->name('products');

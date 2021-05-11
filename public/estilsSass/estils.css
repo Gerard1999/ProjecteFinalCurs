@@ -305,9 +305,6 @@ p {
   width: 60%;
   line-height: 2.2;
 }
-.pagina-cursa .info-cursa .dades-generals h3 {
-  color: red;
-}
 .pagina-cursa .info-cursa .modalitats {
   display: flex;
   justify-content: center;
@@ -316,7 +313,8 @@ p {
   width: 80%;
 }
 .pagina-cursa .info-cursa .modalitats .modalitat {
-  max-width: 75%;
+  max-width: 70%;
+  height: auto;
   background: #fab958;
   padding: 1.5rem;
   margin-top: 2rem;
@@ -379,8 +377,7 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-  max-height: 10%;
-  width: 80%;
+  width: 75%;
 }
 .pagina-cursa .info-cursa .modalitats .modalitat .modalitat-detalls ul {
   padding: 0;
@@ -390,7 +387,7 @@ p {
   align-items: center;
 }
 .pagina-cursa .info-cursa .modalitats .modalitat .modalitat-detalls ul li {
-  width: 30%;
+  width: 40%;
   list-style: none;
   display: flex;
   align-items: center;
@@ -398,6 +395,23 @@ p {
 }
 .pagina-cursa .info-cursa .modalitats .modalitat .modalitat-detalls ul li img {
   margin-right: 2rem;
+}
+
+.inscripcio {
+  background: linear-gradient(90deg, rgba(255, 197, 109, 0.75) 10%, rgba(255, 193, 94, 0.75) 32%, rgba(255, 164, 61, 0.75) 80%);
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 20px;
+  border: 1px solid #424242;
+  text-decoration: none;
+  color: #424242;
+  font-size: 1.1rem;
+}
+.inscripcio:hover {
+  text-decoration: none;
+  color: #424242;
+  font-weight: 600;
+  background: linear-gradient(90deg, rgba(255, 197, 109, 0.945) 10%, rgba(255, 193, 94, 0.938) 32%, rgba(255, 164, 61, 0.952) 80%);
 }
 
 .box-login {

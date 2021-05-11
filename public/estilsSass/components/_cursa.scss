@@ -45,9 +45,6 @@ p {
             text-align: justify;
             width: 60%;
             line-height: 2.2;
-            h3 {
-                color: red;
-            }
         }
         
         .modalitats {
@@ -57,7 +54,8 @@ p {
             flex-direction: column;
             width: 80%;
             .modalitat {
-                max-width: 75%;
+                max-width: 70%;
+                height: auto;
                 background: rgb(250, 185, 88);
                 padding: 1.5rem;
                 margin-top: 2rem;
@@ -122,8 +120,7 @@ p {
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    max-height: 10%;
-                    width: 80%;
+                    width: 75%;
 
                     ul {
                         padding: 0;
@@ -133,7 +130,7 @@ p {
                         align-items: center;
 
                         li{
-                            width: 30%;
+                            width: 40%;
                             list-style: none;
                             display: flex;
                             align-items: center;
@@ -144,9 +141,26 @@ p {
                         }
                     }
                 }
-    
             }
         }
+
+    }
+}
+
+.inscripcio {
+    background: linear-gradient(90deg, rgba(255, 197, 109, 0.75) 10%, rgba(255, 193, 94, 0.75) 32%, rgba(255, 164, 61, 0.75) 80%);
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 20px;
+    border: 1px solid $grisFosc;
+    text-decoration: none;
+    color: $grisFosc;
+    font-size: 1.1rem;
+    &:hover{
+        text-decoration: none;
+        color: $grisFosc;
+        font-weight: 600;
+        background: linear-gradient(90deg, rgba(255, 197, 109, 0.945) 10%, rgba(255, 193, 94, 0.938) 32%, rgba(255, 164, 61, 0.952) 80%);
 
     }
 }
