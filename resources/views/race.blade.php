@@ -14,7 +14,6 @@
     <div class="info-cursa">
         <div class="dades-generals">
             <h2 class="card-text">Població: {{$race->location}}</h2>
-            <b>{{ date('d/m/Y', strtotime($race->date)) }}</b>
             <p class="card-text">{{$race->description}}</p>
             <p class="text-muted mb-0">
                 <em>
@@ -25,17 +24,39 @@
         <div class="modalitats">
             @foreach($race->categories as $category)
             <div class="modalitat">
-                <div class="modalitat-titol">
-                    <h3>{{$category->name_category}}</h3>
+                <div class="modalitat-upper">
+                    <div class="modalitat-titol">
+                        <h3>{{$category->name_category}}</h3>
+                    </div>
+                    <ul class="modalitat-info">
+                        <li><img src="{{asset('images/distance.png')}}">{{$category->kms}}km</li>
+                        <li><img src="{{asset('images/mountains.png')}}">{{$category->elevation_gain}}m+</li>
+                        <li><img src="{{asset('images/money.png')}}">{{$category->price}}€</li>
+                    </ul>
                 </div>
-                <div class="modalitat-info">
-                    <p>{{$category->kms}}km</p>
-                    <p>{{$category->elevation_gain}}m+</p>
-                    <p>{{$category->price}}€</p>
+                <div class="separador"></div>
+                <div class="modalitat-detalls">
+                    <ul>
+                        <li><img src="{{asset('images/calendar.png')}}">{{ date('d/m/Y', strtotime($race->date)) }}</li>
+                        <li><img src="{{asset('images/xinxeta.png')}}">Sortida: {{$category->location_start}}</li>
+                        <li><img src="{{asset('images/xinxeta.png')}}">Arribada: {{$category->location_finish}}</li>
+                        <li><img src="{{asset('images/clock.png')}}">{{$category->start_time}}</li>
+                        <li><img src="{{asset('images/fork.png')}}">Avituallaments: {{$category->num_aid_station}}</li>
+                        <li><img src="{{asset('images/group.png')}}">{{$category->max_participants}}</li>
+                    </ul>
                 </div>
             </div>
             @endforeach
         </div>
+        <div id='map' style='width: 800px; height: 400px; margin-top: 2rem; border-radius: 10px;'></div>
+            <script>
+            mapboxgl.accessToken = 'pk.eyJ1IjoiZ2VyYXJkMTk5OSIsImEiOiJja2I2cm1vbnUwMWhwMnVwYXNkdTJmM3U4In0.U_3ehdXAGsTDf_KqMSqHjw';
+            var map = new mapboxgl.Map({
+                container: 'map',
+                style: 'mapbox://styles/mapbox/streets-v11'
+            });
+            </script>
+
     </div>
 </div>
 @endsection

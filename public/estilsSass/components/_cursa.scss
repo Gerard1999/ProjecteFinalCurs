@@ -59,36 +59,67 @@ p {
             .modalitat {
                 width: 80%;
                 background: rgb(250, 185, 88);
-                padding: 2rem;
+                padding: 1.5rem;
                 margin-top: 2rem;
                 display: flex;
                 justify-content: space-around;
                 align-items: center;
-                
-                &:nth-child(odd){
-                    flex-direction: row-reverse;
-                }
-                
-                .modalitat-titol {
-                    height: 100%;
+                border-radius: 5px;
+                box-shadow: 6px 6px 20px 6px rgba(0, 0, 0, 0.329);
+                flex-direction: column;
+                .modalitat-upper {
                     display: flex;
-                    justify-content: center;
+                    justify-content: space-around;
                     align-items: center;
-                    border-left: 2px solid $grisFosc;
-                    border-right: 2px solid $grisFosc;
-                    padding: 2rem;
-                }
-    
-                .modalitat-info {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    p {
-                        font-weight: 600;
-                        letter-spacing: 2px;
-                        font-family: 1.5rem;
-                        margin: 4rem;
+                    width: 100%;
+                    &:nth-child(odd){
+                        flex-direction: row-reverse;
                     }
+                    
+                    .modalitat-titol {
+                        height: 100%;
+                        width: 30%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        border-left: 2px solid $grisFosc;
+                        border-right: 2px solid $grisFosc;
+                        padding: 1rem;
+                    }
+        
+                    .modalitat-info {
+                        margin: 0;
+                        padding: 0;
+                        display: flex;
+                        justify-content: space-around;
+                        align-items: center;
+                        width: 60%;
+                        li{
+                            border-radius: 50%;
+                            box-shadow: 1px 2px 4px 4px rgba(0, 0, 0, 0.2);
+                            list-style: none;
+                            font-weight: 600;
+                            letter-spacing: 2px;
+                            font-family: 1.5rem;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            flex-direction: column;
+                            width: 7rem;
+                            height: 7rem;
+                            img {
+                                height: 50px;
+                                width: 50px;
+                                margin-bottom: 10px;
+                            }
+                        }
+                    }
+                }
+                .separador {
+                    background-color: $grisFosc;
+                    width: 90%;
+                    height: 2px;
+                    margin: 2rem;
                 }
     
             }

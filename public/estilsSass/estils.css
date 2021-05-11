@@ -318,34 +318,66 @@ p {
 .pagina-cursa .info-cursa .modalitats .modalitat {
   width: 80%;
   background: #fab958;
-  padding: 2rem;
+  padding: 1.5rem;
   margin-top: 2rem;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  border-radius: 5px;
+  box-shadow: 6px 6px 20px 6px rgba(0, 0, 0, 0.329);
+  flex-direction: column;
 }
-.pagina-cursa .info-cursa .modalitats .modalitat:nth-child(odd) {
+.pagina-cursa .info-cursa .modalitats .modalitat .modalitat-upper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+.pagina-cursa .info-cursa .modalitats .modalitat .modalitat-upper:nth-child(odd) {
   flex-direction: row-reverse;
 }
-.pagina-cursa .info-cursa .modalitats .modalitat .modalitat-titol {
+.pagina-cursa .info-cursa .modalitats .modalitat .modalitat-upper .modalitat-titol {
   height: 100%;
+  width: 30%;
   display: flex;
   justify-content: center;
   align-items: center;
   border-left: 2px solid #424242;
   border-right: 2px solid #424242;
-  padding: 2rem;
+  padding: 1rem;
 }
-.pagina-cursa .info-cursa .modalitats .modalitat .modalitat-info {
+.pagina-cursa .info-cursa .modalitats .modalitat .modalitat-upper .modalitat-info {
+  margin: 0;
+  padding: 0;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
+  width: 60%;
 }
-.pagina-cursa .info-cursa .modalitats .modalitat .modalitat-info p {
+.pagina-cursa .info-cursa .modalitats .modalitat .modalitat-upper .modalitat-info li {
+  border-radius: 50%;
+  box-shadow: 1px 2px 4px 4px rgba(0, 0, 0, 0.2);
+  list-style: none;
   font-weight: 600;
   letter-spacing: 2px;
   font-family: 1.5rem;
-  margin: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 7rem;
+  height: 7rem;
+}
+.pagina-cursa .info-cursa .modalitats .modalitat .modalitat-upper .modalitat-info li img {
+  height: 50px;
+  width: 50px;
+  margin-bottom: 10px;
+}
+.pagina-cursa .info-cursa .modalitats .modalitat .separador {
+  background-color: #424242;
+  width: 90%;
+  height: 2px;
+  margin: 2rem;
 }
 
 .box-login {
