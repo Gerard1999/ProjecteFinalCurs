@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class InscriptionsList extends Migration
+class CreateInscriptionsListsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,17 @@ class InscriptionsList extends Migration
      */
     public function up()
     {
-        Schema::create('inscriptions_list', function (Blueprint $table) {
+        Schema::create('inscriptions_lists', function (Blueprint $table) {
             $table->id();
 
-            //Clau forana de Categories
+            //Clau forana de Categoria
             $table->bigInteger('category_id')->unsigned();
-            $table->foreign('category_id')->references('id')->on('category');
-            
-            //Clau forana de Runner
+            $table->foreign('category_id')->references('id')->on('categories');
+
+            //Clau forana de Curses
             $table->bigInteger('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
-            
+
             $table->timestamps();
         });
     }
@@ -35,6 +35,6 @@ class InscriptionsList extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('inscriptions_list');
+        Schema::dropIfExists('inscriptions_lists');
     }
 }

@@ -42,5 +42,10 @@ class User extends Authenticatable
     public function runner(){
         return $this->hasOne(Runner::class);
     }
+
+    //Relació : Un Usuari pot estar en moltes Inscripccions
+    public function inscriptions(){
+        return $this->hasMany(InscriptionsList::class);
+    }
     
 }

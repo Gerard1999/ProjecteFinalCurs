@@ -137,16 +137,4 @@ class RaceController extends Controller
 
         return back()->with('status', 'Cursa esborrada correctament');
     }
-
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Race  $race
-     * @return \Illuminate\Http\Response
-     */
-    public function inscripcio(Race $race)
-    {
-        return view('races.inscripcio', compact('race'));
-    }
 }

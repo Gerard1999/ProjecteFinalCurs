@@ -21,4 +21,9 @@ class Category extends Model
     public function race(){
         return $this->belongsTo(Race::class);
     }
+
+    //Relació : Una Categoria té moltes Inscripccions
+    public function inscriptions(){
+        return $this->hasMany(InscriptionsList::class);
+    }
 }

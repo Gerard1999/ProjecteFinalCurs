@@ -7,6 +7,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OrganizerController;
 use App\Http\Controllers\RunnerController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\InscriptionsListController;
 use App\Http\Controllers\Backend\RaceController;
 /*
 |--------------------------------------------------------------------------
@@ -37,8 +38,8 @@ Route::group([
         'middleware' => ['auth','runner']    
 ], function() {
         Route::get('/privatezone', [RunnerController::class, 'privatezone'])->name('privatezone');
-        Route::get('/inscripcio/{race}', [RaceController::class, 'inscripcio'])->name('inscripcio');
-        Route::post('/guardar-inscripcio', [RaceController::class, 'guardarInscripcio'])->name('guardar-inscripcio');
+        Route::get('/inscripcio/{race}', [InscriptionsListController::class, 'create'])->name('inscripcio');
+        Route::post('/guardar-inscripcio', [InscriptionsListController::class, 'store'])->name('guardar-inscripcio');
 });
 
 //Rutes dels organitzadors
