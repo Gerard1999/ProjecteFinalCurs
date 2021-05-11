@@ -20,7 +20,7 @@
                 Ho organitza:  {{ $race->organizer->user->name }}
                 </em>
             </p>
-            <a class="inscripcio" href="">Inscriu-t'hi!</a>
+            <a class="boto" href="{{route('runner.inscripcio', $race)}}">Inscriu-t'hi!</a>
         </div>
         <div class="modalitats">
             @foreach($race->categories as $category)
@@ -47,7 +47,7 @@
             </div>
             @endforeach
         </div>
-        <a class="inscripcio" href="">Inscriu-t'hi!</a>
+        <a class="boto" href="{{route('runner.inscripcio', $race)}}">Inscriu-t'hi!</a>
         <div id='map' style='width: 800px; height: 400px; margin-top: 2rem; border-radius: 10px;'></div>
             <script>
             mapboxgl.accessToken = 'pk.eyJ1IjoiZ2VyYXJkMTk5OSIsImEiOiJja2I2cm1vbnUwMWhwMnVwYXNkdTJmM3U4In0.U_3ehdXAGsTDf_KqMSqHjw';

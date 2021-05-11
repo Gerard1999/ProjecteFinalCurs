@@ -41,7 +41,7 @@ class Race extends Model
      * Funció per substreure un fragment de la descripció de la cursa
      */
     public function getGetExcerptAttribute(){
-        return substr($this->description, 0, 140);
+        return substr($this->description, 0, 80);
     }
 
     /**

@@ -13,6 +13,7 @@ $grisClar: rgba(255, 255, 255, 0.466);
 @import 'components/productes';
 @import 'components/product';
 @import 'components/creaciocurses';
+@import 'components/inscripcio';
 html {
     margin: 0;
     padding: 0;
@@ -30,4 +31,20 @@ h4 {
 
 * {
     scroll-behavior: smooth !important;
+}
+
+.titol {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    h1 {
+        width: 80%;
+        border-bottom: 1px black solid;
+        padding-bottom: 1rem;
+        font-size: 2rem;
+    }
 }

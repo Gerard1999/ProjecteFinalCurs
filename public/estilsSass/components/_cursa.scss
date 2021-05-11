@@ -36,7 +36,6 @@ p {
         flex-direction: column;
         padding: 4rem 0rem;
         width: 100%;
-
         .dades-generals {
             display: flex;
             justify-content: center;
@@ -46,7 +45,6 @@ p {
             width: 60%;
             line-height: 2.2;
         }
-        
         .modalitats {
             display: flex;
             justify-content: center;
@@ -65,7 +63,6 @@ p {
                 border-radius: 5px;
                 box-shadow: 6px 6px 20px 6px rgba(0, 0, 0, 0.329);
                 flex-direction: column;
-                    
                 .modalitat-titol {
                     width: 20%;
                     display: flex;
@@ -74,14 +71,13 @@ p {
                     margin: 1rem;
                     border-top: 2px solid $grisFosc;
                     border-bottom: 2px solid $grisFosc;
-                    h3{
+                    h3 {
                         padding: 1rem;
                         text-transform: uppercase;
                         letter-spacing: 6px;
                         font-weight: 600;
                     }
                 }
-    
                 .modalitat-info {
                     margin: 0;
                     padding: 0;
@@ -89,7 +85,7 @@ p {
                     justify-content: space-around;
                     align-items: center;
                     width: 75%;
-                    li{
+                    li {
                         border-radius: 50%;
                         box-shadow: 1px 2px 4px 4px rgba(0, 0, 0, 0.2);
                         list-style: none;
@@ -103,8 +99,8 @@ p {
                         width: 7rem;
                         height: 7rem;
                         img {
-                            height: 50px;
-                            width: 50px;
+                            height: 40px;
+                            width: 40px;
                             margin-bottom: 10px;
                         }
                     }
@@ -115,27 +111,26 @@ p {
                     height: 2px;
                     margin: 2rem;
                 }
-
                 .modalitat-detalls {
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    width: 75%;
-
+                    width: 90%;
                     ul {
                         padding: 0;
                         display: flex;
                         flex-wrap: wrap;
                         justify-content: space-around;
                         align-items: center;
-
-                        li{
+                        li {
                             width: 40%;
                             list-style: none;
                             display: flex;
                             align-items: center;
                             margin: 1rem;
                             img {
+                                width: 30px;
+                                height: 30px;
                                 margin-right: 2rem;
                             }
                         }
@@ -143,24 +138,22 @@ p {
                 }
             }
         }
-
     }
 }
 
-.inscripcio {
+.boto {
     background: linear-gradient(90deg, rgba(255, 197, 109, 0.75) 10%, rgba(255, 193, 94, 0.75) 32%, rgba(255, 164, 61, 0.75) 80%);
-    padding: 1rem;
+    padding: 0.8rem;
     margin: 1rem;
     border-radius: 20px;
     border: 1px solid $grisFosc;
     text-decoration: none;
     color: $grisFosc;
     font-size: 1.1rem;
-    &:hover{
+    &:hover {
         text-decoration: none;
         color: $grisFosc;
         font-weight: 600;
         background: linear-gradient(90deg, rgba(255, 197, 109, 0.945) 10%, rgba(255, 193, 94, 0.938) 32%, rgba(255, 164, 61, 0.952) 80%);
-
     }
 }

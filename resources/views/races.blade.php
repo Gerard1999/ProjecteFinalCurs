@@ -12,7 +12,7 @@
             <h3>{{$race->name}}</h3>
             <h5>Població: {{$race->location}}</h5>
             <p class="descripcio">
-                {{$race->get_excerpt}}
+                {{$race->get_excerpt}}...
             </p>
             <a class="link-cursa" href="{{ route('race', $race) }}">Veure més</a>
             <p class="nom-organitzador">

@@ -1,0 +1,19 @@
+.formulari-inscripcio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    form {
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        select {
+            padding: 0.8rem 0.5rem;
+            border-radius: 20px;
+            text-align: center;
+            background: linear-gradient(90deg, rgba(255, 197, 109, 0.5) 10%, rgba(255, 193, 94, 0.5) 32%, rgba(255, 164, 61, 0.5) 80%);
+            border: 1px solid $grisFosc;
+        }
+    }
+}

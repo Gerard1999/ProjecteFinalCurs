@@ -34,9 +34,11 @@ Route::group([
         'prefix' => 'runner',
         'as' => 'runner.',
         'namespace' => 'Runner',
-        'middleware' => ['auth']    
+        'middleware' => ['auth','runner']    
 ], function() {
         Route::get('/privatezone', [RunnerController::class, 'privatezone'])->name('privatezone');
+        Route::get('/inscripcio/{race}', [RaceController::class, 'inscripcio'])->name('inscripcio');
+        Route::post('/guardar-inscripcio', [RaceController::class, 'guardarInscripcio'])->name('guardar-inscripcio');
 });
 
 //Rutes dels organitzadors
