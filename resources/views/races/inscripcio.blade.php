@@ -26,7 +26,7 @@
             <select  name="category">
                 <option selected>-- Escull una modalitat --</option>
                 @foreach($race->categories as $category)
-                <option value="{{$category->name_category}}" selected>{{$category->name_category}} - {{$category->kms}}kms -</option>
+                <option value="{{$category->id}}" selected>{{$category->name_category}} - {{$category->kms}}kms -</option>
                 @endforeach
             </select>
             <input type="submit" class="boto" value="Inscriure'm">
