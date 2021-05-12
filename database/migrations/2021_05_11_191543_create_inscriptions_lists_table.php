@@ -15,12 +15,16 @@ class CreateInscriptionsListsTable extends Migration
     {
         Schema::create('inscriptions_lists', function (Blueprint $table) {
             $table->id();
-
+            
+            //Clau forana de Race
+            $table->bigInteger('race_id')->unsigned();
+            $table->foreign('race_id')->references('id')->on('races');
+            
             //Clau forana de Categoria
             $table->bigInteger('category_id')->unsigned();
             $table->foreign('category_id')->references('id')->on('categories');
-
-            //Clau forana de Curses
+            
+            //Clau forana de User
             $table->bigInteger('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
 

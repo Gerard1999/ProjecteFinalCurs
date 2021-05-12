@@ -21,17 +21,19 @@
         </div>
         <form action="{{route('runner.guardarinscripcio')}}" method="POST">
         @csrf
-            <input type="text" name="iduser" value="{{Auth::user()->id}}" hidden>
-
-            <label for="category">Modalitat</label>
-            @if(count($errors) > 0)
-            @foreach($errors->all() as $error)
-                <span class="invalid-feedback" role="alert">
-                    <strong>{{ $error }}</strong>
-                </span>
-                @endforeach
+            @if(count($errors)> 0)
+                <div class="alert alert-danger">
+                    Selecciona una categoria
+                </div>
+            @elseif(session('status'))
+                <div class="alert alert-danger">
+                    {{ session('status') }}
+                </div>
             @endif
-            <select  name="category">
+            <input type="text" name="user_id" value="{{Auth::user()->id}}" hidden>
+            <input type="text" name="race_id" value="{{$race->id}}" hidden>
+            
+            <select  name="category_id" class="@error('name') is-invalid @enderror">
                 @foreach($race->categories as $category)
                 <option value="{{$category->id}}" selected>{{$category->name_category}} - {{$category->kms}}kms -</option>
                 @endforeach

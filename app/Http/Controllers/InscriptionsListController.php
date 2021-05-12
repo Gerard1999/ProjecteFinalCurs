@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\InscriptionsList;
 use Illuminate\Http\Request;
 use App\Race;
+use App\Category;
 
 class InscriptionsListController extends Controller
 {
@@ -35,18 +36,35 @@ class InscriptionsListController extends Controller
      */
     public function store(Request $request) {
 
-        // $request->validate([
-        //     'category_id'   => 'required',
-        //     'user_id'       => 'required',
-        // ]);
+        $validation = \Validator::make($request->all(), [
+            
+            'category_id'   => 'required',
+            'user_id'       => 'required'
+        ]);
+
+        //Si hi ha errors de validació
+        if ($validation->fails()){
+            return redirect()->back()->withInput()->withErrors($validation->errors());
+        }
+
+        //Busca si hi ha registres amb les mateixes dades
+        $inscriptonDuplicate = InscriptionsList::where("race_id","=",$request->race_id)
+            ->where("user_id","=",$request->user_id)
+            ->get();
+
+        //Si hi ha una inscripció del mateix Usuari a la mateixa cursa retorna un error    
+        if(count($inscriptonDuplicate)  >= 1){
+            return back()->with('status', "No pots fer més d'una inscripció a la mateixa cursa");
+        }
 
         //Guardar Inscripció
         $inscriptionsList = InscriptionsList::create([
-            'category_id'   => $request->category,
-            'user_id'       => $request->iduser,
+            'race_id'       => $request->race_id,
+            'category_id'   => $request->category_id,
+            'user_id'       => $request->user_id,
         ]);
 
-        return back()->with('status', 'Cursa actualitzada amb èxit');
+        return redirect()->route('races');
     }
 
     /**
