@@ -55,6 +55,7 @@
                 container: 'map',
                 style: 'mapbox://styles/mapbox/streets-v11'
             });
+            map.addControl(new mapboxgl.NavigationControl());
             </script>
 
     </div>

@@ -22,7 +22,7 @@ class InscriptionsList extends Model
     }
     
     //Una Inscripcio pertany a un User
-    public function category(){
+    public function user(){
         return $this->belongsTo(User::class);
     }
 }

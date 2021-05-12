@@ -19,10 +19,18 @@
             <h3>Hola {{Auth::user()->name}} {{Auth::user()->runner->surname}},</h3>
             <h5>a quina modalitat de la cursa {{$race->name}} vols participar?</h5 >
         </div>
-        <form action="{{route('runner.guardar-inscripcio')}}" method="POST">
-            <input type="text" name="id" value="{{Auth::user()->id}}" hidden>
+        <form action="{{route('runner.guardarinscripcio')}}" method="POST">
+        @csrf
+            <input type="text" name="iduser" value="{{Auth::user()->id}}" hidden>
 
             <label for="category">Modalitat</label>
+            @if(count($errors) > 0)
+            @foreach($errors->all() as $error)
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $error }}</strong>
+                </span>
+                @endforeach
+            @endif
             <select  name="category">
                 @foreach($race->categories as $category)
                 <option value="{{$category->id}}" selected>{{$category->name_category}} - {{$category->kms}}kms -</option>

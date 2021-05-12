@@ -33,10 +33,18 @@ class InscriptionsListController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        dd($request);
-        $race = InscriptionsListController::create($request->all());
+    public function store(Request $request) {
+
+        // $request->validate([
+        //     'category_id'   => 'required',
+        //     'user_id'       => 'required',
+        // ]);
+
+        //Guardar Inscripció
+        $inscriptionsList = InscriptionsList::create([
+            'category_id'   => $request->category,
+            'user_id'       => $request->iduser,
+        ]);
 
         return back()->with('status', 'Cursa actualitzada amb èxit');
     }

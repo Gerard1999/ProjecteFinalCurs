@@ -39,7 +39,7 @@ Route::group([
 ], function() {
         Route::get('/privatezone', [RunnerController::class, 'privatezone'])->name('privatezone');
         Route::get('/inscripcio/{race}', [InscriptionsListController::class, 'create'])->name('inscripcio');
-        Route::post('/guardar-inscripcio', [InscriptionsListController::class, 'store'])->name('guardar-inscripcio');
+        Route::post('/guardar-inscripcio', [InscriptionsListController::class, 'store'])->name('guardarinscripcio');
 });
 
 //Rutes dels organitzadors
