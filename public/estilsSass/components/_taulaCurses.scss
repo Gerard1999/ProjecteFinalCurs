@@ -1,4 +1,5 @@
 .taula {
+    box-shadow: 6px 6px 20px 6px rgba(0, 0, 0, 0.329);
     margin: 5rem 0rem;
     width: 60%;
     border-radius: 20px;
@@ -22,6 +23,15 @@
             background: linear-gradient(90deg, rgba(255, 197, 109, 0.80) 10%, rgba(255, 193, 94, 0.80) 32%, rgba(255, 164, 61, 0.80) 80%);
             td {
                 padding: 0.5rem;
+            }
+            a {
+                text-decoration: none;
+                color: $grisFosc;
+                font-weight: 600;
+                &:hover {
+                    color: rgb(250, 185, 88);
+                    text-shadow: 1px -1px 8px black;
+                }
             }
         }
         tr:nth-child(odd) {

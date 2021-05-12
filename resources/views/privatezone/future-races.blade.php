@@ -20,7 +20,7 @@
             @foreach($inscripcions as $inscripcio)
                 @if($inscripcio->race->date > now()->toDateString())
                 <tr>
-                    <td>{{$inscripcio->race->name}}</td>
+                    <td><a href="{{ route('race', $inscripcio->race->id) }}">{{$inscripcio->race->name}}</a></td>
                     <td>{{$inscripcio->category->name_category}}</td>
                     <td>{{$inscripcio->race->location}}</td>
                     <td>{{$inscripcio->category->kms}}km's</td>

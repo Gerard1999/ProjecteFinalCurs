@@ -999,6 +999,8 @@ footer h4 {
 }
 
 .taula {
+  -webkit-box-shadow: 6px 6px 20px 6px rgba(0, 0, 0, 0.329);
+          box-shadow: 6px 6px 20px 6px rgba(0, 0, 0, 0.329);
   margin: 5rem 0rem;
   width: 60%;
   border-radius: 20px;
@@ -1031,6 +1033,17 @@ footer h4 {
 
 .taula .cosTaula tr td {
   padding: 0.5rem;
+}
+
+.taula .cosTaula tr a {
+  text-decoration: none;
+  color: #424242;
+  font-weight: 600;
+}
+
+.taula .cosTaula tr a:hover {
+  color: #fab958;
+  text-shadow: 1px -1px 8px black;
 }
 
 .taula .cosTaula tr:nth-child(odd) {
