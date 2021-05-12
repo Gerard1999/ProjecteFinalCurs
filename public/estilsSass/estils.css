@@ -998,6 +998,46 @@ footer h4 {
   border: 1px solid #424242;
 }
 
+.taula {
+  margin: 5rem 0rem;
+  width: 60%;
+  border-radius: 20px;
+  font-size: 1.2rem;
+  overflow: hidden;
+}
+
+.taula .capcalera {
+  width: 100%;
+  background: #facd7b;
+  padding: 1rem;
+}
+
+.taula .capcalera th {
+  padding: 0.5rem;
+}
+
+.taula .cosTaula {
+  width: 100%;
+  font-size: 1rem;
+  margin-left: 0.5rem;
+}
+
+.taula .cosTaula tr {
+  padding: 1rem;
+  width: 100%;
+  background: -webkit-gradient(linear, left top, right top, color-stop(10%, rgba(255, 197, 109, 0.8)), color-stop(32%, rgba(255, 193, 94, 0.8)), color-stop(80%, rgba(255, 164, 61, 0.8)));
+  background: linear-gradient(90deg, rgba(255, 197, 109, 0.8) 10%, rgba(255, 193, 94, 0.8) 32%, rgba(255, 164, 61, 0.8) 80%);
+}
+
+.taula .cosTaula tr td {
+  padding: 0.5rem;
+}
+
+.taula .cosTaula tr:nth-child(odd) {
+  background: -webkit-gradient(linear, left top, right top, color-stop(10%, #ffc56d), color-stop(32%, #ffc15e), color-stop(80%, #ffa43d));
+  background: linear-gradient(90deg, #ffc56d 10%, #ffc15e 32%, #ffa43d 80%);
+}
+
 html {
   margin: 0;
   padding: 0;

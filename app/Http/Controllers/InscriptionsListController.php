@@ -6,6 +6,7 @@ use App\InscriptionsList;
 use Illuminate\Http\Request;
 use App\Race;
 use App\Category;
+use Auth;
 
 class InscriptionsListController extends Controller
 {
@@ -110,5 +111,14 @@ class InscriptionsListController extends Controller
     public function destroy(InscriptionsList $inscriptionsList)
     {
         //
+    }
+
+    //Funció que envia una llista de curses de l'usuari en qüestió
+    function viewFutureRaces(){
+
+        $inscripcions = InscriptionsList::where('user_id',Auth::user()->id)
+            ->get();
+
+        return view('privatezone.future-races', compact('inscripcions'));
     }
 }

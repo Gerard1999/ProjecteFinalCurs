@@ -25,4 +25,9 @@ class InscriptionsList extends Model
     public function user(){
         return $this->belongsTo(User::class);
     }
+
+    //Una Inscripcio pertany a una Cursa
+    public function race(){
+        return $this->belongsTo(Race::class);
+    }
 }

@@ -37,9 +37,15 @@ Route::group([
         'namespace' => 'Runner',
         'middleware' => ['auth','runner']    
 ], function() {
+        //Zona privada
         Route::get('/privatezone', [RunnerController::class, 'privatezone'])->name('privatezone');
+
+        //Inscripccions
         Route::get('/inscripcio/{race}', [InscriptionsListController::class, 'create'])->name('inscripcio');
         Route::post('/guardar-inscripcio', [InscriptionsListController::class, 'store'])->name('guardarinscripcio');
+
+        //Curses Corredor
+        Route::get('/futures-curses', [InscriptionsListController::class, 'viewFutureRaces'])->name('view-future-races');
 });
 
 //Rutes dels organitzadors
