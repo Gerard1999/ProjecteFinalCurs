@@ -46,6 +46,7 @@ Route::group([
 
         //Curses Corredor
         Route::get('/futures-curses', [InscriptionsListController::class, 'viewFutureRaces'])->name('view-future-races');
+        Route::get('/curses-realitzades', [InscriptionsListController::class, 'viewPassedRaces'])->name('view-passed-races');
 });
 
 //Rutes dels organitzadors

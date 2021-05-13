@@ -121,4 +121,12 @@ class InscriptionsListController extends Controller
 
         return view('privatezone.future-races', compact('inscripcions'));
     }
+    
+    function viewPassedRaces(){
+    
+        $inscripcions = InscriptionsList::where('user_id',Auth::user()->id)
+            ->get();
+    
+        return view('privatezone.passed-races', compact('inscripcions'));
+    }
 }
