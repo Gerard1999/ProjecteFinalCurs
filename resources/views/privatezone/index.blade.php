@@ -2,11 +2,15 @@
 
 @section('content')
 
-<div class="opcions">
-    <ul class="links">
-        <li><a href="{{route('runner.view-future-races')}}">Veure Futures Curses</a></li>
-        <li><a href="{{route('runner.view-passed-races')}}">Veure Curses Realitzades</a></li>
-    </ul>
+<div class="private-zone">
+    
+    <h1 class="titol">Benvingut/da, {{Auth::user()->name}}</h1>
+    <div class="opcions">
+        <ul class="links">
+            <li><a href="{{route('runner.view-future-races')}}">Veure Futures Curses</a></li>
+            <li><a href="{{route('runner.view-passed-races')}}">Veure Curses Realitzades</a></li>
+        </ul>
+    </div>
 </div>
 
 @endsection

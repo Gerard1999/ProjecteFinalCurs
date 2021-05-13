@@ -625,7 +625,7 @@ p {
   margin-top: 5vh;
 }
 
-.opcions {
+.private-zone {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -635,10 +635,32 @@ p {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 92vh;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 5%;
 }
 
-.opcions ul {
+.private-zone .opcions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+  margin-top: 5%;
+}
+
+.private-zone .opcions ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -654,7 +676,7 @@ p {
   margin: auto;
 }
 
-.opcions ul li {
+.private-zone .opcions ul li {
   width: 10rem;
   height: 10rem;
   text-align: center;
@@ -667,12 +689,12 @@ p {
   background: linear-gradient(90deg, #ffd393 10%, #ffc05e 32%, #ffa43d 80%);
 }
 
-.opcions ul li:hover {
+.private-zone .opcions ul li:hover {
   -webkit-filter: grayscale(25%);
           filter: grayscale(25%);
 }
 
-.opcions ul li a {
+.private-zone .opcions ul li a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -691,13 +713,13 @@ p {
 }
 
 @media screen and (max-width: 768px) {
-  .opcions {
+  .private-zone .opcions {
     margin: 0;
   }
-  .opcions ul {
+  .private-zone .opcions ul {
     width: 100%;
   }
-  .opcions ul li {
+  .private-zone .opcions ul li {
     margin: 1rem;
     width: 90%;
     height: 5rem;
@@ -720,18 +742,19 @@ footer {
 }
 
 footer .separador {
-  width: 80%;
+  width: 90%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 0.2vh;
-  background-color: rgba(255, 255, 255, 0.466);
+  height: 0.2rem;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(27%, #57565e), color-stop(75%, #303033));
+  background: linear-gradient(180deg, #57565e 27%, #303033 75%);
   margin: auto;
 }
 
 footer .links_pagina,
 footer .social {
-  height: 10vh;
+  height: 10%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -742,6 +765,7 @@ footer .social {
       justify-content: space-around;
   margin-bottom: 0;
   list-style: none;
+  padding: 1.2rem 0;
 }
 
 footer .links_pagina a,
@@ -763,7 +787,17 @@ footer .social {
           justify-content: space-evenly;
 }
 
-footer h4 {
+footer .social li {
+  border-radius: 20px;
+  padding: 0.1rem;
+}
+
+footer .social li:hover {
+  -webkit-box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.356);
+          box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.356);
+}
+
+footer h3 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -771,6 +805,8 @@ footer h4 {
       -ms-flex-pack: center;
           justify-content: center;
   color: rgba(255, 255, 255, 0.466);
+  text-shadow: 6px -6px 8px black;
+  padding: 0.5rem;
 }
 
 .contingut {

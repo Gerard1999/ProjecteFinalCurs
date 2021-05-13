@@ -6,20 +6,21 @@ footer {
     justify-content: space-around;
     flex-direction: column;
     .separador {
-        width: 80%;
+        width: 90%;
         display: flex;
-        height: 0.2vh;
-        background-color: $grisClar;
+        height: 0.2rem;
+        background: linear-gradient(180deg, rgba(87, 86, 94, 1) 27%, rgba(48, 48, 51, 1) 75%);
         margin: auto;
     }
     .links_pagina,
     .social {
-        height: 10vh;
+        height: 10%;
         display: flex;
         align-items: center;
         justify-content: space-around;
         margin-bottom: 0;
         list-style: none;
+        padding: 1.2rem 0;
         a {
             color: orange;
             font-size: large;
@@ -32,10 +33,19 @@ footer {
     .social {
         margin: 0 12rem 0 12rem;
         justify-content: space-evenly;
+        li {
+            border-radius: 20px;
+            padding: 0.1rem;
+            &:hover {
+                box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.356);
+            }
+        }
     }
-    h4 {
+    h3 {
         display: flex;
         justify-content: center;
         color: $grisClar;
+        text-shadow: 6px -6px 8px black;
+        padding: 0.5rem;
     }
 }
