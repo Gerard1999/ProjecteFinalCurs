@@ -11,6 +11,11 @@ class Product extends Model
         return $this->belongsTo(Organizer::class);
     }
 
+    //Relació : Un Producte té una Talla
+    public function size(){
+        return $this->belongsTo(Size::class);
+    }
+
     /**
      * Funció que retorna la url de la imatge de la cursa
      */

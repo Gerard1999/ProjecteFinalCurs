@@ -908,19 +908,18 @@ footer h3 {
 }
 
 .contingut-producte {
-  width: 80%;
-  margin: auto;
   margin-top: 4rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .contingut-producte .imatge-producte {
-  margin: 5rem;
   height: 22rem;
   width: 22rem;
-  background: red;
 }
 
 .contingut-producte .imatge-producte img {
@@ -930,19 +929,42 @@ footer h3 {
 }
 
 .contingut-producte .detalls-producte {
+  margin-left: 2rem;
+}
+
+.contingut-producte .detalls-producte h2 {
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+.contingut-producte .detalls-producte .talles {
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  overflow: hidden;
+  border: #424242 solid 1px;
+  border-radius: 20px;
+  padding: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.contingut-producte .detalls-producte .talles li {
+  margin: 0;
+  list-style: none;
+  padding: 1rem;
+}
+
+.contingut-producte .detalls-producte .talles li:hover {
+  background: #424242;
+  color: rgba(255, 255, 255, 0.466);
 }
 
 .container {
