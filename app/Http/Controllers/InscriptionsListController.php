@@ -129,4 +129,8 @@ class InscriptionsListController extends Controller
     
         return view('privatezone.passed-races', compact('inscripcions'));
     }
+
+    function getRunnersRace(Race $race) {
+        return view('organizerzone.runners-list', compact('race'));
+    }
 }

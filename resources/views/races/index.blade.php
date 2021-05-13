@@ -22,7 +22,7 @@
                                 <th>Cursa</th>
                                 <th>Dia</th>
                                 <th>Lloc</th>
-                                <th colspan="2">&nbsp;</th>
+                                <th colspan="3">&nbsp;</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -34,6 +34,11 @@
                                     <td>
                                         <a href="{{ route('organizer.editarcursa', $race)}}" class="btn btn-primary btn-sm">
                                             Editar
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a href="{{ route('organizer.veure-corredors', $race)}}" class="btn btn-success btn-sm">
+                                            Veure Participants
                                         </a>
                                     </td>
                                     <td>
