@@ -2,9 +2,37 @@
 
 @section('content')
 
-heey
 
-{{$race->name}}
+<div class="pagina-cursa">
+    <div class="titol">
+        <h1>Inscrits a la {{$race->name}}</h1>
+    </div>
+
+    @if(count($llistaCursa) == 0)
+            <h3 class="titol marges">Encara no hi ha ningú inscrit...</h3>
+                
+    @else
+    <table class="taula">
+        <thead class="capcalera">
+            <th>Nom</th>
+            <th>Cognoms</th>
+            <th>Modalitat</th>
+            <th>Num. Dorsal</th>
+        </thead>
+        <tbody class="cosTaula">
+            
+            @foreach($llistaCursa as $inscripcio)
+                <tr>
+                    <td>{{$inscripcio->user->name}}</a></td>
+                    <td>{{$inscripcio->user->runner->surname}}</a></td>
+                    <td>{{$inscripcio->category->name_category}}</td>
+                    <td>{{$inscripcio->num_dorsal}}</td>
+                </tr>
+            @endforeach
+        </tbody>
+    </table>
+    @endif
+</div>
 
 
 @endsection

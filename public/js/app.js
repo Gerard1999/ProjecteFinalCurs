@@ -37383,6 +37383,38 @@ module.exports = function(module) {
 
 /***/ }),
 
+/***/ "./resources/js/animacioHeader.js":
+/*!****************************************!*\
+  !*** ./resources/js/animacioHeader.js ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var navSlide = function navSlide() {
+  var linies = document.querySelector(".linies");
+  var nav = document.querySelector('.nav-links');
+  var links = document.querySelectorAll('.nav-links li');
+  var body = document.body;
+  linies.addEventListener('click', function () {
+    nav.classList.toggle('nav-active');
+    body.classList.toggle('no-scroll'); //Per cada link del menú li dona una animació
+
+    links.forEach(function (link, index) {
+      if (link.style.animation) {
+        link.style.animation = '';
+      } else {
+        link.style.animation = "navAnimation 0.5s ease forwards ".concat(index / 5 + 0.2, "s");
+      }
+    }); //Afegeix classe per animació a les línies del menú
+
+    linies.classList.toggle('animacioLinies');
+  });
+};
+
+navSlide();
+
+/***/ }),
+
 /***/ "./resources/js/app.js":
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
@@ -37391,6 +37423,8 @@ module.exports = function(module) {
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+
+__webpack_require__(/*! ./animacioHeader */ "./resources/js/animacioHeader.js");
 
 /***/ }),
 
@@ -37457,8 +37491,8 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\gerar\Desktop\Gerard\Laravel\laravel\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\gerar\Desktop\Gerard\Laravel\laravel\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\gerar\OneDrive\Escriptori\PROJECTES\PFC_TrailRaces\ProjecteFinalCurs\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\gerar\OneDrive\Escriptori\PROJECTES\PFC_TrailRaces\ProjecteFinalCurs\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

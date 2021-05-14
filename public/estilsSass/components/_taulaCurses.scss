@@ -10,19 +10,18 @@
         background: rgb(250, 205, 123);
         padding: 1rem;
         th {
-            padding: 0.5rem;
+            padding: 0.5rem 2rem;
         }
     }
     .cosTaula {
         width: 100%;
         font-size: 1rem;
-        margin-left: 0.5rem;
         tr {
             padding: 1rem;
             width: 100%;
             background: linear-gradient(90deg, rgba(255, 197, 109, 0.80) 10%, rgba(255, 193, 94, 0.80) 32%, rgba(255, 164, 61, 0.80) 80%);
             td {
-                padding: 0.5rem;
+                padding: 0.5rem 2rem;
             }
             a {
                 text-decoration: none;

@@ -1073,13 +1073,12 @@ footer h3 {
 }
 
 .taula .capcalera th {
-  padding: 0.5rem;
+  padding: 0.5rem 2rem;
 }
 
 .taula .cosTaula {
   width: 100%;
   font-size: 1rem;
-  margin-left: 0.5rem;
 }
 
 .taula .cosTaula tr {
@@ -1090,7 +1089,7 @@ footer h3 {
 }
 
 .taula .cosTaula tr td {
-  padding: 0.5rem;
+  padding: 0.5rem 2rem;
 }
 
 .taula .cosTaula tr a {
@@ -1150,5 +1149,9 @@ h4 {
   border-bottom: 1px black solid;
   padding-bottom: 1rem;
   font-size: 2rem;
+}
+
+.marges {
+  margin: 10% 0rem;
 }
 /*# sourceMappingURL=estils.css.map */

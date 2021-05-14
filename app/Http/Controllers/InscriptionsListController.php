@@ -53,6 +53,12 @@ class InscriptionsListController extends Controller
             ->where("user_id","=",$request->user_id)
             ->get();
 
+        //Compte quants corredors hi ha a una categoria per adjudicar el dorsal
+        $numCorredorsCategoria = InscriptionsList::where("category_id","=",$request->category_id)
+            ->count();
+
+
+
         //Si hi ha una inscripció del mateix Usuari a la mateixa cursa retorna un error    
         if(count($inscriptonDuplicate)  >= 1){
             return back()->with('status', "No pots fer més d'una inscripció a la mateixa cursa");
@@ -63,6 +69,7 @@ class InscriptionsListController extends Controller
             'race_id'       => $request->race_id,
             'category_id'   => $request->category_id,
             'user_id'       => $request->user_id,
+            'num_dorsal'    => $numCorredorsCategoria + 1,
         ]);
 
         return redirect()->route('races');
@@ -131,6 +138,8 @@ class InscriptionsListController extends Controller
     }
 
     function getRunnersRace(Race $race) {
-        return view('organizerzone.runners-list', compact('race'));
+        $llistaCursa = InscriptionsList::where('race_id',$race->id)
+            ->get();
+        return view('organizerzone.runners-list', compact('race', 'llistaCursa'));
     }
 }

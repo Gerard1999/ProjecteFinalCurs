@@ -12,7 +12,7 @@ class InscriptionsList extends Model
      * @var array
      */
     protected $fillable = [
-        'race_id', 'category_id', 'user_id',
+        'race_id', 'category_id', 'user_id', 'num_dorsal',
     ];
 
 
