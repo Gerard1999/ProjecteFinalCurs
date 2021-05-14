@@ -61,10 +61,11 @@ Route::group([
         Route::get('/editar-cursa', [RaceController::class, 'edit'])->name('editarcursa');
         Route::post('/guardar-cursa', [RaceController::class, 'store'])->name('guardarcursa');
         Route::post('/reguardar-cursa', [RaceController::class, 'update'])->name('reguardarcursa');
-        Route::get('/eliminar-cursa', [RaceController::class, 'destroy'])->name('eliminarcursa');
+        Route::delete('/eliminar-cursa/{id}', [RaceController::class, 'destroy'])->name('eliminarcursa');
         
         Route::get('/organizerzone', [OrganizerController::class, 'organizerzone'])->name('organizerzone');
         Route::get('/prodcutes', [OrganizerController::class, 'products'])->name('productes');
+        Route::delete('/eliminar-producte/{id}', [ProductController::class, 'destroy'])->name('eliminarproducte');
         
         Route::get('/llista-corredors/{race}', [InscriptionsListController::class, 'getRunnersRace'])->name('veure-corredors');
 
