@@ -128,13 +128,18 @@ class RaceController extends Controller
      * @param  \App\Race  $race
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Race $race)
+    public function destroy($idRace)
     {
+        $race = Race::where('id',$idRace)->first();
+        dd($race);
+
         //Eliminem primer la imatge del disc
         Storage::disk('public')->delete($race->img_cover);
         
         $race->delete();
-
+        if (Race::where('id',$idRace)->first()) {
+            return back()->with('status', "Hi hagut un error, no s'ha pogut esborrar la cursa");
+        }
         return back()->with('status', 'Cursa esborrada correctament');
     }
 }
