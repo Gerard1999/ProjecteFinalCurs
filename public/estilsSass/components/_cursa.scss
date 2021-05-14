@@ -140,20 +140,3 @@ p {
         }
     }
 }
-
-.boto {
-    background: linear-gradient(90deg, rgba(255, 197, 109, 0.75) 10%, rgba(255, 193, 94, 0.75) 32%, rgba(255, 164, 61, 0.75) 80%);
-    padding: 0.8rem;
-    margin: 1rem;
-    border-radius: 20px;
-    border: 1px solid $grisFosc;
-    text-decoration: none;
-    color: $grisFosc;
-    font-size: 1.1rem;
-    &:hover {
-        text-decoration: none;
-        color: $grisFosc;
-        font-weight: 600;
-        background: linear-gradient(90deg, rgba(255, 197, 109, 0.945) 10%, rgba(255, 193, 94, 0.938) 32%, rgba(255, 164, 61, 0.952) 80%);
-    }
-}

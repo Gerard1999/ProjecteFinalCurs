@@ -61,7 +61,7 @@ class InscriptionsListController extends Controller
 
         //Si hi ha una inscripció del mateix Usuari a la mateixa cursa retorna un error    
         if(count($inscriptonDuplicate)  >= 1){
-            return back()->with('status', "No pots fer més d'una inscripció a la mateixa cursa");
+            return back()->with('status', "Ja estàs inscrit en aquesta cursa");
         }
 
         //Guardar Inscripció

@@ -16,6 +16,7 @@
         <thead class="capcalera">
             <th>Nom</th>
             <th>Cognoms</th>
+            <th>DNI</th>
             <th>Modalitat</th>
             <th>Num. Dorsal</th>
         </thead>
@@ -23,8 +24,9 @@
             
             @foreach($llistaCursa as $inscripcio)
                 <tr>
-                    <td>{{$inscripcio->user->name}}</a></td>
-                    <td>{{$inscripcio->user->runner->surname}}</a></td>
+                    <td>{{$inscripcio->user->name}}</td>
+                    <td>{{$inscripcio->user->runner->surname}}</td>
+                    <td>{{$inscripcio->user->nif}}</td>
                     <td>{{$inscripcio->category->name_category}}</td>
                     <td>{{$inscripcio->num_dorsal}}</td>
                 </tr>

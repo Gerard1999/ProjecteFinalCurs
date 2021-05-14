@@ -601,26 +601,6 @@ p {
   margin-right: 2rem;
 }
 
-.boto {
-  background: -webkit-gradient(linear, left top, right top, color-stop(10%, rgba(255, 197, 109, 0.75)), color-stop(32%, rgba(255, 193, 94, 0.75)), color-stop(80%, rgba(255, 164, 61, 0.75)));
-  background: linear-gradient(90deg, rgba(255, 197, 109, 0.75) 10%, rgba(255, 193, 94, 0.75) 32%, rgba(255, 164, 61, 0.75) 80%);
-  padding: 0.8rem;
-  margin: 1rem;
-  border-radius: 20px;
-  border: 1px solid #424242;
-  text-decoration: none;
-  color: #424242;
-  font-size: 1.1rem;
-}
-
-.boto:hover {
-  text-decoration: none;
-  color: #424242;
-  font-weight: 600;
-  background: -webkit-gradient(linear, left top, right top, color-stop(10%, rgba(255, 197, 109, 0.945)), color-stop(32%, rgba(255, 193, 94, 0.938)), color-stop(80%, rgba(255, 164, 61, 0.952)));
-  background: linear-gradient(90deg, rgba(255, 197, 109, 0.945) 10%, rgba(255, 193, 94, 0.938) 32%, rgba(255, 164, 61, 0.952) 80%);
-}
-
 .box-login {
   margin-top: 5vh;
 }
@@ -1061,7 +1041,7 @@ footer h3 {
           box-shadow: 6px 6px 20px 6px rgba(0, 0, 0, 0.329);
   margin: 5rem 0rem;
   width: 60%;
-  border-radius: 20px;
+  border-radius: 10px;
   font-size: 1.2rem;
   overflow: hidden;
 }
@@ -1073,23 +1053,20 @@ footer h3 {
 }
 
 .taula .capcalera th {
-  padding: 0.5rem 2rem;
+  padding: 0.5rem 0.4rem 0.5rem 1rem;
 }
 
 .taula .cosTaula {
-  width: 100%;
   font-size: 1rem;
 }
 
 .taula .cosTaula tr {
-  padding: 1rem;
-  width: 100%;
   background: -webkit-gradient(linear, left top, right top, color-stop(10%, rgba(255, 197, 109, 0.8)), color-stop(32%, rgba(255, 193, 94, 0.8)), color-stop(80%, rgba(255, 164, 61, 0.8)));
   background: linear-gradient(90deg, rgba(255, 197, 109, 0.8) 10%, rgba(255, 193, 94, 0.8) 32%, rgba(255, 164, 61, 0.8) 80%);
 }
 
 .taula .cosTaula tr td {
-  padding: 0.5rem 2rem;
+  padding: 0.5rem 0.4rem 0.5rem 1rem;
 }
 
 .taula .cosTaula tr a {
@@ -1100,12 +1077,17 @@ footer h3 {
 
 .taula .cosTaula tr a:hover {
   color: #fab958;
-  text-shadow: 1px -1px 8px black;
+  text-shadow: 0px 0px 10px black;
 }
 
 .taula .cosTaula tr:nth-child(odd) {
   background: -webkit-gradient(linear, left top, right top, color-stop(10%, #ffc56d), color-stop(32%, #ffc15e), color-stop(80%, #ffa43d));
   background: linear-gradient(90deg, #ffc56d 10%, #ffc15e 32%, #ffa43d 80%);
+}
+
+.taula th,
+.taula td {
+  text-align: center;
 }
 
 html {
@@ -1153,5 +1135,49 @@ h4 {
 
 .marges {
   margin: 10% 0rem;
+}
+
+.boto {
+  background: -webkit-gradient(linear, left top, right top, color-stop(10%, rgba(255, 197, 109, 0.75)), color-stop(32%, rgba(255, 193, 94, 0.75)), color-stop(80%, rgba(255, 164, 61, 0.75)));
+  background: linear-gradient(90deg, rgba(255, 197, 109, 0.75) 10%, rgba(255, 193, 94, 0.75) 32%, rgba(255, 164, 61, 0.75) 80%);
+  padding: 0.8rem;
+  border-radius: 20px;
+  border: 1px solid #424242;
+  text-decoration: none;
+  color: #424242;
+  font-size: 1.1rem;
+}
+
+.boto:hover {
+  text-decoration: none;
+  color: #424242;
+  font-weight: 600;
+  background: -webkit-gradient(linear, left top, right top, color-stop(10%, rgba(255, 197, 109, 0.945)), color-stop(32%, rgba(255, 193, 94, 0.938)), color-stop(80%, rgba(255, 164, 61, 0.952)));
+  background: linear-gradient(90deg, rgba(255, 197, 109, 0.945) 10%, rgba(255, 193, 94, 0.938) 32%, rgba(255, 164, 61, 0.952) 80%);
+}
+
+.boto-petit {
+  font-size: 0.8rem;
+  padding: 0.5rem;
+  border-radius: 10px;
+}
+
+.boto-vermell:hover {
+  background: -webkit-gradient(linear, left top, right top, color-stop(10%, rgba(255, 82, 76, 0.726)), color-stop(32%, rgba(235, 88, 62, 0.733)), color-stop(80%, rgba(255, 61, 61, 0.767)));
+  background: linear-gradient(90deg, rgba(255, 82, 76, 0.726) 10%, rgba(235, 88, 62, 0.733) 32%, rgba(255, 61, 61, 0.767) 80%);
+  color: orange;
+  text-shadow: 0px 0px 10px black;
+}
+
+.boto-blau:hover {
+  background: -webkit-gradient(linear, left top, right top, color-stop(10%, rgba(85, 157, 240, 0.726)), color-stop(32%, rgba(40, 128, 243, 0.733)), color-stop(80%, rgba(19, 88, 236, 0.767)));
+  background: linear-gradient(90deg, rgba(85, 157, 240, 0.726) 10%, rgba(40, 128, 243, 0.733) 32%, rgba(19, 88, 236, 0.767) 80%);
+  color: orange;
+  text-shadow: 0px 0px 10px black;
+}
+
+.boto-verd:hover {
+  background: -webkit-gradient(linear, left top, right top, color-stop(10%, rgba(120, 250, 87, 0.726)), color-stop(32%, rgba(122, 252, 62, 0.733)), color-stop(80%, rgba(31, 241, 42, 0.767)));
+  background: linear-gradient(90deg, rgba(120, 250, 87, 0.726) 10%, rgba(122, 252, 62, 0.733) 32%, rgba(31, 241, 42, 0.767) 80%);
 }
 /*# sourceMappingURL=estils.css.map */
