@@ -18,7 +18,7 @@ class CreateCategoriesTable extends Migration
 
             //Clau forana de Curses
             $table->bigInteger('race_id')->unsigned();
-            $table->foreign('race_id')->references('id')->on('races');
+            $table->foreign('race_id')->references('id')->on('races')->onDelete('cascade');;
 
             $table->char('name_category', 50);
             $table->float('kms');

@@ -42,6 +42,11 @@ class User extends Authenticatable
     public function runner(){
         return $this->hasOne(Runner::class);
     }
+    
+    //Relació : Un Usuari pot ser Organitzador
+    public function organizer(){
+        return $this->hasOne(Organizer::class);
+    }
 
     //Relació : Un Usuari pot estar en moltes Inscripccions
     public function inscriptions(){

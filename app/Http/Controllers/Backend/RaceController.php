@@ -19,7 +19,7 @@ class RaceController extends Controller
      */
     public function index()
     {
-        $races = Race::where('organizer_id', auth()->user()->id)
+        $races = Race::where('organizer_id', auth()->user()->organizer->id)
                     ->orderBy('date')
                     ->get();
         return view('races.index', compact('races'));

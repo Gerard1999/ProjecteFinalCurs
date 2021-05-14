@@ -53,7 +53,7 @@
                 </tr>
             @empty
                 <tr>
-                    <td colspan="5">No hi ha curses</td>
+                    <td colspan="6">No hi ha curses</td>
                 </tr>
             @endforelse
         </tbody>

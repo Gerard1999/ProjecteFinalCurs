@@ -14,6 +14,24 @@ class DatabaseSeeder extends Seeder
         
         //Crear un Usuari predeterminat
         App\User::create([
+            'name' => 'Gerard',
+            'user_type' => 'runner',
+            'email' => 'gerardlopo@gmail.com',
+            'nif' => '77623668W',
+            'password' => bcrypt('12341234'),
+            'telephone' => 693211981,
+            'address' => 'C/ Jaume Balmes, 75 1r 3a',
+            'city' => 'Pineda de Mar',
+            ]);
+
+        //Crear un Usuari predeterminat
+        App\Runner::create([
+            'surname' => 'Lopez',
+            'user_id' => 1,
+            ]);
+
+        //Crear un Usuari predeterminat
+        App\User::create([
             'name' => 'Bestrail',
             'user_type' => 'organizer',
             'email' => 'best@trail.com',
@@ -26,7 +44,7 @@ class DatabaseSeeder extends Seeder
             
         //Crear un Organitzador predeterminat
         App\Organizer::create([
-            'user_id' => 1,
+            'user_id' => 2,
             'link_web' => 'besttrail.cat',
             'link_facebook' => 'www.facebook.com/besttrail',
             'link_instagram' => 'www.instagram.com/besttrail',
@@ -41,7 +59,7 @@ class DatabaseSeeder extends Seeder
             'shirt' => true,
             'date' => '2021-09-07',
             'location' => 'Setcases',
-            'img_cover' => 'races\1BX57ZbQR1R869GiXb16AWAGYBbz3M9nJ5GUohIW.jpg',
+            'img_cover' => 'races\DZTMYto8g8wLDen4NdAH2YAS9fzPgpTxZQAzrPd9.jpg',
             ]);
         //Modalitats Cursa Entrevalls
         App\Category::create([

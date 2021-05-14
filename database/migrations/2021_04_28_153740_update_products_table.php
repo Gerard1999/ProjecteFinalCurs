@@ -16,11 +16,11 @@ class UpdateProductsTable extends Migration
         Schema::table('products', function (Blueprint $table) {
            //Clau forana de Organizers
            $table->bigInteger('organizer_id')->unsigned();
-           $table->foreign('organizer_id')->references('id')->on('organizers');
+           $table->foreign('organizer_id')->references('id')->on('organizers')->onDelete('cascade');
 
            //Clau forana de Talles
            $table->bigInteger('size_id')->unsigned();
-           $table->foreign('size_id')->references('id')->on('sizes');
+           $table->foreign('size_id')->references('id')->on('sizes')->onDelete('cascade');
         });
     }
 

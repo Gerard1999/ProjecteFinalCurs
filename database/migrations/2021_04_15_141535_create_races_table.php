@@ -29,7 +29,7 @@ class CreateRacesTable extends Migration
             
             $table->timestamps();
             
-            $table->foreign('organizer_id')->references('id')->on('users');
+            $table->foreign('organizer_id')->references('id')->on('users')->onDelete('cascade');;
             
         });
     }

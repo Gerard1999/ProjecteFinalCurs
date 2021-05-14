@@ -18,15 +18,15 @@ class CreateInscriptionsListsTable extends Migration
             
             //Clau forana de Race
             $table->bigInteger('race_id')->unsigned();
-            $table->foreign('race_id')->references('id')->on('races');
+            $table->foreign('race_id')->references('id')->on('races')->onDelete('cascade');;
             
             //Clau forana de Categoria
             $table->bigInteger('category_id')->unsigned();
-            $table->foreign('category_id')->references('id')->on('categories');
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');;
             
             //Clau forana de User
             $table->bigInteger('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');;
 
             $table->integer('num_dorsal');
 

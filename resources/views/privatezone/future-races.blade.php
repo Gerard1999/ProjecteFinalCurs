@@ -6,12 +6,14 @@
     <div class="titol">
         <h1>Llista de futures curses</h1>
     </div>
-    
+    <div class="tornar">
+        <a class="boto boto-petit" href="{{ URL::previous() }}">&larr;Tornar Enrere</a>
+    </div>
+    {{$hihaCurses = false}}
     @if(count($inscripcions) == 0)
             <h3 class="titol marges">No tens cap cursa a fer...</h3>
     
     @else
-        {{$hihaCurses = false}}
         @foreach($inscripcions as $inscripcio)
             @if($inscripcio->race->date > now()->toDateString())
                 {{$hihaCurses = true}}
