@@ -10,7 +10,9 @@
             <h2>{{$race->name}}</h2>
         </div>
     </div>
-    
+    <div class="tornar">
+        <a class="boto boto-petit esquerra" href="{{ URL::previous() }}">&larr;Tornar Enrere</a>
+    </div>
     <div class="info-cursa">
         <div class="dades-generals">
             <h2 class="card-text">Població: {{$race->location}}</h2>

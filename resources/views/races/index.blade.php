@@ -6,7 +6,10 @@
     <div class="titol">
         <h1>Les meves curses</h1>
     </div>
-    <a href="{{route('organizer.crearcursa')}}" class="boto boto-petit">Crear</a>
+    <div class="tornar">
+        <a class="boto boto-petit esquerra" href="{{ URL::previous() }}">&larr;Tornar Enrere</a>
+        <a href="{{route('organizer.crearcursa')}}" class="boto boto-petit dreta">Crear una nova cursa</a>
+    </div>
     @if (session('status'))
         <div class="alert alert-success" role="alert">
             {{ session('status') }}
@@ -31,12 +34,12 @@
                     <td>{{date('d/m/Y', strtotime($race->date))}}</td>
                     <td>{{$race->location}}</td>
                     <td>
-                        <a href="{{ route('organizer.editarcursa', $race)}}" class="boto boto-petit boto-verd">
+                        <a href="{{ route('organizer.editarcursa', $race)}}" class="boto boto-petit boto-blau">
                             Editar
                         </a>
                     </td>
                     <td>
-                        <a href="{{ route('organizer.veure-corredors', $race)}}" class="boto boto-petit boto-blau">
+                        <a href="{{ route('organizer.veure-corredors', $race)}}" class="boto boto-petit boto-verd">
                             Veure Participants
                         </a>
                     </td>
