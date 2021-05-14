@@ -43,7 +43,7 @@ h4 {
     text-transform: uppercase;
     letter-spacing: 4px;
     h1 {
-        width: 80%;
+        width: 60%;
         border-bottom: 1px black solid;
         padding-bottom: 1rem;
         font-size: 2rem;
@@ -94,6 +94,17 @@ h4 {
 
 .boto-verd {
     &:hover {
-        background: linear-gradient(90deg, rgba(120, 250, 87, 0.726) 10%, rgba(122, 252, 62, 0.733) 32%, rgba(31, 241, 42, 0.767) 80%);
+        background: linear-gradient(90deg, rgba(19, 219, 35, 0.726) 10%, rgba(79, 216, 16, 0.747) 32%, rgba(7, 138, 14, 0.767) 80%);
+    }
+}
+
+.tornar {
+    margin: 1rem;
+    width: 75%;
+    .esquerra {
+        float: left;
+    }
+    .dreta {
+        float: right;
     }
 }

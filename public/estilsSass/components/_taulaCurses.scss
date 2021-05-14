@@ -19,6 +19,11 @@
             background: linear-gradient(90deg, rgba(255, 197, 109, 0.80) 10%, rgba(255, 193, 94, 0.80) 32%, rgba(255, 164, 61, 0.80) 80%);
             td {
                 padding: 0.5rem 0.4rem 0.5rem 1rem;
+                img {
+                    width: 64px;
+                    border-radius: 10px;
+                    box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.329);
+                }
             }
             a {
                 text-decoration: none;

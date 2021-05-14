@@ -11,11 +11,11 @@
             <h3 class="titol marges">No tens cap cursa a fer...</h3>
     
     @else
-        {{$hihaCurses = false}} 
+        {{$hihaCurses = false}}
         @foreach($inscripcions as $inscripcio)
             @if($inscripcio->race->date > now()->toDateString())
                 {{$hihaCurses = true}}
-            @endif 
+            @endif
         @endforeach
     @endif    
 

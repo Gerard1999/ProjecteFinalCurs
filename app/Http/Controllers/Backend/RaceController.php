@@ -131,7 +131,6 @@ class RaceController extends Controller
     public function destroy($idRace)
     {
         $race = Race::where('id',$idRace)->first();
-        dd($race);
 
         //Eliminem primer la imatge del disc
         Storage::disk('public')->delete($race->img_cover);

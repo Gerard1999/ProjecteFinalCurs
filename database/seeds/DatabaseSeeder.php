@@ -41,7 +41,7 @@ class DatabaseSeeder extends Seeder
             'shirt' => true,
             'date' => '2021-09-07',
             'location' => 'Setcases',
-            'img_cover' => 'races\DZTMYto8g8wLDen4NdAH2YAS9fzPgpTxZQAzrPd9.jpg',
+            'img_cover' => 'races\1BX57ZbQR1R869GiXb16AWAGYBbz3M9nJ5GUohIW.jpg',
             ]);
         //Modalitats Cursa Entrevalls
         App\Category::create([

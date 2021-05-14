@@ -636,7 +636,7 @@ p {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  width: 100%;
+  width: 75%;
   margin-top: 5%;
 }
 
@@ -662,9 +662,8 @@ p {
   text-align: center;
   list-style: none;
   margin: 2rem;
+  border: 1px solid #424242;
   border-radius: 10px;
-  -webkit-box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.2), 0 10px 10px 0 rgba(109, 109, 109, 0.527);
-          box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.2), 0 10px 10px 0 rgba(109, 109, 109, 0.527);
   background: -webkit-gradient(linear, left top, right top, color-stop(10%, #ffd393), color-stop(32%, #ffc05e), color-stop(80%, #ffa43d));
   background: linear-gradient(90deg, #ffd393 10%, #ffc05e 32%, #ffa43d 80%);
 }
@@ -675,6 +674,7 @@ p {
 }
 
 .private-zone .opcions ul li a {
+  overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -686,15 +686,22 @@ p {
           justify-content: center;
   color: #424242;
   font-size: 1.2rem;
+  font-weight: 600;
   text-decoration: none;
   text-align: center;
   width: 100%;
   height: 100%;
 }
 
+.private-zone .opcions ul li a:hover {
+  -webkit-box-shadow: 4px 4px 16px 4px rgba(0, 0, 0, 0.329);
+          box-shadow: 4px 4px 16px 4px rgba(0, 0, 0, 0.329);
+}
+
 @media screen and (max-width: 768px) {
   .private-zone .opcions {
     margin: 0;
+    width: 90%;
   }
   .private-zone .opcions ul {
     width: 100%;
@@ -1028,6 +1035,7 @@ footer h3 {
 }
 
 .formulari-inscripcio form select {
+  margin: 0.5rem 0rem;
   padding: 1rem;
   border-radius: 20px;
   text-align: center;
@@ -1067,6 +1075,13 @@ footer h3 {
 
 .taula .cosTaula tr td {
   padding: 0.5rem 0.4rem 0.5rem 1rem;
+}
+
+.taula .cosTaula tr td img {
+  width: 64px;
+  border-radius: 10px;
+  -webkit-box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.329);
+          box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.329);
 }
 
 .taula .cosTaula tr a {
@@ -1127,7 +1142,7 @@ h4 {
 }
 
 .titol h1 {
-  width: 80%;
+  width: 60%;
   border-bottom: 1px black solid;
   padding-bottom: 1rem;
   font-size: 2rem;
@@ -1177,7 +1192,20 @@ h4 {
 }
 
 .boto-verd:hover {
-  background: -webkit-gradient(linear, left top, right top, color-stop(10%, rgba(120, 250, 87, 0.726)), color-stop(32%, rgba(122, 252, 62, 0.733)), color-stop(80%, rgba(31, 241, 42, 0.767)));
-  background: linear-gradient(90deg, rgba(120, 250, 87, 0.726) 10%, rgba(122, 252, 62, 0.733) 32%, rgba(31, 241, 42, 0.767) 80%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(10%, rgba(19, 219, 35, 0.726)), color-stop(32%, rgba(79, 216, 16, 0.747)), color-stop(80%, rgba(7, 138, 14, 0.767)));
+  background: linear-gradient(90deg, rgba(19, 219, 35, 0.726) 10%, rgba(79, 216, 16, 0.747) 32%, rgba(7, 138, 14, 0.767) 80%);
+}
+
+.tornar {
+  margin: 1rem;
+  width: 75%;
+}
+
+.tornar .esquerra {
+  float: left;
+}
+
+.tornar .dreta {
+  float: right;
 }
 /*# sourceMappingURL=estils.css.map */
