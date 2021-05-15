@@ -8,7 +8,7 @@
         <h1>Inscrits a la {{$race->name}}</h1>
     </div>
     <div class="tornar">
-        <a class="boto boto-petit" href="{{ URL::previous() }}">&larr;Tornar Enrere</a>
+        <a class="boto boto-petit" href="{{ route('organizer.cursesorganitzador') }}">&larr;Tornar Enrere</a>
     </div>
     @if(count($llistaCursa) == 0)
             <h3 class="titol marges">Encara no hi ha ningú inscrit...</h3>
@@ -38,5 +38,5 @@
     @endif
 </div>
 
-
+@include('footer')
 @endsection

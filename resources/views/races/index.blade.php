@@ -7,7 +7,7 @@
         <h1>Les meves curses</h1>
     </div>
     <div class="tornar">
-        <a class="boto boto-petit esquerra" href="{{ URL::previous() }}">&larr;Tornar Enrere</a>
+        <a class="boto boto-petit esquerra" href="{{route('organizer.organizerzone')}}">&larr;Tornar Enrere</a>
         <a href="{{route('organizer.crearcursa')}}" class="boto boto-petit dreta">Crear una nova cursa</a>
     </div>
     @if (session('status'))

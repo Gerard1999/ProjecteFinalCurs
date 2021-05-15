@@ -4,6 +4,8 @@ sans-serif;
 //Colors
 $grisFosc: rgb(66, 66, 66);
 $grisClar: rgba(255, 255, 255, 0.466);
+$gradientTaronja: linear-gradient(90deg, rgb(255, 197, 109) 10%, rgb(255, 193, 94) 32%, rgb(255, 164, 61) 80%);
+;
 @import 'components/_header.scss';
 @import 'components/_curses.scss';
 @import 'components/_cursa.scss';
@@ -15,6 +17,7 @@ $grisClar: rgba(255, 255, 255, 0.466);
 @import 'components/creaciocurses';
 @import 'components/inscripcio';
 @import 'components/taulaCurses';
+@import 'components/formulariProducte';
 html {
     margin: 0;
     padding: 0;
@@ -71,7 +74,7 @@ h4 {
 }
 
 .boto-petit {
-    font-size: 0.8rem;
+    font-size: 1rem;
     padding: 0.5rem;
     border-radius: 10px;
 }

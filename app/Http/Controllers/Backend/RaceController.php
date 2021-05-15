@@ -30,14 +30,8 @@ class RaceController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-
-        $categoriesCursa = [
-            []
-        ];
-
-        return view('races.create', compact('categoriesCursa'));
+    public function create(){
+        return view('races.create');
     }
 
     /**
@@ -52,7 +46,7 @@ class RaceController extends Controller
         
         //Guardar cursa
         $race = Race::create([
-            'organizer_id'  => auth()->user()->id,
+            'organizer_id'  => auth()->user()->organizer->id,
             'name'          => $request->name,
             'location'      => $request->location,
             'description'   => $request->description,

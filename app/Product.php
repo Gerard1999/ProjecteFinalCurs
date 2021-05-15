@@ -6,6 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
+    protected $fillable = [
+        'name', 'description', 'link_photo', 'price', 'organizer_id', 'size_id'
+    ];
+
     //Relació : Un Producte pertany a un Organitzador
     public function organizer(){
         return $this->belongsTo(Organizer::class);

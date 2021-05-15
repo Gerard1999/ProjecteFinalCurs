@@ -99,7 +99,7 @@
                             </div>
                             <br><br>
                             <div class="row">
-                                <input id="save" type="submit" value="Crear Cursa" class="btn btn-primary btn-block">
+                                <input id="save" type="submit" value="Crear Cursa" class="boto boto-verd btn-block">
                             </div>
                         </div>
                     </form>

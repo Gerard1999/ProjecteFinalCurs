@@ -7,7 +7,8 @@
         <h1>Els meus productes</h1>
     </div>
     <div class="tornar">
-        <a class="boto boto-petit" href="{{ URL::previous() }}">&larr;Tornar Enrere</a>
+        <a class="boto boto-petit" href="{{ route('organizer.organizerzone')}}">&larr;Tornar Enrere</a>
+        <a href="{{route('organizer.crearproducte')}}" class="boto boto-petit dreta">Crear un nou producte</a>
     </div>
     @if (session('status'))
         <div class="alert alert-success" role="alert">
@@ -45,5 +46,5 @@
     </table>
     @endif
 </div>
-
+@include('footer')
 @endsection

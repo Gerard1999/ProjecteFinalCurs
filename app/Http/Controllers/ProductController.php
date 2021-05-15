@@ -18,6 +18,43 @@ class ProductController extends Controller
         return view('product', ['product' => $product]);
     }
 
+    //Retorna la vista amb una llista dels productes del organitzador
+    public function productsOrganizer(){
+        return view('organizerzone.products', [
+            'products' => Product::where('organizer_id', auth()->user()->organizer->id)->get()
+        ]);
+    }
+
+    //Retorna la vista del formulari de cració de productes
+    public function create(){
+        return view('products.create');
+    }
+
+
+    //Guardar el producte, la imatge i les talles
+    public function store(Request $request)
+    {
+        //Guardar Producte
+        $product = Product::create([
+            'organizer_id'  => auth()->user()->organizer->id,
+            'name'          => $request->name,
+            'description'   => $request->description,
+            'link_photo'    => $request->img,
+            'price'         => $request->price,
+            'size_id'       => 1,
+        ]);
+        
+        Storage::disk('public')->put('products/'. $request->img, $request->file('img'));
+
+        //Guardar Imatge
+        // if ($request->file('img')) {
+        //     $product->link_photo = $request->file('img')->store('products', 'public');
+        //     $product->save();
+        // }
+        
+        //Retornar
+        return back()->with('status', 'Producte creat amb èxit');
+    }
     //Eliminar un producte
     public function destroy($idProducte)
     {

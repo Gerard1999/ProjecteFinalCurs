@@ -15,10 +15,4 @@ class OrganizerController extends Controller
     public function organizerzone(){
         return view('organizerzone.index');
     }
-
-    public function products(){
-        return view('organizerzone.products', [
-            'products' => Product::where('organizer_id', 1)->get()
-        ]);
-    }
 }

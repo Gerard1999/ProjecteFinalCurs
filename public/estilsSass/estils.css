@@ -956,6 +956,7 @@ footer h3 {
 
 .container {
   margin-top: 3rem;
+  margin-bottom: 3rem;
 }
 
 .container .modalitats {
@@ -1105,6 +1106,56 @@ footer h3 {
   text-align: center;
 }
 
+.formulari-producte {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 4rem;
+}
+
+.formulari-producte .imatge-producte {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: auto;
+  margin-bottom: 2rem;
+  width: 16rem;
+  height: 16rem;
+  background: -webkit-gradient(linear, left top, right top, color-stop(10%, #ffc56d), color-stop(32%, #ffc15e), color-stop(80%, #ffa43d));
+  background: linear-gradient(90deg, #ffc56d 10%, #ffc15e 32%, #ffa43d 80%);
+  border-radius: 15px;
+  -webkit-box-shadow: 1px 2px 4px 4px rgba(0, 0, 0, 0.2);
+          box-shadow: 1px 2px 4px 4px rgba(0, 0, 0, 0.2);
+}
+
+.formulari-producte .imatge-producte h3 {
+  margin: auto;
+  font-weight: 500;
+}
+
+.formulari-producte input {
+  padding: 0.5rem;
+  border-radius: 10px;
+}
+
+.formulari-producte .boto {
+  margin-top: 2rem;
+}
+
 html {
   margin: 0;
   padding: 0;
@@ -1172,7 +1223,7 @@ h4 {
 }
 
 .boto-petit {
-  font-size: 0.8rem;
+  font-size: 1rem;
   padding: 0.5rem;
   border-radius: 10px;
 }

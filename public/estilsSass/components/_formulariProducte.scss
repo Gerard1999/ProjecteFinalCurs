@@ -1,0 +1,30 @@
+.formulari-producte {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 4rem;
+    .imatge-producte {
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        margin: auto;
+        margin-bottom: 2rem;
+        width: 16rem;
+        height: 16rem;
+        background: $gradientTaronja;
+        border-radius: 15px;
+        box-shadow: 1px 2px 4px 4px rgba(0, 0, 0, 0.2);
+        h3 {
+            margin: auto;
+            font-weight: 500;
+        }
+    }
+    input {
+        padding: 0.5rem;
+        border-radius: 10px;
+    }
+    .boto {
+        margin-top: 2rem;
+    }
+}
