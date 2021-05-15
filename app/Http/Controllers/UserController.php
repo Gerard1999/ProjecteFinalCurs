@@ -63,7 +63,7 @@ class UserController extends Controller
 
         Auth::login($user);
 
-        return redirect()->route('home');
+        return redirect()->route('races');
     }
 
     //Registrar un Organitzador
@@ -97,7 +97,7 @@ class UserController extends Controller
 
         Auth::login($user);
 
-        return redirect()->route('home');
+        return redirect()->route('races');
     }
 
     public function destroy(User $user){
