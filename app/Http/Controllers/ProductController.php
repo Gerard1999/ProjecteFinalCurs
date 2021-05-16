@@ -34,6 +34,12 @@ class ProductController extends Controller
     //Guardar el producte, la imatge i les talles
     public function store(Request $request)
     {
+        $request->validate([
+            'name'          => 'required|max:50',
+            'description'   => 'required',
+            'price'         => 'required',
+            'img'    => 'required',
+        ]);
         //Guardar Producte
         $product = Product::create([
             'organizer_id'  => auth()->user()->organizer->id,
@@ -55,6 +61,34 @@ class ProductController extends Controller
         //Retornar
         return back()->with('status', 'Producte creat amb èxit');
     }
+
+    //Retorna la vista per actualitzar un producte
+    public function edit(Product $product) {  
+        return view('products.edit', compact('product'));
+    }
+
+    //Actualitzar un producte
+    public function update(Request $request, Product $product){
+
+        $request->validate([
+            'name'          => 'required|max:50',
+            'description'   => 'required',
+            'price'         => 'required',
+            'img'           => 'required',
+        ]);
+        //Actualitzar les dades
+        $product->update($request->all());
+
+        if ($request->file('img')) {
+            //Eliminar la imatge anterior per actualitzar la nova.
+            Storage::disk('public')->delete($product->img_cover);
+            $product->link_photo = $request->file('img')->store('products', 'public');
+            $product->save();
+        }
+
+        return back()->with('status', 'Producte actualitzat amb èxit');
+    }
+
     //Eliminar un producte
     public function destroy($idProducte)
     {

@@ -22,25 +22,25 @@
                             <div class="row">
                                 <div class="col col-md-6">
                                     <label>Nom Cursa *</label>
-                                    <input id="name" type="text" name="name" class="form-control" required>
+                                    <input id="name" type="text" name="name" class="form-control">
                                 </div>
                                 <div class="col col-md-6">
                                     <label>Població *</label>
-                                    <input type="text" name="location" class="form-control" required>
+                                    <input type="text" name="location" class="form-control">
                                 </div>
                             </div>
                             <br>
                             <label>Descripció *</label>
-                            <textarea name="description" class="form-control" rows="4" required></textarea>
+                            <textarea name="description" class="form-control" rows="4"></textarea>
                             <br>
                             <div class="row">
                                 <div class="col col-md-7">
                                     <label>Imatge de Portada *</label>
-                                    <input type="file" name="img" required>
+                                    <input type="file" name="img">
                                 </div>
                                 <div class="col col-md-5">
                                     <label>Data *</label>
-                                    <input type="date" name="date" class="form-control" required>
+                                    <input type="date" name="date" class="form-control">
                                 </div>
                             </div>
                             <div class="modalitats">
@@ -53,43 +53,43 @@
                                     <div class="row">
                                         <div class="col col-md-4 col-12">
                                             <label>Nom modalitat *</label>
-                                            <input type="text" name="name_category_0" class="form-control" required>
+                                            <input type="text" name="name_category_0" class="form-control">
                                         </div>
                                         <div class="col col-md-4 col-6">
                                             <label>Quilòmetres *</label>
-                                            <input type="number" name="kms_0" class="form-control" required>
+                                            <input type="number" name="kms_0" class="form-control">
                                         </div>
                                         <div class="col col-md-4 col-6">  
                                             <label>Desnivell Positiu *</label>
-                                            <input type="number" name="elevation_gain_0" class="form-control" required>
+                                            <input type="number" name="elevation_gain_0" class="form-control">
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col col-md-3 col-6">
                                             <label>Lloc Inici *</label>
-                                            <input type="text" name="location_start_0" class="form-control" required>
+                                            <input type="text" name="location_start_0" class="form-control">
                                         </div>
                                         <div class="col col-md-3 col-6">
                                             <label>Lloc Fi *</label>
-                                            <input type="text" name="location_finish_0" class="form-control" required>
+                                            <input type="text" name="location_finish_0" class="form-control">
                                         </div>
                                         <div class="col col-md-3 col-6">  
                                             <label>Hora Inici *</label>
-                                            <input type="time" name="start_time_0" class="form-control" required>
+                                            <input type="time" name="start_time_0" class="form-control">
                                         </div>
                                         <div class="col col-md-3 col-6">
                                             <label>Preu *</label>
-                                            <input type="number" name="price_0" class="form-control" required>
+                                            <input type="number" name="price_0" class="form-control">
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col col-md-6">
                                             <label>Num. avituallaments *</label>
-                                            <input type="number" name="num_aid_station_0" class="form-control" required>
+                                            <input type="number" name="num_aid_station_0" class="form-control">
                                         </div>
                                         <div class="col col-md-6">  
                                             <label>Num. participants *</label>
-                                            <input type="number" name="num_participants_0" class="form-control" required>
+                                            <input type="number" name="num_participants_0" class="form-control">
                                         </div>
                                     </div>
                                 </div>
@@ -128,43 +128,43 @@
                     <div class="row">
                         <div class="col col-md-4 col-12">
                             <label>Nom modalitat *</label>
-                            <input type="text" name="name_category_${counter}" class="form-control" required>
+                            <input type="text" name="name_category_${counter}" class="form-control">
                         </div>
                         <div class="col col-md-4 col-6">
                             <label>Quilòmetres *</label>
-                            <input type="number" name="kms_${counter}" class="form-control" required>
+                            <input type="number" name="kms_${counter}" class="form-control">
                         </div>
                         <div class="col col-md-4 col-6">  
                             <label>Desnivell Positiu *</label>
-                            <input type="number" name="elevation_gain_${counter}" class="form-control" required>
+                            <input type="number" name="elevation_gain_${counter}" class="form-control">
                         </div>
                     </div>
                     <div class="row">
                         <div class="col col-md-3 col-6">
                             <label>Lloc Inici *</label>
-                            <input type="text" name="location_start_${counter}" class="form-control" required>
+                            <input type="text" name="location_start_${counter}" class="form-control">
                         </div>
                         <div class="col col-md-3 col-6">
                             <label>Lloc Fi *</label>
-                            <input type="text" name="location_finish_${counter}" class="form-control" required>
+                            <input type="text" name="location_finish_${counter}" class="form-control">
                         </div>
                         <div class="col col-md-3 col-6">  
                             <label>Hora Inici *</label>
-                            <input type="time" name="start_time_${counter}" class="form-control" required>
+                            <input type="time" name="start_time_${counter}" class="form-control">
                         </div>
                         <div class="col col-md-3 col-6">
                             <label>Preu *</label>
-                            <input type="number" name="price_${counter}" class="form-control" required>
+                            <input type="number" name="price_${counter}" class="form-control">
                         </div>
                     </div>
                     <div class="row">
                         <div class="col col-md-6">
                             <label>Num. avituallaments *</label>
-                            <input type="number" name="num_aid_station_${counter}" class="form-control" required>
+                            <input type="number" name="num_aid_station_${counter}" class="form-control">
                         </div>
                         <div class="col col-md-6">  
                             <label>Num. participants *</label>
-                            <input type="number" name="num_participants_${counter}" class="form-control" required>
+                            <input type="number" name="num_participants_${counter}" class="form-control">
                         </div>
                     </div>
                 </div>`;

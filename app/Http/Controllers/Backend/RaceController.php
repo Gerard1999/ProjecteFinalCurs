@@ -89,8 +89,7 @@ class RaceController extends Controller
      * @param  \App\Race  $race
      * @return \Illuminate\Http\Response
      */
-    public function edit(Race $race)
-    {
+    public function edit(Race $race){
         return view('races.edit', compact('race'));
     }
 
