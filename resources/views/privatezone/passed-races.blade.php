@@ -7,7 +7,7 @@
         <h1>Llista de curses realitzades</h1>
     </div>
     <div class="tornar">
-        <a class="boto boto-petit" href="{{ URL::previous() }}">&larr;Tornar Enrere</a>
+        <a class="boto boto-petit" href="{{route('runner.privatezone')}}">&larr;Tornar Enrere</a>
     </div>
     {{$hihaCurses = false}} 
     @if(count($inscripcions) == 0)

@@ -6,7 +6,13 @@
 </div>
 <div class="container">
     <div class="row justify-content-center">
+        <div class="tornar">
+            <a class="boto boto-petit" href="{{route('organizer.cursesorganitzador')}}">&larr;Tornar Enrere</a>
+        </div>
         <div class="col-md-6">
+
+            
+
             <div class="panel panel-default">
                 <div class="panel-body">
                     @if (session('status'))

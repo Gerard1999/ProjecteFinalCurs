@@ -26,6 +26,9 @@ class RaceRequest extends FormRequest
         return [
             'name' => 'required',
             'description' => 'required',
+            'location' => 'required',
+            'url_cover' => 'required',
+            'date' => 'required',
         ];
     }
 }

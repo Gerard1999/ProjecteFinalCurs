@@ -103,14 +103,20 @@ class RaceController extends Controller
     public function update(RaceRequest $request, Race $race)
     {
         //Actualitzar les dades
-        $race->update($request->all());
+        $race->organizer_id  = auth()->user()->organizer->id;
+        $race->name          = $request->name;
+        $race->location      = $request->location;
+        $race->description   = $request->description;
+        $race->url           = $request->url;
+        $race->img_cover     = $request->img;
+        $race->date          = $request->date;
 
         if ($request->file('img')) {
             //Eliminar la imatge anterior per actualitzar la nova.
             Storage::disk('public')->delete($race->img_cover);
             $race->img_cover = $request->file('img')->store('races', 'public');
-            $race->save();
         }
+        $race->update();
 
         return back()->with('status', 'Cursa actualitzada amb èxit');
     }

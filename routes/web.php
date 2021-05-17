@@ -60,7 +60,7 @@ Route::group([
         Route::get('/crear-cursa', [RaceController::class, 'create'])->name('crearcursa');
         Route::get('/editar-cursa/{race}', [RaceController::class, 'edit'])->name('editarcursa');
         Route::post('/guardar-cursa', [RaceController::class, 'store'])->name('guardarcursa');
-        Route::post('/reguardar-cursa', [RaceController::class, 'update'])->name('reguardarcursa');
+        Route::post('/reguardar-cursa/{race}', [RaceController::class, 'update'])->name('reguardarcursa');
         Route::delete('/eliminar-cursa/{id}', [RaceController::class, 'destroy'])->name('eliminarcursa');
         
         Route::get('/organizerzone', [OrganizerController::class, 'organizerzone'])->name('organizerzone');

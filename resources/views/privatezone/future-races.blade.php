@@ -7,16 +7,16 @@
         <h1>Llista de futures curses</h1>
     </div>
     <div class="tornar">
-        <a class="boto boto-petit" href="{{ URL::previous() }}">&larr;Tornar Enrere</a>
+        <a class="boto boto-petit" href="{{route('runner.privatezone')}}">&larr;Tornar Enrere</a>
     </div>
-    {{$hihaCurses = false}}
+    @php $hihaCurses = false @endphp
     @if(count($inscripcions) == 0)
             <h3 class="titol marges">No tens cap cursa a fer...</h3>
     
     @else
         @foreach($inscripcions as $inscripcio)
             @if($inscripcio->race->date > now()->toDateString())
-                {{$hihaCurses = true}}
+                @php $hihaCurses = true @endphp
             @endif
         @endforeach
     @endif    
