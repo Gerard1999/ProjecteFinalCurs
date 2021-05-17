@@ -26,7 +26,7 @@
     <form class="formulari-producte" action="{{route('organizer.reguardarproducte')}}" method="POST">
         @csrf
         <div class="imatge-producte">
-            <h3>Imatge</h3>
+            <img src="{{$product->get_image}}" alt="">
         </div>
         <label for="image">Imatge Producte:</label>
         <input type="file" name="img" value="{{$product->get_image}}">

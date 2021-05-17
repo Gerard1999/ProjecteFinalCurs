@@ -1079,6 +1079,9 @@ footer h3 {
 }
 
 .taula .cosTaula tr td img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 64px;
   height: 64px;
   border-radius: 10px;
   -webkit-box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.329);
@@ -1123,6 +1126,7 @@ footer h3 {
 }
 
 .formulari-producte .imatge-producte {
+  overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1133,7 +1137,7 @@ footer h3 {
           justify-content: center;
   margin: auto;
   margin-bottom: 2rem;
-  width: 16rem;
+  width: 14rem;
   height: 16rem;
   background: -webkit-gradient(linear, left top, right top, color-stop(10%, #ffc56d), color-stop(32%, #ffc15e), color-stop(80%, #ffa43d));
   background: linear-gradient(90deg, #ffc56d 10%, #ffc15e 32%, #ffa43d 80%);
@@ -1145,6 +1149,13 @@ footer h3 {
 .formulari-producte .imatge-producte h3 {
   margin: auto;
   font-weight: 500;
+}
+
+.formulari-producte .imatge-producte img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
 }
 
 .formulari-producte .talles-disponibles {

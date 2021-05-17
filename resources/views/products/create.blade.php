@@ -23,12 +23,12 @@
         </div>
     @endif
 
-    <form class="formulari-producte" action="{{route('organizer.guardarproducte')}}" method="POST">
+    <form class="formulari-producte" action="{{route('organizer.guardarproducte')}}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="imatge-producte">
             <h3>Imatge</h3>
         </div>
-        <label for="image">Imatge Producte:</label>
+        <label for="img">Imatge Producte:</label>
         <input type="file" name="img">
 
         <label for="name">Nom Producte:</label>

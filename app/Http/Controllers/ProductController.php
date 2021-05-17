@@ -63,10 +63,8 @@ class ProductController extends Controller
         //Guardar Imatge
         if ($request->file('img')) {
             $product->link_photo = $request->file('img')->store('products', 'public');
-            $product->save();
         }
-
-        //Storage::disk('public')->put('products/'. $request->img, $request->file('img'));
+        $product->save();
         
         //Retornar
         return back()->with('status', 'Producte creat amb èxit');
@@ -80,13 +78,15 @@ class ProductController extends Controller
     //Actualitzar un producte
     public function update(Request $request, Product $product){
 
+        //Validem
         $request->validate([
             'name'          => 'required|max:50',
             'description'   => 'required',
             'price'         => 'required',
             'img'           => 'required',
         ]);
-        //Actualitzar les dades
+
+        //Actualitzar les dades del producte en si
         $product->organizer_id  = auth()->user()->organizer->id;
         $product->name          = $request->name;
         $product->description   = $request->description;
@@ -95,6 +95,7 @@ class ProductController extends Controller
         $product->size_id       = $request->size_id;
         $product->update();
         
+        //Busquem les talles per l'id i les modifiquem
         $size = Size::where('id', $request->size_id)->first();
         $size->xs      = $request->xs;
         $size->s       = $request->s;
