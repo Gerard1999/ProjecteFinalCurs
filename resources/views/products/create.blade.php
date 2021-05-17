@@ -40,6 +40,38 @@
         <label for="price">Preu:</label>
         <input type="number" name="price">
 
+        <div class="talles-disponibles">
+            <h4>Talles Disponibles:</h4>
+            <div class="opcions-talles">
+                <div class="talla">
+                    <label for="xs">XS</label>
+                    <input type="checkbox" name="xs">
+                </div>
+                <div class="talla">
+                    <label for="s">S</label>
+                    <input type="checkbox" name="s">
+                </div>
+                <div class="talla">
+                    <label for="m">M</label>
+                    <input type="checkbox" name="m">
+                </div>
+                <div class="talla">
+                    <label for="l">L</label>
+                    <input type="checkbox" name="l">
+                </div>
+                <div class="talla">
+                    <label for="xl">XL</label>
+                    <input type="checkbox" name="xl">
+                </div>
+                <div class="talla">
+                    <label for="xxl">XXL</label>
+                    <input type="checkbox" name="xxl">
+                </div>
+            </div>
+        </div>
+        
+
+
         <input type="submit" name="enviar" value="Crear Producte" class="boto boto-petit boto-verd">
         
 

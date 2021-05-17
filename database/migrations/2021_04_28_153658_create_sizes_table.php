@@ -15,12 +15,12 @@ class CreateSizesTable extends Migration
     {
         Schema::create('sizes', function (Blueprint $table) {
             $table->id();
-            $table->boolean('xs')->nullable();
-            $table->boolean('s')->nullable();
-            $table->boolean('m')->nullable();
-            $table->boolean('l')->nullable();
-            $table->boolean('xl')->nullable();
-            $table->boolean('xxl')->nullable();
+            $table->string('xs')->nullable();
+            $table->string('s')->nullable();
+            $table->string('m')->nullable();
+            $table->string('l')->nullable();
+            $table->string('xl')->nullable();
+            $table->string('xxl')->nullable();
 
             $table->timestamps();
         });

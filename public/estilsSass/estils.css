@@ -1147,7 +1147,38 @@ footer h3 {
   font-weight: 500;
 }
 
-.formulari-producte input {
+.formulari-producte .talles-disponibles {
+  margin: 1.2rem 0 1.2rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.formulari-producte .talles-disponibles .opcions-talles {
+  font-size: 1.2rem;
+  margin-top: 1.2rem;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+.formulari-producte .talles-disponibles input {
   padding: 0.5rem;
   border-radius: 10px;
 }

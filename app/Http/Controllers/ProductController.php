@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Product;
+use App\Size;
 use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
@@ -34,11 +35,20 @@ class ProductController extends Controller
     //Guardar el producte, la imatge i les talles
     public function store(Request $request)
     {
+        $size = Size::create([
+            'xs'    => $request->xs,
+            's'     => $request->s,
+            'm'     => $request->m,
+            'l'     => $request->l,
+            'xl'    => $request->xl,
+            'xxl'   => $request->xxl,
+        ]);
+        
         $request->validate([
             'name'          => 'required|max:50',
             'description'   => 'required',
             'price'         => 'required',
-            'img'    => 'required',
+            'img'           => 'required',
         ]);
         //Guardar Producte
         $product = Product::create([
@@ -47,16 +57,16 @@ class ProductController extends Controller
             'description'   => $request->description,
             'link_photo'    => $request->img,
             'price'         => $request->price,
-            'size_id'       => 1,
+            'size_id'       => $size->id,
         ]);
         
-        Storage::disk('public')->put('products/'. $request->img, $request->file('img'));
-
         //Guardar Imatge
-        // if ($request->file('img')) {
-        //     $product->link_photo = $request->file('img')->store('products', 'public');
-        //     $product->save();
-        // }
+        if ($request->file('img')) {
+            $product->link_photo = $request->file('img')->store('products', 'public');
+            $product->save();
+        }
+
+        //Storage::disk('public')->put('products/'. $request->img, $request->file('img'));
         
         //Retornar
         return back()->with('status', 'Producte creat amb èxit');
@@ -77,7 +87,22 @@ class ProductController extends Controller
             'img'           => 'required',
         ]);
         //Actualitzar les dades
-        $product->update($request->all());
+        $product->organizer_id  = auth()->user()->organizer->id;
+        $product->name          = $request->name;
+        $product->description   = $request->description;
+        $product->link_photo    = $request->img;
+        $product->price         = $request->price;
+        $product->size_id       = $request->size_id;
+        $product->update();
+        
+        $size = Size::where('id', $request->size_id)->first();
+        $size->xs      = $request->xs;
+        $size->s       = $request->s;
+        $size->m       = $request->m;
+        $size->l       = $request->l;
+        $size->xl      = $request->xl;
+        $size->xxl     = $request->xxl;
+        $size->update();
 
         if ($request->file('img')) {
             //Eliminar la imatge anterior per actualitzar la nova.
