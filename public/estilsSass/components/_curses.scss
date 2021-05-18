@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0rem 0rem;
+    margin: 0rem 4rem;
     flex-wrap: wrap;
     .cursa {
         height: 20rem;
@@ -81,10 +81,11 @@
 
 @media screen and (max-width: 1024px) {
     .curses {
+        margin: 0;
         .cursa {
             font-size: 0.8rem;
             flex-direction: column;
-            width: 60%;
+            width: 100%;
             height: 30rem;
             .imatge-cursa {
                 width: 100%;
