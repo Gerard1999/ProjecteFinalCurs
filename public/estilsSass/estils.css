@@ -1,12 +1,20 @@
 nav {
+  background: -webkit-gradient(linear, left top, right top, color-stop(10%, #ffd393), color-stop(32%, #ffc05e), color-stop(80%, #ffa43d));
   background: linear-gradient(90deg, #ffd393 10%, #ffc05e 32%, #ffa43d 80%);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   min-height: 8vh;
   font-family: "Poppins", sans-serif;
-  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.596);
+  -webkit-box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.596);
+          box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.596);
 }
+
 nav .logo a {
   text-transform: uppercase;
   color: black;
@@ -14,35 +22,45 @@ nav .logo a {
   font-size: 1.6rem;
   letter-spacing: 5px;
   font-weight: normal;
+  -webkit-transition: color 0.4s ease;
   transition: color 0.4s ease;
   border: 1px #424242 solid;
   padding: 0.4rem;
 }
+
 nav .logo a:hover {
   color: #424242;
 }
+
 nav .nav-links,
 nav .user-links {
   margin: 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-around;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   width: 30%;
 }
+
 nav .nav-links li,
 nav .user-links li {
   list-style: none;
 }
+
 nav .nav-links .register,
 nav .user-links .register {
   border: 1px #424242 solid;
   padding: 0.4rem;
   border-radius: 5px;
 }
+
 nav .nav-links .register:hover,
 nav .user-links .register:hover {
   color: orange;
   background-color: #424242;
 }
+
 nav .nav-links a,
 nav .user-links a {
   margin: 0.2rem;
@@ -53,29 +71,39 @@ nav .user-links a {
   border-radius: 5px;
   padding: 8px;
 }
+
 nav .nav-links a:hover,
 nav .user-links a:hover {
   color: #424242;
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
 }
+
 nav .user-links {
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
+
 nav .user-links a {
   letter-spacing: normal;
 }
+
 nav .nav-links {
   width: 40%;
 }
+
 nav .linies {
   display: none;
   cursor: pointer;
 }
+
 nav .linies div {
   width: 25px;
   height: 3px;
   background-color: #424242;
   margin: 5px;
+  -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 
@@ -83,7 +111,6 @@ nav .linies div {
   .no-scroll {
     overflow-y: hidden;
   }
-
   body {
     overflow-x: hidden;
   }
@@ -96,13 +123,25 @@ nav .linies div {
     height: 92vh;
     top: 8vh;
     background: #ffd393;
+    background: -webkit-gradient(linear, left bottom, left top, color-stop(10%, #ffd393), color-stop(32%, #ffc05e), color-stop(80%, #ffa43d));
     background: linear-gradient(0deg, #ffd393 10%, #ffc05e 32%, #ffa43d 80%);
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     z-index: 1;
-    flex-direction: column;
-    align-items: center;
-    transform: translateX(100%);
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+    -webkit-transition: -webkit-transform 0.4s ease-in;
+    transition: -webkit-transform 0.4s ease-in;
     transition: transform 0.4s ease-in;
+    transition: transform 0.4s ease-in, -webkit-transform 0.4s ease-in;
     width: 40%;
   }
   body .nav-links li {
@@ -112,60 +151,87 @@ nav .linies div {
     display: block;
   }
   body .animacioLinies .linia1 {
-    transform: rotate(45deg) translate(2px, 9px);
+    -webkit-transform: rotate(45deg) translate(2px, 9px);
+            transform: rotate(45deg) translate(2px, 9px);
   }
   body .animacioLinies .linia2 {
     opacity: 0;
   }
   body .animacioLinies .linia3 {
-    transform: rotate(-45deg) translate(2px, -9px);
+    -webkit-transform: rotate(-45deg) translate(2px, -9px);
+            transform: rotate(-45deg) translate(2px, -9px);
   }
   body .nav-active {
-    transform: translateX(0%);
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
   }
   @-webkit-keyframes navAnimation {
     from {
-      transform: translateX(100px);
+      -webkit-transform: translateX(100px);
+              transform: translateX(100px);
     }
     to {
       opacity: 1;
-      transform: translateX(0px);
+      -webkit-transform: translateX(0px);
+              transform: translateX(0px);
     }
   }
   @keyframes navAnimation {
     from {
-      transform: translateX(100px);
+      -webkit-transform: translateX(100px);
+              transform: translateX(100px);
     }
     to {
       opacity: 1;
-      transform: translateX(0px);
+      -webkit-transform: translateX(0px);
+              transform: translateX(0px);
     }
   }
 }
+
 .curses {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin: 0rem 0rem;
-  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
+
 .curses .cursa {
   height: 20rem;
   width: 45%;
   border-radius: 10px;
   overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.2);
   margin: 2rem 2rem;
 }
+
 .curses .cursa .imatge-cursa {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   height: 100%;
   width: 50%;
   position: relative;
 }
+
 .curses .cursa .imatge-cursa img {
   width: 100%;
   height: 100%;
@@ -173,13 +239,20 @@ nav .linies div {
      object-fit: cover;
   z-index: 0;
 }
+
 .curses .cursa .imatge-cursa .modalitats {
   display: none;
 }
+
 .curses .cursa .imatge-cursa:hover {
-  filter: grayscale(70%);
+  -webkit-filter: grayscale(70%);
+          filter: grayscale(70%);
+  -webkit-transition: -webkit-filter 0.3s ease-in-out;
+  transition: -webkit-filter 0.3s ease-in-out;
   transition: filter 0.3s ease-in-out;
+  transition: filter 0.3s ease-in-out, -webkit-filter 0.3s ease-in-out;
 }
+
 .curses .cursa .imatge-cursa:hover .modalitats {
   display: block;
   position: absolute;
@@ -190,27 +263,41 @@ nav .linies div {
   z-index: 1;
   text-align: center;
 }
+
 .curses .cursa .informacio-cursa {
   height: 100%;
   width: 50%;
+  background: -webkit-gradient(linear, left top, right top, color-stop(10%, #ffc56d), color-stop(32%, #ffc15e), color-stop(80%, #ffa43d));
   background: linear-gradient(90deg, #ffc56d 10%, #ffc15e 32%, #ffa43d 80%);
   color: #424242;
   padding: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
+
 .curses .cursa .informacio-cursa h3 {
   text-align: center;
   font-weight: bold;
   letter-spacing: 2px;
 }
+
 .curses .cursa .informacio-cursa p {
   text-align: justify;
   margin: 0;
   font-size: 0.9rem;
 }
+
 .curses .cursa .informacio-cursa .link-cursa {
   border: #424242 1px solid;
   border-radius: 10px;
@@ -219,6 +306,7 @@ nav .linies div {
   color: #424242;
   text-decoration: none;
 }
+
 .curses .cursa .informacio-cursa .link-cursa:hover {
   color: orange;
   background-color: #424242;
@@ -227,7 +315,10 @@ nav .linies div {
 @media screen and (max-width: 1024px) {
   .curses .cursa {
     font-size: 0.8rem;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     width: 60%;
     height: 30rem;
   }
@@ -240,6 +331,7 @@ nav .linies div {
     height: 50%;
   }
 }
+
 @media screen and (max-width: 768px) {
   .curses {
     width: 90%;
@@ -256,145 +348,253 @@ nav .linies div {
     height: 40%;
   }
 }
+
 p {
   font-size: 1rem;
 }
 
 .pagina-cursa {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
+
 .pagina-cursa .header-imatge {
   height: 18rem;
   width: 100%;
 }
+
 .pagina-cursa .header-imatge img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
+
 .pagina-cursa .header-imatge .titular-cursa {
   width: 100%;
   height: 3rem;
+  background: -webkit-gradient(linear, left top, right top, color-stop(10%, rgba(255, 197, 109, 0.75)), color-stop(32%, rgba(255, 193, 94, 0.75)), color-stop(80%, rgba(255, 164, 61, 0.75)));
   background: linear-gradient(90deg, rgba(255, 197, 109, 0.75) 10%, rgba(255, 193, 94, 0.75) 32%, rgba(255, 164, 61, 0.75) 80%);
-  transform: translateY(-3rem);
+  -webkit-transform: translateY(-3rem);
+          transform: translateY(-3rem);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   letter-spacing: 10px;
 }
+
 .pagina-cursa .header-imatge .titular-cursa h2 {
   font-weight: 800;
 }
+
 .pagina-cursa .info-cursa {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   padding: 4rem 0rem;
   width: 100%;
 }
+
 .pagina-cursa .info-cursa .dades-generals {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   text-align: justify;
   width: 60%;
   line-height: 2.2;
 }
+
 .pagina-cursa .info-cursa .modalitats {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   width: 80%;
 }
+
 .pagina-cursa .info-cursa .modalitats .modalitat {
   max-width: 70%;
   height: auto;
-  background: #ffcc7f;
+  background: #fab958;
   padding: 1.5rem;
   margin: 1.2rem 0rem 1.2rem 0rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   border-radius: 5px;
-  box-shadow: 6px 6px 20px 6px rgba(0, 0, 0, 0.329);
-  flex-direction: column;
+  -webkit-box-shadow: 6px 6px 20px 6px rgba(0, 0, 0, 0.329);
+          box-shadow: 6px 6px 20px 6px rgba(0, 0, 0, 0.329);
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
+
 .pagina-cursa .info-cursa .modalitats .modalitat .modalitat-titol {
   width: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin: 1rem;
   border-top: 2px solid #424242;
   border-bottom: 2px solid #424242;
 }
+
 .pagina-cursa .info-cursa .modalitats .modalitat .modalitat-titol h3 {
   padding: 1rem;
   text-transform: uppercase;
   letter-spacing: 6px;
   font-weight: 600;
 }
+
 .pagina-cursa .info-cursa .modalitats .modalitat .modalitat-info {
   margin: 0;
   padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 75%;
 }
+
 .pagina-cursa .info-cursa .modalitats .modalitat .modalitat-info li {
-  background-color: #fbc36e;
   border-radius: 50%;
-  box-shadow: 1px 2px 4px 4px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 1px 2px 4px 4px rgba(0, 0, 0, 0.2);
+          box-shadow: 1px 2px 4px 4px rgba(0, 0, 0, 0.2);
   list-style: none;
   font-weight: 600;
   letter-spacing: 2px;
   font-family: 1.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   width: 7rem;
   height: 7rem;
 }
+
 .pagina-cursa .info-cursa .modalitats .modalitat .modalitat-info li img {
   height: 40px;
   width: 40px;
   margin-bottom: 10px;
 }
+
 .pagina-cursa .info-cursa .modalitats .modalitat .separador {
   background-color: #424242;
   width: 90%;
   height: 2px;
   margin: 2rem;
 }
+
 .pagina-cursa .info-cursa .modalitats .modalitat .modalitat-detalls {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 90%;
 }
+
 .pagina-cursa .info-cursa .modalitats .modalitat .modalitat-detalls ul {
   padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
 .pagina-cursa .info-cursa .modalitats .modalitat .modalitat-detalls ul li {
   width: 40%;
   list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin: 1rem;
 }
+
 .pagina-cursa .info-cursa .modalitats .modalitat .modalitat-detalls ul li img {
   width: 30px;
   height: 30px;
@@ -406,29 +606,56 @@ p {
 }
 
 .private-zone {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   margin-top: 5%;
 }
+
 .private-zone .opcions {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   width: 75%;
   margin-top: 5%;
 }
+
 .private-zone .opcions ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   width: 70%;
   padding: 0;
   margin: auto;
 }
+
 .private-zone .opcions ul li {
   width: 10rem;
   height: 10rem;
@@ -437,16 +664,26 @@ p {
   margin: 2rem;
   border: 1px solid #424242;
   border-radius: 10px;
+  background: -webkit-gradient(linear, left top, right top, color-stop(10%, #ffd393), color-stop(32%, #ffc05e), color-stop(80%, #ffa43d));
   background: linear-gradient(90deg, #ffd393 10%, #ffc05e 32%, #ffa43d 80%);
 }
+
 .private-zone .opcions ul li:hover {
-  filter: grayscale(25%);
+  -webkit-filter: grayscale(25%);
+          filter: grayscale(25%);
 }
+
 .private-zone .opcions ul li a {
   overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   color: #424242;
   font-size: 1.2rem;
   font-weight: 600;
@@ -455,9 +692,12 @@ p {
   width: 100%;
   height: 100%;
 }
+
 .private-zone .opcions ul li a:hover {
-  box-shadow: 4px 4px 16px 4px rgba(0, 0, 0, 0.329);
+  -webkit-box-shadow: 4px 4px 16px 4px rgba(0, 0, 0, 0.329);
+          box-shadow: 4px 4px 16px 4px rgba(0, 0, 0, 0.329);
 }
+
 @media screen and (max-width: 768px) {
   .private-zone .opcions {
     margin: 0;
@@ -477,69 +717,111 @@ footer {
   margin: 1.8rem 0 0 0;
   width: 100%;
   background: #424242;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-around;
-  flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
+
 footer .separador {
   width: 90%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   height: 0.2rem;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(27%, #57565e), color-stop(75%, #303033));
   background: linear-gradient(180deg, #57565e 27%, #303033 75%);
   margin: auto;
 }
+
 footer .links_pagina,
 footer .social {
   height: 10%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   margin-bottom: 0;
   list-style: none;
   padding: 1.2rem 0;
 }
+
 footer .links_pagina a,
 footer .social a {
   color: orange;
   font-size: large;
   text-decoration: none;
 }
+
 footer .links_pagina a:hover,
 footer .social a:hover {
   color: rgba(255, 255, 255, 0.466);
 }
+
 footer .social {
   margin: 0 12rem 0 12rem;
-  justify-content: space-evenly;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
 }
+
 footer .social li {
   border-radius: 20px;
   padding: 0.1rem;
 }
+
 footer .social li:hover {
-  box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.356);
+  -webkit-box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.356);
+          box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.356);
 }
+
 footer h3 {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   color: rgba(255, 255, 255, 0.466);
   text-shadow: 6px -6px 8px black;
   padding: 0.5rem;
 }
 
 .contingut {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-self: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-item-align: center;
+      align-self: center;
 }
+
 .contingut .productes {
   width: 90%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-self: center;
-  justify-content: space-evenly;
+  -ms-flex-item-align: center;
+      align-self: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   padding: 4rem 0 0 4rem;
-  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
+
 .contingut .productes .producte {
   border-radius: 5px;
   padding-bottom: 5rem;
@@ -548,37 +830,63 @@ footer h3 {
   margin-right: 2rem;
   margin-bottom: 2rem;
   overflow: hidden;
+  -webkit-transition: -webkit-box-shadow 0.3s ease;
+  transition: -webkit-box-shadow 0.3s ease;
   transition: box-shadow 0.3s ease;
+  transition: box-shadow 0.3s ease, -webkit-box-shadow 0.3s ease;
+  background: -webkit-gradient(linear, left top, right top, color-stop(10%, #ffc56d), color-stop(32%, #ffc15e), color-stop(80%, #ffa43d));
   background: linear-gradient(90deg, #ffc56d 10%, #ffc15e 32%, #ffa43d 80%);
 }
+
 .contingut .productes .producte:hover {
-  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 3px 6px 0 rgba(109, 109, 109, 0.527);
+  -webkit-box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 3px 6px 0 rgba(109, 109, 109, 0.527);
+          box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 3px 6px 0 rgba(109, 109, 109, 0.527);
 }
+
 .contingut .productes .producte a {
   text-decoration: none;
 }
+
 .contingut .productes .producte .imatge-producte {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 1rem;
   background-color: white;
 }
+
 .contingut .productes .producte .imatge-producte img {
   -o-object-fit: cover;
      object-fit: cover;
   width: 100%;
 }
+
 .contingut .productes .producte .dades-producte {
   height: auto;
   padding: 0.8rem;
   font-weight: bold;
   color: #424242;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
+
 .contingut .productes .producte .dades-producte .separador {
   width: 90%;
   height: 1px;
@@ -588,25 +896,34 @@ footer h3 {
 
 .contingut-producte {
   margin-top: 4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
 .contingut-producte .imatge-producte {
   height: 22rem;
   width: 22rem;
 }
+
 .contingut-producte .imatge-producte img {
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
+
 .contingut-producte .detalls-producte {
   margin-left: 2rem;
 }
+
 .contingut-producte .detalls-producte h2 {
   text-transform: uppercase;
   margin-bottom: 1.5rem;
 }
+
 .contingut-producte .detalls-producte .talles {
   width: -webkit-min-content;
   width: -moz-min-content;
@@ -615,15 +932,23 @@ footer h3 {
   border: #424242 solid 1px;
   border-radius: 20px;
   padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
 .contingut-producte .detalls-producte .talles li {
   margin: 0;
   list-style: none;
   padding: 1rem;
 }
+
 .contingut-producte .detalls-producte .talles li:hover {
   background: #424242;
   color: rgba(255, 255, 255, 0.466);
@@ -633,152 +958,242 @@ footer h3 {
   margin-top: 3rem;
   margin-bottom: 3rem;
 }
+
 .container .modalitats {
   margin: 2rem 0 2rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
+
 .container .modalitats .modalitat {
   padding: 2rem;
   margin-bottom: 2rem;
-  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2);
   border-radius: 10px;
 }
+
 .container .modalitats .modalitat .header-modalitat {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   margin-bottom: 1.4rem;
 }
+
 .container .modalitats .modalitat .header-modalitat h4 {
   text-decoration: underline;
 }
+
 .container .boto-afegir {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .formulari-inscripcio {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
+
 .formulari-inscripcio form {
   padding: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   width: 80%;
 }
+
 .formulari-inscripcio form select {
   margin: 0.5rem 0rem;
   padding: 1rem;
   border-radius: 20px;
   text-align: center;
+  background: -webkit-gradient(linear, left top, right top, color-stop(10%, rgba(255, 197, 109, 0.5)), color-stop(32%, rgba(255, 193, 94, 0.5)), color-stop(80%, rgba(255, 164, 61, 0.5)));
   background: linear-gradient(90deg, rgba(255, 197, 109, 0.5) 10%, rgba(255, 193, 94, 0.5) 32%, rgba(255, 164, 61, 0.5) 80%);
   border: 1px solid #424242;
 }
 
 .taula {
-  box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.342);
+  -webkit-box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.342);
+          box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.342);
   margin: 5rem 0rem;
   width: 60%;
   border-radius: 10px;
   font-size: 1.2rem;
   overflow: hidden;
 }
+
 .taula .capcalera {
   width: 100%;
   background: #facd7b;
   padding: 1rem;
 }
+
 .taula .capcalera th {
   padding: 0.5rem 0.4rem 0.5rem 1rem;
 }
+
 .taula .cosTaula {
   font-size: 1rem;
 }
+
 .taula .cosTaula tr {
+  background: -webkit-gradient(linear, left top, right top, color-stop(10%, rgba(255, 197, 109, 0.8)), color-stop(32%, rgba(255, 193, 94, 0.8)), color-stop(80%, rgba(255, 164, 61, 0.8)));
   background: linear-gradient(90deg, rgba(255, 197, 109, 0.8) 10%, rgba(255, 193, 94, 0.8) 32%, rgba(255, 164, 61, 0.8) 80%);
 }
+
 .taula .cosTaula tr td {
   padding: 0.5rem 0.4rem 0.5rem 1rem;
 }
+
 .taula .cosTaula tr td img {
   -o-object-fit: cover;
      object-fit: cover;
   width: 64px;
   height: 64px;
   border-radius: 10px;
-  box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.329);
+  -webkit-box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.329);
+          box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.329);
 }
+
 .taula .cosTaula tr a {
   text-decoration: none;
   color: #424242;
   font-weight: 600;
 }
+
 .taula .cosTaula tr a:hover {
   color: #fab958;
   text-shadow: 0px 0px 10px black;
 }
+
 .taula .cosTaula tr:nth-child(odd) {
+  background: -webkit-gradient(linear, left top, right top, color-stop(10%, #ffc56d), color-stop(32%, #ffc15e), color-stop(80%, #ffa43d));
   background: linear-gradient(90deg, #ffc56d 10%, #ffc15e 32%, #ffa43d 80%);
 }
+
 .taula th,
 .taula td {
   text-align: center;
 }
 
 .formulari-producte {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-content: center;
-  justify-content: center;
-  flex-direction: column;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   margin-bottom: 4rem;
 }
+
 .formulari-producte .imatge-producte {
   overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-content: center;
-  justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin: auto;
   margin-bottom: 2rem;
   width: 14rem;
   height: 16rem;
+  background: -webkit-gradient(linear, left top, right top, color-stop(10%, #ffc56d), color-stop(32%, #ffc15e), color-stop(80%, #ffa43d));
   background: linear-gradient(90deg, #ffc56d 10%, #ffc15e 32%, #ffa43d 80%);
   border-radius: 15px;
-  box-shadow: 1px 2px 4px 4px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 1px 2px 4px 4px rgba(0, 0, 0, 0.2);
+          box-shadow: 1px 2px 4px 4px rgba(0, 0, 0, 0.2);
 }
+
 .formulari-producte .imatge-producte h3 {
   margin: auto;
   font-weight: 500;
 }
+
 .formulari-producte .imatge-producte img {
   -o-object-fit: cover;
      object-fit: cover;
   width: 100%;
   height: 100%;
 }
+
 .formulari-producte .talles-disponibles {
   margin: 1.2rem 0 1.2rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
+
 .formulari-producte .talles-disponibles .opcions-talles {
   font-size: 1.2rem;
   margin-top: 1.2rem;
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-evenly;
-  align-content: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -ms-flex-line-pack: center;
+      align-content: center;
 }
+
 .formulari-producte .talles-disponibles input {
   padding: 0.5rem;
   border-radius: 10px;
 }
+
 .formulari-producte .boto {
   margin-top: 2rem;
 }
@@ -786,7 +1201,8 @@ footer h3 {
 html {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
@@ -803,14 +1219,21 @@ h4 {
 }
 
 .titol {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   text-align: center;
   margin: 2rem;
   text-transform: uppercase;
   letter-spacing: 4px;
 }
+
 .titol h1 {
   width: 60%;
   border-bottom: 1px black solid;
@@ -823,6 +1246,7 @@ h4 {
 }
 
 .boto {
+  background: -webkit-gradient(linear, left top, right top, color-stop(10%, rgba(255, 197, 109, 0.75)), color-stop(32%, rgba(255, 193, 94, 0.75)), color-stop(80%, rgba(255, 164, 61, 0.75)));
   background: linear-gradient(90deg, rgba(255, 197, 109, 0.75) 10%, rgba(255, 193, 94, 0.75) 32%, rgba(255, 164, 61, 0.75) 80%);
   padding: 0.8rem;
   border-radius: 20px;
@@ -831,10 +1255,12 @@ h4 {
   color: #424242;
   font-size: 1.1rem;
 }
+
 .boto:hover {
   text-decoration: none;
   color: #424242;
   font-weight: 600;
+  background: -webkit-gradient(linear, left top, right top, color-stop(10%, rgba(255, 197, 109, 0.945)), color-stop(32%, rgba(255, 193, 94, 0.938)), color-stop(80%, rgba(255, 164, 61, 0.952)));
   background: linear-gradient(90deg, rgba(255, 197, 109, 0.945) 10%, rgba(255, 193, 94, 0.938) 32%, rgba(255, 164, 61, 0.952) 80%);
 }
 
@@ -845,18 +1271,21 @@ h4 {
 }
 
 .boto-vermell:hover {
+  background: -webkit-gradient(linear, left top, right top, color-stop(10%, rgba(255, 82, 76, 0.726)), color-stop(32%, rgba(235, 88, 62, 0.733)), color-stop(80%, rgba(255, 61, 61, 0.767)));
   background: linear-gradient(90deg, rgba(255, 82, 76, 0.726) 10%, rgba(235, 88, 62, 0.733) 32%, rgba(255, 61, 61, 0.767) 80%);
   color: orange;
   text-shadow: 0px 0px 10px black;
 }
 
 .boto-blau:hover {
+  background: -webkit-gradient(linear, left top, right top, color-stop(10%, rgba(85, 157, 240, 0.726)), color-stop(32%, rgba(40, 128, 243, 0.733)), color-stop(80%, rgba(19, 88, 236, 0.767)));
   background: linear-gradient(90deg, rgba(85, 157, 240, 0.726) 10%, rgba(40, 128, 243, 0.733) 32%, rgba(19, 88, 236, 0.767) 80%);
   color: orange;
   text-shadow: 0px 0px 10px black;
 }
 
 .boto-verd:hover {
+  background: -webkit-gradient(linear, left top, right top, color-stop(10%, rgba(19, 219, 35, 0.726)), color-stop(32%, rgba(79, 216, 16, 0.747)), color-stop(80%, rgba(7, 138, 14, 0.767)));
   background: linear-gradient(90deg, rgba(19, 219, 35, 0.726) 10%, rgba(79, 216, 16, 0.747) 32%, rgba(7, 138, 14, 0.767) 80%);
 }
 
@@ -864,9 +1293,12 @@ h4 {
   margin: 1rem;
   width: 75%;
 }
+
 .tornar .esquerra {
   float: left;
 }
+
 .tornar .dreta {
   float: right;
-}/*# sourceMappingURL=estils.css.map */
+}
+/*# sourceMappingURL=estils.css.map */

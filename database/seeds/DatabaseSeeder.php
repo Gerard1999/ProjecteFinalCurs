@@ -97,7 +97,7 @@ class DatabaseSeeder extends Seeder
         App\Product::create([
             'name' => 'Samarreta tècnica Scott',
             'description' => 'Samarreta tècnia Scott de trail running. LLeugeresa i transpirabilitat',
-            'price' => 24,
+            'price' => 24.99,
             'link_photo' => 'products/scott.jpg',
             'size_id' => 1,
             'organizer_id' => 1,
@@ -105,7 +105,7 @@ class DatabaseSeeder extends Seeder
         App\Product::create([
             'name' => 'Samarreta tècnica Adidas',
             'description' => 'Samarreta tècnia Adidas de trail running. LLeugeresa i transpirabilitat',
-            'price' => 20,
+            'price' => 19.99,
             'link_photo' => 'products/adidas.jpg',
             'size_id' => 1,
             'organizer_id' => 1,
