@@ -50,6 +50,25 @@ class Race extends Model
     public function getGetImageAttribute(){
         return url("storage/$this->img_cover");
     }
+
+    //Filtratges Pàgina Principal
+
+    public function scopeNomCursa($query, $nomCursa){
+        if ($nomCursa) {
+            return $query->where('races.name', 'LIKE', "%$nomCursa%");
+        }
+    }
+    public function scopePoblacio($query, $poblacio){
+        if ($poblacio) {
+            return $query->where('races.location', 'LIKE', "%$poblacio%");
+        }
+    }
+
+    public function scopeMinKms($query, $minKms){
+        if ($minKms) {
+            return $query->where('races.categories.kms', '<', "%$minKms%");
+        }
+    }
 }
 
 

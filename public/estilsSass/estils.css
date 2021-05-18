@@ -189,6 +189,73 @@ nav .linies div {
   }
 }
 
+.formulari-filtratge {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 60%;
+  margin: auto;
+  padding: 2rem;
+  background: -webkit-gradient(linear, left top, right top, color-stop(10%, #ffc56d), color-stop(32%, #ffc15e), color-stop(80%, #ffa43d));
+  background: linear-gradient(90deg, #ffc56d 10%, #ffc15e 32%, #ffa43d 80%);
+  border-radius: 10px;
+  -webkit-box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.2);
+}
+
+.formulari-filtratge h3 {
+  margin: auto;
+  margin-bottom: 2rem;
+}
+
+.formulari-filtratge form {
+  margin: auto;
+  width: 75%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.formulari-filtratge form input[type=text],
+.formulari-filtratge form input[type=number] {
+  margin: 0.2rem 1rem;
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  -webkit-box-decoration-break: unset;
+          box-decoration-break: unset;
+  background: #ffd17b;
+  border: 0;
+}
+
+.formulari-filtratge form input[type=text]:focus,
+.formulari-filtratge form input[type=number]:focus {
+  outline: none;
+  border-bottom: 2px #424242 solid;
+  background: rgba(255, 228, 163, 0.301);
+}
+
+.formulari-filtratge form input[type=submit] {
+  width: 60%;
+  margin-top: 1.5rem;
+}
+
 .curses {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -202,6 +269,12 @@ nav .linies div {
   margin: 0rem 4rem;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+}
+
+.curses .curses-buides {
+  margin: 4rem;
+  text-transform: uppercase;
+  font-size: 2rem;
 }
 
 .curses .cursa {

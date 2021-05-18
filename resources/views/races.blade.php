@@ -4,8 +4,25 @@
 <div class="titol">
     <h1>Curses</h1>
 </div>
+<div class="formulari-filtratge">
+    <h3>Busca una cursa</h3>
+    <form action="{{route('races')}}" method="GET">
+        @csrf
+        <input type="text" name="nomCursa" placeholder="Nom Cursa" value="{{ old('nomCursa') }}">
+        <input type="text" name="poblacio" placeholder="Població">
+        <input type="number" name="kmsmin" placeholder="Min. kms">
+        <input type="number" name="kmsmax" placeholder="Max. kms">
+        <input type="number" name="metresmin" placeholder="Min. desnivell">
+        <input type="number" name="metresmax" placeholder="Max. desnivell">
+        <input type="submit" value="Buscar" class="boto boto-blau">
+    </form>
+</div>
 <div class="curses" id="races">
-
+    @if(count($races) <= 1)
+        <div class="curses-buides">
+            <h2>No hi ha curses amb aquests filtres...</h2>
+        </div>
+    @endif
     @foreach($races as $race)
     <div class="cursa">
         <div class="informacio-cursa">
