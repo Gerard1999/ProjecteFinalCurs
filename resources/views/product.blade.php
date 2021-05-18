@@ -15,24 +15,14 @@
             <h3>{{$product->price}}€</h3>
             <h5>Talles disponibles:</h5>
             <ul class="talles">
-                @if($product->size->xs)
-                    <li>XS</li>
-                @endif
-                @if($product->size->s)
-                    <li>S</li>
-                @endif
-                @if($product->size->m)
-                    <li>M</li>
-                @endif
-                @if($product->size->l)
-                    <li>L</li>
-                @endif
-                @if($product->size->xl)
-                    <li>XL</li>
-                @endif
-                @if($product->size->xxl)
-                    <li>XXL</li>
-                @endif
+                <select name="select">
+                    <option name="xs" @if(!$product->size->xs) disabled @endif>XS</option>
+                    <option name="s" @if(!$product->size->s) disabled @endif>S</option>
+                    <option name="m" @if(!$product->size->m) disabled @endif>M</option>
+                    <option name="l" @if(!$product->size->l) disabled @endif>L</option>
+                    <option name="xl" @if(!$product->size->xl) disabled @endif>XL</option>
+                    <option name="xxl" @if(!$product->size->xxl) disabled @endif>XXL</option>
+                  </select>
             </ul>
         </div>
     </div>

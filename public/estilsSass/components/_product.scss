@@ -20,7 +20,7 @@
             width: min-content;
             overflow: hidden;
             border: $grisFosc solid 1px;
-            border-radius: 20px;
+            border-radius: 5px;
             padding: 0;
             display: flex;
             justify-content: center;
@@ -32,6 +32,14 @@
                 &:hover {
                     background: $grisFosc;
                     color: $grisClar;
+                }
+            }
+            select {
+                width: 10rem;
+                padding: 0.4rem 1.2rem;
+                option:disabled {
+                    background: $grisFosc;
+                    color: white;
                 }
             }
         }
