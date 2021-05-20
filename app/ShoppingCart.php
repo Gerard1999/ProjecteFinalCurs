@@ -29,4 +29,17 @@ class ShoppingCart extends Model
         }
     }
 
+    //Funció que retorna el total de procuctes en el carro
+    public function quantityProducts() {
+        return $this->cartDetails->sum('quantity');
+    } 
+
+    //Funció que calcula el preu del carro
+    public function priceCart() {
+        $total = 0;
+        foreach ($this->cartDetails as $cartDetail) {
+            $total += $cartDetail->price * $cartDetail->quantity;
+        }
+        return $total;
+    }
 }
