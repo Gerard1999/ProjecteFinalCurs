@@ -46,10 +46,32 @@
             <ul class="user-links">
 
                 <!-- Shopping Cart-->
-                <i class="fa fa-shopping-cart"></i>
-                @if($shopping_cart->quantityProducts() != 0)
-                <span class="badge">{{$shopping_cart->quantityProducts()}}</span>
-                @endif
+                <div class="dropdown">
+                    <button class="dropdown-toggle icona-carro" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-shopping-cart "></i>
+                        @if($shopping_cart->quantityProducts() != 0)
+                        <span class="badge">{{$shopping_cart->quantityProducts()}}</span>
+                        @endif
+                    </button>
+                    <div class="dropdown-menu carro-compra" aria-labelledby="dropdownMenuButton">
+                       <!-- DIV detalls Carro de la Compra -->
+                            <div class="detalls-carro">
+                                <ul class="shopping-cart-items">
+                                    @foreach($shopping_cart->cartDetails as $cartDetail)
+                                        <li>{{$cartDetail->product->name}} ({{$cartDetail->quantity}}) - {{number_format($cartDetail->price, 2, ',', '.')}}€</li>
+
+                                    @endforeach
+                                </ul>
+                                <div class="total-carro">
+                                    <h4>Total: {{$shopping_cart->priceCart()}}€</h4>
+                                </div>
+                                <div class="boto boto-petit boto-blau">
+                                    <a href="">Realitzar Comanda</a>
+                                </div>
+                            </div>
+                    </div>
+                  </div>
+                
                 <!--end shopping-cart -->
 
                 @guest
@@ -99,20 +121,6 @@
             </div>
 
         </nav>
-
-        <!-- DIV detalls Carro de la Compra -->
-        <div class="carro-compra">
-            <div class="detalls-carro">
-                <div class="shopping-cart-items">
-                    <h6>Producte</h6>
-                    <h6>Producte</h6>
-                    <h6>Producte</h6>
-                </div>
-                <div class="total-carro">
-                    <h4>Total: {{$shopping_cart->priceCart()}}€</h4>
-                </div>
-            </div>
-        </div>   
 
 
         <main>

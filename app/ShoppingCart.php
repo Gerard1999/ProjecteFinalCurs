@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Session;
 
 class ShoppingCart extends Model
 {
@@ -41,5 +42,13 @@ class ShoppingCart extends Model
             $total += $cartDetail->price * $cartDetail->quantity;
         }
         return number_format($total, 2, ',', '.');
+    }
+
+
+    //Funció que retorna el id del Carro de la Compra actual
+    public static function getShoppingCartId() {
+        $shopping_cart_id = Session::get('shopping_cart_id');
+        $shopping_cart = self::findOrCreateBySessionId($shopping_cart_id);
+        return $shopping_cart;
     }
 }

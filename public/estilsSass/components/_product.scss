@@ -16,31 +16,24 @@
             text-transform: uppercase;
             margin-bottom: 1.5rem;
         }
-        .talles {
+        .dades {
             width: min-content;
             overflow: hidden;
-            border: $grisFosc solid 1px;
-            border-radius: 5px;
             padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
-            li {
-                margin: 0;
-                list-style: none;
-                padding: 1rem;
-                &:hover {
-                    background: $grisFosc;
-                    color: $grisClar;
-                }
-            }
-            select {
-                width: 10rem;
-                padding: 0.4rem 1.2rem;
-                option:disabled {
-                    background: $grisFosc;
-                    color: white;
-                }
+        }
+        select,
+        input {
+            width: 10rem;
+            padding: 0.4rem 1.2rem;
+            margin-bottom: 0.6rem;
+            border-radius: 10px;
+            outline: none;
+            option:disabled {
+                background: $grisFosc;
+                color: white;
             }
         }
     }

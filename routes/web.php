@@ -28,6 +28,10 @@ Route::get('products/{product}', [ProductController::class, 'product'])->name('p
 
 Auth::routes();
 
+Route::resource('shoppingCartDetail', 'ShoppingCartDetailController')->only([
+        'store', 'update', 'destroy'
+])->names('shopping_cart_details');
+
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 //Rutes dels corredors

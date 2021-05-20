@@ -14,16 +14,22 @@
             <h2>{{$product->name}}</h2>
             <h3>{{$product->price}}€</h3>
             <h5>Talles disponibles:</h5>
-            <ul class="talles">
-                <select name="select">
-                    <option name="xs" @if(!$product->size->xs) disabled @endif>XS</option>
-                    <option name="s" @if(!$product->size->s) disabled @endif>S</option>
-                    <option name="m" @if(!$product->size->m) disabled @endif>M</option>
-                    <option name="l" @if(!$product->size->l) disabled @endif>L</option>
-                    <option name="xl" @if(!$product->size->xl) disabled @endif>XL</option>
-                    <option name="xxl" @if(!$product->size->xxl) disabled @endif>XXL</option>
-                  </select>
-            </ul>
+            <div class="dades">
+                <form action="{{route('shopping_cart_details.store')}}" method="post">
+                    @csrf
+                    <input type="number" value="{{$product->id}}" hidden name="product_id">
+                    <select name="size">
+                        <option name="xs" @if(!$product->size->xs) disabled @endif>XS</option>
+                        <option name="s" @if(!$product->size->s) disabled @endif>S</option>
+                        <option name="m" @if(!$product->size->m) disabled @endif>M</option>
+                        <option name="l" @if(!$product->size->l) disabled @endif>L</option>
+                        <option name="xl" @if(!$product->size->xl) disabled @endif>XL</option>
+                        <option name="xxl" @if(!$product->size->xxl) disabled @endif>XXL</option>
+                      </select>
+                      <input type="number" name="quantity" value="1">
+                      <input type="submit" value="Afegir al Carro" class="boto boto-petit boto-blau">
+                </form>
+            </div>
         </div>
     </div>
 </div>

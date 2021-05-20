@@ -3,30 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\ShoppingCartDetail;
+use App\ShoppingCart;
+use App\Product;
+use Session;
 use Illuminate\Http\Request;
 
 class ShoppingCartDetailController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -35,29 +18,15 @@ class ShoppingCartDetailController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\ShoppingCartDetail  $shoppingCartDetail
-     * @return \Illuminate\Http\Response
-     */
-    public function show(ShoppingCartDetail $shoppingCartDetail)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\ShoppingCartDetail  $shoppingCartDetail
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(ShoppingCartDetail $shoppingCartDetail)
-    {
-        //
+        $product = Product::find($request->product_id);
+        $shopping_cart = ShoppingCart::getShoppingCartId();
+        $detail = $shopping_cart->cartDetails->create([
+            'quantity'      =>$request->quantity,
+            'price'         =>$product->price,
+            'product_id'    =>$request->product_id,
+            'size'          =>$request->size,
+        ]);
+        dd($detail);
     }
 
     /**

@@ -17,7 +17,7 @@
                         <!--<p>{{$product->description}}</p>-->
                     <div class="separador"></div>
                     <div class="footer-producte"></div>
-                    <h5 class="preu">{{$product->price}}.00€</h5>
+                    <h5 class="preu">{{number_format($product->price, 2, ',', '.')}}€</h5>
                 </div>
             </a>
         </div>

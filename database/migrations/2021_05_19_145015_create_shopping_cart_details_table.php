@@ -17,6 +17,7 @@ class CreateShoppingCartDetailsTable extends Migration
             $table->id();
             $table->integer('quantity')->default(1);
             $table->decimal('price');
+            $table->string('size')->nullable();
 
             //Clau forana de Carro de la Compra
             $table->unsignedBigInteger('shopping_cart_id')->nullable();
