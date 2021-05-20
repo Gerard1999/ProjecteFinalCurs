@@ -40,6 +40,6 @@ class ShoppingCart extends Model
         foreach ($this->cartDetails as $cartDetail) {
             $total += $cartDetail->price * $cartDetail->quantity;
         }
-        return $total;
+        return number_format($total, 2, ',', '.');
     }
 }

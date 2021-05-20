@@ -18,7 +18,7 @@
     </form>
 </div>
 <div class="curses" id="races">
-    @if(count($races) <= 1)
+    @if(count($races) <= 0)
         <div class="curses-buides">
             <h2>No hi ha curses amb aquests filtres...</h2>
         </div>

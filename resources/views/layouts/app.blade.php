@@ -44,6 +44,14 @@
                 <li><a href="">Galeria</a></li>
             </ul>
             <ul class="user-links">
+
+                <!-- Shopping Cart-->
+                <i class="fa fa-shopping-cart"></i>
+                @if($shopping_cart->quantityProducts() != 0)
+                <span class="badge">{{$shopping_cart->quantityProducts()}}</span>
+                @endif
+                <!--end shopping-cart -->
+
                 @guest
                     <li>
                         <a href="{{ route('login') }}">Entrar</a>
@@ -91,6 +99,21 @@
             </div>
 
         </nav>
+
+        <!-- DIV detalls Carro de la Compra -->
+        <div class="carro-compra">
+            <div class="detalls-carro">
+                <div class="shopping-cart-items">
+                    <h6>Producte</h6>
+                    <h6>Producte</h6>
+                    <h6>Producte</h6>
+                </div>
+                <div class="total-carro">
+                    <h4>Total: {{$shopping_cart->priceCart()}}€</h4>
+                </div>
+            </div>
+        </div>   
+
 
         <main>
             @yield('content')
