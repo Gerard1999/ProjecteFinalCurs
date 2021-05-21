@@ -26,9 +26,10 @@ class ShoppingCartProvider extends ServiceProvider
     public function boot()
     {
         view()->composer('*', function($view) {
-            $shopping_cart_id = Session::get('shopping_cart_id');
+            $session_name = 'shopping_cart_id';
+            $shopping_cart_id = Session::get($session_name);
             $shopping_cart = ShoppingCart::findOrCreateBySessionId($shopping_cart_id);
-            Session::put('shopping_cart_id', $shopping_cart->id);
+            Session::put($session_name, $shopping_cart->id);
             $view->with('shopping_cart', $shopping_cart);
         });
     }

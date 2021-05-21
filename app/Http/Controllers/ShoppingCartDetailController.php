@@ -20,13 +20,14 @@ class ShoppingCartDetailController extends Controller
     {
         $product = Product::find($request->product_id);
         $shopping_cart = ShoppingCart::getShoppingCartId();
-        $detail = $shopping_cart->cartDetails->create([
+        $detail = $shopping_cart->cartDetails()->create([
             'quantity'      =>$request->quantity,
             'price'         =>$product->price,
             'product_id'    =>$request->product_id,
             'size'          =>$request->size,
         ]);
-        dd($detail);
+
+        return back()->with('status', "S'ha afegit el producte correctament");
     }
 
     /**

@@ -4,7 +4,7 @@
 <div class="titol">
     <h1>Curses</h1>
 </div>
-<div class="formulari-filtratge">
+<div class="formulari-filtratge" id="races">
     <h3>Busca una cursa</h3>
     <form action="{{route('races')}}" method="GET">
         @csrf
@@ -17,7 +17,7 @@
         <input type="submit" value="Buscar" class="boto boto-blau">
     </form>
 </div>
-<div class="curses" id="races">
+<div class="curses">
     @if(count($races) <= 0)
         <div class="curses-buides">
             <h2>No hi ha curses amb aquests filtres...</h2>

@@ -28,6 +28,11 @@
                       </select>
                       <input type="number" name="quantity" value="1">
                       <input type="submit" value="Afegir al Carro" class="boto boto-petit boto-blau">
+                      @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif
                 </form>
             </div>
         </div>
