@@ -20,6 +20,10 @@ class ShoppingCartDetailController extends Controller
     {
         $product = Product::find($request->product_id);
         $shopping_cart = ShoppingCart::getShoppingCartId();
+
+        //Ha de retornar true i el ID del DetailProduct, després suma la quantitat al detall
+        ShoppingCartDetail::checkProductSizeDetail($shopping_cart, $request);
+        
         $detail = $shopping_cart->cartDetails()->create([
             'quantity'      =>$request->quantity,
             'price'         =>$product->price,

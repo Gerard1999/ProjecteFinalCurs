@@ -55,20 +55,27 @@
                     </button>
                     <div class="dropdown-menu carro-compra" aria-labelledby="dropdownMenuButton">
                        <!-- DIV detalls Carro de la Compra -->
-                            <div class="detalls-carro">
-                                <ul class="shopping-cart-items">
+                       <div class="header-carro">
+                           <h3>Cistella ({{$shopping_cart->quantityProducts()}})</h3>
+                       </div>
+                        <div class="detalls-carro">
+                            <ul class="shopping-cart-items">
+                                @if($shopping_cart->cartDetails)
                                     @foreach($shopping_cart->cartDetails as $cartDetail)
-                                        <li>{{$cartDetail->product->name}} ({{$cartDetail->quantity}}) - {{number_format($cartDetail->price, 2, ',', '.')}}€</li>
-
+                                        <li>
+                                            <img src="{{asset($cartDetail->product->get_image)}}" width="32px" alt="">
+                                            {{$cartDetail->product->name}} ({{$cartDetail->quantity}})
+                                        </li>
                                     @endforeach
-                                </ul>
-                                <div class="total-carro">
-                                    <h4>Total: {{$shopping_cart->priceCart()}}€</h4>
-                                </div>
-                                <div class="boto boto-petit boto-blau">
-                                    <a href="">Realitzar Comanda</a>
-                                </div>
+                                @else
+                                        <h4>No hi ha productes</h4>
+                                @endif
+                            </ul>
+                            <div class="total-carro">
+                                <h4>Total: {{$shopping_cart->priceCart()}}€</h4>
                             </div>
+                            <a href="" class="boto boto-petit boto-blau">Realitzar Comanda</a>
+                        </div>
                     </div>
                   </div>
                 

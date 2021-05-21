@@ -1277,11 +1277,6 @@ footer h3 {
   margin-top: 2rem;
 }
 
-.container {
-  margin: auto;
-  width: 80%;
-}
-
 .badge {
   background-color: #6394F8;
   border-radius: 50px;
@@ -1308,20 +1303,38 @@ footer h3 {
           box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
 }
 
-.icona-carro .carro-compra {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 1.5rem;
+.carro-compra {
+  width: 21rem;
+  padding: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
 }
 
-.icona-carro .carro-compra .detalls-carro {
-  width: 50rem;
-  background: white;
-  border: 1px solid black;
-  position: relative;
-  padding: 1.5rem;
-  border-radius: 3px;
+.carro-compra .header-carro {
+  padding: 0.6rem;
+  background: -webkit-gradient(linear, left top, right top, color-stop(10%, #ffc56d), color-stop(32%, #ffc15e), color-stop(80%, #ffa43d));
+  background: linear-gradient(90deg, #ffc56d 10%, #ffc15e 32%, #ffa43d 80%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.carro-compra .header-carro h3 {
+  font-weight: bolder;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+.carro-compra .detalls-carro {
+  background: -webkit-gradient(linear, left top, right top, color-stop(10%, rgba(255, 197, 109, 0.692)), color-stop(32%, rgba(255, 193, 94, 0.671)), color-stop(80%, rgba(255, 164, 61, 0.678)));
+  background: linear-gradient(90deg, rgba(255, 197, 109, 0.692) 10%, rgba(255, 193, 94, 0.671) 32%, rgba(255, 164, 61, 0.678) 80%);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1333,22 +1346,32 @@ footer h3 {
           flex-direction: column;
 }
 
-.icona-carro .carro-compra .detalls-carro .shopping-cart-items {
+.carro-compra .detalls-carro .shopping-cart-items {
   padding: 1rem;
 }
 
-.icona-carro .carro-compra .detalls-carro .shopping-cart-items .item-name {
-  display: block;
-  padding-top: 10px;
-  font-size: 16px;
+.carro-compra .detalls-carro .shopping-cart-items li {
+  margin: 1rem;
 }
 
-.icona-carro .carro-compra .detalls-carro .shopping-cart-items .item-price {
-  margin-right: 8px;
+.carro-compra .detalls-carro .shopping-cart-items img {
+  border-radius: 5px;
+  margin-right: 10px;
 }
 
-.icona-carro .carro-compra .detalls-carro .total-carro {
-  margin-left: 1rem;
+.carro-compra .detalls-carro .total-carro {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.carro-compra .detalls-carro .total-carro h4 {
+  font-weight: bolder;
 }
 
 .cart-icon {
