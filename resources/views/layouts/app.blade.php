@@ -64,7 +64,9 @@
                                     @foreach($shopping_cart->cartDetails as $cartDetail)
                                         <li>
                                             <img src="{{asset($cartDetail->product->get_image)}}" width="32px" alt="">
-                                            {{$cartDetail->product->name}} ({{$cartDetail->quantity}})
+                                            {{$cartDetail->product->name}} 
+                                            @if($cartDetail->size)-{{$cartDetail->size}}-@endif 
+                                            ({{$cartDetail->quantity}})
                                         </li>
                                     @endforeach
                                 @else

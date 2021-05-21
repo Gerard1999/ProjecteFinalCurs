@@ -8,6 +8,7 @@ use App\Http\Controllers\OrganizerController;
 use App\Http\Controllers\RunnerController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\InscriptionsListController;
+use App\Http\Controllers\ShoppingCartDetailController;
 use App\Http\Controllers\Backend\RaceController;
 /*
 |--------------------------------------------------------------------------
@@ -29,8 +30,9 @@ Route::get('products/{product}', [ProductController::class, 'product'])->name('p
 Auth::routes();
 
 Route::resource('shoppingCartDetail', 'ShoppingCartDetailController')->only([
-        'store', 'update', 'destroy'
+        'update', 'destroy'
 ])->names('shopping_cart_details');
+Route::post('/afegir-producte-carro', [ShoppingCartDetailController::class, 'store'])->name('addproduct');
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
