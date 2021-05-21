@@ -13,4 +13,8 @@ class ShoppingCartDetail extends Model
     public function product() {
         return $this->belongsTo(Product::class);
     }
+
+    public function shoppingCart() {
+        return $this->belongsTo(ShoppingCart::class);
+    }
 }
