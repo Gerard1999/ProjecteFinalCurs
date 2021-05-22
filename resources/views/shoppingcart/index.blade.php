@@ -8,6 +8,7 @@
 </div>
 
 <div class="pagina-cursa flexHoritzontal">
+    @if(count($shopping_cart->cartDetails) >= 1)
     <table class="taula taula-petita">
         <thead class="capcalera">
             <th>Producte</th>
@@ -31,7 +32,9 @@
             @endforeach
         </tbody>
     </table>
-    
+    @else
+    <h3 class="titol marges">No tens cap producte a la cistella...</h3>
+    @endif
     <div class="quadre-total">
         <h3>Total: {{$shopping_cart->priceCart()}}€</h3>
         <a href="" class="boto boto-blau">Finalitzar Compra</a>
