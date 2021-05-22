@@ -777,6 +777,11 @@ footer h3 {
   color: #fab958;
   text-shadow: 0px 0px 10px black;
 }
+.taula .cosTaula tr .casellaRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
 .taula .cosTaula tr:nth-child(odd) {
   background: linear-gradient(90deg, #ffc56d 10%, #ffc15e 32%, #ffa43d 80%);
 }
@@ -925,10 +930,17 @@ footer h3 {
   margin: 25px 0 15px 0;
 }
 
-.clearfix:after {
-  content: "";
-  display: table;
-  clear: both;
+.quadre-total {
+  width: 15%;
+  height: 10rem;
+  background: #fab958;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 5px;
+  box-shadow: 6px 6px 20px 6px rgba(0, 0, 0, 0.329);
+  flex-direction: column;
 }
 
 html {
@@ -1020,4 +1032,19 @@ h4 {
 }
 .tornar .dreta {
   float: right;
+}
+
+.taula-petita {
+  width: 40%;
+  font-size: 1rem;
+}
+
+.flexHoritzontal {
+  margin: auto;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: row;
+  flex-wrap: wrap;
 }/*# sourceMappingURL=estils.css.map */

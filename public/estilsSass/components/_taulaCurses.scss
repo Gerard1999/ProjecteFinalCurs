@@ -36,6 +36,11 @@
                     text-shadow: 0px 0px 10px black;
                 }
             }
+            .casellaRow {
+                display: flex;
+                align-items: center;
+                justify-content: space-evenly;
+            }
         }
         tr:nth-child(odd) {
             background: linear-gradient(90deg, rgb(255, 197, 109) 10%, rgb(255, 193, 94) 32%, rgb(255, 164, 61) 80%);

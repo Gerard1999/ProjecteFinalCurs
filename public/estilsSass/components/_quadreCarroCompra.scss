@@ -85,8 +85,15 @@
     margin: 25px 0 15px 0;
 }
 
-.clearfix:after {
-    content: "";
-    display: table;
-    clear: both;
+.quadre-total {
+    width: 15%;
+    height: 10rem;
+    background: rgb(250, 185, 88);
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: 6px 6px 20px 6px rgba(0, 0, 0, 0.329);
+    flex-direction: column;
 }

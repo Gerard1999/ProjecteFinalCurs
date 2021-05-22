@@ -9,6 +9,7 @@ use App\Http\Controllers\RunnerController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\InscriptionsListController;
 use App\Http\Controllers\ShoppingCartDetailController;
+use App\Http\Controllers\ShoppingCartController;
 use App\Http\Controllers\Backend\RaceController;
 /*
 |--------------------------------------------------------------------------
@@ -25,14 +26,17 @@ Route::get('/', [PageController::class, 'races'])->name('races');
 Route::get('curses/{race}', [PageController::class, 'race'])->name('race');
 
 Route::get('products', [ProductController::class, 'products'])->name('products');
-Route::get('products/{product}', [ProductController::class, 'product'])->name('product');
+Route::get('product/{product}', [ProductController::class, 'product'])->name('product');
 
 Auth::routes();
 
+//Inici Rutes Carro de la Compra
 Route::resource('shoppingCartDetail', 'ShoppingCartDetailController')->only([
-        'update', 'destroy'
-])->names('shopping_cart_details');
+                'update', 'destroy'
+                ])->names('shopping_cart_details');
 Route::post('/afegir-producte-carro', [ShoppingCartDetailController::class, 'store'])->name('addproduct');
+Route::get('/el-meu-carro', [ShoppingCartController::class, 'index'])->name('shoppingcart');
+//Fi Rutes Carro de la Compra
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 

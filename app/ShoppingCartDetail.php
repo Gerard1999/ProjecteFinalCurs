@@ -30,4 +30,9 @@ class ShoppingCartDetail extends Model
             }
         }
     }
+
+    //Funció que retorna el subtotal de CartDetail arrodonit a dos decimals
+    public function sumPriceDetail() {
+        return number_format($this->quantity * $this->product->price, 2, ',', '.');
+    }
 }

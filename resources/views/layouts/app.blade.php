@@ -76,7 +76,7 @@
                             <div class="total-carro">
                                 <h4>Total: {{$shopping_cart->priceCart()}}€</h4>
                             </div>
-                            <a href="" class="boto boto-petit boto-blau">Realitzar Comanda</a>
+                            <a href="{{route('shoppingcart')}}" class="boto boto-petit boto-blau">Realitzar Comanda</a>
                         </div>
                     </div>
                   </div>

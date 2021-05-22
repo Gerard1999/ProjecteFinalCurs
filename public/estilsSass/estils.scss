@@ -115,3 +115,18 @@ h4 {
         float: right;
     }
 }
+
+.taula-petita {
+    width: 40%;
+    font-size: 1rem;
+}
+
+.flexHoritzontal {
+    margin: auto;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row;
+    flex-wrap: wrap;
+}

@@ -3,7 +3,7 @@
 @section('content')
 <div class="pagina-cursa">
     <div class="tornar">
-        <a class="boto boto-petit esquerra" href="{{ URL::previous() }}">&larr;Tornar Enrere</a>
+        <a class="boto boto-petit esquerra" href="{{ route('products') }}">&larr;Tornar Enrere</a>
     </div>
 
     <div class="contingut-producte">
