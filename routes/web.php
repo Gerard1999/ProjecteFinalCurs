@@ -36,6 +36,7 @@ Route::resource('shoppingCartDetail', 'ShoppingCartDetailController')->only([
                 ])->names('shopping_cart_details');
 Route::post('/afegir-producte-carro', [ShoppingCartDetailController::class, 'store'])->name('addproduct');
 Route::get('/el-meu-carro', [ShoppingCartController::class, 'index'])->name('shoppingcart');
+Route::delete('/esborrar-detall/{detail}', [ShoppingCartDetailController::class, 'destroy'])->name('deleteCartDetail');
 //Fi Rutes Carro de la Compra
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');

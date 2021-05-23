@@ -56,8 +56,12 @@ class ShoppingCartDetailController extends Controller
      * @param  \App\ShoppingCartDetail  $shoppingCartDetail
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ShoppingCartDetail $shoppingCartDetail)
+    public function destroy($idShoppingCartDetail)
     {
-        //
+        $shoppingCartDetail = ShoppingCartDetail::where('id',$idShoppingCartDetail)->first();
+
+        $shoppingCartDetail->delete();
+
+        return back();
     }
 }

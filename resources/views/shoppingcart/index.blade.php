@@ -15,6 +15,7 @@
             <th>Preu</th>
             <th>Unitats</th>
             <th>Subtotal</th>
+            <th>Eliminar</th>
         </thead>
         <tbody class="cosTaula">
             @foreach($shopping_cart->cartDetails as $detail)
@@ -28,6 +29,13 @@
                     <td>{{$detail->product->price}}€</td>
                     <td>{{$detail->quantity}}</td>
                     <td>{{$detail->sumPriceDetail()}}€</td>
+                    <td>
+                        <form action="{{ route('deleteCartDetail', $detail) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <input type="submit" value="Eliminar" class="boto boto-petit boto-vermell">
+                        </form>
+                    </td>
                 </tr>
             @endforeach
         </tbody>
