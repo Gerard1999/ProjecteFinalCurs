@@ -944,6 +944,42 @@ footer h3 {
   flex-direction: column;
 }
 
+.portada {
+  height: 100%;
+  width: 100%;
+  background: url("../../images/portada/portada.jpg");
+  background-size: cover;
+  padding: 14rem 24rem;
+}
+.portada .portada-titol {
+  width: 24rem;
+  height: 14rem;
+  border-radius: 15px;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+.portada .portada-titol h1 {
+  font-family: "Satisfy", cursive;
+  font-size: 4.5rem;
+  text-shadow: 5px 5px 3px #424242;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+.portada .portada-titol .boto {
+  box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.534);
+}
+.portada .portada-titol .boto a {
+  font-family: "Satisfy", cursive;
+  font-size: 1.5rem;
+  color: black;
+}
+.portada .portada-titol .boto a:hover {
+  font-weight: 900;
+}
+
 html {
   margin: 0;
   padding: 0;

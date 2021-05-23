@@ -1,3 +1,10 @@
+<section class="portada">
+    <div class="portada-titol">
+        <h1>Trail Races</h1>
+        <a href="#races" class="boto">Veure Curses</a>
+    </div>
+</section>
+
 @extends('layouts.app')
 
 @section('content')
