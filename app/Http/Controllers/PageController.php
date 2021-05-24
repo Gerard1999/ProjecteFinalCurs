@@ -25,4 +25,12 @@ class PageController extends Controller
     public function race(Race $race){
         return view('race', ['race' => $race]);
     }
+
+
+    public function images() {
+
+        return view('gallery', [
+            'races' => Race::paginate(6)
+        ]);
+    }
 }

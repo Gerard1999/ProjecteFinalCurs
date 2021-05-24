@@ -28,6 +28,8 @@ Route::get('curses/{race}', [PageController::class, 'race'])->name('race');
 Route::get('products', [ProductController::class, 'products'])->name('products');
 Route::get('product/{product}', [ProductController::class, 'product'])->name('product');
 
+Route::get('galeria', [PageController::class, 'images'])->name('gallery');
+
 Auth::routes();
 
 //Inici Rutes Carro de la Compra

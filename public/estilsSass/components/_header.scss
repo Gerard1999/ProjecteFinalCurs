@@ -16,6 +16,7 @@ nav {
         transition: color 0.4s ease;
         border: 1px $grisFosc solid;
         padding: 0.4rem;
+        margin: 0;
         &:hover {
             color: $grisFosc;
         }

@@ -36,13 +36,12 @@
         <nav>
             <div class="logo">
                 <h4><a href="/">Trail Races</a></h4>
-                <!--<img src="images/logo.png" alt="">-->
             </div>
             
             <ul class="nav-links">
                 <li><a href="/#races">Curses</a></li>
                 <li><a href="{{ route('products') }}">Botiga</a></li>
-                <li><a href="">Galeria</a></li>
+                <li><a href="{{ route('gallery') }}">Galeria</a></li>
             </ul>
             <ul class="user-links">
 
