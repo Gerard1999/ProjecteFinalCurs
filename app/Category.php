@@ -13,7 +13,7 @@ class Category extends Model
      */
     protected $fillable = [
         'race_id', 'name_category', 'kms', 'elevation_gain', 'location_start',
-        'location_finish', 'start_time', 'num_aid_station', 'price', 'max_participants',
+        'location_finish', 'start_time', 'num_aid_station', 'price', 'max_participants', 'elevation_img'
     ];
 
 
@@ -25,5 +25,12 @@ class Category extends Model
     //Relació : Una Categoria té moltes Inscripccions
     public function inscriptions(){
         return $this->hasMany(InscriptionsList::class);
+    }
+
+    /**
+     * Funció que retorna la url de la imatge de la categoria
+     */
+    public function getGetImageAttribute(){
+        return url("storage/$this->elevation_img");
     }
 }

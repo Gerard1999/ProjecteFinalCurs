@@ -20,7 +20,6 @@ class RaceController extends Controller
     public function index()
     {
         $races = Race::where('organizer_id', auth()->user()->organizer->id)
-                    ->orderBy('date')
                     ->get();
         return view('races.index', compact('races'));
     }
@@ -70,14 +69,20 @@ class RaceController extends Controller
                 'price'             => $request['price_'.$i],
                 'num_aid_station'   => $request['num_aid_station_'.$i],
                 'max_participants'  => $request['num_participants_'.$i],
+                'elevation_img'     => $request['elevation_img_'.$i],
             ]);
+            if ($request->file('elevation_img_'.$i)) {
+                $category->elevation_img = $request->file('elevation_img_'.$i)->store('races', 'public');
+                $category->save();
+            }
         }
-
-        //Guardar Imatge
+        //Guardar Imatges
         if ($request->file('img')) {
             $race->img_cover = $request->file('img')->store('races', 'public');
             $race->save();
         }
+
+        
         
         //Retornar
         return back()->with('status', 'Creat amb èxit');

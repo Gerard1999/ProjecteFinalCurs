@@ -18,7 +18,7 @@ class PageController extends Controller
                 ->nomCursa($nomCursa)
                 ->poblacio($poblacio)
                 ->minKms($minKms)
-                ->paginate()
+                ->paginate(4)
         ]);
     }
 

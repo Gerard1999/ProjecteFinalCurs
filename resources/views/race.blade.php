@@ -48,6 +48,12 @@
                         <li><img src="{{asset('images/group.png')}}">Màxim participants: {{$category->max_participants}}</li>
                     </ul>
                 </div>
+                @if($category->elevation_img)
+                    <div class="foto-desnivell">
+                        <h4>PERFIL:</h4>
+                        <img src="{{$category->get_image}}" alt="">
+                    </div>
+                @endif
             </div>
             @endforeach
         </div>

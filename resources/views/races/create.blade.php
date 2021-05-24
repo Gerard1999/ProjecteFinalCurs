@@ -98,6 +98,12 @@
                                             <input type="number" name="num_participants_0" class="form-control">
                                         </div>
                                     </div>
+                                    <div class="row">
+                                        <div class="col col-md-12">
+                                            <label>Imatge Perfil</label>
+                                            <input type="file" name="elevation_img_0">
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="boto-afegir">

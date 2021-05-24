@@ -29,6 +29,7 @@ class CreateCategoriesTable extends Migration
             $table->integer('num_aid_station');
             $table->float('price');
             $table->integer('max_participants');
+            $table->string('elevation_img')->nullable();
 
 
             $table->timestamps();
