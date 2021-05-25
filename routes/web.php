@@ -11,6 +11,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\InscriptionsListController;
 use App\Http\Controllers\ShoppingCartDetailController;
 use App\Http\Controllers\ShoppingCartController;
+use App\Http\Controllers\SuperAdminController;
 use App\Http\Controllers\Backend\RaceController;
 /*
 |--------------------------------------------------------------------------
