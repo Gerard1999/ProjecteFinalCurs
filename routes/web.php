@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Artisan;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\HomeController;
@@ -106,3 +107,8 @@ Route::post('/register-runner', [UserController::class,'storeRunner'])->name('us
 Route::post('/register-organizer', [UserController::class,'storeOrganizer'])->name('users.storeOrganizer');
 /*Route::delete('users/{user}', 'UserController@destroy')->name('users.destroy');*/
 //use App\User;
+
+
+Route::get('storage-link', function(){
+        Artisan::call('storage:link');
+});

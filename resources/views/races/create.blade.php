@@ -28,25 +28,50 @@
                             <div class="row">
                                 <div class="col col-md-6">
                                     <label>Nom Cursa *</label>
-                                    <input id="name" type="text" name="name" class="form-control">
+                                    <input id="name" type="text" name="name" class="form-control @error('name') is-invalid @enderror">
+                                    @error('name')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                 </div>
                                 <div class="col col-md-6">
                                     <label>Població *</label>
-                                    <input type="text" name="location" class="form-control">
+                                    <input type="text" name="location" class="form-control @error('location') is-invalid @enderror">
+                                    @error('location')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                 </div>
                             </div>
                             <br>
                             <label>Descripció *</label>
-                            <textarea name="description" class="form-control" rows="4"></textarea>
-                            <br>
+                                <textarea name="description" class="form-control @error('description') is-invalid @enderror" rows="4"></textarea>
+                                    @error('location')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                <br>
                             <div class="row">
                                 <div class="col col-md-7">
                                     <label>Imatge de Portada *</label>
-                                    <input type="file" name="img">
+                                    <input type="file" name="img" class="@error('img') is-invalid @enderror">
+                                    @error('img')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                 </div>
                                 <div class="col col-md-5">
                                     <label>Data *</label>
-                                    <input type="date" name="date" class="form-control">
+                                    <input type="date" name="date" class="form-control @error('date') is-invalid @enderror">
+                                    @error('img')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="modalitats">
@@ -59,50 +84,100 @@
                                     <div class="row">
                                         <div class="col col-md-4 col-12">
                                             <label>Nom modalitat *</label>
-                                            <input type="text" name="name_category_0" class="form-control">
+                                            <input type="text" name="name_category_0" class="form-control @error('name_category_0') is-invalid @enderror">
+                                            @error('name_category_0')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
                                         </div>
                                         <div class="col col-md-4 col-6">
                                             <label>Quilòmetres *</label>
-                                            <input type="number" name="kms_0" class="form-control">
+                                            <input type="number" name="kms_0" class="form-control @error('kms_0') is-invalid @enderror">
+                                            @error('kms_0')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
                                         </div>
                                         <div class="col col-md-4 col-6">  
                                             <label>Desnivell Positiu *</label>
-                                            <input type="number" name="elevation_gain_0" class="form-control">
+                                            <input type="number" name="elevation_gain_0" class="form-control  @error('elevation_gain_0') is-invalid @enderror">
+                                            @error('elevation_gain_0')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col col-md-3 col-6">
                                             <label>Lloc Inici *</label>
-                                            <input type="text" name="location_start_0" class="form-control">
+                                            <input type="text" name="location_start_0" class="form-control @error('location_start_0') is-invalid @enderror">
+                                            @error('location_start_0')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror                                        
                                         </div>
                                         <div class="col col-md-3 col-6">
                                             <label>Lloc Fi *</label>
-                                            <input type="text" name="location_finish_0" class="form-control">
+                                            <input type="text" name="location_finish_0" class="form-control @error('location_finish_0') is-invalid @enderror">
+                                            @error('location_finish_0')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror                                         
                                         </div>
                                         <div class="col col-md-3 col-6">  
                                             <label>Hora Inici *</label>
-                                            <input type="time" name="start_time_0" class="form-control">
+                                            <input type="time" name="start_time_0" class="form-control  @error('start_time_0') is-invalid @enderror">
+                                            @error('start_time_0')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror                                         
                                         </div>
                                         <div class="col col-md-3 col-6">
                                             <label>Preu *</label>
-                                            <input type="number" name="price_0" class="form-control">
+                                            <input type="number" name="price_0" class="form-control @error('price_0') is-invalid @enderror">
+                                            @error('price_0')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror                                         
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col col-md-6">
                                             <label>Num. avituallaments *</label>
-                                            <input type="number" name="num_aid_station_0" class="form-control">
-                                        </div>
+                                            <input type="number" name="num_aid_station_0" class="form-control @error('num_aid_station_0') is-invalid @enderror">
+                                            @error('num_aid_station_0')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror 
+                                    </div>
                                         <div class="col col-md-6">  
                                             <label>Num. participants *</label>
-                                            <input type="number" name="num_participants_0" class="form-control">
+                                            <input type="number" name="num_participants_0" class="form-control @error('num_participants_0') is-invalid @enderror">
+                                        
+                                            @error('num_participants_0')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror 
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col col-md-12">
                                             <label>Imatge Perfil</label>
-                                            <input type="file" name="elevation_img_0">
-                                        </div>
+                                            <input type="file" name="elevation_img_0" class="@error('elevation_img_0') is-invalid @enderror">
+                                            @error('elevation_img_0')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror                                         </div>
                                     </div>
                                 </div>
                             </div>
