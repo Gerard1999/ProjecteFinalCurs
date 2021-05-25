@@ -30,7 +30,7 @@
             @foreach($products as $product)
                 <tr>
                     <td><a href="{{ route('product', $product->id) }}">{{$product->name}}</a></td>
-                    <td>{{$product->price}}.00€</td>
+                    <td>{{$product->price}}€</td>
                     <td><img src="{{$product->get_image}}" alt=""></td>
                     <td><a href="{{ route('organizer.editarproducte', $product->id)}}" class="boto boto-petit boto-blau">Editar</a></td>
                     <td>

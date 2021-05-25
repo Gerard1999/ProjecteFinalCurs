@@ -19,12 +19,28 @@
             <p class="card-text">{{$race->description}}</p>
             <p class="text-muted mb-0">
                 <em>
-                Ho organitza:  {{ $race->organizer->user->name }}
+                Ho organitza: 
                 </em>
+                @if($web = $race->organizer->link_web)
+                <a target="blank" href="https://{{$web}}">{{$web}}</a>
+                @else
+                {{$race->organizer->user->name}}
+                @endif
             </p>
+            <div class="links-organizer">
+                @if($insta = $race->organizer->link_instagram)
+                    <a target="blank" href="https://{{$insta}}"><img src="{{asset('images/social_images/logotipo-de-instagram.png')}}" alt=""></a>
+                @endif
+                @if($fb = $race->organizer->link_facebook)
+                    <a target="blank" href="https://{{$fb}}"><img src="{{asset('images/social_images/logotipo-circular-de-facebook.png')}}" alt=""></a>
+                @endif
+                @if($t = $race->organizer->link_twitter)
+                    <a target="blank" href="https://{{$t}}"><img src="{{asset('images/social_images/gorjeo.png')}}" alt=""></a>
+                @endif
+            </div>
             
             @if($race->date > now()->toDateString())
-                <a class="boto" href="{{route('runner.inscripcio', $race)}}">Inscriu-t'hi!</a>
+                <a class="boto" href="{{route('runner.inscripcio', $race)}}" style="margin-top:1.2rem;">Inscriu-t'hi!</a>
             @endif        </div>
         <div class="modalitats">
             @foreach($race->categories as $category)
@@ -60,7 +76,7 @@
         @if($race->date > now()->toDateString())
         <a class="boto" href="{{route('runner.inscripcio', $race)}}">Inscriu-t'hi!</a>
         @endif
-        <div id='map' style='width: 800px; height: 400px; margin-top: 2rem; border-radius: 10px;'></div>
+        <!-- <div id='map' style='width: 800px; height: 400px; margin-top: 2rem; border-radius: 10px;'></div>
             <script>
             mapboxgl.accessToken = 'pk.eyJ1IjoiZ2VyYXJkMTk5OSIsImEiOiJja2I2cm1vbnUwMWhwMnVwYXNkdTJmM3U4In0.U_3ehdXAGsTDf_KqMSqHjw';
             var map = new mapboxgl.Map({
@@ -70,7 +86,7 @@
             map.addControl(new mapboxgl.NavigationControl());
             </script>
 
-    </div>
+    </div> -->
 </div>
 @include('footer')
 @endsection

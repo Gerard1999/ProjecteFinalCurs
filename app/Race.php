@@ -66,7 +66,7 @@ class Race extends Model
 
     public function scopeMinKms($query, $minKms){
         if ($minKms) {
-            return $query->where('races.categories.kms', '<', "%$minKms%");
+            return $query->where('categories.kms', '>', "%$minKms%");
         }
     }
 }

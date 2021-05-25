@@ -179,6 +179,12 @@
                             <input type="number" name="num_participants_${counter}" class="form-control">
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="col col-md-12">
+                            <label>Imatge Perfil</label>
+                            <input type="file" name="elevation_img_${counter}">
+                        </div>
+                    </div>
                 </div>`;
             $('.modalitats').append(html);
 

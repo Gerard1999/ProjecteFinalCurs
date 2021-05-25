@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Race;
 use Illuminate\Http\Request;
+use DB;
 
 class PageController extends Controller
 {
@@ -18,8 +19,13 @@ class PageController extends Controller
                 ->nomCursa($nomCursa)
                 ->poblacio($poblacio)
                 ->minKms($minKms)
-                ->paginate(4)
+                ->paginate(10)
         ]);
+        // return view('races', [
+        //     'races' => DB::select('SELECT r.* FROM races r
+        //                     LEFT JOIN categories c ON r.id = c.race_id')
+        // ]);
+        // dd($races);
     }
 
     public function race(Race $race){
