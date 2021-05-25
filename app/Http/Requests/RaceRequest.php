@@ -24,11 +24,21 @@ class RaceRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required',
-            'description' => 'required',
-            'location' => 'required',
-            'url_cover' => 'required',
-            'date' => 'required',
+            'name'                  => 'required',
+            'description'           => 'required',
+            'location'              => 'required',
+            'img'                   => 'required|image|mimes:jpeg,png,jpg',
+            'date'                  => 'required',
+            'name_category_0'       => 'required',
+            'kms_0'                 => 'required',
+            'elevation_gain_0'      => 'required',
+            'location_start_0'      => 'required',
+            'location_finish_0'     => 'required',
+            'start_time_0'          => 'required',
+            'price_0'               => 'required',
+            'num_aid_station_0'     => 'required',
+            'num_participants_0'    => 'required',
+            'elevation_img_0'       => 'image|mimes:jpeg,png,jpg',
         ];
     }
 }

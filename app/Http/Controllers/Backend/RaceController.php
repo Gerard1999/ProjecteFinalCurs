@@ -39,10 +39,9 @@ class RaceController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-
-        
+    public function store(RaceRequest $request)
+    {      
+        $request->rules();
         //Guardar cursa
         $race = Race::create([
             'organizer_id'  => auth()->user()->organizer->id,
