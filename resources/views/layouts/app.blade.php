@@ -102,6 +102,10 @@
                         <li >
                             <a href="{{ route('runner.privatezone')}}">Espai Corredor</a>
                         </li>
+                    @elseif(Auth::user()->user_type == 'superadmin')
+                    <li >
+                        <a href="{{ route('superadmin.superadminzone')}}">Zona Admin</a>
+                    </li>
                     @endif
                     <li>
                         <a id="navbarDropdown" class="dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>

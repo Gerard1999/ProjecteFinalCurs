@@ -88,6 +88,15 @@ Route::group([
 
 });
 
+//Rutes del SuperAdmin
+Route::group([
+        'prefix' => 'superadmin',
+        'as' => 'superadmin.',
+        'middleware' => ['auth','superadmin']    
+], function() {
+        Route::get('/superadminzone', [SuperAdminController::class, 'superadminzone'])->name('superadminzone');
+});
+
 
 
 Route::get('organizers/register', [OrganizerController::class, 'showRegisterForm'])->name('registerorganizer');

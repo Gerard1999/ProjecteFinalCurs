@@ -19,6 +19,7 @@ class CreateProductsTable extends Migration
             $table->string('description');
             $table->float('price');
             $table->string('link_photo');
+            $table->boolean('validate')->default(0);
             
             $table->timestamps();
         });

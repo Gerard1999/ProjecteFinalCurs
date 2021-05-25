@@ -26,6 +26,7 @@ class CreateRacesTable extends Migration
             $table->date('date')->format('d M Y');
             $table->char('location', 100);
             $table->string('img_cover')->nullable();
+            $table->boolean('validate')->default(0);
             
             $table->timestamps();
             

@@ -11,6 +11,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        //SUPERADMIN
+        App\User::create([
+            'name' => 'SuperAdmin',
+            'user_type' => 'admin',
+            'password' => bcrypt('admin1234'),
+            ]);
         
         //Crear un Usuari predeterminat
         App\User::create([
