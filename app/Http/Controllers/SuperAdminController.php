@@ -56,5 +56,17 @@ class SuperAdminController extends Controller
         return back()->with('status', 'Hi ha hagut un error');
     }
     
-
+    //Retorna totes les curses
+    public function allRaces() {
+        return view('superadmin.allraces', [
+            'races' => Race::get()
+        ]);
+    }
+    
+    //Retorna tots els productes
+    public function allProducts() {
+        return view('superadmin.allproducts', [
+            'products' => Product::get()
+        ]);
+    }
 }

@@ -98,11 +98,13 @@ Route::group([
 ], function() {
         Route::get('/superadminzone', [SuperAdminController::class, 'superadminzone'])->name('superadminzone');
         Route::get('/pending-race/{id}', [SuperAdminController::class, 'allRace'])->name('pendingrace');
-        Route::get('/notvalidateraces', [SuperAdminController::class, 'notValidateRaces'])->name('notvalidateraces');
+        Route::get('/curses-per-validar', [SuperAdminController::class, 'notValidateRaces'])->name('notvalidateraces');
+        Route::get('/totes-les-curses', [SuperAdminController::class, 'allRaces'])->name('allraces');
         Route::delete('/eliminar-cursa/{id}', [RaceController::class, 'destroy'])->name('eliminarcursa');
         Route::post('/validar-cursa/{id}', [SuperAdminController::class, 'validarCursa'])->name('validarcursa');
 
-        Route::get('/notvalidateproducts', [SuperAdminController::class, 'notValidateProducts'])->name('notvalidateproducts');
+        Route::get('/productes-per-validar', [SuperAdminController::class, 'notValidateProducts'])->name('notvalidateproducts');
+        Route::get('/tots-els-productes', [SuperAdminController::class, 'allProductes'])->name('allproducts');
         Route::delete('/eliminar-producte/{id}', [ProductController::class, 'destroy'])->name('eliminarproducte');
         Route::post('/validar-producte/{id}', [SuperAdminController::class, 'validarProducte'])->name('validarproducte');
 });

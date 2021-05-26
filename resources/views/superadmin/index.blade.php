@@ -9,8 +9,8 @@
         <ul class="links">
             <li><a href="{{route('superadmin.notvalidateraces')}}">Validar Noves Curses</a></li>
             <li><a href="{{route('superadmin.notvalidateproducts')}}">Validar Nous Productes</a></li>
-            <li><a href="">Veure totes les curses</a></li>
-            <li><a href="">Veure tots els productes</a></li>
+            <li><a href="{{route('superadmin.allraces')}}">Veure totes les curses</a></li>
+            <li><a href="{{route('superadmin.allproducts')}}">Veure tots els productes</a></li>
         </ul>
     </div>
 </div>
