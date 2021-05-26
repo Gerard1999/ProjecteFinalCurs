@@ -104,7 +104,7 @@ Route::group([
         Route::post('/validar-cursa/{id}', [SuperAdminController::class, 'validarCursa'])->name('validarcursa');
 
         Route::get('/productes-per-validar', [SuperAdminController::class, 'notValidateProducts'])->name('notvalidateproducts');
-        Route::get('/tots-els-productes', [SuperAdminController::class, 'allProductes'])->name('allproducts');
+        Route::get('/tots-els-productes', [SuperAdminController::class, 'allProducts'])->name('allproducts');
         Route::delete('/eliminar-producte/{id}', [ProductController::class, 'destroy'])->name('eliminarproducte');
         Route::post('/validar-producte/{id}', [SuperAdminController::class, 'validarProducte'])->name('validarproducte');
 });
