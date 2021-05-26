@@ -10,16 +10,7 @@ class DatabaseSeeder extends Seeder
      * @return void
      */
     public function run()
-    {
-        //SUPERADMIN
-        App\User::create([
-            'name' => 'SuperAdmin',
-            'user_type' => 'superadmin',
-            'nif' => '12345678A',
-            'email' => 'super@admin.com',
-            'password' => bcrypt('admin1234'),
-            ]);
-        
+    {        
         //Crear un Usuari predeterminat
         App\User::create([
             'name' => 'Gerard',
@@ -56,6 +47,15 @@ class DatabaseSeeder extends Seeder
             'link_web' => 'besttrail.cat',
             'link_facebook' => 'www.facebook.com/besttrail',
             'link_instagram' => 'www.instagram.com/besttrail',
+            ]);
+        
+        //SUPERADMIN
+        App\User::create([
+            'name' => 'SuperAdmin',
+            'user_type' => 'superadmin',
+            'nif' => '12345678A',
+            'email' => 'super@admin.com',
+            'password' => bcrypt('admin1234'),
             ]);
 
         //Crear una Cursa predeterminada

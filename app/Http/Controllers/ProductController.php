@@ -11,18 +11,22 @@ class ProductController extends Controller
 {
     public function products(){
         return view('products', [
-            'products' => Product::get()
+            'products' => Product::where('validate', 1)->get()
         ]);
     }
 
     public function product(Product $product){
-        return view('product', ['product' => $product]);
+        if($product->validate) {
+            return view('product', ['product' => $product]);
+        }
+        return back();
     }
 
     //Retorna la vista amb una llista dels productes del organitzador
     public function productsOrganizer(){
+        dd(auth()->user()->runner);
         return view('organizerzone.products', [
-            'products' => Product::where('organizer_id', auth()->user()->organizer->id)->get()
+            'products' => Product::where('organizer_id', auth()->user()->organizer->id->get())
         ]);
     }
 

@@ -16,6 +16,7 @@ class PageController extends Controller
 
         return view('races', [
             'races' => Race::with('organizer')
+                ->where('validate', 1)
                 ->nomCursa($nomCursa)
                 ->poblacio($poblacio)
                 ->minKms($minKms)
@@ -29,7 +30,10 @@ class PageController extends Controller
     }
 
     public function race(Race $race){
-        return view('race', ['race' => $race]);
+        if($race->validate){
+            return view('race', ['race' => $race]);
+        }
+        return back();
     }
 
 

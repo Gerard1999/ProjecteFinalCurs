@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Artisan;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OrganizerController;
@@ -97,6 +97,14 @@ Route::group([
         'middleware' => ['auth','superadmin']    
 ], function() {
         Route::get('/superadminzone', [SuperAdminController::class, 'superadminzone'])->name('superadminzone');
+        Route::get('/pending-race/{id}', [SuperAdminController::class, 'allRace'])->name('pendingrace');
+        Route::get('/notvalidateraces', [SuperAdminController::class, 'notValidateRaces'])->name('notvalidateraces');
+        Route::delete('/eliminar-cursa/{id}', [RaceController::class, 'destroy'])->name('eliminarcursa');
+        Route::post('/validar-cursa/{id}', [SuperAdminController::class, 'validarCursa'])->name('validarcursa');
+
+        Route::get('/notvalidateproducts', [SuperAdminController::class, 'notValidateProducts'])->name('notvalidateproducts');
+        Route::delete('/eliminar-producte/{id}', [ProductController::class, 'destroy'])->name('eliminarproducte');
+        Route::post('/validar-producte/{id}', [SuperAdminController::class, 'validarProducte'])->name('validarproducte');
 });
 
 
