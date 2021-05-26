@@ -44,7 +44,7 @@
                         <form action="{{ route('superadmin.eliminarusuari', $organizer->id)}}" method="POST">
                             @csrf
                             @method('DELETE')
-                            <input type="submit" value="Eliminar" class="boto boto-petit boto-vermell" onclick="return confirm('Estàs segur/a que vols eliminar el corredor: {{$runner->name}}?')">
+                            <input type="submit" value="Eliminar" class="boto boto-petit boto-vermell" onclick="return confirm('Estàs segur/a que vols eliminar el corredor: {{$organizer->name}}?')">
                         </form>
                     </td>
                 </tr>
