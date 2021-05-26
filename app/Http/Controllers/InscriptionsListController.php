@@ -11,16 +11,6 @@ use Auth;
 class InscriptionsListController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
@@ -72,56 +62,11 @@ class InscriptionsListController extends Controller
             'num_dorsal'    => $numCorredorsCategoria + 1,
         ]);
 
-        return redirect()->route('races');
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\InscriptionsList  $inscriptionsList
-     * @return \Illuminate\Http\Response
-     */
-    public function show(InscriptionsList $inscriptionsList)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\InscriptionsList  $inscriptionsList
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(InscriptionsList $inscriptionsList)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\InscriptionsList  $inscriptionsList
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, InscriptionsList $inscriptionsList)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\InscriptionsList  $inscriptionsList
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(InscriptionsList $inscriptionsList)
-    {
-        //
+        return redirect()->route('inscriptionsummary', $inscriptionsList->id);
     }
 
     //Funció que envia una llista de curses de l'usuari en qüestió
-    function viewFutureRaces(){
+    public function viewFutureRaces(){
 
         $inscripcions = InscriptionsList::where('user_id',Auth::user()->id)
             ->get();
@@ -129,7 +74,7 @@ class InscriptionsListController extends Controller
         return view('privatezone.future-races', compact('inscripcions'));
     }
     
-    function viewPassedRaces(){
+    public function viewPassedRaces(){
     
         $inscripcions = InscriptionsList::where('user_id',Auth::user()->id)
             ->get();
@@ -137,9 +82,18 @@ class InscriptionsListController extends Controller
         return view('privatezone.passed-races', compact('inscripcions'));
     }
 
-    function getRunnersRace(Race $race) {
-        $llistaCursa = InscriptionsList::where('race_id',$race->id)
-            ->get();
+    public function getRunnersRace(Race $race) {
+        $llistaCursa = InscriptionsList::where('race_id',$race->id)->get();
         return view('organizerzone.runners-list', compact('race', 'llistaCursa'));
     }
+
+    public function inscriptionSummary($idInscripcio) {
+        $inscripcio = InscriptionsList::where('id',$idInscripcio)->get();
+
+        //Comprova que la inscripció sigui del usuari
+        if ($inscripcio->user_id == Auth::user()->id) {
+            return view('inscriptionsummary', compact('inscripcio'));
+        }
+        return back();
+    } 
 }

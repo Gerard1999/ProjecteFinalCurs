@@ -55,4 +55,5 @@
     </table>
     @endif
 </div>
+@include('footer')
 @endsection
