@@ -78,7 +78,7 @@ class SuperAdminController extends Controller
     }
     
     //Retorna tots els Organitzadors
-    public function allProducts() {
+    public function allOrganizers() {
         return view('superadmin.allorganizers', [
             'organizers' => User::where('user_type', 'organizer')->get()
         ]);
