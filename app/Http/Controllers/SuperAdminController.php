@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\SuperAdmin;
 use App\Race;
 use App\Product;
+use App\User;
 use Illuminate\Http\Request;
 
 class SuperAdminController extends Controller
