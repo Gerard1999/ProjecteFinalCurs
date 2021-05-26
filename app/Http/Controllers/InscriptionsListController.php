@@ -91,9 +91,9 @@ class InscriptionsListController extends Controller
         $inscripcio = InscriptionsList::where('id',$idInscripcio)->get();
 
         //Comprova que la inscripció sigui del usuari
-        if ($inscripcio->user_id == Auth::user()->id) {
+        // if ($inscripcio->user_id == Auth::user()->id) {
             return view('inscriptionsummary', compact('inscripcio'));
-        }
-        return back();
+        // }
+        // return back();
     } 
 }
