@@ -25,7 +25,7 @@ class ProductController extends Controller
     //Retorna la vista amb una llista dels productes del organitzador
     public function productsOrganizer(){
         return view('organizerzone.products', [
-            'products' => Product::where('organizer_id', auth()->user()->organizer->id->get())
+            'products' => Product::where('organizer_id', auth()->user()->organizer->id)->get()
         ]);
     }
 

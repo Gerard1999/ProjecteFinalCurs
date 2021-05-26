@@ -40,7 +40,7 @@ class PageController extends Controller
     public function images() {
 
         return view('gallery', [
-            'races' => Race::paginate(6)
+            'races' => Race::where('validate', 1)->paginate(6)
         ]);
     }
 }
