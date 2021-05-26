@@ -37,7 +37,7 @@
                     <td>{{$organizer->telephone}}</td>
                     <td>{{$organizer->nif}}</td>
                     <td>{{$organizer->city}}</td>
-                    @if($web = {{$organizer->organizer->link_web)
+                    @if($web = $organizer->organizer->link_web)
                         <td><a target="blank" href="https://{{$web}}">{{$web}}</a></td>
                     @endif
                     <td>
