@@ -22,6 +22,7 @@
             <tr>
                 <th>Imatge</th>
                 <th>Cursa</th>
+                <th>Propietari</th>
                 <th>Dia</th>
                 <th>Lloc</th>
                 <th>Veure Cursa</th>
@@ -33,6 +34,7 @@
                 <tr>
                     <td><img src="{{$race->get_image}}" alt=""></td>
                     <td>{{$race->name}}</td>
+                    <td>{{$race->organizer->user->name}}</td>
                     <td>{{date('d/m/Y', strtotime($race->date))}}</td>
                     <td>{{$race->location}}</td>
                     <td>

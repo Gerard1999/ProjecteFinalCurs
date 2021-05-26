@@ -21,6 +21,7 @@
         <thead class="capcalera">
             <th>Imatge</th>
             <th>Nom Producte</th>
+            <th>Propietari</th>
             <th>Preu</th>
             <th>Esborrar</th>
         </thead>
@@ -29,6 +30,7 @@
                 <tr>
                     <td><img src="{{$product->get_image}}" alt=""></td>
                     <td><a href="{{ route('product', $product->id) }}">{{$product->name}}</a></td>
+                    <td>{{$product->organizer->user->name}}</td>
                     <td>{{$product->price}}€</td>
                     <td>
                         <form action="{{ route('superadmin.eliminarproducte', $product->id)}}" method="POST">
