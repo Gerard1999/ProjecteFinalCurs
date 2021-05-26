@@ -62,7 +62,7 @@ class InscriptionsListController extends Controller
             'num_dorsal'    => $numCorredorsCategoria + 1,
         ]);
 
-        return redirect()->route('inscriptionsummary', $inscriptionsList->id);
+        return redirect()->route('runner.inscriptionsummary', $inscriptionsList->id);
     }
 
     //Funció que envia una llista de curses de l'usuari en qüestió
