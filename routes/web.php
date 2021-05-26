@@ -107,6 +107,10 @@ Route::group([
         Route::get('/tots-els-productes', [SuperAdminController::class, 'allProducts'])->name('allproducts');
         Route::delete('/eliminar-producte/{id}', [ProductController::class, 'destroy'])->name('eliminarproducte');
         Route::post('/validar-producte/{id}', [SuperAdminController::class, 'validarProducte'])->name('validarproducte');
+
+        Route::get('/corredors', [SuperAdminController::class, 'allRunners'])->name('allrunners');
+        Route::get('/organitzadors', [SuperAdminController::class, 'allOrganizers'])->name('allorganizers');
+        Route::delete('/eliminar-corredor/{id}', [UserController::class, 'destroy'])->name('eliminarusuari');
 });
 
 

@@ -11,6 +11,8 @@
             <li><a href="{{route('superadmin.notvalidateproducts')}}">Validar Nous Productes</a></li>
             <li><a href="{{route('superadmin.allraces')}}">Veure totes les curses</a></li>
             <li><a href="{{route('superadmin.allproducts')}}">Veure tots els productes</a></li>
+            <li><a href="{{route('superadmin.allrunners')}}">Veure Corredors</a></li>
+            <li><a href="{{route('superadmin.allorganizers')}}">Veure Organitzadors</a></li>
         </ul>
     </div>
 </div>

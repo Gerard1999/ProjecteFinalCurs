@@ -69,4 +69,18 @@ class SuperAdminController extends Controller
             'products' => Product::get()
         ]);
     }
+
+    //Retorna tots els Corredors
+    public function allRunners() {
+        return view('superadmin.allrunners', [
+            'runners' => User::where('user_type', 'runner')->get()
+        ]);
+    }
+    
+    //Retorna tots els Organitzadors
+    public function allProducts() {
+        return view('superadmin.allorganizers', [
+            'organizers' => User::where('user_type', 'organizer')->get()
+        ]);
+    }
 }

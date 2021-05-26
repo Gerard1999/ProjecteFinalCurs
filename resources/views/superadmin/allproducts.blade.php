@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="titol">
-    <h1>Els meus productes</h1>
+    <h1>Tots els productes</h1>
 </div>
 <div class="pagina-cursa">
     <div class="tornar">

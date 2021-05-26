@@ -100,10 +100,14 @@ class UserController extends Controller
         return redirect()->route('races');
     }
 
-    public function destroy(User $user){
-        
+    public function destroy($idUser){
+        $user = User::where('id',$idUser)->first();
         $user->delete();
 
-        return back();
+        if (User::where('id',$idUser)->first()) {
+            return back()->with('status', "Hi hagut un error, no s'ha pogut esborrar l'usuari");
+        }
+
+        return back()->with('status', 'Corredor esborrat correctament');
     }
 }
