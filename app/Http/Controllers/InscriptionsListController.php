@@ -94,6 +94,6 @@ class InscriptionsListController extends Controller
         // if ($inscripcio->user_id == Auth::user()->id) {
             //return view('inscriptionsummary', compact('inscripcio'));
         // }
-        return back();
+        return back()->with('status', 'Inscrit correctament');
     } 
 }
