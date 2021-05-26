@@ -51,7 +51,7 @@ Route::group([
         'prefix' => 'runner',
         'as' => 'runner.',
         'namespace' => 'Runner',
-        'middleware' => ['auth','runner']    
+        'middleware' => ['auth']    
 ], function() {
         //Zona privada
         Route::get('/privatezone', [RunnerController::class, 'privatezone'])->name('privatezone');
