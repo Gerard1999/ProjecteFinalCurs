@@ -88,12 +88,14 @@ class InscriptionsListController extends Controller
     }
 
     public function inscriptionSummary($idInscripcio) {
-        $inscripcio = InscriptionsList::where('id',$idInscripcio)->get();
+        $inscripcio = InscriptionsList::where('id',$idInscripcio)->first();
 
-        //Comprova que la inscripció sigui del usuari
-        // if ($inscripcio->user_id == Auth::user()->id) {
-            //return view('inscriptionsummary', compact('inscripcio'));
-        // }
-        return back()->with('status', 'Inscrit correctament');
+        if ($inscripcio) {
+            //Comprova que la inscripció sigui del usuari
+            if ($inscripcio->user_id == Auth::user()->id) {
+                return view('inscriptionsummary', compact('inscripcio'))->with('status', 'Inscipció realitzada correctament');
+            }
+        }
+        return back();
     } 
 }

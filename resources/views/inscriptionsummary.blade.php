@@ -14,15 +14,19 @@
             {{ session('status') }}
         </div>
     @endif
+    <h3 class="titular-resum-inscripcio">{{Auth::user()->name}}, t'has inscrit correctament a la cursa {{$inscripcio->race->name}}</h3>
     <div class="resum-inscripcio">
-        <ul>
-            <li>Cursa: {{$inscripcio->race->name}}</li>
-            <li>Modalitat: {{$inscripcio->category->name_category}}</li>
-            <li>Quilòmetres: {{$inscripcio->category->kms}}</li>
-            <li>Desnivell: {{$inscripcio->category->elevation_gain}}</li>
-            <li>Lloc: {{$inscripcio->category->location_start}}</li>
-            <li>Preu: {{$inscripcio->category->price}}</li>
-            <li>Num. Dorsal: {{$inscripcio->num_dorsal}}</li>
+        <ul class="resum-esquerra">
+            <li><b>Cursa:</b> {{$inscripcio->race->name}}</li>
+            <li><b>Modalitat:</b> {{$inscripcio->category->name_category}}</li>
+            <li><b>Quilòmetres:</b> {{$inscripcio->category->kms}}</li>
+            <li><b>Desnivell:</b> {{$inscripcio->category->elevation_gain}}m+</li>
+        </ul>
+        <ul class="resum-dreta">
+            <li><b>Num. Avituallaments:</b> {{$inscripcio->category->num_aid_station}}</li>
+            <li><b>Lloc:</b> {{$inscripcio->category->location_start}}</li>
+            <li><b>Preu:</b> {{$inscripcio->category->price}}€</li>
+            <li><b>Num. Dorsal:</b> {{$inscripcio->num_dorsal}}</li>
         </ul>
     </div>
 </div>

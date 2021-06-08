@@ -983,7 +983,7 @@ footer h3 {
 
 .quadre-total {
   margin: 0rem 2rem;
-  width: 14rem;
+  width: 15rem;
   height: 10rem;
   background: #fab958;
   padding: 1.5rem;
@@ -1098,6 +1098,32 @@ footer h3 {
 }
 .imatges .imatge-galeria:hover .enllac-cursa a:hover {
   color: orange;
+}
+
+.titular-resum-inscripcio {
+  margin: 2rem 0rem;
+}
+
+.resum-inscripcio {
+  margin: 5rem 0rem;
+  width: 35rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.resum-inscripcio li {
+  list-style: none;
+  font-size: 1.1rem;
+  margin: 0.6rem;
+}
+.resum-inscripcio .inscripcio-esquerra {
+  float: left;
+}
+.resum-inscripcio .inscripcio-dreta {
+  float: right;
+}
+.resum-inscripcio .inscripcio-dreta li {
+  text-align: center;
 }
 
 html {
