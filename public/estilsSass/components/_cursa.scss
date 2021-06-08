@@ -21,7 +21,6 @@ p {
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        padding: 4rem 0rem;
         width: 100%;
         .dades-generals {
             display: flex;
@@ -155,5 +154,37 @@ p {
     letter-spacing: 10px;
     h2 {
         font-weight: 800;
+    }
+}
+
+//Mida de mòbil
+@media screen and (max-width: 768px) {
+    .modalitat {
+        width:100%;
+        padding: 0;
+        margin: 0;
+        .modalitat-info {
+            li {
+                display: flex;
+                flex-direction: column;
+                box-shadow: none;
+                margin: 5px;
+                border-radius: 0px;
+            }
+        }
+        .modalitat-detalls {
+            display: flex;
+            flex-direction: column;
+            li {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                text-align: center;
+                img {
+                    margin: auto;
+                    margin-bottom: 4px;
+                }
+            }
+        }
     }
 }

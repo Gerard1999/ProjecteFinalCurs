@@ -270,7 +270,6 @@
             counter++;
             $('#counter').val(counter);
             categoriesInputs(counter);
-            console.log( $('#counter').val());
         });
 
 
