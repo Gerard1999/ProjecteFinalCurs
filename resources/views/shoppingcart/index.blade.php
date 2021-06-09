@@ -62,8 +62,8 @@
     </div>
 </div>
 <script>
-    if (document.getElementById("qtt").value ==1) {
-        document.getElementById("resta").disabled = true;
+    if (document.querySelector("#qtt").value <= 1) {
+        document.querySelector("#resta").disabled = true;
     }
 </script>
 @include('footer')

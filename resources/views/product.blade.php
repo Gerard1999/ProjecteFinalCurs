@@ -25,12 +25,17 @@
                         <option name="l" @if(!$product->size->l) disabled @endif>L</option>
                         <option name="xl" @if(!$product->size->xl) disabled @endif>XL</option>
                         <option name="xxl" @if(!$product->size->xxl) disabled @endif>XXL</option>
-                      </select>
-                      <input type="number" name="quantity" value="1">
-                      <input type="submit" value="Afegir al Carro" class="boto boto-petit boto-blau">
-                      @if (session('status'))
+                    </select>
+                    <input type="number" name="quantity" value="1">
+                    <input type="submit" value="Afegir al Carro" class="boto boto-petit boto-blau">
+                    @if (session('status'))
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
+                        </div>
+                    @endif
+                    @if($errors->any())
+                        <div class="alert alert-danger" role="alert">
+                            {{$errors->first()}}
                         </div>
                     @endif
                 </form>

@@ -18,24 +18,29 @@ class ShoppingCartDetailController extends Controller
      */
     public function store(Request $request, Product $product)
     {
-        $product = Product::find($request->product_id);
-        $shopping_cart = ShoppingCart::getShoppingCartId();
-
-        //Si la talla i el producte està repetit suma la quantitat al CartDetail
-        if ($cartDetailRepeated = ShoppingCartDetail::checkProductSizeDetail($shopping_cart, $request)) {
-            $cartDetailRepeated->quantity += $request->quantity;
-            $cartDetailRepeated->save();
+        if ($request->quantity <= 0) {
+            return back()->withErrors("Has de seleccionar una quantitat vàlida");
         } else {
-            //Sinó, crea un nou CartDetail
-            $detail = $shopping_cart->cartDetails()->create([
-                'quantity'      =>$request->quantity,
-                'price'         =>$product->price,
-                'product_id'    =>$request->product_id,
-                'size'          =>$request->size,
-            ]);
-        }
 
-        return back()->with('status', "S'ha afegit el producte correctament");
+            $product = Product::find($request->product_id);
+            $shopping_cart = ShoppingCart::getShoppingCartId();
+    
+            //Si la talla i el producte està repetit suma la quantitat al CartDetail
+            if ($cartDetailRepeated = ShoppingCartDetail::checkProductSizeDetail($shopping_cart, $request)) {
+                $cartDetailRepeated->quantity += $request->quantity;
+                $cartDetailRepeated->save();
+            } else {
+                //Sinó, crea un nou CartDetail
+                $detail = $shopping_cart->cartDetails()->create([
+                    'quantity'      =>$request->quantity,
+                    'price'         =>$product->price,
+                    'product_id'    =>$request->product_id,
+                    'size'          =>$request->size,
+                ]);
+            }
+    
+            return back()->with('status', "S'ha afegit el producte correctament");
+        }
     }
 
     /**
@@ -50,7 +55,7 @@ class ShoppingCartDetailController extends Controller
         if ($request->accio == "sumar") {
             $shoppingCartDetail->quantity++;
             $shoppingCartDetail->save();
-        } elseif ($request->accio == "restar") {
+        } elseif ($request->accio == "restar" && $shoppingCartDetail->quantity > 1) {
             $shoppingCartDetail->quantity--;
             $shoppingCartDetail->save();
         }
