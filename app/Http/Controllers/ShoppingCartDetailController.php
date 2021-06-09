@@ -45,9 +45,16 @@ class ShoppingCartDetailController extends Controller
      * @param  \App\ShoppingCartDetail  $shoppingCartDetail
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, ShoppingCartDetail $shoppingCartDetail)
-    {
-        //
+    public function update(Request $request, $idShoppingCartDetail){
+        $shoppingCartDetail = ShoppingCartDetail::where('id',$idShoppingCartDetail)->first();
+        if ($request->accio == "sumar") {
+            $shoppingCartDetail->quantity++;
+            $shoppingCartDetail->save();
+        } elseif ($request->accio == "restar") {
+            $shoppingCartDetail->quantity--;
+            $shoppingCartDetail->save();
+        }
+        return back();
     }
 
     /**
