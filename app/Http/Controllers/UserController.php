@@ -39,10 +39,11 @@ class UserController extends Controller
     public function storeRunner(Request $request){
 
         $request->validate([
-            'name'      => ['required','max:50'],
-            'surname'   => ['required','max:50'],
-            'city'      => ['required','max:50'],
-            'address'   => ['required','max:100'],
+            'name'      => ['required','max:25'],
+            'surname'   => ['required','max:25'],
+            'city'      => ['required','max:30'],
+            'address'   => ['required','max:50'],
+            'nif'       => ['required','max:9', 'min:9'],
             'email'     => ['required', 'email', 'unique:users'],
             'password'  => ['required', 'min:8'],
             'telephone' => ['required', 'min:9', 'max:9'],

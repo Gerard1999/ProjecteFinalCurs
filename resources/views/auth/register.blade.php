@@ -17,7 +17,7 @@
                             <div class="row">
                                 <div class="col col-md-6">
                                     <label for="name">Nom *</label>
-                                    <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                    <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" autocomplete="name" autofocus>
 
                                     @error('name')
                                         <span class="invalid-feedback" role="alert">
@@ -27,7 +27,7 @@
                                 </div>
                                 <div class="col col-md-6">
                                     <label for="surname">Cognom *</label>
-                                    <input id="surname" type="text" class="form-control @error('surname') is-invalid @enderror" name="surname" value="{{ old('surname') }}" required autocomplete="surname" autofocus>
+                                    <input id="surname" type="text" class="form-control @error('surname') is-invalid @enderror" name="surname" value="{{ old('surname') }}" autocomplete="surname" autofocus>
 
                                     @error('surname')
                                         <span class="invalid-feedback" role="alert">
@@ -42,7 +42,7 @@
                         <div class="row">
                                 <div class="col col-md-4 col-12">
                                     <label for="nif">DNI *</label>
-                                    <input id="nif" type="text" class="form-control @error('nif') is-invalid @enderror" name="nif" value="{{ old('nif') }}" required autocomplete="nif">
+                                    <input id="nif" type="text" class="form-control @error('nif') is-invalid @enderror" name="nif" value="{{ old('nif') }}" autocomplete="nif">
 
                                     @error('nif')
                                         <span class="invalid-feedback" role="alert">
@@ -62,7 +62,7 @@
                                 </div>
                                 <div class="col col-md-4 col-12">
                                     <label for="telephone">Telèfon *</label>
-                                    <input id="telephone" type="numer" class="form-control @error('telephone') is-invalid @enderror" name="telephone" value="{{ old('telephone') }}" required autocomplete="telephone" autofocus>
+                                    <input id="telephone" type="numer" class="form-control @error('telephone') is-invalid @enderror" name="telephone" value="{{ old('telephone') }}" autocomplete="telephone" autofocus>
 
                                     @error('telephone')
                                         <span class="invalid-feedback" role="alert">
@@ -77,7 +77,7 @@
                             <div class="row">
                                 <div class="col col-md-6">
                                     <label for="email">Correu Electrònic *</label>
-                                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" autocomplete="email" autofocus>
 
                                     @error('email')
                                         <span class="invalid-feedback" role="alert">
@@ -102,7 +102,7 @@
                             <div class="row">
                                 <div class="col col-md-6 col-12">
                                     <label for="password">Contrasenya *</label>
-                                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" autocomplete="new-password">
 
                                     @error('password')
                                         <span class="invalid-feedback" role="alert">
@@ -112,7 +112,7 @@
                                 </div>
                                 <div class="col col-md-6 col-12">
                                     <label for="password-confirm">Repeteix Contrsenya *</label>
-                                    <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                                    <input id="password-confirm" type="password" class="form-control" name="password_confirmation" autocomplete="new-password">
                                 </div>
                             </div>
                         </div>
