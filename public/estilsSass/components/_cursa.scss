@@ -164,12 +164,10 @@ p {
         padding: 0;
         margin: 0;
         .modalitat-info {
+            display: flex;
+            flex-direction: column;
             li {
-                display: flex;
-                flex-direction: column;
-                box-shadow: none;
                 margin: 5px;
-                border-radius: 0px;
             }
         }
         .modalitat-detalls {

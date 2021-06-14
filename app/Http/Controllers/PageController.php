@@ -10,23 +10,49 @@ class PageController extends Controller
 {
     public function races(Request $request){
 
-        $nomCursa = $request->nomCursa;
-        $poblacio = $request->poblacio;
-        $minKms   = $request->minKms; 
+        $nomCursa       = $request->nomCursa;
+        $poblacio       = $request->poblacio;
+        $minKms         = $request->kmsmin;
+        $maxKms         = $request->kmsmax;
+        $minDesnivell   = $request->metresmin;
+        $maxDesnivell   = $request->metresmax;
 
-        return view('races', [
-            'races' => Race::with('organizer')
-                ->where('validate', 1)
-                ->nomCursa($nomCursa)
-                ->poblacio($poblacio)
-                ->minKms($minKms)
-                ->paginate(10)
-        ]);
-        // return view('races', [
-        //     'races' => DB::select('SELECT r.* FROM races r
-        //                     LEFT JOIN categories c ON r.id = c.race_id')
-        // ]);
-        // dd($races);
+        $races = Race::where('validate', 1)
+                ->select('races.*', 'categories.kms', 'categories.elevation_gain')
+                ->leftjoin('categories','categories.race_id', '=', 'races.id')
+                ->where('races.name', 'LIKE', '%'.$nomCursa.'%')
+                ->where('races.location', 'LIKE', '%'.$poblacio.'%');
+
+        if($minKms != NULL) {
+            $races = $races->where('categories.kms', '>=', (int)$minKms);
+        }
+        if($maxKms != NULL) {
+            $races = $races->where('categories.kms', '<=', (int)$maxKms);
+        }
+        if($minDesnivell != NULL) {
+            $races = $races->where('categories.elevation_gain', '>=', (int)$minDesnivell);
+        }
+        if($maxDesnivell != NULL) {
+            $races = $races->where('categories.elevation_gain', '<=', (int)$maxDesnivell);
+        }
+
+        $races = $races->paginate(10);
+
+        return view('races', compact('races'));
+
+        // $races = Race::
+        //     select('*')
+        //     ->leftJoin('categories','races.id','=', 'categories.race_id');
+        // if($nomCursa){
+        //     $races->where('name', 'like', '%' . $nomCursa . '%');
+        // }
+
+        // if($poblacio){
+        //     $races->where('location', 'like', '%' . $poblacio . '%');
+        // }
+
+        // $races = $races->get();
+        // return view('races', compact('races'));
     }
 
     public function race(Race $race){

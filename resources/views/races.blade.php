@@ -57,7 +57,6 @@
         </div>
     </div>
     @endforeach
-    {{$races->links()}}
 </div>
 @include('footer')
 @endsection

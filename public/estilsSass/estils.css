@@ -478,12 +478,12 @@ p {
     padding: 0;
     margin: 0;
   }
-  .modalitat .modalitat-info li {
+  .modalitat .modalitat-info {
     display: flex;
     flex-direction: column;
-    box-shadow: none;
+  }
+  .modalitat .modalitat-info li {
     margin: 5px;
-    border-radius: 0px;
   }
   .modalitat .modalitat-detalls {
     display: flex;
