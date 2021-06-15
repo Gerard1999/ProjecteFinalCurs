@@ -14,7 +14,8 @@
                 <th>Total</th>
             </thead>
             <tbody class="cosTaula">
-                @foreach($invoice->cart->cartDetails as $detail)
+                {{$factura->cart}}
+                <!-- @foreach($factura->cart->cartDetails as $detail)
                     <tr>
                         <td>
                             <img src="{{$detail->product->get_image}}" height="100px" alt="">
@@ -25,7 +26,7 @@
                         <td>{{$detail->sumPriceDetail()}}€</td>
                     </tr>
                 @endforeach
-                <tr><td coolspan="5">$invoice->cart->priceCart()}}€</td></tr>
+                <tr><td coolspan="5">$factura->cart->priceCart()}}€</td></tr> -->
             </tbody>
         </table>
 </div>

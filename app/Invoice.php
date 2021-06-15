@@ -12,7 +12,7 @@ class Invoice extends Model
 
     //Una Factura és sobre un carro de la compra
     public function cart(){
-        return $this->hasMany(ShoppingCart::class);
+        return $this->belongsTo(ShoppingCart::class);
     }
 
     //Una Factura és d'un usuari

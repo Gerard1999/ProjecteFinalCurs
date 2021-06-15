@@ -21,6 +21,11 @@ class ShoppingCart extends Model
         return $this->belongsTo(User::class);
     }
 
+    //Relació de la factura
+    public function invoice(){
+        return $this->hasOne(Invoice::class);
+    }
+
     //Funció per crear un carro de la compra al crear la sessió o buscar si ja hi ha un amb la sessió actual
     public static function findOrCreateBySessionId($shopping_cart_id) {
         if ($shopping_cart_id) {
