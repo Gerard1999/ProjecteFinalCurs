@@ -13,7 +13,6 @@ use App\Http\Controllers\ShoppingCartDetailController;
 use App\Http\Controllers\ShoppingCartController;
 use App\Http\Controllers\SuperAdminController;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\Backend\RaceController;
 /*
 |--------------------------------------------------------------------------
@@ -36,6 +35,16 @@ Route::get('galeria', [PageController::class, 'images'])->name('gallery');
 
 Auth::routes();
 
+//Inici Rutes Carro de la Compra
+Route::resource('shoppingCartDetail', 'ShoppingCartDetailController')->only([
+                'update', 'destroy'
+                ])->names('shopping_cart_details');
+Route::post('/afegir-producte-carro', [ShoppingCartDetailController::class, 'store'])->name('addproduct');
+Route::get('/el-meu-carro', [ShoppingCartController::class, 'index'])->name('shoppingcart');
+Route::delete('/esborrar-detall/{detail}', [ShoppingCartDetailController::class, 'destroy'])->name('deleteCartDetail');
+Route::post('/actualitzar-detall/{detail}', [ShoppingCartDetailController::class, 'update'])->name('updateCartDetail');
+//Fi Rutes Carro de la Compra
+
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 //Rutes dels corredors
@@ -57,18 +66,6 @@ Route::group([
         Route::get('/curses-realitzades', [InscriptionsListController::class, 'viewPassedRaces'])->name('view-passed-races');
         
         Route::get('/resum-inscripcio/{id}', [InscriptionsListController::class, 'inscriptionSummary'])->name('inscriptionsummary');
-        
-        //Inici Rutes Carro de la Compra
-        Route::resource('shoppingCartDetail', 'ShoppingCartDetailController')->only([
-                'update', 'destroy'
-                ])->names('shopping_cart_details');
-                Route::post('/afegir-producte-carro', [ShoppingCartDetailController::class, 'store'])->name('addproduct');
-                Route::get('/el-meu-carro', [ShoppingCartController::class, 'index'])->name('shoppingcart');
-                Route::delete('/esborrar-detall/{detail}', [ShoppingCartDetailController::class, 'destroy'])->name('deleteCartDetail');
-                Route::post('/actualitzar-detall/{detail}', [ShoppingCartDetailController::class, 'update'])->name('updateCartDetail');
-                Route::post('/guardar-compra/{id}', [InvoiceController::class, 'store'])->name('saveshopping');
-                Route::get('/veurefactura/{factura}', [InvoiceController::class, 'indexOne'])->name('showInvoice');
-        //Fi Rutes Carro de la Compra
 
 });
 

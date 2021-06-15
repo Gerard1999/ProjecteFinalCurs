@@ -15,7 +15,7 @@
             <h3>{{$product->price}}€</h3>
             <h5>Talles disponibles:</h5>
             <div class="dades">
-                <form action="{{route('runner.addproduct', $product)}}" method="post">
+                <form action="{{route('addproduct', $product)}}" method="post">
                     @csrf
                     <input type="number" value="{{$product->id}}" hidden name="product_id">
                     <select name="size">
