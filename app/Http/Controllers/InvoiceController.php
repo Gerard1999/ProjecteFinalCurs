@@ -16,7 +16,6 @@ class InvoiceController extends Controller
     public function indexOne($invoice) {
         $factura = Invoice::find($invoice);
         $carro = ShoppingCart::find($factura->shopping_cart_id);
-
         return view('shoppingcart.showinvoice', compact('carro'));
 
     }
@@ -40,6 +39,7 @@ class InvoiceController extends Controller
             'user_id'           => Auth::user()->id,
         ]);
 
+        $request->session()->start();
         return redirect()->route('runner.showInvoice', $invoice);
     }
 
