@@ -18,8 +18,8 @@ class PageController extends Controller
         $maxDesnivell   = $request->metresmax;
 
         $races = Race::where('validate', 1)
-                ->select('races.*', 'categories.kms', 'categories.elevation_gain')
-                ->leftjoin('categories','categories.race_id', '=', 'races.id')
+                ->select('races.*')
+                ->leftJoin('categories','categories.race_id', '=', 'races.id')
                 ->where('races.name', 'LIKE', '%'.$nomCursa.'%')
                 ->where('races.location', 'LIKE', '%'.$poblacio.'%');
 
@@ -36,7 +36,7 @@ class PageController extends Controller
             $races = $races->where('categories.elevation_gain', '<=', (int)$maxDesnivell);
         }
 
-        $races = $races->paginate(10);
+        $races = $races->distinct()->get();
 
         return view('races', compact('races'));
 

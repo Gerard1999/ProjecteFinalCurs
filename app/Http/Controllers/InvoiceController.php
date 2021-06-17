@@ -15,7 +15,9 @@ class InvoiceController extends Controller
 
     public function indexOne($invoice) {
         $factura = Invoice::find($invoice);
-        return view('shoppingcart.showinvoice', compact('factura'));
+        $carro = ShoppingCart::find($factura->shopping_cart_id);
+
+        return view('shoppingcart.showinvoice', compact('carro'));
 
     }
 

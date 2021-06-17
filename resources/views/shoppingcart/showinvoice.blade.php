@@ -11,11 +11,9 @@
                 <th>Preu</th>
                 <th>Unitats</th>
                 <th>Subtotal</th>
-                <th>Total</th>
             </thead>
             <tbody class="cosTaula">
-                {{$factura->cart}}
-                <!-- @foreach($factura->cart->cartDetails as $detail)
+            @foreach($carro->cartDetails as $detail)
                     <tr>
                         <td>
                             <img src="{{$detail->product->get_image}}" height="100px" alt="">
@@ -26,9 +24,13 @@
                         <td>{{$detail->sumPriceDetail()}}€</td>
                     </tr>
                 @endforeach
-                <tr><td coolspan="5">$factura->cart->priceCart()}}€</td></tr> -->
+                
+                
             </tbody>
         </table>
+        <div class="quadre-total">
+            <h3>Total: {{$carro->priceCart()}}€</h3>
+        </div>
 </div>
 @include('footer')
 @endsection
