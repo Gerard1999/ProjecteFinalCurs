@@ -26,11 +26,14 @@
     </form>
 </div>
 <div class="curses">
+    <script>
+        window.location.href = '/#races';
+    </script>
     @if(count($races) <= 0)
         <div class="curses-buides">
             <h2>No hi ha curses amb aquests filtres...</h2>
         </div>
-    @endif
+    @else
     @foreach($races as $race)
     <div class="cursa">
         <div class="informacio-cursa">
@@ -57,6 +60,7 @@
         </div>
     </div>
     @endforeach
+    @endif
 </div>
 @include('footer')
 @endsection
