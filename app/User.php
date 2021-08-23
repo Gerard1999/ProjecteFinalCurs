@@ -52,5 +52,10 @@ class User extends Authenticatable
     public function inscriptions(){
         return $this->hasMany(InscriptionsList::class);
     }
+
+    //Una Usuari pot tenir vàries Factures
+    public function invoices(){
+        return $this->HasMany(Invoice::class);
+    }
     
 }

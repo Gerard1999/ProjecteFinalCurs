@@ -55,6 +55,7 @@ Route::group([
         //Curses Corredor
         Route::get('/futures-curses', [InscriptionsListController::class, 'viewFutureRaces'])->name('view-future-races');
         Route::get('/curses-realitzades', [InscriptionsListController::class, 'viewPassedRaces'])->name('view-passed-races');
+        Route::get('/historial-compres', [InvoiceController::class, 'viewBuyHistory'])->name('view-buy-history');
         
         Route::get('/resum-inscripcio/{id}', [InscriptionsListController::class, 'inscriptionSummary'])->name('inscriptionsummary');
         

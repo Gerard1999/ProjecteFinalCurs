@@ -53,4 +53,12 @@ class InvoiceController extends Controller
     {
         
     }
+
+    //Funció que retorna les compres d'un usuari
+    public function viewBuyHistory() {
+        $history = Invoice::where('user_id',Auth::user()->id)
+            ->get();
+
+        return view('privatezone.buy-history', compact('history'));
+    }
 }

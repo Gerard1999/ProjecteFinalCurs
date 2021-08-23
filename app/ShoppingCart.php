@@ -56,4 +56,9 @@ class ShoppingCart extends Model
         $shopping_cart = self::findOrCreateBySessionId($shopping_cart_id);
         return $shopping_cart;
     }
+
+    //Funció que crea un nou carro de la compra (nova sessió)
+    public static function createSession() {
+        return ShoppingCart::create();
+    }
 }
