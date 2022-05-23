@@ -1,5 +1,5 @@
 nav {
-  background: linear-gradient(90deg, #ffd393 10%, #ffc05e 32%, #ffa43d 80%);
+  background: linear-gradient(90deg, rgb(255, 211, 147) 10%, rgb(255, 192, 94) 32%, rgb(255, 164, 61) 80%);
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -15,12 +15,12 @@ nav .logo a {
   letter-spacing: 5px;
   font-weight: normal;
   transition: color 0.4s ease;
-  border: 1px #424242 solid;
+  border: 1px rgb(66, 66, 66) solid;
   padding: 0.4rem;
   margin: 0;
 }
 nav .logo a:hover {
-  color: #424242;
+  color: rgb(66, 66, 66);
 }
 nav .nav-links,
 nav .user-links {
@@ -35,14 +35,14 @@ nav .user-links li {
 }
 nav .nav-links .register,
 nav .user-links .register {
-  border: 1px #424242 solid;
+  border: 1px rgb(66, 66, 66) solid;
   padding: 0.4rem;
   border-radius: 5px;
 }
 nav .nav-links .register:hover,
 nav .user-links .register:hover {
   color: orange;
-  background-color: #424242;
+  background-color: rgb(66, 66, 66);
 }
 nav .nav-links a,
 nav .user-links a {
@@ -56,7 +56,7 @@ nav .user-links a {
 }
 nav .nav-links a:hover,
 nav .user-links a:hover {
-  color: #424242;
+  color: rgb(66, 66, 66);
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
 }
 nav .user-links {
@@ -75,7 +75,7 @@ nav .linies {
 nav .linies div {
   width: 25px;
   height: 3px;
-  background-color: #424242;
+  background-color: rgb(66, 66, 66);
   margin: 5px;
   transition: all 0.3s ease;
 }
@@ -96,8 +96,8 @@ nav .linies div {
     right: 0px;
     height: 100vh;
     top: 8vh;
-    background: #ffd393;
-    background: linear-gradient(0deg, #ffd393 10%, #ffc05e 32%, #ffa43d 80%);
+    background: rgb(255, 211, 147);
+    background: linear-gradient(0deg, rgb(255, 211, 147) 10%, rgb(255, 192, 94) 32%, rgb(255, 164, 61) 80%);
     display: flex;
     z-index: 1;
     flex-direction: column;
@@ -151,7 +151,7 @@ nav .linies div {
   width: 100%;
   margin: auto;
   padding: 1.4rem 0;
-  background: linear-gradient(90deg, #ffc56d 10%, #ffc15e 32%, #ffa43d 80%);
+  background: linear-gradient(90deg, rgb(255, 197, 109) 10%, rgb(255, 193, 94) 32%, rgb(255, 164, 61) 80%);
   box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.2);
 }
 .formulari-filtratge h3 {
@@ -173,13 +173,13 @@ nav .linies div {
   border-radius: 10px;
   -webkit-box-decoration-break: unset;
           box-decoration-break: unset;
-  background: #ffd17b;
+  background: rgb(255, 209, 123);
   border: 0;
 }
 .formulari-filtratge form input[type=text]:focus,
 .formulari-filtratge form input[type=number]:focus {
   outline: none;
-  border-bottom: 2px #424242 solid;
+  border-bottom: 2px rgb(66, 66, 66) solid;
   background: rgba(255, 228, 163, 0.301);
 }
 .formulari-filtratge form input[type=submit] {
@@ -193,7 +193,7 @@ nav .linies div {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0rem 2rem;
+  margin: 6rem 2rem;
   flex-wrap: wrap;
 }
 .curses .curses-buides {
@@ -235,7 +235,7 @@ nav .linies div {
 .curses .cursa .imatge-cursa:hover .modalitats {
   display: block;
   position: absolute;
-  border: 1px solid #424242;
+  border: 1px solid rgb(66, 66, 66);
   background: rgba(255, 255, 255, 0.466);
   border-radius: 5px;
   padding: 0.5rem;
@@ -245,8 +245,8 @@ nav .linies div {
 .curses .cursa .informacio-cursa {
   height: 100%;
   width: 50%;
-  background: linear-gradient(90deg, #ffc56d 10%, #ffc15e 32%, #ffa43d 80%);
-  color: #424242;
+  background: linear-gradient(90deg, rgb(255, 197, 109) 10%, rgb(255, 193, 94) 32%, rgb(255, 164, 61) 80%);
+  color: rgb(66, 66, 66);
   padding: 1rem;
   display: flex;
   justify-content: center;
@@ -264,16 +264,16 @@ nav .linies div {
   font-size: 0.9rem;
 }
 .curses .cursa .informacio-cursa .link-cursa {
-  border: #424242 1px solid;
+  border: rgb(66, 66, 66) 1px solid;
   border-radius: 10px;
   padding: 0.4rem;
   margin: 0.4rem;
-  color: #424242;
+  color: rgb(66, 66, 66);
   text-decoration: none;
 }
 .curses .cursa .informacio-cursa .link-cursa:hover {
   color: orange;
-  background-color: #424242;
+  background-color: rgb(66, 66, 66);
 }
 
 @media screen and (max-width: 1024px) {
@@ -357,7 +357,7 @@ p {
 .pagina-cursa .info-cursa .modalitats .modalitat {
   max-width: 70%;
   height: auto;
-  background: #fab958;
+  background: rgb(250, 185, 88);
   padding: 1.5rem;
   margin: 1.2rem 0rem 1.2rem 0rem;
   display: flex;
@@ -373,8 +373,8 @@ p {
   justify-content: center;
   align-items: center;
   margin: 1rem;
-  border-top: 2px solid #424242;
-  border-bottom: 2px solid #424242;
+  border-top: 2px solid rgb(66, 66, 66);
+  border-bottom: 2px solid rgb(66, 66, 66);
 }
 .pagina-cursa .info-cursa .modalitats .modalitat .modalitat-titol h3 {
   padding: 1rem;
@@ -410,7 +410,7 @@ p {
   margin-bottom: 10px;
 }
 .pagina-cursa .info-cursa .modalitats .modalitat .separador {
-  background-color: #424242;
+  background-color: rgb(66, 66, 66);
   width: 90%;
   height: 2px;
   margin: 2rem;
@@ -534,9 +534,9 @@ p {
   text-align: center;
   list-style: none;
   margin: 2rem;
-  border: 1px solid #424242;
+  border: 1px solid rgb(66, 66, 66);
   border-radius: 10px;
-  background: linear-gradient(90deg, #ffd393 10%, #ffc05e 32%, #ffa43d 80%);
+  background: linear-gradient(90deg, rgb(255, 211, 147) 10%, rgb(255, 192, 94) 32%, rgb(255, 164, 61) 80%);
 }
 .private-zone .opcions ul li:hover {
   filter: grayscale(25%);
@@ -546,7 +546,7 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #424242;
+  color: rgb(66, 66, 66);
   font-size: 1.2rem;
   font-weight: 600;
   text-decoration: none;
@@ -575,7 +575,7 @@ p {
 footer {
   margin: 1.8rem 0 0 0;
   width: 100%;
-  background: linear-gradient(90deg, #ffc56d 10%, #ffc15e 32%, #ffa43d 80%);
+  background: linear-gradient(90deg, rgb(255, 197, 109) 10%, rgb(255, 193, 94) 32%, rgb(255, 164, 61) 80%);
   display: flex;
   justify-content: space-around;
   flex-direction: column;
@@ -584,7 +584,7 @@ footer .separador {
   width: 90%;
   display: flex;
   height: 0.1rem;
-  background: linear-gradient(180deg, #57565e 27%, #303033 75%);
+  background: linear-gradient(180deg, rgb(87, 86, 94) 27%, rgb(48, 48, 51) 75%);
   margin: auto;
 }
 footer .links_pagina,
@@ -653,7 +653,7 @@ footer h3 {
   margin-bottom: 2rem;
   overflow: hidden;
   transition: box-shadow 0.3s ease;
-  background: linear-gradient(90deg, #ffc56d 10%, #ffc15e 32%, #ffa43d 80%);
+  background: linear-gradient(90deg, rgb(255, 197, 109) 10%, rgb(255, 193, 94) 32%, rgb(255, 164, 61) 80%);
 }
 .contingut .productes .producte:hover {
   box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 3px 6px 0 rgba(109, 109, 109, 0.527);
@@ -677,7 +677,7 @@ footer h3 {
   height: auto;
   padding: 0.8rem;
   font-weight: bold;
-  color: #424242;
+  color: rgb(66, 66, 66);
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -686,7 +686,7 @@ footer h3 {
 .contingut .productes .producte .dades-producte .separador {
   width: 90%;
   height: 1px;
-  background-color: #424242;
+  background-color: rgb(66, 66, 66);
   margin: 0.4rem 0;
 }
 
@@ -731,7 +731,7 @@ footer h3 {
 }
 .contingut-producte .detalls-producte select option:disabled,
 .contingut-producte .detalls-producte input option:disabled {
-  background: #424242;
+  background: rgb(66, 66, 66);
   color: white;
 }
 
@@ -783,7 +783,7 @@ footer h3 {
   border-radius: 20px;
   text-align: center;
   background: linear-gradient(90deg, rgba(255, 197, 109, 0.5) 10%, rgba(255, 193, 94, 0.5) 32%, rgba(255, 164, 61, 0.5) 80%);
-  border: 1px solid #424242;
+  border: 1px solid rgb(66, 66, 66);
 }
 
 .taula {
@@ -796,7 +796,7 @@ footer h3 {
 }
 .taula .capcalera {
   width: 100%;
-  background: #facd7b;
+  background: rgb(250, 205, 123);
   padding: 1rem;
 }
 .taula .capcalera th {
@@ -821,11 +821,11 @@ footer h3 {
 }
 .taula .cosTaula tr a {
   text-decoration: none;
-  color: #424242;
+  color: rgb(66, 66, 66);
   font-weight: 600;
 }
 .taula .cosTaula tr a:hover {
-  color: #fab958;
+  color: rgb(250, 185, 88);
   text-shadow: 0px 0px 10px black;
 }
 .taula .cosTaula tr .casellaRow {
@@ -834,7 +834,7 @@ footer h3 {
   justify-content: space-evenly;
 }
 .taula .cosTaula tr:nth-child(odd) {
-  background: linear-gradient(90deg, #ffc56d 10%, #ffc15e 32%, #ffa43d 80%);
+  background: linear-gradient(90deg, rgb(255, 197, 109) 10%, rgb(255, 193, 94) 32%, rgb(255, 164, 61) 80%);
 }
 .taula th,
 .taula td {
@@ -857,7 +857,7 @@ footer h3 {
   margin-bottom: 2rem;
   width: 14rem;
   height: 16rem;
-  background: linear-gradient(90deg, #ffc56d 10%, #ffc15e 32%, #ffa43d 80%);
+  background: linear-gradient(90deg, rgb(255, 197, 109) 10%, rgb(255, 193, 94) 32%, rgb(255, 164, 61) 80%);
   border-radius: 15px;
   box-shadow: 1px 2px 4px 4px rgba(0, 0, 0, 0.2);
 }
@@ -914,7 +914,7 @@ footer h3 {
   padding: 8px;
 }
 .icona-carro:hover {
-  color: #424242;
+  color: rgb(66, 66, 66);
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
 }
 
@@ -927,7 +927,7 @@ footer h3 {
 }
 .carro-compra .header-carro {
   padding: 0.6rem;
-  background: linear-gradient(90deg, #ffc56d 10%, #ffc15e 32%, #ffa43d 80%);
+  background: linear-gradient(90deg, rgb(255, 197, 109) 10%, rgb(255, 193, 94) 32%, rgb(255, 164, 61) 80%);
   display: flex;
   align-content: center;
   justify-content: center;
@@ -970,7 +970,7 @@ footer h3 {
 }
 
 .button {
-  background: #424242;
+  background: rgb(66, 66, 66);
   color: white;
   text-align: center;
   padding: 12px;
@@ -985,7 +985,7 @@ footer h3 {
   margin: 0rem 2rem;
   width: 15rem;
   height: 10rem;
-  background: #fab958;
+  background: rgb(250, 185, 88);
   padding: 1.5rem;
   display: flex;
   justify-content: space-around;
@@ -1014,46 +1014,6 @@ footer h3 {
 }
 .comptador-preu button {
   border: none;
-}
-
-.portada {
-  height: 92%;
-  width: 100%;
-  background: url("../../images/portada/portada.jpg");
-  background-size: cover;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.portada .portada-titol {
-  transform: translate(-60%, -35%);
-  width: 24rem;
-  height: 14rem;
-  border-radius: 15px;
-  padding: 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: column;
-  margin: 4rem;
-}
-.portada .portada-titol h1 {
-  font-family: "Satisfy", cursive;
-  font-size: 4.5rem;
-  text-shadow: -2px 0 white, 0 2px white, 2px 0 white, 0 -2px black;
-  font-weight: bold;
-  letter-spacing: 2px;
-}
-.portada .portada-titol .boto {
-  box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.534);
-}
-.portada .portada-titol .boto a {
-  font-family: "Satisfy", cursive;
-  font-size: 1.5rem;
-  color: black;
-}
-.portada .portada-titol .boto a:hover {
-  font-weight: 900;
 }
 
 @media screen and (max-width: 768px) {
@@ -1106,7 +1066,7 @@ footer h3 {
 .imatges .imatge-galeria:hover .enllac-cursa {
   display: block;
   position: absolute;
-  border: 1px solid #424242;
+  border: 1px solid rgb(66, 66, 66);
   background: rgba(255, 255, 255, 0.466);
   border-radius: 5px;
   padding: 0.5rem;
@@ -1190,9 +1150,9 @@ h4 {
   background: linear-gradient(90deg, rgba(255, 197, 109, 0.75) 10%, rgba(255, 193, 94, 0.75) 32%, rgba(255, 164, 61, 0.75) 80%);
   padding: 0.8rem;
   border-radius: 20px;
-  border: 1px solid #424242;
+  border: 1px solid rgb(66, 66, 66);
   text-decoration: none;
-  color: #424242;
+  color: rgb(66, 66, 66);
   font-size: 1.1rem;
   text-align: center;
   justify-content: center;
@@ -1200,7 +1160,7 @@ h4 {
 }
 .boto:hover {
   text-decoration: none;
-  color: #424242;
+  color: rgb(66, 66, 66);
   font-weight: 600;
   background: linear-gradient(90deg, rgba(255, 197, 109, 0.945) 10%, rgba(255, 193, 94, 0.938) 32%, rgba(255, 164, 61, 0.952) 80%);
 }

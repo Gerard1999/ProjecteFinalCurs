@@ -58,11 +58,16 @@
     @endif
     <div class="quadre-total">
         <h3>Total: {{$shopping_cart->priceCart()}}€</h3>
-        <form action="{{ route('runner.saveshopping', $shopping_cart) }}" method="POST">
+        <form action="{{ route('runner.restartSession', $shopping_cart) }}" method="POST">
             @csrf
             @method('POST')
             <input type="submit" value="Finalitzar Compra" class="boto boto-blau" @if($shopping_cart->cartDetails->isEmpty()) disabled @endif>
         </form>
+        <!-- <form action="{{ route('runner.saveshopping', $shopping_cart) }}" method="POST">
+            @csrf
+            @method('POST')
+            <input type="submit" value="Finalitzar Compra" class="boto boto-blau" @if($shopping_cart->cartDetails->isEmpty()) disabled @endif>
+        </form> -->
     </div>
 </div>
 <script>

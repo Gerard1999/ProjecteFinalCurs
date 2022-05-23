@@ -1,42 +1,42 @@
-.portada {
-    height: 92%;
-    width: 100%;
-    background: url('../../images/portada/portada.jpg');
-    background-size: cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    .portada-titol {
-        transform: translate(-60%, -35%);
-        width: 24rem;
-        height: 14rem;
-        border-radius: 15px;
-        padding: 2rem;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-direction: column;
-        margin: 4rem;
-        h1 {
-            font-family: 'Satisfy', cursive;
-            font-size: 4.5rem;
-            text-shadow: -2px 0 rgb(255, 255, 255), 0 2px rgb(255, 255, 255), 2px 0 rgb(255, 255, 255), 0 -2px black;
-            font-weight: bold;
-            letter-spacing: 2px;
-        }
-        .boto {
-            box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.534);
-            a {
-                font-family: 'Satisfy', cursive;
-                font-size: 1.5rem;
-                color: black;
-                &:hover {
-                    font-weight: 900;
-                }
-            }
-        }
-    }
-}
+// .portada {
+//     height: 92%;
+//     width: 100%;
+//     background: url('../../images/portada/portada.jpg');
+//     background-size: cover;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     .portada-titol {
+//         transform: translate(-60%, -35%);
+//         width: 24rem;
+//         height: 14rem;
+//         border-radius: 15px;
+//         padding: 2rem;
+//         display: flex;
+//         justify-content: space-between;
+//         align-items: center;
+//         flex-direction: column;
+//         margin: 4rem;
+//         h1 {
+//             font-family: 'Satisfy', cursive;
+//             font-size: 4.5rem;
+//             text-shadow: -2px 0 rgb(255, 255, 255), 0 2px rgb(255, 255, 255), 2px 0 rgb(255, 255, 255), 0 -2px black;
+//             font-weight: bold;
+//             letter-spacing: 2px;
+//         }
+//         .boto {
+//             box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.534);
+//             a {
+//                 font-family: 'Satisfy', cursive;
+//                 font-size: 1.5rem;
+//                 color: black;
+//                 &:hover {
+//                     font-weight: 900;
+//                 }
+//             }
+//         }
+//     }
+// }
 
 //Mida mòbil
 @media screen and (max-width: 768px) {

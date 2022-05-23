@@ -26,20 +26,16 @@
     <!-- Icones -->
     <link href="{{ asset('iconesFontawesome/css/all.css') }}" rel="stylesheet">
 
-    <!-- Maps -->
-    <script src='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js'></script>
-    <link href='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css' rel='stylesheet' />
-
 </head>
 <body>
     <div id="app">
         <nav>
-            <div class="logo">
+            <!-- <div class="logo">
                 <h4><a href="/">Trail Races</a></h4>
-            </div>
+            </div> -->
             
             <ul class="nav-links">
-                <li><a href="/#races">Curses</a></li>
+                <li><a href="{{ route('races') }}">Curses</a></li>
                 <li><a href="{{ route('products') }}">Botiga</a></li>
                 <li><a href="{{ route('gallery') }}">Galeria</a></li>
             </ul>

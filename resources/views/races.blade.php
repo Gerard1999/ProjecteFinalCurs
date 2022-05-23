@@ -2,16 +2,18 @@
 
 @extends('layouts.app')
 
-<section class="portada">
+<!-- <section class="portada">
     <div class="portada-titol">
         <h1>Trail Races</h1>
         <a href="#races" class="boto">Veure Curses</a>
     </div>
-</section>
+</section> -->
 @section('content')
-<div class="titol">
+<!-- <div class="titol">
     <h1>Curses</h1>
-</div>
+</div> -->
+
+<br><br>
 <div class="formulari-filtratge" id="races">
     <h3>Busca una cursa</h3>
     <form action="{{route('races')}}" method="GET">
@@ -26,9 +28,9 @@
     </form>
 </div>
 <div class="curses">
-    <script>
+    <!-- <script>
         window.location.href = '/#races';
-    </script>
+    </script> -->
     @if(count($races) <= 0)
         <div class="curses-buides">
             <h2>No hi ha curses amb aquests filtres...</h2>

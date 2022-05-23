@@ -40,7 +40,16 @@
             </div>
             
             @if($race->date > now()->toDateString())
-                <a class="boto" href="{{route('runner.inscripcio', $race)}}" style="margin-top:1.2rem;">Inscriu-t'hi!</a>
+            <br>
+                @if (auth()->check())
+                    <a class="boto" href="{{route('runner.inscripcio', $race)}}" style="margin-top:1.2rem;">Inscriu-t'hi!</a>
+                @else
+                    <a class="boto" href="{{ url('/login?redirect_to='.url()->current()) }}" class="btn blue no-margin">
+                        Inicia sessió per inscriure't
+                    </a>
+                @endif
+
+                <!-- <a class="boto" href="{{route('runner.inscripcio', $race)}}" style="margin-top:1.2rem;">Inscriu-t'hi!</a> -->
             @endif        </div>
         <div class="modalitats">
             @foreach($race->categories as $category)
@@ -76,6 +85,10 @@
         @if($race->date > now()->toDateString())
         <a class="boto" href="{{route('runner.inscripcio', $race)}}">Inscriu-t'hi!</a>
         @endif
+
+        <div id="map" style="height: 500px; width: 800px; margin: auto;"></div>
+
+
         <!-- <div id='map' style='width: 800px; height: 400px; margin-top: 2rem; border-radius: 10px;'></div>
             <script>
             mapboxgl.accessToken = 'pk.eyJ1IjoiZ2VyYXJkMTk5OSIsImEiOiJja2I2cm1vbnUwMWhwMnVwYXNkdTJmM3U4In0.U_3ehdXAGsTDf_KqMSqHjw';
@@ -90,3 +103,32 @@
 </div>
 @include('footer')
 @endsection
+
+    <!-- Maps -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-gpx/1.7.0/gpx.min.js"></script>
+    <script>
+
+        window.onload = function () {
+            var map = L.map('map');
+            L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}.png', {
+            attribution: 'Made by Gerard Lopez'
+            }).addTo(map);
+    
+            var gpx = '../gpx/Surfing_in_da_night.gpx'; // URL to your GPX file or the GPX itself
+            new L.GPX(gpx, {
+                async: true,
+                marker_options: {
+                    startIconUrl: '',
+                    endIconUrl: '',
+                },
+                polyline_options: {
+                color: 'orange',
+                opacity: 0.8,
+                weight: 4,
+                }
+            }).on('loaded', function(e) {
+            map.fitBounds(e.target.getBounds());
+            }).addTo(map);
+        }
+    </script>

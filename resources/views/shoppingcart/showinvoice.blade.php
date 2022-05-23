@@ -4,6 +4,8 @@
     <h1>Rebut Compra</h1>
 </div>
 
+
+
 <div class="pagina-cursa">
         <table class="taula taula-petita">
             <thead class="capcalera">

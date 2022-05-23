@@ -80,6 +80,6 @@ class ShoppingCartController extends Controller
      */
     public function destroy(ShoppingCart $shoppingCart)
     {
-        //
+        $shoppingCart->delete();
     }
 }
