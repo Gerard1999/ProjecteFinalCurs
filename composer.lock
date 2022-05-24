@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9a1945e21630d401a620a0f0c4102fec",
+    "content-hash": "f7a4fe90e75364083a6a76225081089a",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2550,6 +2550,57 @@
                 }
             ],
             "time": "2020-08-18T17:17:46+00:00"
+        },
+        {
+            "name": "rawaby88/open-weather-laravel",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rawaby88/open-weather-laravel.git",
+                "reference": "e43c94c465d77350c5a98c706e00ba2072936574"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rawaby88/open-weather-laravel/zipball/e43c94c465d77350c5a98c706e00ba2072936574",
+                "reference": "e43c94c465d77350c5a98c706e00ba2072936574",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "^7.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^6.13",
+                "phpunit/phpunit": "^9.5"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Rawaby88\\OpenWeatherMap\\Providers\\OpenWeatherServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Rawaby88\\OpenWeatherMap\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "M.Osman",
+                    "email": "m.osman@dreamod.pl"
+                }
+            ],
+            "description": "Laravel package to provide Open Weather Map API integration",
+            "support": {
+                "issues": "https://github.com/rawaby88/open-weather-laravel/issues",
+                "source": "https://github.com/rawaby88/open-weather-laravel/tree/1.0.1"
+            },
+            "time": "2021-03-13T18:05:42+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",

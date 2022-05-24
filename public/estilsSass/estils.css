@@ -1,3 +1,4 @@
+@charset "UTF-8";
 nav {
   background: linear-gradient(90deg, rgb(255, 211, 147) 10%, rgb(255, 192, 94) 32%, rgb(255, 164, 61) 80%);
   display: flex;
@@ -456,6 +457,65 @@ p {
      object-fit: cover;
   width: 100%;
   height: 100%;
+}
+
+.weather_grid {
+  display: grid;
+  padding: 5px;
+  width: 250px;
+  grid-template-columns: 55px 55px 55px 1fr;
+  background: linear-gradient(90deg, rgba(255, 197, 109, 0.692) 10%, rgba(255, 193, 94, 0.671) 32%, rgba(255, 164, 61, 0.678) 80%);
+  border: 1px solid rgb(66, 66, 66);
+  border-radius: 10px;
+}
+.weather_grid .grid_temp {
+  grid-column: 1;
+  grid-row: 1;
+  text-align: center;
+}
+.weather_grid .grid_temp:after {
+  content: "°C";
+}
+.weather_grid .grid_tempMin {
+  grid-column: 2;
+  grid-row: 1;
+  text-align: center;
+}
+.weather_grid .grid_tempMin:after {
+  content: "°C";
+}
+.weather_grid .grid_tempMax {
+  grid-column: 3;
+  grid-row: 1;
+  text-align: center;
+}
+.weather_grid .grid_tempMax:after {
+  content: "°C";
+}
+.weather_grid .grid_temp_description {
+  grid-column: 4;
+  grid-row: 1;
+  text-align: center;
+}
+.weather_grid .grid_icon_temp {
+  grid-row: 2;
+  grid-column: 1;
+  margin: auto;
+}
+.weather_grid .grid_icon_tempMin {
+  grid-row: 2;
+  grid-column: 2;
+  margin: auto;
+}
+.weather_grid .grid_icon_tempMax {
+  grid-row: 2;
+  grid-column: 3;
+  margin: auto;
+}
+.weather_grid .grid_temp_icon {
+  grid-row: 2;
+  grid-column: 4;
+  margin: auto;
 }
 
 .titular-cursa {

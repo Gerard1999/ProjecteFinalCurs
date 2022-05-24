@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Race;
 use Illuminate\Http\Request;
+use Rawaby88\OpenWeatherMap\Services\CWByCityName;
 use DB;
 
 class PageController extends Controller
@@ -57,6 +58,15 @@ class PageController extends Controller
 
     public function race(Race $race){
         if($race->validate){
+        
+            $cw = (new CWByCityName($race->location, 'es'))->get();
+            $temperature = $cw->temperature; // return Temperature object
+            $weather     = $cw->weather;     // return Weather object 
+            $sun         = $cw->sun;         // return Sun object
+            $race->temperature = $temperature;
+            $race->weather = $weather;
+            $race->sun = $sun;
+
             return view('race', ['race' => $race]);
         }
         return back();

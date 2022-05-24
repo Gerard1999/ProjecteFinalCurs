@@ -12,6 +12,20 @@
     </div>
     <div class="tornar">
         <a class="boto boto-petit esquerra" href="{{ URL::previous() }}">&larr;Tornar Enrere</a>
+        <div class="weather_grid dreta">
+            @if($race->temperature)
+                <div class="grid_temp"> {{$race->temperature->temp}}</div>
+                <img class="grid_icon_temp" src="{{asset('images/celsius.png')}}">
+                <div class="grid_tempMin">{{$race->temperature->tempMax}}</div>
+                <img class="grid_icon_tempMin" src="{{asset('images/alta-temperatura.png')}}">
+                <div class="grid_tempMax">{{$race->temperature->tempMin}}</div>
+                <img class="grid_icon_tempMax" src="{{asset('images/baja-temperatura.png')}}">
+            @endif
+            @if($race->weather->iconUrl)
+            <div class="grid_temp_description">{{ucfirst(trans($race->weather->description))}}</div>
+            <div class="grid_temp_icon"><img src="{{ $race->weather->iconUrl }}"></div>
+            @endif
+        </div>
     </div>
     <div class="info-cursa">
         <div class="dades-generals">
@@ -50,7 +64,8 @@
                 @endif
 
                 <!-- <a class="boto" href="{{route('runner.inscripcio', $race)}}" style="margin-top:1.2rem;">Inscriu-t'hi!</a> -->
-            @endif        </div>
+            @endif        
+        </div>
         <div class="modalitats">
             @foreach($race->categories as $category)
             <div class="modalitat">
