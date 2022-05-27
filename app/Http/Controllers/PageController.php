@@ -66,12 +66,64 @@ class PageController extends Controller
             $race->temperature = $temperature;
             $race->weather = $weather;
             $race->sun = $sun;
+            $race->weather->iconWeather = $this->getWeatherImage($race->weather->iconUrl);
 
             return view('race', ['race' => $race]);
         }
         return back();
     }
 
+    public function getWeatherImage($urlImg) {
+        // dd($urlImg);
+        $url = 'images/weather/';
+        // $img = "//openweathermap.org/img/w/05n.png";
+        $icon = explode('/', $urlImg);
+        $icon = ($icon[count($icon)-1]);
+
+        switch ($icon) {
+            //DIA
+            case '01d.png':
+                $img = $url.'sun.png';
+                // Sol
+                break;
+            case '02d.png':
+                $img = $url.'suncloud.png';
+                // Sol i nuvol    
+                break;
+            case '03d.png':
+                $img = $url.'cloud.png';
+                // nuvol    
+                break;
+            case '04d.png':
+                $img = $url.'clouds.png';
+                // 2 nuvol    
+                break;
+            //NIT
+            case '01n.png':
+                $img = $url.'moon.png';
+                // Lluna
+                break;
+            case '02n.png':
+                $img = $url.'mooncloud.png';
+                // Lluna i nuvol
+                break;
+            case '03n.png':
+                $img = $url.'cloud.png';
+                // nuvol    
+                break;
+            case '04n.png':
+                $img = $url.'clouds.png';
+                // 2 nuvol    
+                break;
+            
+            // default:
+            //     $img = $url.'.png';
+            //     # code...
+            //     break;
+        }
+        // dd($img);
+        return $img;
+    }
 
     public function images() {
 
