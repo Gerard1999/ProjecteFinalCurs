@@ -119,8 +119,10 @@
 @endsection
 
     <!-- Maps -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-gpx/1.7.0/gpx.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-gpx/1.7.0/gpx.min.js"></script> -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ==" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ==" crossorigin=""></script>
     <script>
 
         window.onload = function () {
@@ -129,7 +131,8 @@
             attribution: 'Made by Gerard Lopez'
             }).addTo(map);
     
-            var gpx = '../gpx/Surfing_in_da_night.gpx'; // URL to your GPX file or the GPX itself
+            var gpx = '../Surfing_in_da_night.gpx'; // URL to your GPX file or the GPX itself
+            console.log(gpx);
             new L.GPX(gpx, {
                 async: true,
                 marker_options: {

@@ -15,24 +15,48 @@ nav {
         font-weight: normal;
         transition: color 0.4s ease;
         border: 1px $grisFosc solid;
-        padding: 0.4rem;
+        // padding: 0.4rem;
         margin: 0;
         &:hover {
             color: $grisFosc;
         }
     }
-    .nav-links,
-    .user-links {
-        margin: 0px;
+    .nav-links {
+        padding: 0;
+        margin: -40px;
         display: flex;
         justify-content: space-around;
-        width: 30%;
         li {
             list-style: none;
+            margin: auto 5px;
+        }
+        a {
+            margin: 0.2rem;
+            text-decoration: none;
+            color: black;
+            font-size: 1rem;
+            letter-spacing: 2px;
+            border-radius: 5px;
+            padding: 8px;
+            &:hover {
+                color: $grisFosc;
+                box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+            }
+        }
+    }
+    .user-links {
+        float: right;
+        padding: 0;
+        margin: -80px;
+        display: flex;
+        justify-content: space-around;
+        li {
+            list-style: none;
+            margin: auto 5px;
         }
         .register {
             border: 1px $grisFosc solid;
-            padding: 0.4rem;
+            padding: 5px;
             border-radius: 5px;
             &:hover {
                 color: orange;
@@ -60,7 +84,10 @@ nav {
         }
     }
     .nav-links {
-        width: 40%;
+        width: 400px;
+    }
+    .user-links {
+        width: 350px;
     }
     .linies {
         display: none;
@@ -74,9 +101,28 @@ nav {
         }
     }
 }
+@media screen and (max-width: 950px) {
+    .nav-links {
+        width: 300px !important;
+    }
+    .user-links {
+        width: 450px !important;
+    }
+    .logo  {
+        margin-top: 5px !important;
+        margin-left: -10px !important;
+        a {
+            font-size: 1.2rem !important;
+            letter-spacing: 2px !important;
+        }
+    }
+}
 
 //Mida de mòbil
 @media screen and (max-width: 768px) {
+    nav {
+        justify-content: space-between;
+    }
     .no-scroll {
         overflow-y: hidden;
     }
@@ -105,6 +151,10 @@ nav {
         }
         .linies {
             display: block;
+            margin-right: 20px;
+        }
+        .logo {
+            margin-left:20px !important;
         }
         .animacioLinies .linia1 {
             transform: rotate(45deg) translate(2px, 9px);

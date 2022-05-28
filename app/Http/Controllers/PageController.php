@@ -6,6 +6,7 @@ use App\Race;
 use Illuminate\Http\Request;
 use Rawaby88\OpenWeatherMap\Services\CWByCityName;
 use DB;
+use File;
 
 class PageController extends Controller
 {
@@ -58,25 +59,47 @@ class PageController extends Controller
 
     public function race(Race $race){
         if($race->validate){
-        
-            $cw = (new CWByCityName($race->location, 'es'))->get();
-            $temperature = $cw->temperature; // return Temperature object
-            $weather     = $cw->weather;     // return Weather object 
-            $sun         = $cw->sun;         // return Sun object
-            $race->temperature = $temperature;
-            $race->weather = $weather;
-            $race->sun = $sun;
-            $race->weather->iconWeather = $this->getWeatherImage($race->weather->iconUrl);
+            if ($this->findCity($race->location)) {
+                $cw = (new CWByCityName($race->location, 'es'))->get();
+                $temperature = $cw->temperature; // return Temperature object
+                $weather     = $cw->weather;     // return Weather object 
+                $sun         = $cw->sun;         // return Sun object
+                $race->temperature = $temperature;
+                $race->weather = $weather;
+                $race->sun = $sun;
+                $race->weather->iconWeather = $this->getWeatherImage($race->weather->iconUrl);
+            }
+            
 
             return view('race', ['race' => $race]);
         }
         return back();
     }
 
+    public function findCity($cityName) {
+        if(file_exists('../resources/data/cities.json')) {
+            $json = File::get("../resources/data/cities.json");
+            $cities = json_decode($json);
+            $this->arrayCities = array();
+            
+            $this->arrayCities[$cityName] = 0;
+            foreach ($cities as $arrayCities) {
+                $this->arrayCities[$arrayCities->name] = $arrayCities->name;
+            }
+            if($this->arrayCities[$cityName]) {
+                return true;
+            }
+            return false;
+        }
+    }
+
+    /**
+     * Function that recieves an image link and returns another image of weather API
+     * @return $img, string with image url
+     */
     public function getWeatherImage($urlImg) {
-        // dd($urlImg);
-        $url = 'images/weather/';
         // $img = "//openweathermap.org/img/w/05n.png";
+        $url = 'images/weather/';
         $icon = explode('/', $urlImg);
         $icon = ($icon[count($icon)-1]);
 
@@ -98,7 +121,7 @@ class PageController extends Controller
                 $img = $url.'clouds.png';
                 // 2 nuvol    
                 break;
-            //NIT
+            ///// NIT
             case '01n.png':
                 $img = $url.'moon.png';
                 // Lluna
@@ -116,10 +139,10 @@ class PageController extends Controller
                 // 2 nuvol    
                 break;
             
-            // default:
-            //     $img = $url.'.png';
-            //     # code...
-            //     break;
+            default:
+                //Posem un sol per defecte si per si un cas
+                $img = $url.'sun.png';
+                break;
         }
         // dd($img);
         return $img;

@@ -30,9 +30,9 @@
 <body>
     <div id="app">
         <nav>
-            <!-- <div class="logo">
+            <div class="logo">
                 <h4><a href="/">Trail Races</a></h4>
-            </div> -->
+            </div>
             
             <ul class="nav-links">
                 <li><a href="{{ route('races') }}">Curses</a></li>

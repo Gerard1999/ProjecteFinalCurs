@@ -17,35 +17,54 @@ nav .logo a {
   font-weight: normal;
   transition: color 0.4s ease;
   border: 1px rgb(66, 66, 66) solid;
-  padding: 0.4rem;
   margin: 0;
 }
 nav .logo a:hover {
   color: rgb(66, 66, 66);
 }
-nav .nav-links,
-nav .user-links {
-  margin: 0px;
+nav .nav-links {
+  padding: 0;
+  margin: -40px;
   display: flex;
   justify-content: space-around;
-  width: 30%;
 }
-nav .nav-links li,
+nav .nav-links li {
+  list-style: none;
+  margin: auto 5px;
+}
+nav .nav-links a {
+  margin: 0.2rem;
+  text-decoration: none;
+  color: black;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  border-radius: 5px;
+  padding: 8px;
+}
+nav .nav-links a:hover {
+  color: rgb(66, 66, 66);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+}
+nav .user-links {
+  float: right;
+  padding: 0;
+  margin: -80px;
+  display: flex;
+  justify-content: space-around;
+}
 nav .user-links li {
   list-style: none;
+  margin: auto 5px;
 }
-nav .nav-links .register,
 nav .user-links .register {
   border: 1px rgb(66, 66, 66) solid;
-  padding: 0.4rem;
+  padding: 5px;
   border-radius: 5px;
 }
-nav .nav-links .register:hover,
 nav .user-links .register:hover {
   color: orange;
   background-color: rgb(66, 66, 66);
 }
-nav .nav-links a,
 nav .user-links a {
   margin: 0.2rem;
   text-decoration: none;
@@ -55,7 +74,6 @@ nav .user-links a {
   border-radius: 5px;
   padding: 8px;
 }
-nav .nav-links a:hover,
 nav .user-links a:hover {
   color: rgb(66, 66, 66);
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
@@ -67,7 +85,10 @@ nav .user-links a {
   letter-spacing: normal;
 }
 nav .nav-links {
-  width: 40%;
+  width: 400px;
+}
+nav .user-links {
+  width: 350px;
 }
 nav .linies {
   display: none;
@@ -81,7 +102,29 @@ nav .linies div {
   transition: all 0.3s ease;
 }
 
+@media screen and (max-width: 950px) {
+  .nav-links {
+    width: 300px !important;
+  }
+
+  .user-links {
+    width: 450px !important;
+  }
+
+  .logo {
+    margin-top: 5px !important;
+    margin-left: -10px !important;
+  }
+  .logo a {
+    font-size: 1.2rem !important;
+    letter-spacing: 2px !important;
+  }
+}
 @media screen and (max-width: 768px) {
+  nav {
+    justify-content: space-between;
+  }
+
   .no-scroll {
     overflow-y: hidden;
   }
@@ -112,6 +155,10 @@ nav .linies div {
   }
   body .linies {
     display: block;
+    margin-right: 20px;
+  }
+  body .logo {
+    margin-left: 20px !important;
   }
   body .animacioLinies .linia1 {
     transform: rotate(45deg) translate(2px, 9px);
@@ -186,8 +233,7 @@ nav .linies div {
 .formulari-filtratge form input[type=submit] {
   display: inline-block;
   width: 12rem;
-  margin: 1rem 12rem;
-  margin-top: 1.5rem;
+  margin: 0 1rem;
 }
 
 .curses {
