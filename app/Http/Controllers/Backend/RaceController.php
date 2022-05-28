@@ -69,9 +69,14 @@ class RaceController extends Controller
                 'num_aid_station'   => $request['num_aid_station_'.$i],
                 'max_participants'  => $request['num_participants_'.$i],
                 'elevation_img'     => $request['elevation_img_'.$i],
+                'gpx'               => $request['gpx_'.$i],
             ]);
             if ($request->file('elevation_img_'.$i)) {
                 $category->elevation_img = $request->file('elevation_img_'.$i)->store('races', 'public');
+                $category->save();
+            }
+            if ($request->file('gpx_'.$i)) {
+                $category->gpx = $request->file('gpx_'.$i)->store('gpx', 'public');
                 $category->save();
             }
         }

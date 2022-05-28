@@ -13,7 +13,8 @@ class Category extends Model
      */
     protected $fillable = [
         'race_id', 'name_category', 'kms', 'elevation_gain', 'location_start',
-        'location_finish', 'start_time', 'num_aid_station', 'price', 'max_participants', 'elevation_img'
+        'location_finish', 'start_time', 'num_aid_station', 'price', 'max_participants', 
+        'elevation_img', 'gpx'
     ];
 
 

@@ -30,6 +30,7 @@ class CreateCategoriesTable extends Migration
             $table->float('price');
             $table->integer('max_participants');
             $table->string('elevation_img')->nullable();
+            $table->string('gpx')->nullable();
 
 
             $table->timestamps();

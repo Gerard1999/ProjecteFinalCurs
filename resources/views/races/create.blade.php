@@ -9,7 +9,8 @@
         <div class="tornar">
             <a class="boto boto-petit" href="{{route('organizer.cursesorganitzador')}}">&larr;Tornar Enrere</a>
         </div>
-        <div class="col-md-6">
+        <br><br><br><br>
+        <div class="col-md-10">
 
             
 
@@ -56,6 +57,7 @@
                                 <br>
                             <div class="row">
                                 <div class="col col-md-7">
+                                    <br>
                                     <label>Imatge de Portada *</label>
                                     <input type="file" name="img" class="@error('img') is-invalid @enderror">
                                     @error('img')
@@ -169,15 +171,26 @@
                                             @enderror 
                                         </div>
                                     </div>
+                                    <br>
                                     <div class="row">
-                                        <div class="col col-md-12">
+                                        <div class="col col-md-6">
                                             <label>Imatge Perfil</label>
                                             <input type="file" name="elevation_img_0" class="@error('elevation_img_0') is-invalid @enderror">
                                             @error('elevation_img_0')
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
                                                 </span>
-                                            @enderror                                         </div>
+                                            @enderror
+                                        </div>
+                                        <div class="col col-md-6">
+                                            <label>Arxiu GPX(Mapa)</label>
+                                            <input type="file" name="gpx_0" class="@error('gpx_0') is-invalid @enderror">
+                                            @error('gpx_0')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -209,7 +222,7 @@
             var html =
                 `<div class="modalitat">
                     <div class="header-modalitat">
-                        <h4>Modalitat:</h4>
+                        <h4>Modalitat ${counter+1}:</h4>
                         <button type="button" class="btn btn-danger eliminar far fa-times-circle"></button>
                     </div>
                     <div class="row">
@@ -254,10 +267,15 @@
                             <input type="number" name="num_participants_${counter}" class="form-control">
                         </div>
                     </div>
+                    <br>
                     <div class="row">
-                        <div class="col col-md-12">
+                        <div class="col col-md-6">
                             <label>Imatge Perfil</label>
                             <input type="file" name="elevation_img_${counter}">
+                        </div>
+                        <div class="col col-md-6">
+                            <label>Arxiu GPX(Mapa)</label>
+                            <input type="file" name="gpx_${counter}">
                         </div>
                     </div>
                 </div>`;

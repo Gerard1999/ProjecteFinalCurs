@@ -3,7 +3,8 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-6">
+        <br><br><br><br>
+        <div class="col-md-10">
             <div class="titol">
                 <h1>{{ old('name', $race->name) }}</h1>
             </div>
@@ -45,6 +46,7 @@
                             <br>
                             <div class="row">
                                 <div class="col col-md-7">
+                                    <br>
                                     <label>Imatge de Portada *</label>
                                     <input type="file" name="img" value="{{ old('img_cover', $race->img_cover) }}">
                                 </div>
@@ -104,7 +106,28 @@
                                                 <input type="number" name="num_participants_0" class="form-control" value="{{ old('max_participants', $categoria->max_participants) }}">
                                             </div>
                                         </div>
+                                        <br>
+                                    <div class="row">
+                                        <div class="col col-md-6">
+                                            <label>Imatge Perfil</label>
+                                            <input type="file" name="elevation_img_0" class="@error('elevation_img_0') is-invalid @enderror">
+                                            @error('elevation_img_0')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
+                                        </div>
+                                        <div class="col col-md-6">
+                                            <label>Arxiu GPX(Mapa)</label>
+                                            <input type="file" name="gpx_0" class="@error('gpx_0') is-invalid @enderror">
+                                            @error('gpx_0')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
+                                        </div>
                                     </div>
+                                </div>
                                 @endforeach
                             </div>
                             <div class="boto-afegir">
@@ -178,6 +201,17 @@
                         <div class="col col-md-6">  
                             <label>Num. participants *</label>
                             <input type="number" name="num_participants_${counter}" class="form-control">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col col-md-6">
+                            <label>Imatge Perfil</label>
+                            <input type="file" name="elevation_img_${counter}">
+                        </div>
+                        <div class="col col-md-6">
+                            <label>Arxiu GPX(Mapa)</label>
+                            <input type="file" name="gpx_${counter}">
                         </div>
                     </div>
                 </div>`;

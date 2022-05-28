@@ -29,6 +29,8 @@ class RaceRequest extends FormRequest
             'location'              => 'required',
             'img'                   => 'required|image|mimes:jpeg,png,jpg',
             'date'                  => 'required',
+
+            //Category 1
             'name_category_0'       => 'required',
             'kms_0'                 => 'required',
             'elevation_gain_0'      => 'required',
@@ -39,6 +41,7 @@ class RaceRequest extends FormRequest
             'num_aid_station_0'     => 'required',
             'num_participants_0'    => 'required',
             'elevation_img_0'       => 'image|mimes:jpeg,png,jpg',
+            'gpx_0'                 => ['file','mimes:jpg,csv,gpx'],
         ];
     }
 }
