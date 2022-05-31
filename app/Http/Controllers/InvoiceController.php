@@ -59,6 +59,8 @@ class InvoiceController extends Controller
         $history = Invoice::where('user_id',Auth::user()->id)
             ->get();
 
+        // dd($history);
+
         return view('privatezone.buy-history', compact('history'));
     }
 }

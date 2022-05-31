@@ -29,9 +29,9 @@
                 
                 <table class="taula">
                     <thead class="capcalera">
-                        <th>Cursa</th>
-                        <th>Modalitat</th>
-                        <th>Lloc</th>
+                        <th>Nº Factura</th>
+                        <th>Productes</th>
+                        <th>Preu </th>
                         <th>Km's</th>
                         <th>Desnivell</th>
                         <th>Data</th>

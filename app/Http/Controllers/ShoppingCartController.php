@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\ShoppingCart;
+use App\Invoice;
 use Illuminate\Http\Request;
 
 class ShoppingCartController extends Controller
@@ -67,9 +68,16 @@ class ShoppingCartController extends Controller
      * @param  \App\ShoppingCart  $shoppingCart
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, ShoppingCart $shoppingCart)
-    {
-        //
+    public function update(Request $request, ShoppingCart $shoppingCart) {
+        $shoppingCart->status = "FINSHED";
+        $shoppingCart->save();
+
+        Invoice::create([
+            "user_id" => auth()->user()->id,
+            "shopping_cart_id" => $shoppingCart->id,
+        ]);
+
+        return view('home');
     }
 
     /**

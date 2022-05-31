@@ -7,6 +7,7 @@ use App\ShoppingCart;
 use App\Product;
 use Session;
 use Illuminate\Http\Request;
+use Auth;
 
 class ShoppingCartDetailController extends Controller
 {
@@ -24,7 +25,10 @@ class ShoppingCartDetailController extends Controller
 
             $product = Product::find($request->product_id);
             $shopping_cart = ShoppingCart::getShoppingCartId();
-    
+
+            $shopping_cart->user_id = auth()->user()->id;
+            $shopping_cart->updated_at = now();
+            $shopping_cart->save();
             //Si la talla i el producte està repetit suma la quantitat al CartDetail
             if ($cartDetailRepeated = ShoppingCartDetail::checkProductSizeDetail($shopping_cart, $request)) {
                 $cartDetailRepeated->quantity += $request->quantity;
@@ -37,6 +41,7 @@ class ShoppingCartDetailController extends Controller
                     'product_id'    =>$request->product_id,
                     'size'          =>$request->size,
                 ]);
+                ShoppingCartDetail::create($detail->toArray());
             }
     
             return back()->with('status', "S'ha afegit el producte correctament");

@@ -53,7 +53,8 @@
                 @endif
             </div>
             
-            @if($race->date > now()->toDateString() && Auth::user()->user_type == 'runner')
+            @if($race->date > now()->toDateString())
+            <!--&& Auth::user() && Auth::user()->user_type == 'runner'-->
             <br>
                 @if (auth()->check())
                     <a class="boto" href="{{route('runner.inscripcio', $race)}}" style="margin-top:1.2rem;">Inscriu-t'hi!</a>

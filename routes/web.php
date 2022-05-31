@@ -69,7 +69,11 @@ Route::group([
                 Route::post('/actualitzar-detall/{detail}', [ShoppingCartDetailController::class, 'update'])->name('updateCartDetail');
                 Route::post('/guardar-compra/{id}', [InvoiceController::class, 'store'])->name('saveshopping');
                 Route::get('/veurefactura/{factura}', [InvoiceController::class, 'indexOne'])->name('showInvoice');
-                Route::post('/reiniciarsessio/{shopping_cart}', [ShoppingCartController::class, 'destroy'])->name('restartSession');
+                // Route::post('/reiniciarsessio/{shopping_cart}', [ShoppingCartController::class, 'destroy'])->name('restartSession');
+
+
+                //Realitzar pagament
+                Route::post('/realitzar-pagament/{shopping_cart}', [ShoppingCartController::class, 'update'])->name('realitzarPagament');
         //Fi Rutes Carro de la Compra
 
 });
