@@ -134,3 +134,9 @@ h4 {
     flex-direction: row;
     flex-wrap: wrap;
 }
+
+main {
+    display: grid;
+    min-height: 76vh;
+    grid-template-rows: auto 1fr auto;
+}

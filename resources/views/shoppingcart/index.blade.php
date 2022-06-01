@@ -75,5 +75,4 @@
         document.querySelector("#resta").disabled = true;
     }
 </script>
-@include('footer')
 @endsection

@@ -81,7 +81,7 @@ class DatabaseSeeder extends Seeder
             'num_aid_station' => 1,
             'price' => 20,
             'max_participants' => 300,
-            'gpx'=> 'entrevalls_curta.gpx',
+            'gpx'=> '/gpx/entrevalls_curta.gpx',
         ]);
         App\Category::create([
             'race_id' => 1,
@@ -94,7 +94,7 @@ class DatabaseSeeder extends Seeder
             'num_aid_station' => 2,
             'price' => 30,
             'max_participants' => 200,
-            'gpx'=> 'entrevalls_llarga.gpx'
+            'gpx'=> '/gpx/entrevalls_llarga.gpx'
         ]);
 
         App\Size::create([

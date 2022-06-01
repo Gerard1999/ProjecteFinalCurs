@@ -30,13 +30,13 @@
                 <table class="taula">
                     <thead class="capcalera">
                         <th>Nº Factura</th>
-                        <th>Productes</th>
+                        <th>Producte</th>
                         <th>Preu </th>
-                        <th>Km's</th>
-                        <th>Desnivell</th>
-                        <th>Data</th>
+                        <th>Unitats</th>
+                        <th>Subtotal</th>
                     </thead>
-                    <!--  -->
+                    <!-- {{$invoice->user}} -->
+                    {{$invoice->cart}}
                 </table>
                 </div>
             </div>
@@ -49,5 +49,4 @@
 </div>
 
 
-@include('footer')
 @endsection

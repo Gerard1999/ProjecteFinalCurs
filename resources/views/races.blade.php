@@ -64,5 +64,4 @@
     @endforeach
     @endif
 </div>
-@include('footer')
 @endsection

@@ -29,7 +29,11 @@ class ShoppingCart extends Model
     //Funció per crear un carro de la compra al crear la sessió o buscar si ja hi ha un amb la sessió actual
     public static function findOrCreateBySessionId($shopping_cart_id) {
         if ($shopping_cart_id) {
-            return ShoppingCart::find($shopping_cart_id);
+            $cart = ShoppingCart::find($shopping_cart_id);
+            if($cart->status == 'FINSHED') {
+                return ShoppingCart::create();
+            }
+            return $cart;
         } else {
             return ShoppingCart::create();
         }

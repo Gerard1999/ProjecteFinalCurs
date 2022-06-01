@@ -50,7 +50,6 @@ class Race extends Model
     public function getGetImageAttribute(){
         return url("storage/$this->img_cover");
     }
-
 }
 
 

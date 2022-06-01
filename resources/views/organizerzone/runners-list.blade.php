@@ -38,5 +38,4 @@
     @endif
 </div>
 
-@include('footer')
 @endsection

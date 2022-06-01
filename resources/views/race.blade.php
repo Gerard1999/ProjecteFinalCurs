@@ -114,7 +114,6 @@
 
     </div>
 </div>
-@include('footer')
 @endsection
 
 <!-- Maps -->
@@ -122,9 +121,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-gpx/1.7.0/gpx.min.js"></script>
     
     <script>
-            
-            function getGpx(idMapa, gpx) {
-                // gpx = gpx.replace(/\.[^.]+$/, '.gpx');
+        function getGpx(idMapa, gpx) {
+            try {
                 var map = L.map(idMapa);
                 L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}.png', {
                 attribution: 'Made by Gerard Lopez'
@@ -142,6 +140,9 @@
                     }
                 }).on('loaded', function(e) {
                 map.fitBounds(e.target.getBounds());
-                }).addTo(map);
+                }).addTo(map);       
+            } catch (error) {
+                console.log("getGpx()", error);
             }
+        }
     </script>

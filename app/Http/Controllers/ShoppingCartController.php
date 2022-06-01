@@ -76,8 +76,9 @@ class ShoppingCartController extends Controller
             "user_id" => auth()->user()->id,
             "shopping_cart_id" => $shoppingCart->id,
         ]);
+        ShoppingCart::create();
 
-        return view('home');
+        return redirect()->route('races');
     }
 
     /**

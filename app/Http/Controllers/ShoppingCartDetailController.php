@@ -41,7 +41,7 @@ class ShoppingCartDetailController extends Controller
                     'product_id'    =>$request->product_id,
                     'size'          =>$request->size,
                 ]);
-                ShoppingCartDetail::create($detail->toArray());
+                // ShoppingCartDetail::create($detail->toArray());
             }
     
             return back()->with('status', "S'ha afegit el producte correctament");

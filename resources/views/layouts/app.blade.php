@@ -133,11 +133,12 @@
         </nav>
 
 
-        <main>
-            @yield('content')
-        </main>
         
     </div>
+    <main>
+        @yield('content')
+    </main>
+    @include('footer')
     @yield('scripts')
     <script data-turbolinks-suppress-warning src="http://unpkg.com/turbolinks"></script>
 </body>

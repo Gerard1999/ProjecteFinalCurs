@@ -28,6 +28,7 @@ use App\Http\Controllers\Backend\RaceController;
 
 Route::get('/', [PageController::class, 'races'])->name('races');
 Route::get('curses/{race}', [PageController::class, 'race'])->name('race');
+Route::get('downloadtrack', ['gpx' => 'RaceController@downloadTrack']);
 
 Route::get('products', [ProductController::class, 'products'])->name('products');
 Route::get('product/{product}', [ProductController::class, 'product'])->name('product');

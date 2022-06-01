@@ -18,6 +18,4 @@
     </div>
     {{ $races->links() }}
 </div>
-
-@include('footer')
 @endsection

@@ -34,5 +34,4 @@
             <h3>Total: {{$carro->priceCart()}}€</h3>
         </div>
 </div>
-@include('footer')
 @endsection
