@@ -121,26 +121,29 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-gpx/1.7.0/gpx.min.js"></script>
     
     <script>
+        var mapRunning = false;
         function getGpx(idMapa, gpx) {
             try {
-                var map = L.map(idMapa);
-                L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}.png', {
-                attribution: 'Made by Gerard Lopez'
-                }).addTo(map);
-                new L.GPX(gpx, {
-                    async: true,
-                    marker_options: {
-                        startIconUrl: '',
-                        endIconUrl: '',
-                    },
-                    polyline_options: {
-                    color: 'orange',
-                    opacity: 1,
-                    weight: 4,
-                    }
-                }).on('loaded', function(e) {
-                map.fitBounds(e.target.getBounds());
-                }).addTo(map);       
+                setTimeout(function() {
+                    var map = L.map(idMapa);
+                    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}.png', {
+                    attribution: 'Made by Gerard Lopez'
+                    }).addTo(map);
+                    new L.GPX(gpx, {
+                        async: true,
+                        marker_options: {
+                            startIconUrl: '',
+                            endIconUrl: '',
+                        },
+                        polyline_options: {
+                        color: 'orange',
+                        opacity: 1,
+                        weight: 4,
+                        }
+                    }).on('loaded', function(e) {
+                    map.fitBounds(e.target.getBounds());
+                    }).addTo(map);            
+                }, 100);
             } catch (error) {
                 console.log("getGpx()", error);
             }

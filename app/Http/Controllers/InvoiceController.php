@@ -56,8 +56,9 @@ class InvoiceController extends Controller
 
     //Funció que retorna les compres d'un usuari
     public function viewBuyHistory() {
-        $history = Invoice::where('user_id',Auth::user()->id)
-            ->get();
+        $history = ShoppingCart::where('user_id','=', Auth::user()->id)
+                               ->where('status','=', 'FINSHED')
+                               ->get();
 
         // dd($history);
 

@@ -140,3 +140,12 @@ main {
     min-height: 76vh;
     grid-template-rows: auto 1fr auto;
 }
+
+.center {
+    display: flex;
+    margin: auto;
+}
+
+.card {
+    border:  none !important;
+}

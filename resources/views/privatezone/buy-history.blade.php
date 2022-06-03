@@ -16,7 +16,7 @@
     <div id="accordion">
     @foreach($history as $invoice)
         <div class="card m-3">
-            <div id="heading">
+            <div id="heading" class="center">
                 <h5>
                     <button class="boto boto-petit" data-toggle="collapse" data-target="#collapse{{$i}}" aria-expanded="true" aria-controls="collapse{{$i}}">
                     Factura Nº {{$i}} - {{date('d/m/Y', strtotime($invoice->created_at))  }}  
@@ -29,14 +29,35 @@
                 
                 <table class="taula">
                     <thead class="capcalera">
-                        <th>Nº Factura</th>
+                        <th>Nº Factura {{$i-1}}</th>
                         <th>Producte</th>
                         <th>Preu </th>
                         <th>Unitats</th>
                         <th>Subtotal</th>
                     </thead>
-                    <!-- {{$invoice->user}} -->
-                    {{$invoice->cart}}
+                    <tbody class="cosTaula">
+                @foreach($invoice->cartDetails as $detail)
+                    <tr>
+                        <td><img src="{{$detail->product->get_image}}" height="60px" alt=""></td>
+                        <td>
+                            <a href="{{ route('product', $detail->product->id) }}" class="casellaRow">
+                                {{$detail->product->name}}
+                            </a>
+                        </td>
+                        <td>{{$detail->product->price}}€</td>
+                        
+                        <td>{{$detail->quantity}}</td>
+                        <td>{{$detail->sumPriceDetail()}}€</td>
+                    </tr>
+                @endforeach
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><b>Total:</b></td>
+                    <td><b>{{$invoice->priceCart()}}€</b></td>
+                </tr>
+            </tbody>
                 </table>
                 </div>
             </div>
