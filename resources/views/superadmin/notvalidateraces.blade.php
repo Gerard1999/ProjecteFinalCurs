@@ -37,7 +37,7 @@
                     <td>{{date('d/m/Y', strtotime($race->date))}}</td>
                     <td>{{$race->location}}</td>
                     <td>
-                        <a href="{{ route('superadmin.pendingrace', $race)}}" class="boto boto-petit boto-blau">
+                        <a href="{{ route('race', $race)}}" class="boto boto-petit boto-blau">
                             Veure Cursa
                         </a>
                     </td>

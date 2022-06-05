@@ -41,7 +41,7 @@ class RaceRequest extends FormRequest
             'num_aid_station_0'     => 'required',
             'num_participants_0'    => 'required',
             'elevation_img_0'       => 'image|mimes:jpeg,png,jpg',
-            'gpx_0'                 => 'file|mimes:jpg,csv,gpx',
+            // 'gpx_0'                 => 'file|mimes:jpg,csv,gpx',
         ];
     }
 }

@@ -20,11 +20,11 @@ class CreateCategoriesTable extends Migration
             $table->bigInteger('race_id')->unsigned();
             $table->foreign('race_id')->references('id')->on('races')->onDelete('cascade');;
 
-            $table->char('name_category', 50);
+            $table->char('name_category', 100);
             $table->float('kms');
             $table->integer('elevation_gain');
-            $table->char('location_start', 50);
-            $table->char('location_finish', 50);
+            $table->char('location_start', 100);
+            $table->char('location_finish', 100);
             $table->time('start_time', $precision = 0);
             $table->integer('num_aid_station');
             $table->float('price');

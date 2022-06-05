@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Rawaby88\OpenWeatherMap\Services\CWByCityName;
 use DB;
 use File;
+use Auth;
 
 class PageController extends Controller
 {
@@ -58,20 +59,22 @@ class PageController extends Controller
     }
 
     public function race(Race $race){
-        if($race->validate){
-            if ($this->findCity($race->location)) {
-                $cw = (new CWByCityName($race->location, 'es'))->get();
-                $temperature = $cw->temperature; // return Temperature object
-                $weather     = $cw->weather;     // return Weather object 
-                $sun         = $cw->sun;         // return Sun object
-                $race->temperature = $temperature;
-                $race->weather = $weather;
-                $race->sun = $sun;
-                $race->weather->iconWeather = $this->getWeatherImage($race->weather->iconUrl);
-            }
-            
-
+        if ($this->findCity($race->location)) {
+            $cw = (new CWByCityName($race->location, 'es'))->get();
+            $temperature = $cw->temperature; // return Temperature object
+            $weather     = $cw->weather;     // return Weather object 
+            $sun         = $cw->sun;         // return Sun object
+            $race->temperature = $temperature;
+            $race->weather = $weather;
+            $race->sun = $sun;
+            $race->weather->iconWeather = $this->getWeatherImage($race->weather->iconUrl);
+        }
+        if(Auth::check() && auth()->user()->user_type == "superadmin") {
             return view('race', ['race' => $race]);
+        } else {
+            if($race->validate){
+                return view('race', ['race' => $race]);
+            }
         }
         return back();
     }

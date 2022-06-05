@@ -112,7 +112,7 @@ Route::group([
         'middleware' => ['auth','superadmin']    
 ], function() {
         Route::get('/superadminzone', [SuperAdminController::class, 'superadminzone'])->name('superadminzone');
-        Route::get('/pending-race/{id}', [SuperAdminController::class, 'allRace'])->name('pendingrace');
+        // Route::get('/pending-race/{id}', [SuperAdminController::class, 'allRace'])->name('pendingrace');
         Route::get('/curses-per-validar', [SuperAdminController::class, 'notValidateRaces'])->name('notvalidateraces');
         Route::get('/totes-les-curses', [SuperAdminController::class, 'allRaces'])->name('allraces');
         Route::delete('/eliminar-cursa/{id}', [RaceController::class, 'destroy'])->name('eliminarcursa');

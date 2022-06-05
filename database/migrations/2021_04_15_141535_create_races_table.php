@@ -19,7 +19,7 @@ class CreateRacesTable extends Migration
             //Clau forana de Organizers
             $table->bigInteger('organizer_id')->unsigned();
             
-            $table->char('name', 25);
+            $table->char('name', 50);
             $table->string('description',2000);
             $table->string('url')->nullable();
             $table->boolean('shirt')->nullable();
