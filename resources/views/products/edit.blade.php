@@ -23,13 +23,13 @@
     </div>
     @endif
 
-    <form class="formulari-producte" action="{{route('organizer.reguardarproducte')}}" method="POST">
+    <form class="formulari-producte" action="{{route('organizer.reguardarproducte', $product)}}" method="POST">
         @csrf
         <div class="imatge-producte">
             <img src="{{$product->get_image}}" alt="">
         </div>
         <label for="image">Imatge Producte:</label>
-        <input type="file" name="img" value="{{$product->get_image}}">
+        <input type="file" name="img" value="{{ old('link_photo', $product->link_photo)}}">
         <input type="number" name="size_id" value="{{$product->size_id}}" hidden>
 
         <label for="name">Nom Producte:</label>

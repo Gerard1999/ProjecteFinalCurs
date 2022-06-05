@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Product;
 use App\Size;
+use Auth;
 use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
@@ -16,8 +17,12 @@ class ProductController extends Controller
     }
 
     public function product(Product $product){
-        if($product->validate) {
+        if(Auth::check() && auth()->user()->user_type == "superadmin") {
             return view('product', ['product' => $product]);
+        } else {
+            if($product->validate) {
+                return view('product', ['product' => $product]);
+            }
         }
         return back();
     }
@@ -88,14 +93,14 @@ class ProductController extends Controller
             'price'         => 'required',
             'img'           => 'required',
         ]);
-
         //Actualitzar les dades del producte en si
         $product->organizer_id  = auth()->user()->organizer->id;
         $product->name          = $request->name;
         $product->description   = $request->description;
-        $product->link_photo    = $request->img;
+        $product->link_photo    = 'products/'.$request->img;
         $product->price         = $request->price;
         $product->size_id       = $request->size_id;
+        $product->validate      = 0;
         $product->update();
         
         //Busquem les talles per l'id i les modifiquem
@@ -108,11 +113,13 @@ class ProductController extends Controller
         $size->xxl     = $request->xxl;
         $size->update();
 
-        if ($request->file('img')) {
+        // dd($request->file('img'));
+        if ($request->hasFile('img')) {
+            dd("te foto");
             //Eliminar la imatge anterior per actualitzar la nova.
-            Storage::disk('public')->delete($product->img_cover);
+            // Storage::disk('public')->delete($product->img_cover);
             $product->link_photo = $request->file('img')->store('products', 'public');
-            $product->save();
+            $product->update();
         }
 
         return back()->with('status', 'Producte actualitzat amb èxit');

@@ -12,6 +12,7 @@
         </div>
         <div class="detalls-producte">
             <h2>{{$product->name}}</h2>
+            <h5>{{$product->description}}</h5>
             <h3>{{$product->price}}€</h3>
             <h5>Talles disponibles:</h5>
             <div class="dades">

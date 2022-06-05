@@ -98,7 +98,7 @@ Route::group([
         Route::get('/crear-producte', [ProductController::class, 'create'])->name('crearproducte');
         Route::post('/guardar-producte', [ProductController::class, 'store'])->name('guardarproducte');
         Route::get('/editar-producte/{product}', [ProductController::class, 'edit'])->name('editarproducte');
-        Route::post('/reguardar-producte', [ProductController::class, 'update'])->name('reguardarproducte');
+        Route::post('/reguardar-producte/{product}', [ProductController::class, 'update'])->name('reguardarproducte');
         Route::delete('/eliminar-producte/{id}', [ProductController::class, 'destroy'])->name('eliminarproducte');
         
         Route::get('/llista-corredors/{race}', [InscriptionsListController::class, 'getRunnersRace'])->name('veure-corredors');

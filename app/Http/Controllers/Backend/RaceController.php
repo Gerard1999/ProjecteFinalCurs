@@ -158,6 +158,7 @@ class RaceController extends Controller
         }
         //Guardar Imatges
         if ($request->file('img')) {
+            // Storage::disk('races','public')->delete($race->img_cover);
             $race->img_cover = $request->file('img')->store('races', 'public');
             $race->update();
         }

@@ -98,9 +98,15 @@ class DatabaseSeeder extends Seeder
         ]);
 
         App\Size::create([
-            's' => true,
-            'm' => true,
-            'l' => true,
+            's' => 1,
+            'm' => 1,
+            'l' => 1,
+        ]);
+        App\Size::create([
+            'xs'=> 1,
+            's' => 1,
+            'm' => 1,
+            'l' => 1,
         ]);
         
         //Creant Productes
@@ -114,10 +120,10 @@ class DatabaseSeeder extends Seeder
         ]);
         App\Product::create([
             'name' => 'Samarreta tècnica La Sportiva',
-            'description' => 'Samarreta tècnia La Sportiva de trail running.',
+            'description' => 'Samarreta tècnia La Sportiva de Trail Running.',
             'price' => 19.99,
             'link_photo' => 'products/samarretasportiva.jpg',
-            'size_id' => 1,
+            'size_id' => 2,
             'organizer_id' => 1,
         ]);
     }

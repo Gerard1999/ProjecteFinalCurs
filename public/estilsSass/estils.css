@@ -827,6 +827,10 @@ footer h3 {
 }
 .contingut-producte .detalls-producte {
   margin-left: 2rem;
+  max-width: 400px;
+}
+.contingut-producte .detalls-producte h5 {
+  text-align: justify;
 }
 .contingut-producte .detalls-producte h2 {
   text-transform: uppercase;
@@ -856,6 +860,26 @@ footer h3 {
   color: white;
 }
 
+@media screen and (max-width: 768px) {
+  .contingut-producte {
+    display: flex;
+    flex-direction: column;
+  }
+  .contingut-producte .detalls-producte {
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+  }
+  .contingut-producte img {
+    margin-bottom: 20px;
+  }
+  .contingut-producte h2 {
+    text-align: center;
+  }
+  .contingut-producte .dades {
+    margin: auto;
+  }
+}
 .container {
   margin-top: 3rem;
   margin-bottom: 3rem;
