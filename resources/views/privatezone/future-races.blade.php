@@ -44,8 +44,6 @@
             @endforeach
         </tbody>
     </table>
-    @else 
-    <h3 class="titol marges">No tens cap cursa a fer...</h3>
     @endif
 </div>
 

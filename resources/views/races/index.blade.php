@@ -15,7 +15,9 @@
             {{ session('status') }}
         </div>
     @endif
-
+    @if(count($races) == 0)
+            <h3 class="titol marges">No tens cap cursa...</h3>
+    @else
     <table class="taula">
         <thead class="capcalera">
             <tr>
@@ -28,7 +30,7 @@
             </tr>
         </thead>
         <tbody class="cosTaula">
-            @forelse($races as $race)
+            @foreach($races as $race)
                 <tr>
                     <td>{{$race->name}}</td>
                     <td>{{date('d/m/Y', strtotime($race->date))}}</td>
@@ -51,12 +53,9 @@
                         </form>
                     </td>
                 </tr>
-            @empty
-                <tr>
-                    <td colspan="6">No hi ha curses</td>
-                </tr>
-            @endforelse
-        </tbody>
-    </table>
+            @endforeach
+            </tbody>
+        </table>
+    @endif
 </div>
 @endsection

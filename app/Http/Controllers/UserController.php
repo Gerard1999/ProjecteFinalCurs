@@ -45,7 +45,8 @@ class UserController extends Controller
             'address'   => ['required','max:50'],
             'nif'       => ['required','max:9', 'min:9'],
             'email'     => ['required', 'email', 'unique:users'],
-            'password'  => ['required', 'min:8'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'password_confirmation' => ['required', 'string', 'min:8'],
             'telephone' => ['required', 'min:9', 'max:9'],
         ]);
 

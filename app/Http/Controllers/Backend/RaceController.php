@@ -20,8 +20,7 @@ class RaceController extends Controller
      */
     public function index()
     {
-        $races = Race::where('organizer_id', auth()->user()->organizer->id)
-                    ->get();
+        $races = Race::where('organizer_id', auth()->user()->organizer->id)->get();
         return view('races.index', compact('races'));
     }
 
@@ -90,7 +89,7 @@ class RaceController extends Controller
         
         
         //Retornar
-        return back()->with('status', 'Creat amb èxit');
+        return back()->with('status', "Cursa creada amb èxit. Pendent de validació per part de l'administració");
     }
 
     /**
@@ -164,7 +163,7 @@ class RaceController extends Controller
         }
         $race->update();
 
-        return back()->with('status', 'Cursa actualitzada amb èxit');
+        return back()->with('status', "Cursa actualitzada amb èxit. Pendent de validació per part de l'administració");
     }
 
     /**

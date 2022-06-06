@@ -37,9 +37,7 @@
                     <td>{{$organizer->telephone}}</td>
                     <td>{{$organizer->nif}}</td>
                     <td>{{$organizer->city}}</td>
-                    @if($web = $organizer->organizer->link_web)
-                        <td><a target="blank" href="https://{{$web}}">{{$web}}</a></td>
-                    @endif
+                    <td>@if($web = $organizer->organizer->link_web)<a target="blank" href="https://{{$web}}">{{$web}}</a>@else - @endif</td>
                     <td>
                         <form action="{{ route('superadmin.eliminarusuari', $organizer->id)}}" method="POST">
                             @csrf

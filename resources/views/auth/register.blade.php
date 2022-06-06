@@ -112,7 +112,7 @@
                                 </div>
                                 <div class="col col-md-6 col-12">
                                     <label for="password-confirm">Repeteix Contrsenya *</label>
-                                    <input id="password-confirm" type="password" class="form-control" name="password_confirmation" autocomplete="new-password">
+                                    <input id="password-confirm" type="password" class="form-control @error('password_confirmation') is-invalid @enderror" name="password_confirmation" autocomplete="new-password">
                                 </div>
                             </div>
                         </div>

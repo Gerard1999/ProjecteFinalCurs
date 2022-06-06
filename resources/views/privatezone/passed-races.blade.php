@@ -44,8 +44,6 @@
             @endforeach
         </tbody>
     </table>
-    @else 
-    <h3 class="titol marges">No has realitzat cap cursa...</h3>
     @endif
 </div>
 

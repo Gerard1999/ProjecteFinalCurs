@@ -75,7 +75,7 @@ class ProductController extends Controller
         $product->save();
         
         //Retornar
-        return back()->with('status', 'Producte creat amb èxit');
+        return back()->with('status', "Producte creat amb èxit. Pendent de validació per part de l'administració");
     }
 
     //Retorna la vista per actualitzar un producte
@@ -122,7 +122,7 @@ class ProductController extends Controller
             $product->update();
         }
 
-        return back()->with('status', 'Producte actualitzat amb èxit');
+        return back()->with('status', "Producte actualitzat amb èxit. Pendent de validació per part de l'administració");
     }
 
     //Eliminar un producte
