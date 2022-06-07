@@ -7,7 +7,7 @@
 </div>
 <div class="pagina-cursa">
     <div class="tornar">
-        <a class="boto boto-petit" href="{{ route('superadmin.superadminzone')}}">&larr;Tornar Enrere</a>
+        <a class="boto boto-petit" href="{{ route('runner/privatezone')}}">&larr;Tornar Enrere</a>
     </div>
     @if (session('status'))
         <div class="alert alert-success" role="alert">
