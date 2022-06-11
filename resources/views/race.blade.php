@@ -54,14 +54,17 @@
             </div>
             
             @if($race->date > now()->toDateString())
-            <!--&& Auth::user() && Auth::user()->user_type == 'runner'-->
-            <br>
-                @if (auth()->check())
-                    <a class="boto" href="{{route('runner.inscripcio', $race)}}" style="margin-top:1.2rem;">Inscriu-t'hi!</a>
-                @else
-                    <a class="boto" href="{{ url('/login?redirect_to='.url()->current()) }}" class="btn blue no-margin">
-                        Inicia sessió per inscriure't
-                    </a>
+                @if(Auth::user())
+                    @if (Auth::user()->user_type == 'runner')
+                        <br>
+                            @if (auth()->check())
+                                <a class="boto" href="{{route('runner.inscripcio', $race)}}" style="margin-top:1.2rem;">Inscriu-t'hi!</a>
+                            @else
+                                <a class="boto" href="{{ url('/login?redirect_to='.url()->current()) }}" class="btn blue no-margin">
+                                    Inicia sessió per inscriure't
+                                </a>
+                            @endif
+                    @endif
                 @endif
 
                 <!-- <a class="boto" href="{{route('runner.inscripcio', $race)}}" style="margin-top:1.2rem;">Inscriu-t'hi!</a> -->

@@ -23,6 +23,8 @@ class CreateUsersTable extends Migration
             $table->integer('telephone')->nullable();
             $table->string('address')->nullable();
             $table->string('city')->nullable();
+            $table->boolean('confirmed')->default(0);
+            $table->string('confirmation_code')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
             $table->timestamps();

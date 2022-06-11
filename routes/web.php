@@ -36,6 +36,9 @@ Route::get('product/{product}', [ProductController::class, 'product'])->name('pr
 Route::get('galeria', [PageController::class, 'images'])->name('gallery');
 
 Auth::routes();
+Auth::routes(['verify' => true]);
+// E-mail verification
+Route::get('/register/verify/{code}', 'UserController@verify');
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
